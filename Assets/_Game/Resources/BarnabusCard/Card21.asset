@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7184e90947e6b481ab3c1ee343e8c5e7, type: 3}
+  m_Name: Card21
+  m_EditorClassIdentifier: 
+  id: 21
+  isLocked: 1
+  potionRequirement:
+    red: 7
+    green: 8
+    yellow: 9
+    blue: 8
+  cardImage: {fileID: 21300000, guid: 1fc9b9c7dfef241b181769327658ce77, type: 3}
+  barnabusImage: {fileID: 21300000, guid: c500e1662f5cd7642aeaf27ae4ba0377, type: 3}
+  lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: dcb6a724491df7f4b8894f643ecf25f2,
+    type: 3}
+  barnabusNo: 22
+  element: An
+  elementColor: ED1818
+  barnabusName: Annoyance
+  eyerbow: 'Eyebrows pulled down. '
+  face: Nose might wrinkle
+  mouth: 'Lips pressed tightly '
+  body: 'Clenched fists '
+  soundDescribe: Duh!
+  barnabusSound: {fileID: 8300000, guid: 2f5b66fd800b54b498c26c22e3041bdf, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: 5f88bd64b77f8c54cb851f85c624eecd, type: 3}
