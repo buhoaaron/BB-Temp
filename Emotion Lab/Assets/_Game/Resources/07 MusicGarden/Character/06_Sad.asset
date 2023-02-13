@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b21813a8ad46e4c805613b76d74e9c, type: 3}
+  m_Name: 06_Sad
+  m_EditorClassIdentifier: 
+  id: 6
+  icon: {fileID: 21300000, guid: b6294e57b7eb144d78decaa885422c98, type: 3}
+  lockedIcon: {fileID: 21300000, guid: cfa525701cc0f4801ab97b8917141803, type: 3}
+  musicBackground: {fileID: 21300000, guid: 3ce493a3cdbc940e59ee0441cae3dd95, type: 3}
+  buttonBackground: {fileID: 21300000, guid: 70eb4dc78f7bb5b449de13afba6d1cf0, type: 3}
+  noteIcon: {fileID: 21300000, guid: ab1a149ad85046941a4883133e161bfb, type: 3}
+  longNoteIcon: {fileID: 21300000, guid: 27b17525509b9614ea4427065d6a1730, type: 3}
+  noteColor: {r: 0.57254905, g: 0.88235295, b: 1, a: 1}
+  sound: {fileID: 8300000, guid: c081d6254253da7438eb634bdeede728, type: 3}
+  longSound: {fileID: 8300000, guid: 11b1f4ffe388f4e44a849658b2db551f, type: 3}
+  songList:
+  - {fileID: 11400000, guid: 67c3fb891dd61c74eb2d5ebb4cd8f776, type: 2}
+  - {fileID: 11400000, guid: d433738890bf484479e429313ced2322, type: 2}
+  - {fileID: 11400000, guid: 00deae056233dbb4da92a059f56c9b75, type: 2}
+  - {fileID: 11400000, guid: 1f9c3f0eecadcac4b82210108d6cc4b3, type: 2}
+  - {fileID: 11400000, guid: d86c1a8b49fd17547baed6e6af52e4a8, type: 2}
+  spineAsset: {fileID: 11400000, guid: 153cb2b607ebdc243b6d13763940a6cd, type: 2}
+  idleAnimationName: idle
+  danceAnimationName: song_01

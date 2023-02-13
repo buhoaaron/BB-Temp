@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe99bd0ecbcb2541b8015779580998a, type: 3}
+  m_Name: Sound5
+  m_EditorClassIdentifier: 
+  buttonSprite: {fileID: 21300000, guid: dc5ef05934a13324dbf9cd9f2da7992b, type: 3}
+  noteSprite: {fileID: 21300000, guid: 83a82ec77af274a4da8185a0491f9624, type: 3}
+  audioClip: {fileID: 8300000, guid: f0cc327ed74351b4796121e9facdeecb, type: 3}

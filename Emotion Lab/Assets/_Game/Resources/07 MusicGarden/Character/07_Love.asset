@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b21813a8ad46e4c805613b76d74e9c, type: 3}
+  m_Name: 07_Love
+  m_EditorClassIdentifier: 
+  id: 7
+  icon: {fileID: 21300000, guid: 81736d256debc63468d3bf0fa3d023d2, type: 3}
+  lockedIcon: {fileID: 21300000, guid: fdaef9c3b1639cb47847245214de1692, type: 3}
+  musicBackground: {fileID: 21300000, guid: 898e18a9f4313344a89e925f5cbfc967, type: 3}
+  buttonBackground: {fileID: 21300000, guid: eec91724c4ecef74b8d2b1bc26033458, type: 3}
+  noteIcon: {fileID: 21300000, guid: 28dae0dd778f89046a94a0fdd14dfb98, type: 3}
+  longNoteIcon: {fileID: 21300000, guid: b2ad607546386724db024ab5d825392c, type: 3}
+  noteColor: {r: 1, g: 0.57254905, b: 0.78431374, a: 1}
+  sound: {fileID: 8300000, guid: 6c5344fec3b9ba74294f5c215ed6799b, type: 3}
+  longSound: {fileID: 0}
+  songList:
+  - {fileID: 11400000, guid: 67c3fb891dd61c74eb2d5ebb4cd8f776, type: 2}
+  - {fileID: 11400000, guid: d86c1a8b49fd17547baed6e6af52e4a8, type: 2}
+  spineAsset: {fileID: 11400000, guid: 7bc4405ebfe6ea94498f026a76b5ef5f, type: 2}
+  idleAnimationName: idle
+  danceAnimationName: yoga

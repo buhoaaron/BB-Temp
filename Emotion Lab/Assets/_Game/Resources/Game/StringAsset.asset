@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57534ea9ffdd4c42baca47a94b18357, type: 3}
+  m_Name: StringAsset
+  m_EditorClassIdentifier: 
+  emotionFaceStartDialog: Choose an Emotion Buddy to use as a base, and place the
+    different food items to form a face and different emotions!
+  emotionFaceEndDialog: "Learning emotion labeling can be creative and super fun.
+    When it\u2019s hard to put in words what you\u2019re feeling, maybe try drawing
+    or other creative ways."
+  emotionMusicStartDialog: The emotion song is all about vocal notes - musical building
+    blocks that play out  the iconic tunes of each Emotion Buddy!
+  emotionMusicEndDialog: "Can you feel the power of music in the air? When the music
+    comes to life,doesn\u2019t it feel great? Show off your song and share with friends
+    and family!"
+  dotToDotStartDialog: 'Draw a shape to help the 2 dots come together '
+  dotToDotEndDialog: Sometimes when you feel big emotions, shifting your attention
+    and focus a fun problem sets can help take away the intensity. Come back for
+    more!
+  angerbreathingStartDialog: 'Title: Imaginative Breathing Copy: '
+  angerbreathingEndDialog: Deep breathing is a powerful tool to help children calm
+    down and ground themselves when they feel intense emotions. It takes practice
+    to develop it into a habit!
+  propbreathingStartDialog: 'Title: Smoky Big Search'
+  propbreathingEndDialog: Deep breathing is a powerful tool to help children calm
+    down and ground themselves when they feel intense emotions. It takes practice
+    to develop it into a habit!

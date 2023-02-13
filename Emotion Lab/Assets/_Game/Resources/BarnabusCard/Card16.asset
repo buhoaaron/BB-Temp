@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7184e90947e6b481ab3c1ee343e8c5e7, type: 3}
+  m_Name: Card16
+  m_EditorClassIdentifier: 
+  id: 16
+  isLocked: 1
+  potionRequirement:
+    red: 10
+    green: 10
+    yellow: 12
+    blue: 10
+  cardImage: {fileID: 21300000, guid: 75ead648b9f1b1a4a924024f4374ffd8, type: 3}
+  barnabusImage: {fileID: 21300000, guid: 94d2506dc45b8e74cbdaa04b9d0ac817, type: 3}
+  lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: 5f05555638396fc438e9ca20869ee572,
+    type: 3}
+  barnabusNo: 2
+  element: Gt
+  elementColor: 30E37F
+  barnabusName: Guilt
+  eyerbow: Eyes look away
+  face: neutral in expressions
+  mouth: Lips turn downward
+  body: Head down, body hover down
+  soundDescribe: "\u201Cwhy\u2026.?!\u201D"
+  barnabusSound: {fileID: 8300000, guid: 22fbe537354c64c44a0a63671601473f, type: 3}
+  huntingFoundSound: {fileID: 0}

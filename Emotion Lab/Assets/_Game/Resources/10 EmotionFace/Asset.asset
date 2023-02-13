@@ -1,0 +1,715 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a42bbeb8b1373a48b22a8ee9888a5b1, type: 3}
+  m_Name: Asset
+  m_EditorClassIdentifier: 
+  backgroundButtonImage: {fileID: 21300000, guid: f90fdf8b8586b5c47a653a9f088c9eb6,
+    type: 3}
+  leftButtonSelectedSprite: {fileID: 21300000, guid: 96a3220ad9e7df346ade002fc2e439b0,
+    type: 3}
+  leftButtonUnselectedSprite: {fileID: 21300000, guid: 5709b0aad37232249a262f716ff1cf36,
+    type: 3}
+  rightButtonSelectedSprite: {fileID: 21300000, guid: 1313e1afb07037b46b5494e7e033b23f,
+    type: 3}
+  rightButtonUnselectedSprite: {fileID: 21300000, guid: b652292049365f947888d95e53bf00b1,
+    type: 3}
+  buttonSelectedSprite: {fileID: 21300000, guid: f0c6a719acd76a245a34d2ee5c4b91d2,
+    type: 3}
+  buttonUnselectedSprite: {fileID: 21300000, guid: 026831bf2a5da844db71a09cf80937f1,
+    type: 3}
+  characterTypes:
+  - typeName: Red
+    buttonIcon: {fileID: 21300000, guid: c9c4d6537735f3c4caa8b72596fa2efa, type: 3}
+    elements:
+    - elementName: 1
+      buttonIcon: {fileID: 21300000, guid: 1373ad5159aad43aa8b819c66e0781b3, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 6bc2448dd16ff44688c949ab6357664f,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 6a13ba7719cf94f738fb0b33967b577a, type: 3}
+    - elementName: 9
+      buttonIcon: {fileID: 21300000, guid: 3eafb79c8c7c7ff48b9e3be898212bfa, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 61951f94422db194f8e4252820c5ba6d,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 8b618894752be734399a3e1080cf563f, type: 3}
+    - elementName: 14
+      buttonIcon: {fileID: 21300000, guid: 15ff4e610d98aa4458bd913e3ec6a8fb, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: cf334472e01e4ba41bb54bab20243717,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 602ece9c5b200ea4685cf424f3418b32, type: 3}
+    - elementName: 21
+      buttonIcon: {fileID: 21300000, guid: c500e1662f5cd7642aeaf27ae4ba0377, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: dcb6a724491df7f4b8894f643ecf25f2,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 182b2aad27ceb97409c119a29c54c8dc, type: 3}
+  - typeName: Blue
+    buttonIcon: {fileID: 21300000, guid: eb0215fdeeafda9459395807da1e03bf, type: 3}
+    elements:
+    - elementName: 6
+      buttonIcon: {fileID: 21300000, guid: b6294e57b7eb144d78decaa885422c98, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: cfa525701cc0f4801ab97b8917141803,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 4ec7db3a2b63846378681d7661abd779, type: 3}
+    - elementName: 12
+      buttonIcon: {fileID: 21300000, guid: a445b5357dd80f4408aa207c2b2496ac, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 84183f420002f4245907016d400d7203,
+        type: 3}
+      sprite: {fileID: 21300000, guid: bdbd39704948b9748976ebd2e882470e, type: 3}
+    - elementName: 22
+      buttonIcon: {fileID: 21300000, guid: d0ecc095b592cef47b34c7fdb0e402e0, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 079f78b9197ca92478d0f8a005545230,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 4904cf68b73ac504694e7f938138d716, type: 3}
+    - elementName: 29
+      buttonIcon: {fileID: 21300000, guid: b20cfb39ff27c4143a13cdce8b0bd0bf, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: edafe4c73dd2f6e40bc96ef35e9ad191,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 6059ecb1f58173d4ab25fe84d36036c3, type: 3}
+  - typeName: Yellow
+    buttonIcon: {fileID: 21300000, guid: f957e78eaacb8c94385f9b617256a4ad, type: 3}
+    elements:
+    - elementName: 3
+      buttonIcon: {fileID: 21300000, guid: b54e27a06435b473d8fd9b3256f62c42, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 8da770b16a7cb46afa84e4fe898f6d1c,
+        type: 3}
+      sprite: {fileID: 21300000, guid: b4066d6340e2045b1829a1180071492e, type: 3}
+    - elementName: 18
+      buttonIcon: {fileID: 21300000, guid: c70ad96350afc01469206de0a4896adf, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 460eaedd915d6af489b9c65ff35e085e,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 7100131b50b15c34c814ddc787c65ad7, type: 3}
+    - elementName: 28
+      buttonIcon: {fileID: 21300000, guid: a4c8cbc85f763f3458e29c795230e315, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 4bc66f19e972f9e479d33fa7b42d07f9,
+        type: 3}
+      sprite: {fileID: 21300000, guid: e55ff3ad59429d143be571c374bfcfae, type: 3}
+  - typeName: Orange
+    buttonIcon: {fileID: 21300000, guid: bb70feadb4645ff48b956afa3b6d9b29, type: 3}
+    elements:
+    - elementName: 5
+      buttonIcon: {fileID: 21300000, guid: 6aa187d187b8f450fa197459e3c1caca, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: aa9d2235ce08446c7b83b235e7078733,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 70081a9444cb9430498d67bae732fe74, type: 3}
+    - elementName: 17
+      buttonIcon: {fileID: 21300000, guid: 0b0b5d6d6f27e63488fbd78d11029210, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 95e9ca3e0da87da4cbc8ff03c183e883,
+        type: 3}
+      sprite: {fileID: 21300000, guid: b2b82606ee8a45e47990d3f2ba599bec, type: 3}
+    - elementName: 30
+      buttonIcon: {fileID: 21300000, guid: c81a56f8a4539e64e85e3b0c2c140cb1, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: f5851ae0a8581de489ef62969790b6e9,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 4055c462bb553084996f12907c968612, type: 3}
+  - typeName: Green
+    buttonIcon: {fileID: 21300000, guid: 3711d7179689bd34fb0bf4941fd0b58e, type: 3}
+    elements:
+    - elementName: 2
+      buttonIcon: {fileID: 21300000, guid: f388961c577514ad38501029ba8781f4, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: b6c11c5d397dc4b49ada2e160a87c83d,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 0728d8209cc9d4a2ca5506fad3d68c71, type: 3}
+    - elementName: 15
+      buttonIcon: {fileID: 21300000, guid: 75e42788274132549835c619b85dccf6, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: bae4592e600afd44884e453733254224,
+        type: 3}
+      sprite: {fileID: 21300000, guid: acba4533dc9719f4aae62af39e44d1bf, type: 3}
+    - elementName: 25
+      buttonIcon: {fileID: 21300000, guid: ad6d14b6d0d2e8d4493166f8e0051111, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 1b9335c00a104bc4baddddb61e4f168a,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 89bced32c54d43c48841c9956453e87e, type: 3}
+  - typeName: Purple
+    buttonIcon: {fileID: 21300000, guid: ebb0ece96a2e3b74ba6b0db713252279, type: 3}
+    elements:
+    - elementName: 4
+      buttonIcon: {fileID: 21300000, guid: 3f8e71a6b205b4915b790326eb458e7a, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 9e0df8eff47bc42b4a2dc9904dabd01a,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 587aca35cf5bb40c794ea9e555c3c291, type: 3}
+    - elementName: 13
+      buttonIcon: {fileID: 21300000, guid: 353f488530ddea64db77c2f370e19cc7, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 1dd502296d71c3c408f9e0ed4a9f6ed2,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 5426373b3790fa34fa981e312361df71, type: 3}
+    - elementName: 26
+      buttonIcon: {fileID: 21300000, guid: ee87adc0065bc1446bf4e371a7644d9d, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 3242c514b5fe3dc47ac3a29e63b5f2a6,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 831ae5ab0d561ec40aede1cc739df1fc, type: 3}
+    - elementName: 31
+      buttonIcon: {fileID: 21300000, guid: ad783cb80a2ce844c976be7e279b6728, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 68872800ec0ce424a8f93eb6b0a0c348,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 655e35858ce90064b8f78a71c64e45c9, type: 3}
+  - typeName: Pink
+    buttonIcon: {fileID: 21300000, guid: 2b8a4e73548236048bec619bf9c206d3, type: 3}
+    elements:
+    - elementName: 7
+      buttonIcon: {fileID: 21300000, guid: 81736d256debc63468d3bf0fa3d023d2, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: fdaef9c3b1639cb47847245214de1692,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 441c4b31f96f01d4cabbce46e0cf86ae, type: 3}
+    - elementName: 11
+      buttonIcon: {fileID: 21300000, guid: 68e0c96d1cb16d9418e0ec002f92a192, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 8508c21897e981b4cacee23f765d2e20,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 7a88e2fb0e132ed459d7fb4c342dadd6, type: 3}
+    - elementName: 19
+      buttonIcon: {fileID: 21300000, guid: 1ff2be67f02d14b48b9db8b36b861a4e, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: da93b71d48c1df34b9ab38ee688b136e,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 707d987135867eb45aa33015e528139b, type: 3}
+    - elementName: 24
+      buttonIcon: {fileID: 21300000, guid: 3223f8be8fd8fe24db5fd73d7ca23b63, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 7c44824aa192c9547b995570a069dd19,
+        type: 3}
+      sprite: {fileID: 21300000, guid: c9997d2575450894d8027bbbce9fe799, type: 3}
+    - elementName: 32
+      buttonIcon: {fileID: 21300000, guid: c9a77399497dd054f9ec22708a65a6c3, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: cea78ac66ef6ff24d888f23303584507,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 33ea51ebfe9a3bb4f85bfdc5cb80396f, type: 3}
+  - typeName: Rainbow
+    buttonIcon: {fileID: 21300000, guid: bb34c24ac7305b5449163f3612fcd380, type: 3}
+    elements:
+    - elementName: 8
+      buttonIcon: {fileID: 21300000, guid: 66c4e3e046438e74ca67ae3f41eda262, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: cc0b621abf372a643b60f69cd41da063,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 379b6f0a71d931745bdc2dcfda410352, type: 3}
+    - elementName: 10
+      buttonIcon: {fileID: 21300000, guid: 8691bedd1ecf3d341b7db31d0a28620f, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 0b84d6313b4fef544b5f0c4e35104528,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 0efe2bcae3c7770459914529c17984dd, type: 3}
+    - elementName: 16
+      buttonIcon: {fileID: 21300000, guid: 94d2506dc45b8e74cbdaa04b9d0ac817, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 5f05555638396fc438e9ca20869ee572,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 69a3abab0b0db46459fdc798a8d69613, type: 3}
+    - elementName: 20
+      buttonIcon: {fileID: 21300000, guid: 426b92db91b46a342b96bd262feae9f6, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: 1cca4a1dc0ea4b34aa4b4a8c5f3679e9,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 580172b9e3e74a641a25ee56ba434e89, type: 3}
+    - elementName: 23
+      buttonIcon: {fileID: 21300000, guid: 09d21081af141b54d8775416a4e2bbba, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: eb51166a71c98cb4390268aed280e1eb,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 9a3a62b275539c945b6b82e36e6094bd, type: 3}
+    - elementName: 27
+      buttonIcon: {fileID: 21300000, guid: a7a057be6b74cf04aaad6e389c4c34ab, type: 3}
+      buttonIcon_Gray: {fileID: 21300000, guid: f9cef77925ea8f34db944980d0bc8904,
+        type: 3}
+      sprite: {fileID: 21300000, guid: 9bfb69f742731e84ba6afa118e8b008d, type: 3}
+  itemTypes:
+  - typeName: Candy
+    buttonIcon: {fileID: 21300000, guid: 4a6ecbf6c3a6ee641978655addec8637, type: 3}
+    elements:
+    - elementName: C01
+      buttonIcon: {fileID: 21300000, guid: 4a6ecbf6c3a6ee641978655addec8637, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 4a6ecbf6c3a6ee641978655addec8637, type: 3}
+    - elementName: C02
+      buttonIcon: {fileID: 21300000, guid: bbf0d1d4f04c0f04f8dc1dc63333fc0b, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: bbf0d1d4f04c0f04f8dc1dc63333fc0b, type: 3}
+    - elementName: C03
+      buttonIcon: {fileID: 21300000, guid: 6c7b57d33f149ad4189b7482fb24e13b, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 6c7b57d33f149ad4189b7482fb24e13b, type: 3}
+    - elementName: C04
+      buttonIcon: {fileID: 21300000, guid: f00909a1122571541a5b62b1e613f4ab, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f00909a1122571541a5b62b1e613f4ab, type: 3}
+    - elementName: C05
+      buttonIcon: {fileID: 21300000, guid: 4fdff2e8d022fa947a697c71b8ce9bce, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 4fdff2e8d022fa947a697c71b8ce9bce, type: 3}
+    - elementName: C06
+      buttonIcon: {fileID: 21300000, guid: 14deb060c04ae36478d3fd06a6f39031, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 14deb060c04ae36478d3fd06a6f39031, type: 3}
+    - elementName: C07
+      buttonIcon: {fileID: 21300000, guid: 667c75be37defc64da88eef5ee64d91e, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 667c75be37defc64da88eef5ee64d91e, type: 3}
+    - elementName: C08
+      buttonIcon: {fileID: 21300000, guid: 9099ec834b811864da296d73ccb9de82, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 9099ec834b811864da296d73ccb9de82, type: 3}
+    - elementName: C09
+      buttonIcon: {fileID: 21300000, guid: 79f3c350902608144b461284d2caac46, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 79f3c350902608144b461284d2caac46, type: 3}
+    - elementName: C10
+      buttonIcon: {fileID: 21300000, guid: 1d7c3032557e93547bd364b502ecc5a4, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 1d7c3032557e93547bd364b502ecc5a4, type: 3}
+    - elementName: C11
+      buttonIcon: {fileID: 21300000, guid: 209a78ff550accf4e996ae6da6b0eaf6, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 209a78ff550accf4e996ae6da6b0eaf6, type: 3}
+    - elementName: C12
+      buttonIcon: {fileID: 21300000, guid: d2b79c62fdd0f1149a4ace77f2ae5cf2, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: d2b79c62fdd0f1149a4ace77f2ae5cf2, type: 3}
+    - elementName: C13
+      buttonIcon: {fileID: 21300000, guid: 7aa991bc62a6d4c45a2753578f771191, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 7aa991bc62a6d4c45a2753578f771191, type: 3}
+    - elementName: C14
+      buttonIcon: {fileID: 21300000, guid: c2cb7497041f6044b8aba0423a6934f7, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: c2cb7497041f6044b8aba0423a6934f7, type: 3}
+    - elementName: C15
+      buttonIcon: {fileID: 21300000, guid: bcdd146d93d78fb4daf46ff47d3fa6c8, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: bcdd146d93d78fb4daf46ff47d3fa6c8, type: 3}
+    - elementName: C16
+      buttonIcon: {fileID: 21300000, guid: adde6e58ad61c154283880282395eda1, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: adde6e58ad61c154283880282395eda1, type: 3}
+    - elementName: C17
+      buttonIcon: {fileID: 21300000, guid: 352b3c38e96ab5f4b87c24539448c41a, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 352b3c38e96ab5f4b87c24539448c41a, type: 3}
+    - elementName: C18
+      buttonIcon: {fileID: 21300000, guid: a5ab9446ad7bfef4f86a35a7b686891b, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: a5ab9446ad7bfef4f86a35a7b686891b, type: 3}
+    - elementName: C19
+      buttonIcon: {fileID: 21300000, guid: ea38877b6d063914e97cbc09386e0823, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: ea38877b6d063914e97cbc09386e0823, type: 3}
+  - typeName: Cookie
+    buttonIcon: {fileID: 21300000, guid: 08e0b61d0ba19574492149d6d3b86c4c, type: 3}
+    elements:
+    - elementName: C01
+      buttonIcon: {fileID: 21300000, guid: 08e0b61d0ba19574492149d6d3b86c4c, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 08e0b61d0ba19574492149d6d3b86c4c, type: 3}
+    - elementName: C02
+      buttonIcon: {fileID: 21300000, guid: 70bd08be3cff76b4ea6b6574d6896bf5, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 70bd08be3cff76b4ea6b6574d6896bf5, type: 3}
+    - elementName: C03
+      buttonIcon: {fileID: 21300000, guid: df3b72a2788e20844a60fa0450660ff7, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: df3b72a2788e20844a60fa0450660ff7, type: 3}
+    - elementName: C04
+      buttonIcon: {fileID: 21300000, guid: e65581de9dbb8574db0fce680b5cffd0, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: e65581de9dbb8574db0fce680b5cffd0, type: 3}
+    - elementName: C05
+      buttonIcon: {fileID: 21300000, guid: d1535dfcbb8655b439cae8ca7de0c0c9, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: d1535dfcbb8655b439cae8ca7de0c0c9, type: 3}
+    - elementName: C06
+      buttonIcon: {fileID: 21300000, guid: 6461b2ea60764394c9e9ff15610137b8, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 6461b2ea60764394c9e9ff15610137b8, type: 3}
+    - elementName: C07
+      buttonIcon: {fileID: 21300000, guid: 14ab775012b8cfc48a00a47bc8c0e41e, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 14ab775012b8cfc48a00a47bc8c0e41e, type: 3}
+    - elementName: C08
+      buttonIcon: {fileID: 21300000, guid: ab01665ba36d3c64089795aaf7ae6264, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: ab01665ba36d3c64089795aaf7ae6264, type: 3}
+    - elementName: C09
+      buttonIcon: {fileID: 21300000, guid: 890b4222061b1014ea3e788ae42f4de8, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 890b4222061b1014ea3e788ae42f4de8, type: 3}
+    - elementName: C10
+      buttonIcon: {fileID: 21300000, guid: 43b2701f08ac7974c8810e29c6b2d97f, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 43b2701f08ac7974c8810e29c6b2d97f, type: 3}
+    - elementName: C11
+      buttonIcon: {fileID: 21300000, guid: 957a6c4f87f29af408460debf950f811, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 957a6c4f87f29af408460debf950f811, type: 3}
+    - elementName: C12
+      buttonIcon: {fileID: 21300000, guid: b936c2d1ac872c24d9298c2e1e276946, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: b936c2d1ac872c24d9298c2e1e276946, type: 3}
+    - elementName: C13
+      buttonIcon: {fileID: 21300000, guid: f0241cbdaa268854caec280273419148, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f0241cbdaa268854caec280273419148, type: 3}
+    - elementName: C14
+      buttonIcon: {fileID: 21300000, guid: 473269a8f5db1664db2fac1d564690e7, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 473269a8f5db1664db2fac1d564690e7, type: 3}
+    - elementName: C15
+      buttonIcon: {fileID: 21300000, guid: c200946221b1a19478422476bbfaa6fa, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: c200946221b1a19478422476bbfaa6fa, type: 3}
+    - elementName: C16
+      buttonIcon: {fileID: 21300000, guid: 6ebed16cfb78fae4ab1bc7dd2f4e850a, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 6ebed16cfb78fae4ab1bc7dd2f4e850a, type: 3}
+    - elementName: C17
+      buttonIcon: {fileID: 21300000, guid: f19d28cc42f61894fa4b34c5940900ed, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f19d28cc42f61894fa4b34c5940900ed, type: 3}
+    - elementName: C18
+      buttonIcon: {fileID: 21300000, guid: 285e3e4949bbe7547b2908ea4be407af, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 285e3e4949bbe7547b2908ea4be407af, type: 3}
+    - elementName: C19
+      buttonIcon: {fileID: 21300000, guid: 690a4309388ff3e4a91cfc3358990abf, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 690a4309388ff3e4a91cfc3358990abf, type: 3}
+    - elementName: C20
+      buttonIcon: {fileID: 21300000, guid: e119fb08e53c89548806772faaab29ef, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: e119fb08e53c89548806772faaab29ef, type: 3}
+    - elementName: C21
+      buttonIcon: {fileID: 21300000, guid: 212ee4fa8ed1c6c41a772463680f9952, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 212ee4fa8ed1c6c41a772463680f9952, type: 3}
+    - elementName: C22
+      buttonIcon: {fileID: 21300000, guid: 138b4e8dd58fe6f4fabb631e72deb204, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 138b4e8dd58fe6f4fabb631e72deb204, type: 3}
+    - elementName: C23
+      buttonIcon: {fileID: 21300000, guid: d2fc8703517a15844bea904f951ad994, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: d2fc8703517a15844bea904f951ad994, type: 3}
+    - elementName: C24
+      buttonIcon: {fileID: 21300000, guid: 84e86e757ae489a408ce19689b54f8c4, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 84e86e757ae489a408ce19689b54f8c4, type: 3}
+    - elementName: C25
+      buttonIcon: {fileID: 21300000, guid: 3f00534a44b34164db297eadc9d92ea4, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 3f00534a44b34164db297eadc9d92ea4, type: 3}
+  - typeName: Food
+    buttonIcon: {fileID: 21300000, guid: c0c9b9d7c1c88df48a47a923ddb083d5, type: 3}
+    elements:
+    - elementName: F01
+      buttonIcon: {fileID: 21300000, guid: 37b479f4bd0d7414a92062e21cdb66bf, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 37b479f4bd0d7414a92062e21cdb66bf, type: 3}
+    - elementName: F02
+      buttonIcon: {fileID: 21300000, guid: 1d8585a64aed70341ab208bfdcc25ebd, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 1d8585a64aed70341ab208bfdcc25ebd, type: 3}
+    - elementName: F03
+      buttonIcon: {fileID: 21300000, guid: 83e38dc9aa0e80146b9c0fb7042d7074, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 83e38dc9aa0e80146b9c0fb7042d7074, type: 3}
+    - elementName: F04
+      buttonIcon: {fileID: 21300000, guid: 122d74205ac84ac40a1b3138da88e9ad, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 122d74205ac84ac40a1b3138da88e9ad, type: 3}
+    - elementName: F05
+      buttonIcon: {fileID: 21300000, guid: 4b746b1c0d9cea640aae193187935e45, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 4b746b1c0d9cea640aae193187935e45, type: 3}
+    - elementName: F06
+      buttonIcon: {fileID: 21300000, guid: fc6009584969c1443a94440a813a276f, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: fc6009584969c1443a94440a813a276f, type: 3}
+    - elementName: F07
+      buttonIcon: {fileID: 21300000, guid: c0c9b9d7c1c88df48a47a923ddb083d5, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: c0c9b9d7c1c88df48a47a923ddb083d5, type: 3}
+    - elementName: F08
+      buttonIcon: {fileID: 21300000, guid: a19aa5f038d030541bf68cb70349a5d9, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: a19aa5f038d030541bf68cb70349a5d9, type: 3}
+    - elementName: F09
+      buttonIcon: {fileID: 21300000, guid: f787c6cf9660c1f44acbe101ae670c27, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f787c6cf9660c1f44acbe101ae670c27, type: 3}
+    - elementName: F10
+      buttonIcon: {fileID: 21300000, guid: 27f5c01ba6169854d9920b32c58f540e, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 27f5c01ba6169854d9920b32c58f540e, type: 3}
+    - elementName: F11
+      buttonIcon: {fileID: 21300000, guid: e0d9de2ab9313714c844ff539d281cef, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: e0d9de2ab9313714c844ff539d281cef, type: 3}
+  - typeName: Fruit
+    buttonIcon: {fileID: 21300000, guid: c39d710decbf71c4e9cf0765fc94c3f3, type: 3}
+    elements:
+    - elementName: F01
+      buttonIcon: {fileID: 21300000, guid: ef389e4021a56294ba995f69096bdfd9, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: ef389e4021a56294ba995f69096bdfd9, type: 3}
+    - elementName: F02
+      buttonIcon: {fileID: 21300000, guid: 22e710fe313c0ff439592a62f2ed50f5, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 22e710fe313c0ff439592a62f2ed50f5, type: 3}
+    - elementName: F03
+      buttonIcon: {fileID: 21300000, guid: c39d710decbf71c4e9cf0765fc94c3f3, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: c39d710decbf71c4e9cf0765fc94c3f3, type: 3}
+    - elementName: F04
+      buttonIcon: {fileID: 21300000, guid: d7b51f060217418408a368ea7cdcdacc, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: d7b51f060217418408a368ea7cdcdacc, type: 3}
+    - elementName: F05
+      buttonIcon: {fileID: 21300000, guid: 481dafc87e1f4b844885cb583a7cbc32, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 481dafc87e1f4b844885cb583a7cbc32, type: 3}
+    - elementName: F06
+      buttonIcon: {fileID: 21300000, guid: 1e52026b22ebd1b42920159faf3cf1a4, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 1e52026b22ebd1b42920159faf3cf1a4, type: 3}
+    - elementName: F07
+      buttonIcon: {fileID: 21300000, guid: e742398fdb46d1b4881a3b11c296d411, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: e742398fdb46d1b4881a3b11c296d411, type: 3}
+    - elementName: F08
+      buttonIcon: {fileID: 21300000, guid: 5e7b7ba0da9b61f4285c12322f57be53, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 5e7b7ba0da9b61f4285c12322f57be53, type: 3}
+    - elementName: F09
+      buttonIcon: {fileID: 21300000, guid: 5c32b46704356bd47968572ad8d6518b, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 5c32b46704356bd47968572ad8d6518b, type: 3}
+    - elementName: F10
+      buttonIcon: {fileID: 21300000, guid: 2dcc47bfa40684348a4c664257bba696, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 2dcc47bfa40684348a4c664257bba696, type: 3}
+    - elementName: F11
+      buttonIcon: {fileID: 21300000, guid: 39408d6354e160c43b48e9f000506eeb, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 39408d6354e160c43b48e9f000506eeb, type: 3}
+    - elementName: F12
+      buttonIcon: {fileID: 21300000, guid: 63e5cba5b4f8c21458ec80e36f607a60, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 63e5cba5b4f8c21458ec80e36f607a60, type: 3}
+  - typeName: Leaf
+    buttonIcon: {fileID: 21300000, guid: 05589263afa404b4dbc8e4b7f01366a5, type: 3}
+    elements:
+    - elementName: L01
+      buttonIcon: {fileID: 21300000, guid: d4aff59fff0bbd34d99daed98fb366f8, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: d4aff59fff0bbd34d99daed98fb366f8, type: 3}
+    - elementName: L02
+      buttonIcon: {fileID: 21300000, guid: 05589263afa404b4dbc8e4b7f01366a5, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 05589263afa404b4dbc8e4b7f01366a5, type: 3}
+    - elementName: L03
+      buttonIcon: {fileID: 21300000, guid: 07daa59143f11ef4fbae4e63c2675dac, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 07daa59143f11ef4fbae4e63c2675dac, type: 3}
+  - typeName: Object
+    buttonIcon: {fileID: 21300000, guid: 7d5fc0af09a76464b905f6a02391bacf, type: 3}
+    elements:
+    - elementName: O01
+      buttonIcon: {fileID: 21300000, guid: fb644af7d026c65408b41821b793950b, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: fb644af7d026c65408b41821b793950b, type: 3}
+    - elementName: O02
+      buttonIcon: {fileID: 21300000, guid: 1653f7120676ead4998ef6c2e02c7b5e, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 1653f7120676ead4998ef6c2e02c7b5e, type: 3}
+    - elementName: O03
+      buttonIcon: {fileID: 21300000, guid: e35aa60ed92362748bab6fd22945b739, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: e35aa60ed92362748bab6fd22945b739, type: 3}
+    - elementName: O04
+      buttonIcon: {fileID: 21300000, guid: dff3b43c191d0ad439ca4daf90d1966e, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: dff3b43c191d0ad439ca4daf90d1966e, type: 3}
+    - elementName: O05
+      buttonIcon: {fileID: 21300000, guid: 7d5fc0af09a76464b905f6a02391bacf, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 7d5fc0af09a76464b905f6a02391bacf, type: 3}
+    - elementName: O06
+      buttonIcon: {fileID: 21300000, guid: 883d44238a641c247b8394760e3e4df9, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 883d44238a641c247b8394760e3e4df9, type: 3}
+    - elementName: O07
+      buttonIcon: {fileID: 21300000, guid: 6759388f7b3f7de41b080cb31b33fc98, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 6759388f7b3f7de41b080cb31b33fc98, type: 3}
+    - elementName: O08
+      buttonIcon: {fileID: 21300000, guid: f59ff308d9dff0f498f0cd7b0d926058, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f59ff308d9dff0f498f0cd7b0d926058, type: 3}
+    - elementName: O09
+      buttonIcon: {fileID: 21300000, guid: f679bde6c61cdf449ace8ed5055860c2, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f679bde6c61cdf449ace8ed5055860c2, type: 3}
+    - elementName: O10
+      buttonIcon: {fileID: 21300000, guid: c49fc1bbe64e21d4c8f77f71bb5f3fe7, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: c49fc1bbe64e21d4c8f77f71bb5f3fe7, type: 3}
+    - elementName: O11
+      buttonIcon: {fileID: 21300000, guid: aff9ce6f21629a641b6570b66da9f5f5, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: aff9ce6f21629a641b6570b66da9f5f5, type: 3}
+    - elementName: O12
+      buttonIcon: {fileID: 21300000, guid: 05c57d42c7fa98948a3a0fb859b5d02c, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 05c57d42c7fa98948a3a0fb859b5d02c, type: 3}
+    - elementName: O13
+      buttonIcon: {fileID: 21300000, guid: d037a7ef2c5da9e4ba585b39be23f5d8, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: d037a7ef2c5da9e4ba585b39be23f5d8, type: 3}
+    - elementName: O14
+      buttonIcon: {fileID: 21300000, guid: a3c28567ff56a0142b875cf211d4a75a, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: a3c28567ff56a0142b875cf211d4a75a, type: 3}
+    - elementName: O15
+      buttonIcon: {fileID: 21300000, guid: 80dd2c45b2513c94f83a1ca7bf4e4617, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 80dd2c45b2513c94f83a1ca7bf4e4617, type: 3}
+    - elementName: O16
+      buttonIcon: {fileID: 21300000, guid: ff9020f62dd131c4c828765eb83a5cd5, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: ff9020f62dd131c4c828765eb83a5cd5, type: 3}
+    - elementName: O17
+      buttonIcon: {fileID: 21300000, guid: 3ead2c51af5226d4dbd6cc806a30d7d1, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 3ead2c51af5226d4dbd6cc806a30d7d1, type: 3}
+    - elementName: O18
+      buttonIcon: {fileID: 21300000, guid: 0793d864a1c5afe41920df6bf07d9172, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 0793d864a1c5afe41920df6bf07d9172, type: 3}
+    - elementName: O19
+      buttonIcon: {fileID: 21300000, guid: 61625b495af121649b4d2ff5bf5b385f, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 61625b495af121649b4d2ff5bf5b385f, type: 3}
+    - elementName: O20
+      buttonIcon: {fileID: 21300000, guid: 6e62e3e8c295a994aaa86550866ff3c3, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 6e62e3e8c295a994aaa86550866ff3c3, type: 3}
+  - typeName: Sport
+    buttonIcon: {fileID: 21300000, guid: 73843328ab75cbc4e90c4fae0358196f, type: 3}
+    elements:
+    - elementName: S01
+      buttonIcon: {fileID: 21300000, guid: 73843328ab75cbc4e90c4fae0358196f, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 73843328ab75cbc4e90c4fae0358196f, type: 3}
+    - elementName: S02
+      buttonIcon: {fileID: 21300000, guid: 3a3ceee6ec2ccd04d906ce78a3351d66, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 3a3ceee6ec2ccd04d906ce78a3351d66, type: 3}
+    - elementName: S03
+      buttonIcon: {fileID: 21300000, guid: 5a12ba08bb8bf7342883ff9cff193043, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 5a12ba08bb8bf7342883ff9cff193043, type: 3}
+    - elementName: S04
+      buttonIcon: {fileID: 21300000, guid: 362d130310fa1a84d9a00718d9d0e964, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 362d130310fa1a84d9a00718d9d0e964, type: 3}
+    - elementName: S05
+      buttonIcon: {fileID: 21300000, guid: b1408ecdf46293441845c736ce37eddc, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: b1408ecdf46293441845c736ce37eddc, type: 3}
+    - elementName: S06
+      buttonIcon: {fileID: 21300000, guid: 920a7c7ca7857c6459509ead00fd9e98, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 920a7c7ca7857c6459509ead00fd9e98, type: 3}
+  - typeName: Stationery
+    buttonIcon: {fileID: 21300000, guid: 3825fe62e44432749a46b8c46ca99663, type: 3}
+    elements:
+    - elementName: S01
+      buttonIcon: {fileID: 21300000, guid: 3825fe62e44432749a46b8c46ca99663, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 3825fe62e44432749a46b8c46ca99663, type: 3}
+    - elementName: S02
+      buttonIcon: {fileID: 21300000, guid: b54088d93471fc54ba7bbb15c01cddf2, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: b54088d93471fc54ba7bbb15c01cddf2, type: 3}
+    - elementName: S03
+      buttonIcon: {fileID: 21300000, guid: 40848946d25e832469e30fb27155b62a, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 40848946d25e832469e30fb27155b62a, type: 3}
+    - elementName: S04
+      buttonIcon: {fileID: 21300000, guid: 67d55401690355f4da5697f7bfcdf5cc, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 67d55401690355f4da5697f7bfcdf5cc, type: 3}
+    - elementName: S05
+      buttonIcon: {fileID: 21300000, guid: 3e1e471f735142e49b7f7962bfb9e2db, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 3e1e471f735142e49b7f7962bfb9e2db, type: 3}
+    - elementName: S06
+      buttonIcon: {fileID: 21300000, guid: 4e093c22993a4644e8b6d686992c9929, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 4e093c22993a4644e8b6d686992c9929, type: 3}
+    - elementName: S07
+      buttonIcon: {fileID: 21300000, guid: c7c8165478d2e9440b3c7ea61585b6c5, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: c7c8165478d2e9440b3c7ea61585b6c5, type: 3}
+    - elementName: S08
+      buttonIcon: {fileID: 21300000, guid: f06c9b1567f723a40bce8588a971b108, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f06c9b1567f723a40bce8588a971b108, type: 3}
+    - elementName: S09
+      buttonIcon: {fileID: 21300000, guid: 3a0d4aa3d339ceb47b2ace2ca48834bc, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 3a0d4aa3d339ceb47b2ace2ca48834bc, type: 3}
+    - elementName: S10
+      buttonIcon: {fileID: 21300000, guid: f0c2ad61b9cb012419843657c8346fb9, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: f0c2ad61b9cb012419843657c8346fb9, type: 3}
+    - elementName: S11
+      buttonIcon: {fileID: 21300000, guid: 8cb72616b632b7c48b5e2a287cbfd703, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 8cb72616b632b7c48b5e2a287cbfd703, type: 3}
+    - elementName: S12
+      buttonIcon: {fileID: 21300000, guid: 96c155a17e2c5fc439d2a3e9bf2f5596, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 96c155a17e2c5fc439d2a3e9bf2f5596, type: 3}
+    - elementName: S13
+      buttonIcon: {fileID: 21300000, guid: 37f844a960d342041b2dddc2f958a10e, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 37f844a960d342041b2dddc2f958a10e, type: 3}
+    - elementName: S14
+      buttonIcon: {fileID: 21300000, guid: 4590aa8fc028829448a10f83e65a68ac, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 4590aa8fc028829448a10f83e65a68ac, type: 3}
+  - typeName: Tool
+    buttonIcon: {fileID: 21300000, guid: 68f494b6de3f7214496325d73f0f346d, type: 3}
+    elements:
+    - elementName: T01
+      buttonIcon: {fileID: 21300000, guid: 57eeacf63201b534f8ab5da6c67d2423, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 57eeacf63201b534f8ab5da6c67d2423, type: 3}
+    - elementName: T02
+      buttonIcon: {fileID: 21300000, guid: 232bb2b169e898d4ab371fe6e15d620d, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 232bb2b169e898d4ab371fe6e15d620d, type: 3}
+    - elementName: T03
+      buttonIcon: {fileID: 21300000, guid: 16d93f63dde94ba41bef1eec5a73847f, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 16d93f63dde94ba41bef1eec5a73847f, type: 3}
+    - elementName: T04
+      buttonIcon: {fileID: 21300000, guid: bd348e1691a153949a08f2d12818c1ff, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: bd348e1691a153949a08f2d12818c1ff, type: 3}
+    - elementName: T05
+      buttonIcon: {fileID: 21300000, guid: 68f494b6de3f7214496325d73f0f346d, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 68f494b6de3f7214496325d73f0f346d, type: 3}
+  colors:
+  - {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
+  - {r: 1, g: 0.16862746, b: 0.043137256, a: 1}
+  - {r: 1, g: 0.61960787, b: 0.043137256, a: 1}
+  - {r: 0.9137255, g: 1, b: 0.043137256, a: 1}
+  - {r: 0.46666667, g: 1, b: 0.043137256, a: 1}
+  - {r: 0.3019608, g: 0.69803923, b: 0.27450982, a: 1}
+  - {r: 0.21568628, g: 0.8980392, b: 0.7294118, a: 1}
+  - {r: 0.21568628, g: 0.5764706, b: 0.8980392, a: 1}
+  - {r: 0.17254902, g: 0.3019608, b: 0.8862745, a: 1}
+  - {r: 0.7647059, g: 0.3529412, b: 1, a: 1}
+  - {r: 1, g: 0.3529412, b: 0.68235296, a: 1}
+  - {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+  - {r: 0.45490196, g: 0.45490196, b: 0.45490196, a: 1}

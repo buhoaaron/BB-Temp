@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7184e90947e6b481ab3c1ee343e8c5e7, type: 3}
+  m_Name: Card19
+  m_EditorClassIdentifier: 
+  id: 19
+  isLocked: 1
+  potionRequirement:
+    red: 7
+    green: 8
+    yellow: 9
+    blue: 8
+  cardImage: {fileID: 21300000, guid: c0ccd7cf6698d164a82a9395911d968c, type: 3}
+  barnabusImage: {fileID: 21300000, guid: 1ff2be67f02d14b48b9db8b36b861a4e, type: 3}
+  lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: da93b71d48c1df34b9ab38ee688b136e,
+    type: 3}
+  barnabusNo: 32
+  element: Pr
+  elementColor: F94D9E
+  barnabusName: Pride
+  eyerbow: Raised eyebrows
+  face: Raised cheeks and forehead
+  mouth: Big smile
+  body: Chest position upward
+  soundDescribe: "\u201CI did awesome\u201D; \u201CI did it!\u201D"
+  barnabusSound: {fileID: 8300000, guid: f0837d666ed138b419d71e6fe43fab5e, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: f98ea2985b0099e4ebcc0a728fa5e3c7, type: 3}

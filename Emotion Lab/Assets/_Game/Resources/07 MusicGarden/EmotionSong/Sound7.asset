@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe99bd0ecbcb2541b8015779580998a, type: 3}
+  m_Name: Sound7
+  m_EditorClassIdentifier: 
+  buttonSprite: {fileID: 21300000, guid: 95078ed27a230804b8c4d33f85ca6d3c, type: 3}
+  noteSprite: {fileID: 21300000, guid: 95b83c488597a9a4f86e34efa6a9028e, type: 3}
+  audioClip: {fileID: 8300000, guid: fc7c85c52f56b27479f3bd93b1b208b9, type: 3}

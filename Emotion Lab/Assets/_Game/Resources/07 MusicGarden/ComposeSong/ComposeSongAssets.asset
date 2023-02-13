@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a87663a414581841a6413bd9d7f56c1, type: 3}
+  m_Name: ComposeSongAssets
+  m_EditorClassIdentifier: 
+  soundAssets:
+  - {fileID: 11400000, guid: e5a1c2682a2f0364692640a3d2df7e64, type: 2}
+  - {fileID: 11400000, guid: 2b3d9355b22d74e4b86b8c09b3c0ce95, type: 2}
+  - {fileID: 11400000, guid: 064ce968b14291b42897ef215427c7a4, type: 2}
+  - {fileID: 11400000, guid: 6db0d32faf3a41c43902e9e0f3362872, type: 2}
+  - {fileID: 11400000, guid: 4836eabc2a8cc9d4eb59b0246fc76dd2, type: 2}
