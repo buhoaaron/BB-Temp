@@ -12,6 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/GameRoom.unity
     guid: fbc407dbbcc7249919e366db03153ef2
   - enabled: 1
-    path: Assets/_Game/00 GameScenes/11 Hunting/Hunting.unity
-    guid: cdaac38d8a27f6240ae44441f390c965
+    path: Assets/Scenes/Shelf.unity
+    guid: 093a99000edf38d43aac5849fa950f3e
+  - enabled: 1
+    path: Assets/Scenes/Lab.unity
+    guid: ace96db52daad5143ba3edbe8fa565bb
+  - enabled: 1
+    path: Assets/_Game/00 GameScenes/10 EmotionFace/EmotionFace.unity
+    guid: 72d0dcfb25b00004dac24e60b7080e45
+  - enabled: 1
+    path: Assets/_Game/00 GameScenes/07 EmotionMusic/EmotionMusic.unity
+    guid: 59208df54170e5d41960b03647bd431b
+  - enabled: 0
+    path: Assets/Plugins/VoxelBusters/CrossPlatformReplayKit/Demo/Scenes/ReplayKitDemo.unity
+    guid: 4b2cee09b79e24b14ad386f60cb33b27
   m_configObjects: {}

@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LevelBounds
+  - Music
+  - Background
+  - NoMask
   layers:
   - Default
   - TransparentFX
@@ -13,31 +17,52 @@ TagManager:
   - UI
   - 
   - 
+  - Platforms
+  - Player
+  - Volumes
+  - OneWayPlatforms
+  - Projectiles
+  - Enemies
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ladders
+  - PlayerProjectiles
+  - MovingObjects
+  - MovingPlatforms
+  - Foreground
+  - MovingOneWayPlatforms
+  - NoCollision
+  - Background
+  - Friendlies
+  - Invulnerable
+  - PlatformsPlayerOnly
+  - MidHeightOneWayPlatforms
+  - Pushables
+  - Stairs
   - 
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 865276293
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Between
+    uniqueID: 159767333
+    locked: 0
+  - name: Player
+    uniqueID: 3269598877
+    locked: 0
+  - name: Platforms
+    uniqueID: 3686216261
+    locked: 0
+  - name: Foreground
+    uniqueID: 2037766891
+    locked: 0
+  - name: VisibleParticles
+    uniqueID: 369365599
+    locked: 0
+  - name: UI
+    uniqueID: 263903405
     locked: 0

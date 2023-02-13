@@ -229,7 +229,7 @@ namespace Barnabus.Hunting
             resultText.text = "Found " + foundCount + " Barnabus";
             if (foundCount >= 3)
             {
-                resultTitle.text = "Hooray! You find them all!";
+                resultTitle.text = "Hooray! You found them all!";
             }
             else
             {
