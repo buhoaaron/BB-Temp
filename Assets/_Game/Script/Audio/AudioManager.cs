@@ -18,6 +18,8 @@ namespace CustomAudio
         private bool isBgmMute, isSoundMute;
 
         public float maxVolume;
+        TouchDetector detector;
+
 
         void Awake()
         {
@@ -28,7 +30,11 @@ namespace CustomAudio
                 DontDestroyOnLoad(gameObject);
                 StartCoroutine(FinishDetect());
             }
+
+            
         }
+
+
 
         public void LoadMuteSetting()
         {
@@ -45,7 +51,7 @@ namespace CustomAudio
                 soundList[i].SetMute(isSoundMute);
         }
 
-        #region Sound
+#region Sound
         public void SetSoundResources(ClipResources resources)
         {
             soundResources = resources;
@@ -60,7 +66,8 @@ namespace CustomAudio
             }
         }
 
-        public void PlaySound(ClipSource clip, float pitch = 1, bool loop = false)
+
+   /*     public void PlaySound(ClipSource clip, float pitch = 1, bool loop = false)
         {
             if (clip != null)
             {
@@ -78,7 +85,7 @@ namespace CustomAudio
 
                 soundList.Add(new Sound(clip, source, isSoundMute, pitch, loop));
             }
-        }
+        }*/
 
         public AudioSource FindAudioSource(AudioClip clip)
         {
@@ -154,9 +161,9 @@ namespace CustomAudio
                 FinishSoundDetect();
             }
         }
-        #endregion
+#endregion
 
-        #region BGM
+#region BGM
         public void PlayBGM(AudioClip clip, bool loop = true, float beginTime = 0)
         {
             bgmSource.clip = clip;
@@ -221,6 +228,6 @@ namespace CustomAudio
             }
             bgmSource.volume = 0;
         }
-        #endregion
+#endregion
     }
 }

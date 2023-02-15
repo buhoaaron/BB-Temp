@@ -6,7 +6,13 @@ namespace CustomAudio.Resources
     [CreateAssetMenu(menuName = "Audio/ClipResources")]
     public class ClipResources : ScriptableObject
     {
-        public List<ClipSource> clipResources;
+        public AudioClip ButtonSFX;
+        public AudioClip CameraSFX;
+        public AudioClip SaveSFX;
+        public AudioClip DeleteSFX;
+
+
+       /* public List<ClipSource> clipResources;
 
         public ClipSource GetClipSource(int index)
         {
@@ -20,6 +26,6 @@ namespace CustomAudio.Resources
                     return clipResources[i];
 
             return null;
-        }
+        }*/
     }
 }

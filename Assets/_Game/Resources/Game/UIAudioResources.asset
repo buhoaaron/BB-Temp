@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41b403327405fb48951435a76100bde, type: 3}
+  m_Name: UIAudioResources
+  m_EditorClassIdentifier: 
+  ButtonSFX: {fileID: 8300000, guid: b14d08a5447f545a7b3a8e729ee1ab86, type: 3}
+  CameraSFX: {fileID: 8300000, guid: 2de573fa371d94a4d976d638d7e9bbf8, type: 3}
+  SaveSFX: {fileID: 0}
+  DeleteSFX: {fileID: 8300000, guid: 041a06e31aedbd24392c997efd79d078, type: 3}
