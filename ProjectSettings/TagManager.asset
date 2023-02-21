@@ -9,6 +9,8 @@ TagManager:
   - Background
   - NoMask
   - Button
+  - Delete
+  - Camera
   layers:
   - Default
   - TransparentFX
