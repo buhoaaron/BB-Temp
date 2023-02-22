@@ -86,7 +86,7 @@ namespace AudioSystem
             AssetDatabase.Refresh();
         }
         /// <summary>
-        /// «Ø¥ßAudio¦CÁ|ÀÉ®×
+        /// å»ºç«‹Audioåˆ—èˆ‰æª”æ¡ˆ
         /// </summary>
         private void CreateAudioEnumFile()
         {
@@ -107,7 +107,7 @@ namespace AudioSystem
             AssetDatabase.Refresh();
         }
         /// <summary>
-        /// ÀË¬d¬O§_¦³­«ÂĞªºAUDIO NAME
+        /// æª¢æŸ¥æ˜¯å¦æœ‰é‡è¦†çš„AUDIO NAME
         /// </summary>
         private bool CheckForDuplicates()
         {
@@ -128,7 +128,7 @@ namespace AudioSystem
             return duplicateFound;
         }
         /// <summary>
-        /// ³Ğ«Ø©Î§ó·sAudioSource¨ì·í«e³õ´º¤W
+        /// å‰µå»ºæˆ–æ›´æ–°AudioSourceåˆ°ç•¶å‰å ´æ™¯ä¸Š
         /// </summary>
         private void GenerateOrUpdate()
         {
@@ -137,16 +137,16 @@ namespace AudioSystem
             if (parent == null)
                 parent = new GameObject(Config.AudioSourcesDefaultName);
 
-            //¨ú±o¤w¦s¦bªºAudioSources
+            //å–å¾—å·²å­˜åœ¨çš„AudioSources
             var listAudioSourcesExisted = new List<AudioSource>(parent.GetComponentsInChildren<AudioSource>());
 
             var listAudioSourcesExistedName = new List<string>(listAudioSourcesExisted.ConvertAll<string>(source => source.name));
             var listSettingAudioName = new List<string>(allAudios.clips.ConvertAll<string>(clipData => clipData.Name));
-            //«Ø¥ß¤ñ¹ï¥Îªº¦Cªí
+            //å»ºç«‹æ¯”å°ç”¨çš„åˆ—è¡¨
             var createList = listSettingAudioName.Except(listAudioSourcesExistedName).ToList();
             var removeList = listAudioSourcesExistedName.Except(listSettingAudioName).ToList();
 
-            //§R°£
+            //åˆªé™¤
             var realRemoveList = new List<AudioSource>();
             foreach (string removeName in removeList)
             {
@@ -156,20 +156,19 @@ namespace AudioSystem
             {
                 DestroyImmediate(realRemoveList[i].gameObject);
             }
-            //·s¼W
+            //æ–°å¢
             foreach (string createName in createList)
             {
                 var audioClipData = allAudios.clips.Find((x) => x.Name == createName);
 
                 var audioSourceObj = new GameObject(audioClipData.Name);
                 audioSourceObj.transform.SetParent(parent.transform);
-                //¥[¤JAudioSource²Õ¥ó
+                //åŠ å…¥AudioSourceçµ„ä»¶
                 var audioSource = audioSourceObj.AddComponent<AudioSource>();
                 audioSource.clip = audioClipData.Clip;
                 audioSource.playOnAwake = false;
             }
-
-            //§ó·s
+            //æ›´æ–°
             foreach (var clip in allAudios.clips)
             {
                 foreach (var audioSourcesExisted in listAudioSourcesExisted)

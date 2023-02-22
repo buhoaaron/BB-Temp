@@ -15,10 +15,8 @@ public class AudioSourceManager : MonoBehaviour
 
     [SerializeField]
     private List<AudioSource> listAudioSources;
-    /// <summary>
-    /// 當前播放的BGM
-    /// </summary>
-    private AudioSource currentBGM = null;
+
+    private AudioSource currentPlayBGM = null;
 
     private void Awake()
     {
@@ -40,33 +38,31 @@ public class AudioSourceManager : MonoBehaviour
     /// <param name="audioName">音源列舉</param>
     public void PlayBGM(AUDIO_NAME audioName)
     {
-        int audioIndex = (int)audioName;
-        var audioSource = listAudioSources[audioIndex];
-        //若不同則停掉前一個BGM
-        if (audioSource != currentBGM)
+        var audioSource = GetAudioSource(audioName);
+        //若和當前BGM不同則先停掉當前BGM
+        if (audioSource != currentPlayBGM)
             StopBGM();
-        
-        //相同則繼續播
-        currentBGM = audioSource;
-        currentBGM.loop = true;
 
-        currentBGM.Play();
+        currentPlayBGM = audioSource;
+        currentPlayBGM.loop = true;
+
+        currentPlayBGM.Play();
     }
     /// <summary>
     /// 暫停BGM
     /// </summary>
     public void PauseBGM()
     {
-        if (currentBGM != null)
-            currentBGM.Pause();
+        if (currentPlayBGM != null)
+            currentPlayBGM.Pause();
     }
     /// <summary>
     /// 停止BGM
     /// </summary>
     public void StopBGM()
     {
-        if (currentBGM != null)
-            currentBGM.Stop();
+        if (currentPlayBGM != null)
+            currentPlayBGM.Stop();
     }
     /// <summary>
     /// 播放音效
@@ -74,11 +70,16 @@ public class AudioSourceManager : MonoBehaviour
     /// <param name="audioName">音源列舉</param>
     public void PlaySound(AUDIO_NAME audioName)
     {
-        int audioIndex = (int)audioName;
-        var audioSource = listAudioSources[audioIndex];
+        var audioSource = GetAudioSource(audioName);
         audioSource.loop = false;
 
         audioSource.Play();
+    }
+
+    private AudioSource GetAudioSource(AUDIO_NAME audioName)
+    {
+        int audioIndex = (int)audioName;
+        return listAudioSources[audioIndex];
     }
 }
 
