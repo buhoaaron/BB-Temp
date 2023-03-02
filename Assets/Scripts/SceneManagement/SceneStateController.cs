@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Barnabus.SceneTransitions;
 
 namespace Barnabus.SceneManagement
 {
@@ -15,6 +16,12 @@ namespace Barnabus.SceneManagement
         private UnityAction<Scene, LoadSceneMode> onSceneLoaded = null;
 
         private SceneStateSwitcher stateSwitcher = null;
+        private SceneTransitionsManager transitionsManager = null;
+
+        public SceneStateController(SceneTransitionsManager manager)
+        {
+            transitionsManager = manager;
+        }
 
         #region BASE_API
         public void Init()
@@ -29,6 +36,7 @@ namespace Barnabus.SceneManagement
         {
             SceneManager.sceneLoaded -= onSceneLoaded;
             loadingSceneAsync = null;
+            isLoadingScene = false;
         }
         #endregion
 
@@ -47,17 +55,23 @@ namespace Barnabus.SceneManagement
             else
             {
                 isLoadingScene = true;
-                //場景讀取完後才切換狀態
-                onSceneLoaded = (scene, mode) =>
+                //淡入效果完成後才讀取場景
+                transitionsManager.OnFadeInComplete = () =>
                 {
-                    isLoadingScene = false;
+                    //場景讀取完後才切換狀態及淡出
+                    onSceneLoaded = (scene, mode) =>
+                    {
+                        base.SetState(state);
 
-                    base.SetState(state);
+                        transitionsManager.FadeOut();
 
-                    Clear();
+                        Clear();
+                    };
+
+                    LoadSceneAsync(state.SceneName, onSceneLoaded);
                 };
-                //讀取場景
-                LoadSceneAsync(state.SceneName, onSceneLoaded);
+
+                transitionsManager.FadeIn();
             }   
         }
         private void LoadSceneAsync(string sceneName, UnityAction<Scene, LoadSceneMode> onLoaded = null)

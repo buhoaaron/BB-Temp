@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Barnabus.SceneManagement
+﻿namespace Barnabus.SceneManagement
 {
     public class LoadingMainSceneState : BaseLoadingSceneState
     {

@@ -792,3 +792,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cbe881dae3628447aa253155addf2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneTransitUIPrefab: {fileID: 5548006473019728984, guid: 29d0cc5d3da1f534ca1c630fd6bb1bce, type: 3}

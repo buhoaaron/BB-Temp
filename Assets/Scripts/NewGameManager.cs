@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Barnabus.SceneManagement;
 using Barnabus.Card;
-using Barnabus.Transitions;
+using Barnabus.SceneTransitions;
 
 /// <summary>
 /// 新的遊戲管理者
@@ -17,7 +17,7 @@ public class NewGameManager : MonoBehaviour
     private SceneStateController sceneStateController;
     private AudioSourceManager audioSourceManager;
     private BarnabusCardManager barnabusCardManager;
-    private TransitionsManager transitionsManager;
+    private SceneTransitionsManager sceneTransitionsManager;
 
     private void Start()
     {
@@ -37,16 +37,16 @@ public class NewGameManager : MonoBehaviour
     {
         instance = this;
 
-        sceneStateController = new SceneStateController();
-        sceneStateController.Init();
-       
         audioSourceManager = GetComponentInChildren<AudioSourceManager>();
 
-        transitionsManager = GetComponentInChildren<TransitionsManager>();
-        transitionsManager.Init();
+        sceneTransitionsManager = GetComponentInChildren<SceneTransitionsManager>();
+        sceneTransitionsManager.Init();
 
         barnabusCardManager = new BarnabusCardManager();
         barnabusCardManager.Init();
+
+        sceneStateController = new SceneStateController(sceneTransitionsManager);
+        sceneStateController.Init();
     }
 
     /// <summary>
