@@ -28,8 +28,6 @@ public class AudioSourceManager : MonoBehaviour
         {
             listAudioSources = new List<AudioSource>(audioSourcesObj.GetComponentsInChildren<AudioSource>());
         }
-
-        DontDestroyOnLoad(this);
     }
 
     /// <summary>

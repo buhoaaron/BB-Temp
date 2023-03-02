@@ -21,6 +21,10 @@ public class AudioSourceTest : MonoBehaviour
         {
             AudioSourceManager.Instance.PlaySound(AUDIO_NAME.BUTTON_CLICK);
         }
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            ScreenCapture.CaptureScreenshot("temp.png");
+        }
     }
 }
 
