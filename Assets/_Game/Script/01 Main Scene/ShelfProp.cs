@@ -22,15 +22,13 @@ public class ShelfProp : MonoBehaviour
 
         Instance = this;
 
-        BarnabusList barnabusList = Resources.Load<BarnabusList>("BarnabusCard/BarnabusList");
+        BarnabusList barnabusList = NewGameManager.Instance.BarnabusCardManager.BarnabusList;
         foreach (ShelfBTNProp btn in bTNProps)
         {
             BarnabusScanScriptable barnabusScanScriptable = barnabusList[btn.id];
             btn.GetComponent<Image>().sprite = barnabusScanScriptable.GetBarnabusImage;
         }
     }
-
-
     public void DoScan(ShelfBTNProp prop)
     {
         int id = prop.id;
