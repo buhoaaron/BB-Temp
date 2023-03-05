@@ -11,6 +11,7 @@ TagManager:
   - Button
   - Delete
   - Camera
+  - MakeAFaceItem
   layers:
   - Default
   - TransparentFX

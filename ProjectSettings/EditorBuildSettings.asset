@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/00 GameScenes/12 DotToDot/DotGameScene.unity
     guid: 6932683c547c7b74b939fc82c9504fa4
+  - enabled: 1
+    path: Assets/_Game/00 GameScenes/04 Breathing/AngerBreathing.unity
+    guid: 7323ad51eb68e4746b5d54e4522cbfef
+  - enabled: 1
+    path: Assets/_Game/00 GameScenes/04 Breathing/PropBreathing.unity
+    guid: 0ce84288da940f14db244bfcdbfe31dd
+  - enabled: 1
+    path: Assets/_Game/00 GameScenes/04 Breathing/ShapeBreathing.unity
+    guid: a3d1d7360c31b6e44932486aada42951
   m_configObjects: {}
