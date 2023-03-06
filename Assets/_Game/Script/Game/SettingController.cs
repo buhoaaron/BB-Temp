@@ -1,3 +1,4 @@
+using Barnabus.SceneManagement;
 using UnityEngine;
 
 public class SettingController : MonoBehaviour
@@ -45,5 +46,13 @@ public class SettingController : MonoBehaviour
     public void ToMapScene()
     {
         SceneTransit.LoadSceneAsync(mapSceneName);
+    }
+
+    /// <summary>
+    /// <新增>呼叫場景狀態機切場景狀態
+    /// </summary>
+    public void SetSceneState(int sceneState)
+    {
+        NewGameManager.Instance.SetSceneState((SCENE_STATE)sceneState);
     }
 }
