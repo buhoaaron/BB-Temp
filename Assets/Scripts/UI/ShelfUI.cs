@@ -8,7 +8,7 @@ namespace Barnabus.UI
         public Button ButtonReturn = null;
         public override void Init()
         {
-            ButtonReturn = transform.Find("Return").GetComponent<Button>();
+            ButtonReturn = transform.Find("Button_Return").GetComponent<Button>();
         }
         public override void UpdateUI()
         {
