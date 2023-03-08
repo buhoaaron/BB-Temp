@@ -384,6 +384,7 @@ namespace Barnabus.EmotionMusic
             if (!IsCharacterUnlock(characterID)) return false; //�Ө��⥼���� => ���i���
             else if (stageIndex != -1 && stageIndex != selectedStageIndex) return false; //�Ө���w��b��L�R�x��m => ���i���
             else return true;
+            //return true;
         }
 
         private int GetCharacterFrameID(int characterID)

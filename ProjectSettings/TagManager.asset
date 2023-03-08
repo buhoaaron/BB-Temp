@@ -9,6 +9,9 @@ TagManager:
   - Background
   - NoMask
   - Button
+  - Delete
+  - Camera
+  - MakeAFaceItem
   layers:
   - Default
   - TransparentFX
