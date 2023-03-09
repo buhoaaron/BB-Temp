@@ -171,16 +171,23 @@ namespace Barnabus.EmotionFace
             if (isMovingItem)
             {
                 MoveItem();
-                DeleteItemDetect();
-                if (isReadyDelete) SetDeleteIconPosition();
+                /*DeleteItemDetect();
+                if (isReadyDelete) SetDeleteIconPosition();*/
 
-                deleteHint.SetActive(!deleteItemIcon.gameObject.activeSelf);
+               //deleteHint.SetActive(!deleteItemIcon.gameObject.activeSelf);
             }
-            else if (isReadyDelete) HideDeleteIcon();
+            //else if (isReadyDelete) HideDeleteIcon();
 
             if (isScalingItem) ScaleItem();
             if (isRotatingItem) RotateItem();
             layerToolBar.SetActive(currentEditItem);
+
+            if (currentEditItem != null)
+            {
+                ShowDeleteIcon();
+            }
+            else HideDeleteIcon();
+            
         }
 
         #region Character
@@ -362,7 +369,7 @@ namespace Barnabus.EmotionFace
         private void ShowDeleteIcon()
         {
             deleteItemIcon.gameObject.SetActive(true);
-            SetDeleteIconPosition();
+            //SetDeleteIconPosition();
             isReadyDelete = true;
         }
 
@@ -384,7 +391,7 @@ namespace Barnabus.EmotionFace
 
             StartCoroutine(SetItemsLayer());
 
-            HideDeleteIcon();
+            //HideDeleteIcon();
         }
 
         public void OnClick_LayerDown()
@@ -487,7 +494,7 @@ namespace Barnabus.EmotionFace
         private void OnPointerUp_Item(Item item)
         {
             isMovingItem = false;
-            if (isReadyDelete) DeleteItem();
+            //if (isReadyDelete) DeleteItem();
         }
 
         private void MoveItem()
