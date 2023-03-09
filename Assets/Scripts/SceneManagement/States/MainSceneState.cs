@@ -28,12 +28,6 @@ namespace Barnabus.SceneManagement
         public override void StateUpdate()
         {
             mainUI.UpdateUI();
-
-            //TOFIX: 前往Hi&Bye的測試方法
-            if (Input.GetKeyUp(KeyCode.H))
-            {
-                controller.SetState(SCENE_STATE.LOADING_HI_AND_BYE);
-            }
         }
 
         public override void End()
@@ -71,6 +65,11 @@ namespace Barnabus.SceneManagement
             lessonsUI.ButtonReturn.onClick.AddListener(MinimizeLessons);
             shelfUI.ButtonReturn.onClick.AddListener(MinimizeShelf);
             booksUI.ButtonReturn.onClick.AddListener(MinimizeBooks);
+
+            gameRoomUI.GameButtons[0].onClick.AddListener(GotoFace);
+            gameRoomUI.GameButtons[1].onClick.AddListener(GotoMusic);
+            gameRoomUI.GameButtons[2].onClick.AddListener(GotoDotToDot);
+            gameRoomUI.GameButtons[3].onClick.AddListener(GotoHiAndBye);
 
             foreach (var button in mainUI.Buttons)
                 controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
@@ -137,6 +136,23 @@ namespace Barnabus.SceneManagement
         private void MinimizeBooks()
         {
             booksUI.Minimize();
+        }
+
+        private void GotoFace()
+        {
+            controller.SetState(SCENE_STATE.LOADING_FACE);
+        }
+        private void GotoMusic()
+        {
+            controller.SetState(SCENE_STATE.LOADING_MUSIC);
+        }
+        private void GotoDotToDot()
+        {
+            controller.SetState(SCENE_STATE.LOADING_DOT_TO_DOT);
+        }
+        private void GotoHiAndBye()
+        {
+            controller.SetState(SCENE_STATE.LOADING_HI_AND_BYE);
         }
     }
 }

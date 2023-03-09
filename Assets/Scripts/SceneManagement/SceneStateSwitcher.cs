@@ -23,6 +23,8 @@ namespace Barnabus.SceneManagement
                     return new FaceSceneState(sceneStateController, "EmotionFace");
                 case SCENE_STATE.MUSIC:
                     return new MusicSceneState(sceneStateController, "EmotionMusic");
+                case SCENE_STATE.DOT_TO_DOT:
+                    return new DotToDotSceneState(sceneStateController, "DotToDot");
                 case SCENE_STATE.HI_AND_BYE:
                     return new HiAndByeSceneState(sceneStateController, "GameHiAndByeScene");
 
@@ -32,6 +34,8 @@ namespace Barnabus.SceneManagement
                     return new LoadingFaceSceneState(sceneStateController, "LoadingScene");
                 case SCENE_STATE.LOADING_MUSIC:
                     return new LoadingMusicSceneState(sceneStateController, "LoadingScene");
+                case SCENE_STATE.LOADING_DOT_TO_DOT:
+                    return new LoadingDotToDotSceneState(sceneStateController, "LoadingScene");
                 case SCENE_STATE.LOADING_HI_AND_BYE:
                     return new LoadingHiAndByeSceneState(sceneStateController, "LoadingScene");
                 default:
