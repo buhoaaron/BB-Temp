@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 using AudioSystem;
 
 /// <summary>
@@ -15,7 +15,7 @@ public class AudioSourceManager : MonoBehaviour
 
     [SerializeField]
     private List<AudioSource> listAudioSources;
-
+    private Dictionary<AUDIO_NAME, ButtonClickSubject> dictButtonClickSubjects;
     private AudioSource currentPlayBGM = null;
 
     private void Awake()
@@ -28,6 +28,8 @@ public class AudioSourceManager : MonoBehaviour
         {
             listAudioSources = new List<AudioSource>(audioSourcesObj.GetComponentsInChildren<AudioSource>());
         }
+
+        dictButtonClickSubjects = new Dictionary<AUDIO_NAME, ButtonClickSubject>();
     }
 
     /// <summary>
@@ -72,6 +74,25 @@ public class AudioSourceManager : MonoBehaviour
         audioSource.loop = false;
 
         audioSource.Play();
+    }
+
+    public void AddButton(AUDIO_NAME name, Button button)
+    {
+        //生成按鈕事件主題
+        if (!dictButtonClickSubjects.ContainsKey(name))
+        {
+            var subject = new ButtonClickSubject(name);
+            subject.OnPlaySound = PlaySound;
+            dictButtonClickSubjects.Add(name, subject);
+        }
+
+        dictButtonClickSubjects[name].AddButton(button);
+    }
+
+    public void RemoveButton(AUDIO_NAME name, Button button)
+    {
+        if (dictButtonClickSubjects.ContainsKey(name))
+            dictButtonClickSubjects[name].RemoveButton(button);
     }
 
     private AudioSource GetAudioSource(AUDIO_NAME audioName)
