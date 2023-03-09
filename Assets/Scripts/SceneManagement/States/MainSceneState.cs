@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Barnabus.UI;
+using System.Collections.Generic;
 
 namespace Barnabus.SceneManagement
 {
@@ -9,7 +10,11 @@ namespace Barnabus.SceneManagement
 
         private GameRoomUI gameRoomUI = null;
         private ShelfUI shelfUI = null;
-        private LabUI labUI = null;
+        private BooksUI booksUI = null;
+        private LessonsUI lessonsUI = null;
+
+        private List<Object> buttons = null;
+
         public MainSceneState(SceneStateController controller, string sceneName) : base(controller, sceneName)
         {}
 
@@ -17,16 +22,18 @@ namespace Barnabus.SceneManagement
         {
             InitUI();
 
-            shelfUI.Hide();
-            labUI.Hide();
-            gameRoomUI.Hide();
-
             AddButtonClickListener();
         }
 
         public override void StateUpdate()
         {
             mainUI.UpdateUI();
+
+            //TOFIX: 前往Hi&Bye的測試方法
+            if (Input.GetKeyUp(KeyCode.H))
+            {
+                controller.SetState(SCENE_STATE.LOADING_HI_AND_BYE);
+            }
         }
 
         public override void End()
@@ -44,55 +51,92 @@ namespace Barnabus.SceneManagement
             shelfUI = GameObject.Find("Canvas_Shelf").GetComponent<ShelfUI>();
             shelfUI.Init();
 
-            labUI = GameObject.Find("Canvas_Lab").GetComponent<LabUI>();
-            labUI.Init();
+            booksUI = GameObject.Find("Canvas_Books").GetComponent<BooksUI>();
+            booksUI.Init();
+
+            lessonsUI = GameObject.Find("Canvas_Lessons").GetComponent<LessonsUI>();
+            lessonsUI.Init();
 
             gameRoomUI = GameObject.Find("Canvas_GameRoom").GetComponent<GameRoomUI>();
             gameRoomUI.Init();
         }
         private void AddButtonClickListener()
         {
-            mainUI.ButtonGameRoom.onClick.AddListener(ShowGameRoom);
-            mainUI.ButtonLab.onClick.AddListener(ShowLab);
-            mainUI.ButtonShelf.onClick.AddListener(ShowShelf);
+            mainUI.ButtonGameRoom.onClick.AddListener(MaximizeGameRoom);
+            mainUI.ButtonLessons.onClick.AddListener(MaximizeLessons);
+            mainUI.ButtonShelf.onClick.AddListener(MaximizeShelf);
+            mainUI.ButtonBooks.onClick.AddListener(MaximizeBooks);
 
-            gameRoomUI.ButtonReturn.onClick.AddListener(HideGameRoom);
-            labUI.ButtonReturn.onClick.AddListener(HideLab);
-            shelfUI.ButtonReturn.onClick.AddListener(HideShelf);
+            gameRoomUI.ButtonReturn.onClick.AddListener(MinimizeGameRoom);
+            lessonsUI.ButtonReturn.onClick.AddListener(MinimizeLessons);
+            shelfUI.ButtonReturn.onClick.AddListener(MinimizeShelf);
+            booksUI.ButtonReturn.onClick.AddListener(MinimizeBooks);
+
+            foreach (var button in mainUI.Buttons)
+                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
+            foreach (var button in gameRoomUI.Buttons)
+                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
+            foreach (var button in lessonsUI.Buttons)
+                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
+            foreach (var button in shelfUI.Buttons)
+                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
+            foreach (var button in booksUI.Buttons)
+                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
         }
         private void RemoveButtonClickListener()
         {
-            mainUI.ButtonGameRoom.onClick.RemoveListener(ShowGameRoom);
-            mainUI.ButtonLab.onClick.RemoveListener(ShowLab);
-            mainUI.ButtonShelf.onClick.RemoveListener(ShowShelf);
+            mainUI.ButtonGameRoom.onClick.RemoveListener(MaximizeGameRoom);
+            mainUI.ButtonLessons.onClick.RemoveListener(MaximizeLessons);
+            mainUI.ButtonShelf.onClick.RemoveListener(MaximizeShelf);
+            mainUI.ButtonBooks.onClick.RemoveListener(MaximizeBooks);
 
-            gameRoomUI.ButtonReturn.onClick.RemoveListener(HideGameRoom);
-            labUI.ButtonReturn.onClick.RemoveListener(HideLab);
-            shelfUI.ButtonReturn.onClick.RemoveListener(HideShelf);
+            gameRoomUI.ButtonReturn.onClick.RemoveListener(MinimizeGameRoom);
+            lessonsUI.ButtonReturn.onClick.RemoveListener(MinimizeLessons);
+            shelfUI.ButtonReturn.onClick.RemoveListener(MinimizeShelf);
+            booksUI.ButtonReturn.onClick.RemoveListener(MinimizeBooks);
+
+            foreach (var button in mainUI.Buttons)
+                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
+            foreach (var button in gameRoomUI.Buttons)
+                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
+            foreach (var button in lessonsUI.Buttons)
+                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
+            foreach (var button in shelfUI.Buttons)
+                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
+            foreach (var button in booksUI.Buttons)
+                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
         }
-        private void ShowShelf()
+        private void MaximizeShelf()
         {
-            shelfUI.Show();
+            shelfUI.Maximize();
         }
-        private void HideShelf()
+        private void MinimizeShelf()
         {
-            shelfUI.Hide();
+            shelfUI.Minimize();
         }
-        private void ShowLab()
+        private void MaximizeLessons()
         {
-            labUI.Show();
+            lessonsUI.Maximize();
         }
-        private void HideLab()
+        private void MinimizeLessons()
         {
-            labUI.Hide();
+            lessonsUI.Minimize();
         }
-        private void ShowGameRoom()
+        private void MaximizeGameRoom()
         {
-            gameRoomUI.Show();
+            gameRoomUI.Maximize();
         }
-        private void HideGameRoom()
+        private void MinimizeGameRoom()
         {
-            gameRoomUI.Hide();
+            gameRoomUI.Minimize();
+        }
+        private void MaximizeBooks()
+        {
+            booksUI.Maximize();
+        }
+        private void MinimizeBooks()
+        {
+            booksUI.Minimize();
         }
     }
 }

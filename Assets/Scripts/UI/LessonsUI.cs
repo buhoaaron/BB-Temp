@@ -1,14 +1,12 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
 namespace Barnabus.UI
 {
-    public class LabUI : BaseGameUI
+    public class LessonsUI : BaseMainCommonUI
     {
-        public Button ButtonReturn = null;
         public override void Init()
         {
-            ButtonReturn = transform.Find("Return").GetComponent<Button>();
+            base.Init();
         }
         public override void UpdateUI()
         {

@@ -45,7 +45,7 @@ public class NewGameManager : MonoBehaviour
         barnabusCardManager = new BarnabusCardManager();
         barnabusCardManager.Init();
 
-        sceneStateController = new SceneStateController(sceneTransitionsManager);
+        sceneStateController = new SceneStateController(this, sceneTransitionsManager);
         sceneStateController.Init();
     }
 

@@ -40,7 +40,6 @@
 
                 currentState.StateUpdate();
             }
-
         }
     }
 }

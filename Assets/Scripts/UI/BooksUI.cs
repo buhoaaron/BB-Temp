@@ -1,8 +1,9 @@
-﻿using UnityEngine.UI;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Barnabus.UI
 {
-    public class GameRoomUI : BaseMainCommonUI
+    public class BooksUI : BaseMainCommonUI
     {
         public override void Init()
         {

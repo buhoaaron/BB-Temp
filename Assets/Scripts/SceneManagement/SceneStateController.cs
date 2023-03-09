@@ -11,6 +11,8 @@ namespace Barnabus.SceneManagement
     /// </summary>
     public class SceneStateController : StateController, IBaseSystem
     {
+        public NewGameManager GameManager = null;
+
         private bool isLoadingScene = false;
         private AsyncOperation loadingSceneAsync = null;
         private UnityAction<Scene, LoadSceneMode> onSceneLoaded = null;
@@ -18,8 +20,9 @@ namespace Barnabus.SceneManagement
         private SceneStateSwitcher stateSwitcher = null;
         private SceneTransitionsManager transitionsManager = null;
 
-        public SceneStateController(SceneTransitionsManager manager)
+        public SceneStateController(NewGameManager gm, SceneTransitionsManager manager)
         {
+            GameManager = gm;
             transitionsManager = manager;
         }
 
