@@ -7,12 +7,19 @@ namespace Barnabus.UI
     {
         public Button ButtonGameRoom = null;
         public Button ButtonShelf = null;
-        public Button ButtonLab = null;
+        public Button ButtonLessons = null;
+        public Button ButtonBooks = null;
         public override void Init()
         {
             ButtonGameRoom = transform.Find("SceneChangeButtons/GameRoomButton").GetComponent<Button>();
             ButtonShelf = transform.Find("SceneChangeButtons/ShelfButton").GetComponent<Button>();
-            ButtonLab = transform.Find("SceneChangeButtons/LabButton").GetComponent<Button>();
+            ButtonLessons = transform.Find("SceneChangeButtons/LessonsButton").GetComponent<Button>();
+            ButtonBooks = transform.Find("SceneChangeButtons/BooksButton").GetComponent<Button>();
+
+            buttons.Add(ButtonGameRoom);
+            buttons.Add(ButtonShelf);
+            buttons.Add(ButtonLessons);
+            buttons.Add(ButtonBooks);
         }
         public override void UpdateUI()
         {

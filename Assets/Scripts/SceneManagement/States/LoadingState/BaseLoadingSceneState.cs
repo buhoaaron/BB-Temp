@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using Barnabus.UI;
 
 namespace Barnabus.SceneManagement
 {
     public class BaseLoadingSceneState : BaseSceneState
     {
-        protected Text textLoading = null;
+        protected bool isShowLoading = false;
+        protected SceneLoadingUI sceneLoadingUI = null;
 
         public BaseLoadingSceneState(SceneStateController controller, string sceneName) : base(controller, sceneName)
         {
@@ -15,7 +15,11 @@ namespace Barnabus.SceneManagement
 
         public override void Begin()
         {
+            sceneLoadingUI = GameObject.FindObjectOfType<SceneLoadingUI>();
+            sceneLoadingUI.Init();
 
+            if (!isShowLoading)
+                sceneLoadingUI.Hide();
         }
 
         public override void StateUpdate()
@@ -35,7 +39,8 @@ namespace Barnabus.SceneManagement
 
         protected void SetLoadingPrograss(float loadingPrograss)
         {
-            
+            Debug.Log("loadingPrograss = " + loadingPrograss);
+            sceneLoadingUI.SetPrograss(loadingPrograss);
         }
     }
 }
