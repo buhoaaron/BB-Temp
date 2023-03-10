@@ -114,7 +114,7 @@ RectTransform:
   - {fileID: 4391487874203966029}
   - {fileID: 1050030003651932560}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -311,9 +311,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: My Face HiTest ByeBye
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 424c54be94857294ea6466c768d8aca3, type: 2}
-  m_sharedMaterial: {fileID: 2269793554123077917, guid: 424c54be94857294ea6466c768d8aca3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4c7e163b19ce444f69be6250b70dbf96, type: 2}
+  m_sharedMaterial: {fileID: 8969460257179591101, guid: 4c7e163b19ce444f69be6250b70dbf96, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -337,7 +336,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.75
+  m_fontSize: 60.7
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1

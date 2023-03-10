@@ -381,7 +381,7 @@ namespace Barnabus.EmotionFace
 
         private void SetDeleteIconPosition() { deleteItemIcon.anchoredPosition = GetUiPosition(); }
 
-        private void DeleteItem()
+        public void DeleteItem()
         {
             if (currentEditItem == null) return;
 

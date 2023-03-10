@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Barnabus.EmotionMusic
 {
@@ -241,6 +242,9 @@ namespace Barnabus.EmotionMusic
 
         public void OnClick_ShowCharacterSelector(int stageIndex)
         {
+            GameObject Buttonpos = EventSystem.current.currentSelectedGameObject;
+            Debug.Log(Buttonpos.transform.name);
+
             if (selectedCharactersID[stageIndex] == -1)
             {
                 selectedStageIndex = GetEmptyCharacterIndex();
@@ -257,6 +261,7 @@ namespace Barnabus.EmotionMusic
             RefreshCharacterButtonStates();
 
             characterSelector.SetActive(true);
+            characterSelector.transform.position = new Vector3(0,-3,0)+Buttonpos.transform.position;
         }
 
         private int GetEmptyCharacterIndex()
@@ -341,6 +346,10 @@ namespace Barnabus.EmotionMusic
                 if (!AudioManager.instance.IsSoundExist(clip)) AudioManager.instance.PlaySound(clip);
             }
             selectorConfirmButton.SetActive(true);
+
+            selectedCharactersID[selectedStageIndex] = currentSelectedCharacterID;
+            for (int i = 0; i < selectedCharactersID.Length; i++)
+                SetStageCharacter(i, asset.GetCharacterAssetByID(selectedCharactersID[i]));
         }
 
         private CharacterButton GetCharacterButtonByID(int characterID)
@@ -380,11 +389,11 @@ namespace Barnabus.EmotionMusic
 
         private bool GetCharacterSelectable(int characterID)
         {
-            int stageIndex = GetSelectedCharacterStageIndex(characterID);
+           /* int stageIndex = GetSelectedCharacterStageIndex(characterID);
             if (!IsCharacterUnlock(characterID)) return false; //�Ө��⥼���� => ���i���
             else if (stageIndex != -1 && stageIndex != selectedStageIndex) return false; //�Ө���w��b��L�R�x��m => ���i���
-            else return true;
-            //return true;
+            else return true;*/
+            return true;
         }
 
         private int GetCharacterFrameID(int characterID)
