@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using Barnabus;
 using Barnabus.SceneManagement;
 using Barnabus.Card;
 using Barnabus.SceneTransitions;
+using System.Collections;
 
 /// <summary>
 /// 新的遊戲管理者
@@ -13,11 +15,15 @@ public class NewGameManager : MonoBehaviour
 
     public AudioSourceManager AudioSourceManager => audioSourceManager;
     public BarnabusCardManager BarnabusCardManager => barnabusCardManager;
+    public JsonManager JsonManager => jsonManager;
+    public PlayersBarnabusManager PlayersBarnabusManager => playersBarnabusManager;
 
     private SceneStateController sceneStateController;
     private AudioSourceManager audioSourceManager;
     private BarnabusCardManager barnabusCardManager;
     private SceneTransitionsManager sceneTransitionsManager;
+    private JsonManager jsonManager;
+    private PlayersBarnabusManager playersBarnabusManager;
 
     private void Start()
     {
@@ -42,11 +48,17 @@ public class NewGameManager : MonoBehaviour
         sceneTransitionsManager = GetComponentInChildren<SceneTransitionsManager>();
         sceneTransitionsManager.Init();
 
-        barnabusCardManager = new BarnabusCardManager();
+        barnabusCardManager = new BarnabusCardManager(this);
         barnabusCardManager.Init();
 
         sceneStateController = new SceneStateController(this, sceneTransitionsManager);
         sceneStateController.Init();
+
+        jsonManager = GetComponentInChildren<JsonManager>();
+        jsonManager.Init();
+
+        playersBarnabusManager = new PlayersBarnabusManager(this);
+        playersBarnabusManager.Init();
     }
 
     /// <summary>
@@ -56,12 +68,13 @@ public class NewGameManager : MonoBehaviour
     {
         sceneStateController.SetState(state);
     }
+
     /// <summary>
-    /// 讀取角色卡牌資料
+    /// 
     /// </summary>
-    public void LoadBarnabusListAsync()
+    public Coroutine CustomStartCoroutine(IEnumerator coroutine)
     {
-        StartCoroutine(barnabusCardManager.LoadBarnabusListAsync());
+        return StartCoroutine(coroutine);
     }
 }
 

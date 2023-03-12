@@ -71,16 +71,11 @@ namespace Barnabus.SceneManagement
             gameRoomUI.GameButtons[2].onClick.AddListener(GotoDotToDot);
             gameRoomUI.GameButtons[3].onClick.AddListener(GotoHiAndBye);
 
-            foreach (var button in mainUI.Buttons)
-                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
-            foreach (var button in gameRoomUI.Buttons)
-                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
-            foreach (var button in lessonsUI.Buttons)
-                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
-            foreach (var button in shelfUI.Buttons)
-                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
-            foreach (var button in booksUI.Buttons)
-                controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, button);
+            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, mainUI.Buttons);
+            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, gameRoomUI.Buttons);
+            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, lessonsUI.Buttons);
+            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, shelfUI.Buttons);
+            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, booksUI.Buttons);
         }
         private void RemoveButtonClickListener()
         {
@@ -94,16 +89,11 @@ namespace Barnabus.SceneManagement
             shelfUI.ButtonReturn.onClick.RemoveListener(MinimizeShelf);
             booksUI.ButtonReturn.onClick.RemoveListener(MinimizeBooks);
 
-            foreach (var button in mainUI.Buttons)
-                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
-            foreach (var button in gameRoomUI.Buttons)
-                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
-            foreach (var button in lessonsUI.Buttons)
-                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
-            foreach (var button in shelfUI.Buttons)
-                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
-            foreach (var button in booksUI.Buttons)
-                controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, button);
+            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, mainUI.Buttons);
+            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, gameRoomUI.Buttons);
+            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, lessonsUI.Buttons);
+            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, shelfUI.Buttons);
+            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, booksUI.Buttons);
         }
         private void MaximizeShelf()
         {
@@ -137,7 +127,6 @@ namespace Barnabus.SceneManagement
         {
             booksUI.Minimize();
         }
-
         private void GotoFace()
         {
             controller.SetState(SCENE_STATE.LOADING_FACE);

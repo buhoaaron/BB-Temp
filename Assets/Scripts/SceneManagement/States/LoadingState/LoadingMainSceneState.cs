@@ -9,12 +9,26 @@
         public override void Begin()
         {
             base.Begin();
-            
-            NewGameManager.Instance.LoadBarnabusListAsync();
+            //讀取角色基本資料
+            LoadBarnabusBaseData();
+            //設定玩家擁有的角色
+            SetPlayerBarnabus();
         }
         public override void StateUpdate()
         {
             controller.SetState(SCENE_STATE.MAIN);
+        }
+
+        private void LoadBarnabusBaseData()
+        {
+            controller.GameManager.CustomStartCoroutine(controller.GameManager.BarnabusCardManager.LoadBarnabusListAsync());
+            controller.GameManager.BarnabusCardManager.LoadJson();
+        }
+
+        private void SetPlayerBarnabus()
+        {
+            var allData = controller.GameManager.BarnabusCardManager.GetAllBarnabusBaseData();
+            controller.GameManager.PlayersBarnabusManager.SetPlayerBarnabusData(allData);
         }
     }
 }

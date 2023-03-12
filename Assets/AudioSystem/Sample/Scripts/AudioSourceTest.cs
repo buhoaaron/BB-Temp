@@ -5,10 +5,6 @@ public class AudioSourceTest : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            AudioSourceManager.Instance.PlayBGM(AUDIO_NAME.BGM_HUNTING);
-        }
         if (Input.GetKeyUp(KeyCode.B))
         {
             AudioSourceManager.Instance.PauseBGM();
@@ -20,10 +16,6 @@ public class AudioSourceTest : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.D))
         {
             AudioSourceManager.Instance.PlaySound(AUDIO_NAME.BUTTON_CLICK);
-        }
-        if (Input.GetKeyUp(KeyCode.P))
-        {
-            ScreenCapture.CaptureScreenshot("temp.png");
         }
     }
 }

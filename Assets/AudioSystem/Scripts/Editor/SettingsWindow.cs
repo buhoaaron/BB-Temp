@@ -72,7 +72,8 @@ namespace AudioSystem
             if (GUILayout.Button("Generate/Update AudioSources To Scene"))
             {
                 SaveSettings();
-                GenerateOrUpdate();
+                //GenerateOrUpdate();
+                GenerateOrUpdateVer2();
             }
         }
 
@@ -178,6 +179,21 @@ namespace AudioSystem
                         audioSourcesExisted.clip = clip.Clip;
                     }
                 }
+            }
+        }
+
+        private void GenerateOrUpdateVer2()
+        {
+            var obj = GameObject.Find("AudioResources");
+
+            if (obj == null)
+                obj = new GameObject("AudioResources");
+
+            var resources = obj.AddComponent<AudioClipResources>();
+
+            foreach (var clipData in allAudios.clips)
+            {
+                resources.listSounds.Add(clipData.Clip);
             }
         }
     }

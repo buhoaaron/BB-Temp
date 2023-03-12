@@ -56,6 +56,8 @@ public class BarnabusScanScriptable : ScriptableObject
         }
     }
 
+    public Sprite BarnabusImage => barnabusImage;
+
     public Sprite CharacterImage { get { return barnabusImage; } }
 
     [Header("ID_Card")]

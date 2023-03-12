@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using AudioSystem;
+using System.Collections;
 
 /// <summary>
 /// 音樂音效管理器
@@ -18,16 +19,19 @@ public class AudioSourceManager : MonoBehaviour
     private Dictionary<AUDIO_NAME, ButtonClickSubject> dictButtonClickSubjects;
     private AudioSource currentPlayBGM = null;
 
+    private AudioClipResources audioClipResources = null;
+
     private void Awake()
     {
         if (instance == null)
-            instance = this; 
+            instance = this;
         //自動取得場上的AudioSource
-        var audioSourcesObj = GameObject.Find(Config.AudioSourcesDefaultName);
+        /*var audioSourcesObj = GameObject.Find(Config.AudioSourcesDefaultName);
         if (audioSourcesObj != null)
         {
             listAudioSources = new List<AudioSource>(audioSourcesObj.GetComponentsInChildren<AudioSource>());
-        }
+        }*/
+        audioClipResources = GameObject.Find("AudioResources").GetComponent<AudioClipResources>();
 
         dictButtonClickSubjects = new Dictionary<AUDIO_NAME, ButtonClickSubject>();
     }
@@ -70,10 +74,20 @@ public class AudioSourceManager : MonoBehaviour
     /// <param name="audioName">音源列舉</param>
     public void PlaySound(AUDIO_NAME audioName)
     {
-        var audioSource = GetAudioSource(audioName);
-        audioSource.loop = false;
+        StartCoroutine(IPlaySound(audioName));
+    }
+    private IEnumerator IPlaySound(AUDIO_NAME audioName)
+    {
+        //var audioSource = GetAudioSource(audioName);
+        var audioClip = GetAudioClip(audioName);
 
-        audioSource.Play();
+        var source = CreateAudioSource(audioName, audioClip);
+        source.loop = false;
+        source.Play();
+
+        yield return new WaitForSeconds(audioClip.length);
+
+        Destroy(source.gameObject);
     }
 
     public void AddButton(AUDIO_NAME name, Button button)
@@ -89,16 +103,46 @@ public class AudioSourceManager : MonoBehaviour
         dictButtonClickSubjects[name].AddButton(button);
     }
 
+    public void AddButton(AUDIO_NAME name, List<Button> buttons)
+    {
+        foreach (var button in buttons)
+            AddButton(name, button);
+    }
+
     public void RemoveButton(AUDIO_NAME name, Button button)
     {
         if (dictButtonClickSubjects.ContainsKey(name))
             dictButtonClickSubjects[name].RemoveButton(button);
     }
 
+    public void RemoveButton(AUDIO_NAME name, List<Button> buttons)
+    {
+        foreach (var button in buttons)
+            RemoveButton(name, button);
+    }
+
     private AudioSource GetAudioSource(AUDIO_NAME audioName)
     {
         int audioIndex = (int)audioName;
         return listAudioSources[audioIndex];
+    }
+
+    private AudioClip GetAudioClip(AUDIO_NAME audioName)
+    {
+        int audioIndex = (int)audioName;
+        return audioClipResources.listSounds[audioIndex];
+    }
+
+    private AudioSource CreateAudioSource(AUDIO_NAME audioName, AudioClip clip)
+    {
+        var audioSourceObj = new GameObject(audioName.ToString());
+        audioSourceObj.transform.SetParent(transform);
+        //加入AudioSource組件
+        var audioSource = audioSourceObj.AddComponent<AudioSource>();
+        audioSource.clip = clip;
+        audioSource.playOnAwake = false;
+
+        return audioSource;
     }
 }
 
