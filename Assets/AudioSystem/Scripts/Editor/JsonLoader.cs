@@ -10,20 +10,32 @@ namespace AudioSystem
     {
         public static void SaveJson(AllAudios allAudios)
         {
+            SaveJson(allAudios, Config.AudioSettingsFilePath);
+        }
+
+        public static void SaveJson(AllAudios allAudios, string path)
+        {
             var saveData = allAudios.ConvertSaveData();
 
             string jsonText = JsonConvert.SerializeObject(saveData);
-            File.WriteAllText(Config.AudioSettingsFilePath, jsonText);
+            File.WriteAllText(path, jsonText);
         }
 
         public static AllAudios LoadJson()
         {
             TextAsset jsonText = (TextAsset)Resources.Load(Config.AudioSettingsFile);
+            return LoadJsonText(jsonText.text);
+        }
 
-            if (jsonText == null)
-                return new AllAudios();
+        public static AllAudios LoadJsonFile(string path)
+        {
+            string result = File.ReadAllText(path);
+            return LoadJsonText(result);
+        }
 
-            List<AudioClipSaveData> datas = JsonConvert.DeserializeObject<List<AudioClipSaveData>>(jsonText.text);
+        private static AllAudios LoadJsonText(string jsonText)
+        {
+            List<AudioClipSaveData> datas = JsonConvert.DeserializeObject<List<AudioClipSaveData>>(jsonText);
             AllAudios allAudios = new AllAudios();
 
             //創建AllAudios實例
