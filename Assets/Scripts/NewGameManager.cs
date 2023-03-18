@@ -13,13 +13,13 @@ public class NewGameManager : MonoBehaviour
     public static NewGameManager Instance => instance;
     private static NewGameManager instance;
 
-    public AudioSourceManager AudioSourceManager => audioSourceManager;
+    public BarnabusAudioManager AudioManager => audioeManager;
     public BarnabusCardManager BarnabusCardManager => barnabusCardManager;
     public JsonManager JsonManager => jsonManager;
     public PlayersBarnabusManager PlayersBarnabusManager => playersBarnabusManager;
 
     private SceneStateController sceneStateController;
-    private AudioSourceManager audioSourceManager;
+    private BarnabusAudioManager audioeManager;
     private BarnabusCardManager barnabusCardManager;
     private SceneTransitionsManager sceneTransitionsManager;
     private JsonManager jsonManager;
@@ -43,7 +43,9 @@ public class NewGameManager : MonoBehaviour
     {
         instance = this;
 
-        audioSourceManager = GetComponentInChildren<AudioSourceManager>();
+        var audioSourceManager = GetComponentInChildren<AudioSystem.AudioSourceManager>();
+        audioeManager = new BarnabusAudioManager(audioSourceManager);
+        audioeManager.Init();
 
         sceneTransitionsManager = GetComponentInChildren<SceneTransitionsManager>();
         sceneTransitionsManager.Init();
@@ -77,4 +79,3 @@ public class NewGameManager : MonoBehaviour
         return StartCoroutine(coroutine);
     }
 }
-

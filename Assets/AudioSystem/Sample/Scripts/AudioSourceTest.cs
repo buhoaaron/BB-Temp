@@ -1,4 +1,4 @@
-﻿
+﻿using AudioSystem;
 using UnityEngine;
 
 public class AudioSourceTest : MonoBehaviour
@@ -15,7 +15,7 @@ public class AudioSourceTest : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
-            AudioSourceManager.Instance.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+            AudioSourceManager.Instance.PlaySound("BUTTON_CLICK");
         }
     }
 }

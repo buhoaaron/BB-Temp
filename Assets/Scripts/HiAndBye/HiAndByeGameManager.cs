@@ -59,7 +59,7 @@ namespace HiAndBye
         }
         public void PlaySound(AUDIO_NAME audio)
         {
-            NewGameManager.Instance.AudioSourceManager.PlaySound(audio);
+            NewGameManager.Instance.AudioManager.PlaySound(audio);
         }
         public void BackMainScene()
         {

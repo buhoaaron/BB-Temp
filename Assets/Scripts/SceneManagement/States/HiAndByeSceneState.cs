@@ -34,16 +34,16 @@ namespace Barnabus.SceneManagement
 
         private void AddButtonClickListener()
         {
-            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, gameRootUI.Buttons);
-            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, gameResultUI.Buttons);
+            controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, gameRootUI.Buttons);
+            controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, gameResultUI.Buttons);
 
             gameRootUI.buttonBackMain.onClick.AddListener(BackMainScene);
         }
 
         private void RemoveButtonClickListener()
         {
-            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, gameRootUI.Buttons);
-            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, gameResultUI.Buttons);
+            controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, gameRootUI.Buttons);
+            controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, gameResultUI.Buttons);
 
             gameRootUI.buttonBackMain.onClick.RemoveListener(BackMainScene);
         }

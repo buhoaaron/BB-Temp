@@ -71,11 +71,11 @@ namespace Barnabus.SceneManagement
             gameRoomUI.GameButtons[2].onClick.AddListener(GotoDotToDot);
             gameRoomUI.GameButtons[3].onClick.AddListener(GotoHiAndBye);
 
-            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, mainUI.Buttons);
-            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, gameRoomUI.Buttons);
-            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, lessonsUI.Buttons);
-            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, shelfUI.Buttons);
-            controller.GameManager.AudioSourceManager.AddButton(AUDIO_NAME.BUTTON_CLICK, booksUI.Buttons);
+            controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, mainUI.Buttons);
+            controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, gameRoomUI.Buttons);
+            controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, lessonsUI.Buttons);
+            controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, shelfUI.Buttons);
+            controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, booksUI.Buttons);
         }
         private void RemoveButtonClickListener()
         {
@@ -89,11 +89,11 @@ namespace Barnabus.SceneManagement
             shelfUI.ButtonReturn.onClick.RemoveListener(MinimizeShelf);
             booksUI.ButtonReturn.onClick.RemoveListener(MinimizeBooks);
 
-            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, mainUI.Buttons);
-            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, gameRoomUI.Buttons);
-            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, lessonsUI.Buttons);
-            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, shelfUI.Buttons);
-            controller.GameManager.AudioSourceManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, booksUI.Buttons);
+            controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, mainUI.Buttons);
+            controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, gameRoomUI.Buttons);
+            controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, lessonsUI.Buttons);
+            controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, shelfUI.Buttons);
+            controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, booksUI.Buttons);
         }
         private void MaximizeShelf()
         {
