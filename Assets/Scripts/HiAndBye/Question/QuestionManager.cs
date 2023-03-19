@@ -60,14 +60,19 @@ namespace HiAndBye.Question
             currentSetQuestionInfo = new SetQuestionInfo();
             currentSetQuestionInfo.BarnabusBaseData = barnabus;
             currentSetQuestionInfo.BarnabusSprite = sprite;
+            
+            var asset = gameManager.GetSpineAssets().GetSpineAsset(barnabus.Name);
+            currentSetQuestionInfo.BarnabusSkeletonDataAsset = asset;
 
             if (isCorrectHi)
             {
+                currentSetQuestionInfo.BarnabusFace = barnabus.Vocab;
                 currentSetQuestionInfo.BarnabusVocab = barnabus.Vocab;
                 currentSetQuestionInfo.BarnabusVoice = barnabus.SoundKey;
             }
             else
             {
+                currentSetQuestionInfo.BarnabusFace = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].Vocab;
                 currentSetQuestionInfo.BarnabusVocab = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].Vocab;
                 currentSetQuestionInfo.BarnabusVoice = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].SoundKey;
 

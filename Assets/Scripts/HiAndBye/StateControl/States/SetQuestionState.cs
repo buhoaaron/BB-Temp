@@ -21,7 +21,7 @@ namespace HiAndBye.StateControl
         {
             var gameRootUI = gameStateController.HiAndByeGameManager.GameRootUI;
 
-            gameRootUI.SetBarnabusSprite(setQuestionInfo.BarnabusSprite);
+            gameRootUI.SetBarnabusSpine(setQuestionInfo.BarnabusSkeletonDataAsset, setQuestionInfo.BarnabusFace);
             gameRootUI.SetTextVocab(setQuestionInfo.BarnabusVocab);
             gameRootUI.SetDebugTextAnswer(setQuestionInfo.QuestionType.ToString());
         }

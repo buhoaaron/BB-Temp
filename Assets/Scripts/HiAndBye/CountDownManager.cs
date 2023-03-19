@@ -5,6 +5,7 @@ namespace HiAndBye
 {
     public class CountDownManager : HiAndByeBaseManager
     {
+        public UnityAction<string> OnCountDownFormat = null;
         public UnityAction<float> OnCountDown = null;
         public UnityAction OnCountDownOver = null;
         public bool IsCountDowning => isCountDowning;
@@ -27,7 +28,9 @@ namespace HiAndBye
             if (isCountDowning)
             {
                 var countDowning = countDownTime - (Time.realtimeSinceStartup - realtime);
+
                 OnCountDown?.Invoke(countDowning);
+                OnCountDownFormat?.Invoke(ConvertCountDownFormat(countDowning));
 
                 if (countDowning <= 0)
                 {
@@ -61,6 +64,14 @@ namespace HiAndBye
         {
             countDownTime = 10 + (barnabusCount/24) * 50;
             return countDownTime;
+        }
+
+        /// <summary>
+        /// 轉成倒數需要的格式
+        /// </summary>
+        private string ConvertCountDownFormat(float time)
+        {
+            return time.ToString("#0.00");
         }
     }
 }

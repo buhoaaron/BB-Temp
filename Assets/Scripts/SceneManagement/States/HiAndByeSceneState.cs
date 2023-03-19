@@ -61,7 +61,7 @@ namespace Barnabus.SceneManagement
         public override void End()
         {
             RemoveButtonClickListener();
-
+            gameManager.GetSpineAssets().Clear();
             gameManager.Clear();
         }
     }

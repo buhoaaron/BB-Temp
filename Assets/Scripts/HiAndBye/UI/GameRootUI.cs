@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.Events;
 using Barnabus.UI;
+using Spine.Unity;
 
 using DG.Tweening;
 
@@ -16,14 +17,14 @@ namespace HiAndBye
         public Button ButtonBye => buttons[1];
         public Button buttonBackMain => buttons[2];
 
-        private int dropDownDistanceY = 1000;
-        private int dropDownPosY = -62;
-        private float dropDownDuration = 0.8f;
+        private readonly int dropDownDistanceY = 1000;
+        private readonly int dropDownPosY = -400;
+        private readonly float dropDownDuration = 0.8f;
 
         private Text textTime = null;
         private Text textVocab = null;
         private Text textCorrectNum = null;
-        private Image imageBarnabus = null;
+        private SkeletonGraphic skeletonGraphicBarnabus = null;
         private Text debugTextAnswer = null;
         private RectTransform transCharacter = null;
 
@@ -39,7 +40,7 @@ namespace HiAndBye
             textVocab = transform.Find("Vocab/Text_Content").GetComponent<Text>();
             textCorrectNum = transform.Find("NumberOfCorrect/Text_Count").GetComponent<Text>();
             transCharacter = transform.Find("Character").GetComponent<RectTransform>();
-            imageBarnabus = transform.Find("Character/Image_Char").GetComponent<Image>();
+            skeletonGraphicBarnabus = transform.Find("Character/SkeletonGraphic_Char").GetComponent<SkeletonGraphic>();
 
             debugTextAnswer = transform.Find("Debug/Text_Answer").GetComponent<Text>();
 
@@ -102,6 +103,7 @@ namespace HiAndBye
         {
             textTime.text = value;
         }
+
         public void SetTextVocab(string value)
         {
             textVocab.text = value;
@@ -110,9 +112,11 @@ namespace HiAndBye
         {
             textCorrectNum.text = string.Format("Correct: {0}", value);
         }
-        public void SetBarnabusSprite(Sprite sprite)
+        public void SetBarnabusSpine(SkeletonDataAsset asset, string face = "Anger")
         {
-            imageBarnabus.sprite = sprite;
+            skeletonGraphicBarnabus.skeletonDataAsset = asset;
+            skeletonGraphicBarnabus.initialSkinName = face;
+            skeletonGraphicBarnabus.Initialize(true);
         }
         public void SetDebugTextAnswer(string value)
         {

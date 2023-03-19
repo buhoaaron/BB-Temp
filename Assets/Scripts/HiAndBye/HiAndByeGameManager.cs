@@ -57,6 +57,13 @@ namespace HiAndBye
         {
             return NewGameManager.Instance.BarnabusCardManager.GetCard(name).BarnabusImage;
         }
+        public HiAndByeSpineAssets GetSpineAssets()
+        {
+            if (!NewGameManager.Instance.TryGetComponent<HiAndByeSpineAssets>(out var spineAssets))
+                spineAssets = gameObject.AddComponent<HiAndByeSpineAssets>();
+
+            return spineAssets;
+        }
         public void PlaySound(AUDIO_NAME audio)
         {
             NewGameManager.Instance.AudioManager.PlaySound(audio);

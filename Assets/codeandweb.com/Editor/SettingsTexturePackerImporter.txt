@@ -2,10 +2,13 @@ version: 2
 tpsheetFileNames:
 - Assets/Atlas/Shelf/HubBrand.tpsheet
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
+- Assets/Sprite/Atlas/HubBrand.tpsheet
 textureFileNames:
 - Assets/Atlas/Shelf/HubBrand.png
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
+- Assets/Sprite/Atlas/HubBrand.png
 normalmapFileNames:
 - 
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 enableDebugOutput: 0

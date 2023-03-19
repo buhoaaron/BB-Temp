@@ -32,17 +32,10 @@ namespace HiAndBye.StateControl
 
         private void StartCountDown()
         {
-            gameStateController.HiAndByeGameManager.CountDownManager.StartCountDown();
+            var countDownManager = gameStateController.HiAndByeGameManager.CountDownManager;
 
-            gameStateController.HiAndByeGameManager.CountDownManager.OnCountDownOver = () =>
-            {
-
-            };
-
-            gameStateController.HiAndByeGameManager.CountDownManager.OnCountDown = (time) =>
-            {
-                gameStateController.HiAndByeGameManager.GameRootUI.SetTextTime(time.ToString("#0.00"));
-            };
+            countDownManager.StartCountDown();
+            countDownManager.OnCountDownFormat = gameStateController.HiAndByeGameManager.GameRootUI.SetTextTime;
         }
         /// <summary>
         /// 顯示倒數時間元件

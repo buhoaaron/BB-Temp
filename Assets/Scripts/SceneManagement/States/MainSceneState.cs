@@ -45,10 +45,10 @@ namespace Barnabus.SceneManagement
             shelfUI = GameObject.Find("Canvas_Shelf").GetComponent<ShelfUI>();
             shelfUI.Init();
 
-            booksUI = GameObject.Find("Canvas_Books").GetComponent<BooksUI>();
+            booksUI = GameObject.Find("Canvas_Library").GetComponent<BooksUI>();
             booksUI.Init();
 
-            lessonsUI = GameObject.Find("Canvas_Lessons").GetComponent<LessonsUI>();
+            lessonsUI = GameObject.Find("Canvas_ClassRoom").GetComponent<LessonsUI>();
             lessonsUI.Init();
 
             gameRoomUI = GameObject.Find("Canvas_GameRoom").GetComponent<GameRoomUI>();

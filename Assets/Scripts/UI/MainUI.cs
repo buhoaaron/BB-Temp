@@ -13,8 +13,8 @@ namespace Barnabus.UI
         {
             ButtonGameRoom = transform.Find("SceneChangeButtons/GameRoomButton").GetComponent<Button>();
             ButtonShelf = transform.Find("SceneChangeButtons/ShelfButton").GetComponent<Button>();
-            ButtonLessons = transform.Find("SceneChangeButtons/LessonsButton").GetComponent<Button>();
-            ButtonBooks = transform.Find("SceneChangeButtons/BooksButton").GetComponent<Button>();
+            ButtonLessons = transform.Find("SceneChangeButtons/ClassRoomButton").GetComponent<Button>();
+            ButtonBooks = transform.Find("SceneChangeButtons/LibraryButton").GetComponent<Button>();
 
             buttons.Add(ButtonGameRoom);
             buttons.Add(ButtonShelf);
