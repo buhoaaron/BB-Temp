@@ -954,7 +954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -332, y: 94}
+  m_AnchoredPosition: {x: -332, y: 250}
   m_SizeDelta: {x: 725, y: 455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653961913
@@ -1065,7 +1065,7 @@ GameObject:
   - component: {fileID: 819698937}
   - component: {fileID: 819698936}
   m_Layer: 5
-  m_Name: LessonsButton
+  m_Name: ClassRoomButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,7 +1088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 330, y: -327}
+  m_AnchoredPosition: {x: 330, y: -170}
   m_SizeDelta: {x: 955, y: 344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819698936
@@ -2799,7 +2799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -559, y: -331}
+  m_AnchoredPosition: {x: -560, y: -170}
   m_SizeDelta: {x: 692, y: 344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886802704
@@ -3111,7 +3111,7 @@ GameObject:
   - component: {fileID: 2123210814}
   - component: {fileID: 2123210813}
   m_Layer: 5
-  m_Name: BooksButton
+  m_Name: LibraryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3134,7 +3134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 522, y: 104}
+  m_AnchoredPosition: {x: 522, y: 265}
   m_SizeDelta: {x: 850, y: 360}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123210813
