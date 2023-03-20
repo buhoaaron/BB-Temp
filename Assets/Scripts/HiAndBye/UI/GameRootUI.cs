@@ -39,8 +39,8 @@ namespace HiAndBye
             textTime = transform.Find("Time/Text_Value").GetComponent<Text>();
             textVocab = transform.Find("Vocab/Text_Content").GetComponent<Text>();
             textCorrectNum = transform.Find("NumberOfCorrect/Text_Count").GetComponent<Text>();
-            transCharacter = transform.Find("Character").GetComponent<RectTransform>();
-            skeletonGraphicBarnabus = transform.Find("Character/SkeletonGraphic_Char").GetComponent<SkeletonGraphic>();
+            transCharacter = transform.Find("Mask/Character").GetComponent<RectTransform>();
+            skeletonGraphicBarnabus = transform.Find("Mask/Character/SkeletonGraphic_Char").GetComponent<SkeletonGraphic>();
 
             debugTextAnswer = transform.Find("Debug/Text_Answer").GetComponent<Text>();
 

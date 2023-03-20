@@ -62,7 +62,9 @@ namespace HiAndBye
         /// <param name="barnabusCount">barnabus的數量</param>
         public float SetTime(int barnabusCount)
         {
-            countDownTime = 10 + (barnabusCount/24) * 50;
+            //TOFIX: DEMO固定30秒
+            //countDownTime = 10 + (barnabusCount/24) * 50;
+            countDownTime = 30;
             return countDownTime;
         }
 
