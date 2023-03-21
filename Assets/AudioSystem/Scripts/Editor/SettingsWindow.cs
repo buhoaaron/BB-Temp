@@ -1,15 +1,11 @@
-using System.IO;
 using UnityEditor;
 using UnityEngine;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace AudioSystem
 {
     public class SettingsWindow : EditorWindow
     {
         private AllAudios allAudios = null;
-
         private Vector2 scrollPosition = Vector2.zero;
 
         [MenuItem("Window/AudioSystem/Settings", false, 55)]
@@ -29,22 +25,26 @@ namespace AudioSystem
 
         void OnGUI()
         {
-            scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, false, GUILayout.Width(position.width), GUILayout.Height(position.height - 135));
+            scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, false, 
+                GUILayout.Width(position.width), GUILayout.Height(position.height - 160));
 
-            EditorGUILayout.LabelField("Game Audios:", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Audios:", EditorStyles.boldLabel);
 
             for (int i = 0; i < allAudios.clips.Count; i++)
             {
+                var clipData = allAudios.clips[i];
+
                 EditorGUILayout.BeginVertical(EditorStyles.helpBox);
                 EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField(i + ". " + allAudios.clips[i].Name, GUILayout.Width(100));
-                allAudios.clips[i].Name = EditorGUILayout.TextField(allAudios.clips[i].Name);
-                allAudios.clips[i].Clip = (AudioClip)EditorGUILayout.ObjectField(allAudios.clips[i].Clip, typeof(AudioClip), true);
+                EditorGUILayout.LabelField(i + ". " + clipData.Name, GUILayout.Width(100));
 
-                if (allAudios.clips[i].Clip != null)
+                clipData.Name = EditorGUILayout.TextField(clipData.Name);
+                clipData.Clip = (AudioClip)EditorGUILayout.ObjectField(clipData.Clip, typeof(AudioClip), true);
+
+                if (clipData.Clip != null)
                 {
                     long file;
-                    AssetDatabase.TryGetGUIDAndLocalFileIdentifier(allAudios.clips[i].Clip, out allAudios.clips[i].GUID, out file);
+                    AssetDatabase.TryGetGUIDAndLocalFileIdentifier(clipData.Clip, out clipData.GUID, out file);
                 }
                 if (GUILayout.Button("Remove", GUILayout.Width(70)))
                 {
@@ -67,45 +67,64 @@ namespace AudioSystem
                 SaveSettings();
             }
 
+            EditorGUILayout.LabelField(Config.AudioSourcesDefaultName, EditorStyles.boldLabel);
+
+            if (GUILayout.Button(string.Format("Create New To Scene")))
+            {
+                CreateAudioSourceManager();
+            }
+            if (GUILayout.Button(string.Format("Override To Scene")))
+            {
+                OverrideAudioSourceManager();
+            }
+
             GUILayout.Space(10);
 
-            if (GUILayout.Button("Generate/Update AudioSources To Scene"))
+            if (GUILayout.Button("Import From Json"))
             {
-                SaveSettings();
-                GenerateOrUpdate();
+                ImportFormJson();
+            }
+
+            if (GUILayout.Button("Export to Json"))
+            {
+                ExportToJson();
             }
         }
 
         private void SaveSettings()
         {
             if (allAudios == null) return;
-
-            JsonLoader.SaveJson(allAudios);
-
-            CreateAudioEnumFile();
-            AssetDatabase.Refresh();
-        }
-        /// <summary>
-        /// 建立Audio列舉檔案
-        /// </summary>
-        private void CreateAudioEnumFile()
-        {
             if (CheckForDuplicates() == true)
                 return;
 
-            string text =
-            "public enum AUDIO_NAME\n" +
-            "{\n";
-
-            foreach (var clip in allAudios.clips)
-            {
-                text += "\t" + clip.Name + ",\n";
-            }
-
-            text += "}";
-            File.WriteAllText(Config.AudioEnumsFilePath, text);
+            JsonLoader.SaveJson(allAudios);
             AssetDatabase.Refresh();
         }
+
+        private void ImportFormJson()
+        {
+            var path = EditorUtility.OpenFilePanel("Select .json file", "", "json");
+            allAudios = JsonLoader.LoadJsonFile(path);
+        }
+
+        private void ExportToJson()
+        {
+            if (allAudios == null) return;
+
+            var path = EditorUtility.SaveFilePanel(
+                "Save AudioSettings as json",
+                "",
+                "AudioSettingsFile.json",
+                "json");
+
+            if (path.Length != 0)
+            {
+                JsonLoader.SaveJson(allAudios, path);
+            }
+
+            AssetDatabase.Refresh();
+        }
+
         /// <summary>
         /// 檢查是否有重覆的AUDIO NAME
         /// </summary>
@@ -127,57 +146,43 @@ namespace AudioSystem
 
             return duplicateFound;
         }
-        /// <summary>
-        /// 創建或更新AudioSource到當前場景上
-        /// </summary>
-        private void GenerateOrUpdate()
+
+        private void CreateAudioSourceManager()
         {
-            var parent = GameObject.Find(Config.AudioSourcesDefaultName);
+            var prefab = PrefabUtility.LoadPrefabContents(Config.AudioManagerFilePath);
+            var go = GameObject.Instantiate(prefab);
+            go.name = Config.AudioSourcesDefaultName;
 
-            if (parent == null)
-                parent = new GameObject(Config.AudioSourcesDefaultName);
+            AddAudioClipResources(go);
+        }
 
-            //取得已存在的AudioSources
-            var listAudioSourcesExisted = new List<AudioSource>(parent.GetComponentsInChildren<AudioSource>());
+        private void OverrideAudioSourceManager()
+        {
+            var target = GameObject.FindObjectOfType<AudioSourceManager>();
 
-            var listAudioSourcesExistedName = new List<string>(listAudioSourcesExisted.ConvertAll<string>(source => source.name));
-            var listSettingAudioName = new List<string>(allAudios.clips.ConvertAll<string>(clipData => clipData.Name));
-            //建立比對用的列表
-            var createList = listSettingAudioName.Except(listAudioSourcesExistedName).ToList();
-            var removeList = listAudioSourcesExistedName.Except(listSettingAudioName).ToList();
-
-            //刪除
-            var realRemoveList = new List<AudioSource>();
-            foreach (string removeName in removeList)
+            if (target == null)
             {
-                realRemoveList.Add(listAudioSourcesExisted.Find((x) => x.name == removeName));
+                CreateAudioSourceManager();
+                return;
             }
-            for (int i = 0; i < realRemoveList.Count; i++)
-            {
-                DestroyImmediate(realRemoveList[i].gameObject);
-            }
-            //新增
-            foreach (string createName in createList)
-            {
-                var audioClipData = allAudios.clips.Find((x) => x.Name == createName);
 
-                var audioSourceObj = new GameObject(audioClipData.Name);
-                audioSourceObj.transform.SetParent(parent.transform);
-                //加入AudioSource組件
-                var audioSource = audioSourceObj.AddComponent<AudioSource>();
-                audioSource.clip = audioClipData.Clip;
-                audioSource.playOnAwake = false;
-            }
-            //更新
-            foreach (var clip in allAudios.clips)
+            AddAudioClipResources(target.gameObject);
+        }
+
+        private void AddAudioClipResources(GameObject target)
+        {
+            if (!target.TryGetComponent<AudioClipResources>(out var resources))
+                resources = target.AddComponent<AudioClipResources>();
+
+            resources.Clear();
+
+            foreach (var clipData in allAudios.clips)
             {
-                foreach (var audioSourcesExisted in listAudioSourcesExisted)
-                {
-                    if (clip.Name == audioSourcesExisted.name)
-                    {
-                        audioSourcesExisted.clip = clip.Clip;
-                    }
-                }
+                var audioClip = new AudioClipPair();
+                audioClip.Name = clipData.Name;
+                audioClip.Clip = clipData.Clip;
+
+                resources.AddAudioClip(audioClip);
             }
         }
     }

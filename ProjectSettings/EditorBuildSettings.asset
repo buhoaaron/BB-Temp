@@ -35,4 +35,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameHiAndByeScene.unity
     guid: 377735114e922d24f82bdd117fea0df7
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/_Game/00 GameScenes/12 DotToDot/DotGameScene.unity
+    guid: 6932683c547c7b74b939fc82c9504fa4
+  - enabled: 1
+    path: Assets/_Game/00 GameScenes/12 DotToDot/DotToDot.unity
+    guid: 71736096f556c574d88f596156ead196
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 802379ba2b66f144ab58a26b6f86e8d1, type: 2}

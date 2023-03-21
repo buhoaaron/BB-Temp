@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: HiAndByeSpine
+  m_EditorClassIdentifier: 
+  m_GroupName: HiAndByeSpine
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 06523c4bc299d20438c46348dc42b5c8
+  m_SerializeEntries:
+  - m_GUID: 8d4410e4a6b01d3428407c3d7da23688
+    m_Address: Assets/SpineAssets/Hi_Anger/Hi_Anger_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HiAndByeSpine
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79425d38ffd9d324aaa20dec0392eeb1
+    m_Address: Assets/SpineAssets/HI_Disgust/Hi_Disgust_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HiAndByeSpine
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4046e3add7e2ca74f94712ca80363f02
+    m_Address: Assets/SpineAssets/Hi_Fear/Hi_Fear_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HiAndByeSpine
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7450176501a47341969a498b8ecaed8
+    m_Address: Assets/SpineAssets/Hi_Joy/Hi_Joy_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HiAndByeSpine
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 352b5081ce6d05b4285d7e451fea420b
+    m_Address: Assets/SpineAssets/Hi_Sadness/Hi_Sadness_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HiAndByeSpine
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 451a5ed41a6e27f4682b0e772c6138c5
+    m_Address: Assets/SpineAssets/Hi_Surprise/HI_Surprise_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HiAndByeSpine
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8bac6ea6add247b42a85463bbe989d6c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9b8d2f2ae9b0c564cbf944239672f08d, type: 2}
+    - {fileID: 11400000, guid: 97e8a9eb583ec864f8e2862144afac42, type: 2}

@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: d0de344d41f388540a6b6990082ee2c2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hub_Brand_Blue
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 801
+        width: 210
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ff591e86b1c66488b6d3b473142963
+      internalID: -1445430559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Blue_bg
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 894
+        width: 150
+        height: 129
+      alignment: 9
+      pivot: {x: 0.50666666, y: 0.6744186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc0de1947358cb94689ed0285892672b
+      internalID: -226797755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Green
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 577
+        width: 210
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f190011ddb92a47a103c7019bac4df
+      internalID: -1223732850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Green_bg
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 763
+        width: 150
+        height: 129
+      alignment: 9
+      pivot: {x: 0.50666666, y: 0.6744186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d850dd01801b0bc43a03734eb0df6794
+      internalID: 698104253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Orange
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 353
+        width: 210
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8414e9cada0b0ff44b05e2ea3c12782d
+      internalID: 357969330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Orange_bg
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 670
+        width: 150
+        height: 129
+      alignment: 9
+      pivot: {x: 0.50666666, y: 0.6744186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567b5d2e31feb9445bc3337c16fb3289
+      internalID: -318285998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Purple
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 129
+        width: 210
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 771ac2ad817110f4cafb2ad5742bfbd6
+      internalID: 1281213784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Purple_bg
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 670
+        width: 150
+        height: 129
+      alignment: 9
+      pivot: {x: 0.50666666, y: 0.6744186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b4718c5232f4b4c89004368522bb1f
+      internalID: -711665199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Rainbow
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 801
+        width: 210
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f230b70f95db34d92b411aeb0021ea
+      internalID: 1230384453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Rainbow_bg
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 670
+        width: 150
+        height: 129
+      alignment: 9
+      pivot: {x: 0.50666666, y: 0.6744186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3694090da3ffa6041b05a6b787e2ea15
+      internalID: 476176624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Red
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 801
+        width: 210
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111e7c191ba6a524483e88bed1a026d5
+      internalID: 1426178309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Red_bg
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 670
+        width: 150
+        height: 129
+      alignment: 9
+      pivot: {x: 0.50666666, y: 0.6744186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7dbe4e3963c514bb7d021bc406cb50
+      internalID: -1406413560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Yellow
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 801
+        width: 210
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc51d0e92b824d4e8b66acc3993107a
+      internalID: 465008796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hub_Brand_Yellow_bg
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 632
+        width: 150
+        height: 129
+      alignment: 9
+      pivot: {x: 0.50666666, y: 0.6744186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3e1d7c20ac0d1439557db1d216182d
+      internalID: -1372487669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: aa69e4982b61fc544be10c74f6e551e0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hub_Brand_Rainbow: 1230384453
+      Hub_Brand_Red: 1426178309
+      Hub_Brand_Orange_bg: -318285998
+      Hub_Brand_Green: -1223732850
+      Hub_Brand_Blue_bg: -226797755
+      Hub_Brand_Green_bg: 698104253
+      Hub_Brand_Purple: 1281213784
+      Hub_Brand_Rainbow_bg: 476176624
+      Hub_Brand_Orange: 357969330
+      Hub_Brand_Yellow: 465008796
+      Hub_Brand_Yellow_bg: -1372487669
+      Hub_Brand_Blue: -1445430559
+      Hub_Brand_Purple_bg: -711665199
+      Hub_Brand_Red_bg: -1406413560
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

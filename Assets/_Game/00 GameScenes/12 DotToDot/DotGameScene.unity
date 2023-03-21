@@ -3188,6 +3188,18 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3346200292307216197, guid: 04329982389b3584193abd88109827bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346200292307216197, guid: 04329982389b3584193abd88109827bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSceneState
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346200292307216197, guid: 04329982389b3584193abd88109827bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 101
+      objectReference: {fileID: 0}
     - target: {fileID: 6534586342135344002, guid: 04329982389b3584193abd88109827bb, type: 3}
       propertyPath: m_Camera
       value: 

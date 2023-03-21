@@ -1,6 +1,0 @@
-public enum AUDIO_NAME
-{
-	BUTTON_CLICK,
-	DELETE,
-	BGM_HUNTING,
-}
