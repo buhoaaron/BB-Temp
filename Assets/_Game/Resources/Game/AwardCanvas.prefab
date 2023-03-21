@@ -279,7 +279,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next
+  m_text: 'Replay
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f58c05479cb14f588efcdfcbdab347c, type: 2}
   m_sharedMaterial: {fileID: 7423409246693961632, guid: 5f58c05479cb14f588efcdfcbdab347c, type: 2}
@@ -863,7 +865,7 @@ RectTransform:
   - {fileID: 7175710717938242953}
   - {fileID: 7175710719317823188}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1389,7 +1391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7175710718792568576
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2434,7 +2436,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7175710718369909710}
         m_TargetAssemblyTypeName: AwardController, Assembly-CSharp
-        m_MethodName: OnClick_NextLevel
+        m_MethodName: OnClick_Replay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

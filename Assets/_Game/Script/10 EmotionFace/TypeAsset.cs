@@ -15,6 +15,10 @@ namespace Barnabus.EmotionFace
         [SerializeField]
         private List<ElementAsset> elements;
 
+
+
+
+
         public string Name { get { return typeName; } }
         public Sprite Icon { get { return buttonIcon; } }
         public List<ElementAsset> Elements { get { return elements; } }

@@ -23,7 +23,7 @@ namespace Barnabus.EmotionFace
         [Space(10)]
         [NonReorderable]
         [SerializeField]
-        private List<TypeAsset> characterTypes;
+        private List<CharacterAsset> characterTypes;
 
         [NonReorderable]
         [SerializeField]
@@ -33,8 +33,8 @@ namespace Barnabus.EmotionFace
         public List<Color> colors;
 
         public int CharacterTypeCount { get { return characterTypes.Count; } }
-        public TypeAsset GetCharacterType(int index) { return characterTypes[index]; }
-        public TypeAsset GetCharacterType(string typeName)
+        public CharacterAsset GetCharacterType(int index) { return characterTypes[index]; }
+        public CharacterAsset GetCharacterType(string typeName)
         {
             for (int i = 0; i < characterTypes.Count; i++)
                 if (characterTypes[i].Name == typeName)

@@ -8,14 +8,14 @@ namespace Barnabus.EmotionFace
     {
         [SerializeField]
         private EmotionFaceController controller;
-        [SerializeField]
-        private GameObject nameSelector;
+       /* [SerializeField]
+        private GameObject nameSelector;*/
 
         [Space(10)]
-        [SerializeField]
+       /* [SerializeField]
         private string prefix;
         [SerializeField]
-        private string suffix;
+        private string suffix;*/
         [SerializeField]
         private List<string> wordList;
 
@@ -24,12 +24,12 @@ namespace Barnabus.EmotionFace
         private NameButton nameButtonPrefab;
         [SerializeField]
         private Transform nameButtonContainer;
-        [SerializeField]
-        private GameObject confirmButton;
-        [SerializeField]
+       /* [SerializeField]
+        private GameObject confirmButton;*/
+       /* [SerializeField]
         private Sprite selectedSprite;
         [SerializeField]
-        private Sprite unselectedSprite;
+        private Sprite unselectedSprite;*/
         [SerializeField]
         private Color buttonLockedColor;
 
@@ -43,20 +43,20 @@ namespace Barnabus.EmotionFace
         {
             moodQuestLevel = DataManager.MoodQuestLevel;
             GenerateNameButtons();
-            HideNameSelector();
-            confirmButton.SetActive(false);
+            //HideNameSelector();
+            //confirmButton.SetActive(false);
         }
 
-        public void ShowNameSelector() { nameSelector.SetActive(true); }
-        public void HideNameSelector() { nameSelector.SetActive(false); }
+      /*  public void ShowNameSelector() { nameSelector.SetActive(true); }
+        public void HideNameSelector() { nameSelector.SetActive(false); }*/
 
         public void OnClick_ConfirmSelect()
         {
             controller.SetFileName(selectedNameButton.text.text);
-            HideNameSelector();
+            //HideNameSelector();
         }
 
-        private void GenerateNameButtons()
+        public void GenerateNameButtons()
         {
             for (int i = 0; i < nameButtons.Count; i++) Destroy(nameButtons[i].gameObject);
             nameButtons.Clear();
@@ -65,9 +65,9 @@ namespace Barnabus.EmotionFace
             for (int i = 0; i < wordList.Count; i++)
             {
                 nameButton = Instantiate(nameButtonPrefab, nameButtonContainer);
-                nameButton.backgroundImage.sprite = unselectedSprite;
+                nameButton.backgroundImage.color = Color.clear;
                 nameButton.id = i;
-                nameButton.SetText(prefix + suffix + wordList[i]);
+                nameButton.SetText(/*prefix + suffix + */wordList[i]);
                 nameButton.SetOnClick(OnClick_NameButton);
                 if (!IsNameButtonUnlocked(i))
                 {
@@ -80,13 +80,13 @@ namespace Barnabus.EmotionFace
 
         private void OnClick_NameButton(NameButton button)
         {
-            if (selectedNameButton) selectedNameButton.backgroundImage.sprite = unselectedSprite;
+            if (selectedNameButton) selectedNameButton.backgroundImage.color = Color.clear;
 
             CurrentMoodQuest = button.id;
             selectedNameButton = button;
-            selectedNameButton.backgroundImage.sprite = selectedSprite;
+            selectedNameButton.backgroundImage.color = Color.yellow;
 
-            confirmButton.SetActive(true);
+            //confirmButton.SetActive(true);
         }
 
         private bool IsNameButtonUnlocked(int buttonIndex)
