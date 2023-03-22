@@ -12461,7 +12461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 1695729560}
-  soundResources: {fileID: 11400000, guid: 704dcf7511ff33d449333383c42d29a4, type: 2}
+  soundResources: {fileID: 0}
   maxVolume: 1
 --- !u!1 &1738965898
 GameObject:

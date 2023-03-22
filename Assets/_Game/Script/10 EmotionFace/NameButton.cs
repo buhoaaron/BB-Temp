@@ -14,9 +14,8 @@ namespace Barnabus.EmotionFace
         public Button button;
         public int id;
 
-        public GameObject ItemList;
-        public GameObject StartGameButton;
-
+       
+      
         private Action<NameButton> onClick;
 
         public void OnClick()
@@ -24,27 +23,20 @@ namespace Barnabus.EmotionFace
             onClick?.Invoke(this);
             controller.SetFileName(text.text);
 
-            if (ItemList.activeInHierarchy == true)
-            {
-                StartGameButton.SetActive(false);
-            }
-            else if (ItemList.activeInHierarchy == false)
-            {
-                StartGameButton.SetActive(true);
-            }
+           
         }
 
         void Awake()
         {
             controller = GameObject.Find("EmotionFaceController").GetComponent<EmotionFaceController>();
             
-            ItemList = GameObject.Find("ItemList");
-            StartGameButton = GameObject.Find("StartGameButton");
+            
+        
         }
 
         void Start()
         {
-            StartGameButton.SetActive(false);
+            
         }
 
         private void Update()

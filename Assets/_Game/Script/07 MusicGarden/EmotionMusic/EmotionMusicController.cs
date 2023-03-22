@@ -71,7 +71,6 @@ namespace Barnabus.EmotionMusic
             ChangeGameState(MusicGameState.SelectMain);
             GenerateCharacterButtons();
             OnClick_ShowCharacterSelector(0);
-
             // DialogController.ShowDialog(DialogController.StringAsset.emotionMusicStartDialog, null);
 
 
@@ -171,9 +170,7 @@ namespace Barnabus.EmotionMusic
             {
                 case MusicGameState.SelectMain:
                     ChangeGameState(MusicGameState.SelectSupport);
-                    OnClick_SelectConfirm();
                     selectedStageIndex++;
-                    
                     break;
                 case MusicGameState.SelectSupport:
                     ChangeGameState(MusicGameState.SelectFinalCheck);
@@ -365,10 +362,12 @@ namespace Barnabus.EmotionMusic
             selectorConfirmButton.SetActive(true);
 
             selectedCharactersID[selectedStageIndex] = currentSelectedCharacterID;
+
             for (int i = 0; i < selectedCharactersID.Length; i++)
                 SetStageCharacter(i, asset.GetCharacterAssetByID(selectedCharactersID[i]));
 
             
+
             if (selectedStageIndex != 0)
             {
                 selectedStageIndex++;
@@ -420,7 +419,7 @@ namespace Barnabus.EmotionMusic
 
         private bool GetCharacterSelectable(int characterID)
         {
-           /* int stageIndex = GetSelectedCharacterStageIndex(characterID);
+            /*int stageIndex = GetSelectedCharacterStageIndex(characterID);
             if (!IsCharacterUnlock(characterID)) return false; //�Ө��⥼���� => ���i���
             else if (stageIndex != -1 && stageIndex != selectedStageIndex) return false; //�Ө���w��b��L�R�x��m => ���i���
             else return true;*/

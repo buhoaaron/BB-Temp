@@ -202,8 +202,10 @@ namespace Barnabus.EmotionFace
             else
             for (int i = 0; i < characterList.transform.childCount; i++)
             {
-                Destroy(characterList.transform.GetChild(i).gameObject);
-            }
+                //Destroy(characterList.transform.GetChild(i).gameObject);
+                characterList.transform.GetChild(i).gameObject.SetActive(false);
+                
+        }
 
         }
 
@@ -221,8 +223,14 @@ namespace Barnabus.EmotionFace
 
         public void GenerateCharacterTypeButtons()
         {
-            for (int i = 0; i < characterButtons.Count; i++) Destroy(characterButtons[i].gameObject);
-            characterButtons.Clear();
+            ClearList();
+
+            for (int i = 0; i < characterButtons.Count; i++)
+            {
+                Destroy(characterButtons[i].gameObject);
+
+                characterButtons.Clear();
+            }
 
             SelectableButton newButton;
             for (int i = 0; i < asset.CharacterTypeCount; i++)
@@ -298,8 +306,8 @@ namespace Barnabus.EmotionFace
                 clickedButton.backgroundImage.sprite = asset.leftButtonSelectedSprite;
                 selectedCharacterTypeButton = clickedButton;
 
-                RefreshCharacterButton(clickedButton.parameter);
-                characterList.SetActive(true);
+                //RefreshCharacterButton(clickedButton.parameter);
+                //characterList.SetActive(true);
             }
         }
 
@@ -432,7 +440,7 @@ namespace Barnabus.EmotionFace
             Destroy(currentEditItem.gameObject);
             currentEditItem = null;
 
-            StartCoroutine(SetItemsLayer());
+            //StartCoroutine(SetItemsLayer());
 
             //HideDeleteIcon();
         }
@@ -614,7 +622,7 @@ namespace Barnabus.EmotionFace
             else
             {
                 if (selectedItemTypeButton) selectedItemTypeButton.backgroundImage.sprite = asset.rightButtonUnselectedSprite;
-                itemList.SetActive(true);
+                //itemList.SetActive(true);
 
                 GenerateColorButton(colorTarget);
                 switch (colorTarget)
@@ -632,8 +640,14 @@ namespace Barnabus.EmotionFace
 
         private void GenerateColorButton(ColorTarget colorTarget)
         {
-            for (int i = 0; i < itemButtons.Count; i++) Destroy(itemButtons[i].gameObject);
-            itemButtons.Clear();
+            ClearList();
+
+            for (int i = 0; i < itemButtons.Count; i++)
+            {
+                Destroy(itemButtons[i].gameObject);
+                itemButtons.Clear();
+            }
+                
 
             SelectableButton newButton;
             for (int i = 0; i < asset.colors.Count; i++)

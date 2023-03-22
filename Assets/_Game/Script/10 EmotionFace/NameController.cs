@@ -24,12 +24,12 @@ namespace Barnabus.EmotionFace
         private NameButton nameButtonPrefab;
         [SerializeField]
         private Transform nameButtonContainer;
-       /* [SerializeField]
-        private GameObject confirmButton;*/
-       /* [SerializeField]
-        private Sprite selectedSprite;
         [SerializeField]
-        private Sprite unselectedSprite;*/
+        private GameObject confirmButton;
+        /* [SerializeField]
+         private Sprite selectedSprite;
+         [SerializeField]
+         private Sprite unselectedSprite;*/
         [SerializeField]
         private Color buttonLockedColor;
 
@@ -43,8 +43,8 @@ namespace Barnabus.EmotionFace
         {
             moodQuestLevel = DataManager.MoodQuestLevel;
             GenerateNameButtons();
+            confirmButton.SetActive(false);
             //HideNameSelector();
-            //confirmButton.SetActive(false);
         }
 
       /*  public void ShowNameSelector() { nameSelector.SetActive(true); }
@@ -58,6 +58,8 @@ namespace Barnabus.EmotionFace
 
         public void GenerateNameButtons()
         {
+            controller.ClearList();
+
             for (int i = 0; i < nameButtons.Count; i++) Destroy(nameButtons[i].gameObject);
             nameButtons.Clear();
 
@@ -72,7 +74,7 @@ namespace Barnabus.EmotionFace
                 if (!IsNameButtonUnlocked(i))
                 {
                     nameButton.SetEnable(false);
-                    nameButton.backgroundImage.color = buttonLockedColor;
+                    nameButton.text.color = buttonLockedColor;
                 }
                 nameButtons.Add(nameButton);
             }
@@ -86,7 +88,7 @@ namespace Barnabus.EmotionFace
             selectedNameButton = button;
             selectedNameButton.backgroundImage.color = Color.yellow;
 
-            //confirmButton.SetActive(true);
+            confirmButton.SetActive(true);
         }
 
         private bool IsNameButtonUnlocked(int buttonIndex)
