@@ -2,13 +2,25 @@ version: 2
 tpsheetFileNames:
 - Assets/Atlas/Shelf/HubBrand.tpsheet
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
+- Assets/Sprite/Atlas/BookLibrary.tpsheet
+- Assets/Sprite/Atlas/ClassRoomScanEffect.tpsheet
+- Assets/Sprite/Atlas/ClassRoomUI.tpsheet
 - Assets/Sprite/Atlas/HubBrand.tpsheet
+- Assets/Sprite/Atlas/NavigationBar.tpsheet
 textureFileNames:
 - Assets/Atlas/Shelf/HubBrand.png
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
+- Assets/Sprite/Atlas/BookLibrary.png
+- Assets/Sprite/Atlas/ClassRoomScanEffect.png
+- Assets/Sprite/Atlas/ClassRoomUI.png
 - Assets/Sprite/Atlas/HubBrand.png
+- Assets/Sprite/Atlas/NavigationBar.png
 normalmapFileNames:
 - 
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+- 
+- 
 - 
 enableDebugOutput: 0
