@@ -20,9 +20,11 @@ namespace Barnabus
 
         public CharacterDataList(string json)
         {
+           
             characters = new List<CharacterData>();
             CharacterDataList data = JsonUtility.FromJson<CharacterDataList>(json);
             if (data == null) return;
+           
 
             characters = data.characters;
         }
@@ -31,6 +33,7 @@ namespace Barnabus
 
         public void SetCharacter(CharacterData data)
         {
+
             bool isExist = false;
             for (int i = 0; i < Count; i++)
             {
