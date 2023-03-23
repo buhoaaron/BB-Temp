@@ -21,6 +21,8 @@ namespace Barnabus.UI
             originPos = UIRoot.localPosition;
 
             buttons.Add(ButtonReturn);
+
+            ButtonReturn.image.enabled = false;
         }
 
         public void Maximize()
@@ -28,6 +30,8 @@ namespace Barnabus.UI
             GetComponent<Canvas>().sortingOrder = Order;
             UIRoot.localScale = Vector2.one;
             UIRoot.localPosition = Vector2.zero;
+
+            ButtonReturn.image.enabled = true;
         }
 
         public void Minimize()
@@ -35,6 +39,8 @@ namespace Barnabus.UI
             GetComponent<Canvas>().sortingOrder = 0;
             UIRoot.localScale = originScale;
             UIRoot.localPosition = originPos;
+
+            ButtonReturn.image.enabled = false;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace HiAndBye.StateControl
 
             gameManager.GameRootUI.ResetCharacter();
             gameManager.GameRootUI.ResetTextTime();
-            gameManager.GameRootUI.SetTextCorrectNum(gameManager.AnswerManager.CorrectNum);
+            gameManager.GameRootUI.SetTextCorrectNum(0);
         }
 
         public override void StateUpdate()

@@ -17,7 +17,7 @@ namespace Barnabus.SceneManagement
         {
             gameManager = GameObject.Find("HiAndByeGameManager").GetComponent<HiAndByeGameManager>();
             gameRootUI = GameObject.Find("Canvas").GetComponent<GameRootUI>();
-            gameResultUI = gameRootUI.transform.Find("Result").GetComponent<GameResultUI>();
+            gameResultUI = gameRootUI.transform.Find("GameResult").GetComponent<GameResultUI>();
             //初始化遊戲相關系統
             gameManager.Init();
             gameRootUI.Init();
