@@ -9,10 +9,9 @@
         public override void Begin()
         {
             var gameResultUI = gameStateController.HiAndByeGameManager.GameResultUI;
-            var correctNum = gameStateController.HiAndByeGameManager.AnswerManager.CorrectNum;
-            var incorrectNum = gameStateController.HiAndByeGameManager.AnswerManager.IncorrectNum;
+            var answerInfo = gameStateController.HiAndByeGameManager.AnswerManager.GetAnswerInfo();
 
-            gameResultUI.SetScore(correctNum, incorrectNum);
+            gameResultUI.SetScore(answerInfo.CorrectHiNum, answerInfo.CorrectByeNum, answerInfo.IncorrectNum);
 
             gameResultUI.Show();
             gameResultUI.DoPopUp();

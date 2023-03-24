@@ -3364,7 +3364,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1784138816}
         m_TargetAssemblyTypeName: Barnabus.EmotionFace.EmotionFaceController, Assembly-CSharp
         m_MethodName: OnClick_SaveData
         m_Mode: 1
@@ -3376,7 +3376,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1784138816}
         m_TargetAssemblyTypeName: Barnabus.EmotionFace.EmotionFaceController, Assembly-CSharp
         m_MethodName: CloseExportCanvas
         m_Mode: 1
@@ -4829,11 +4829,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -5178,21 +5178,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Barnabus.EmotionFace.EmotionFaceController, Assembly-CSharp
-        m_MethodName: OnClick_SharePicture
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CustomAudio.AudioPlayer, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 1385344654}
+        m_TargetAssemblyTypeName: Barnabus.EmotionFace.FileController, Assembly-CSharp
+        m_MethodName: SharePicture
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6314,7 +6302,7 @@ MonoBehaviour:
   characterButtonContainer: {fileID: 486979459}
   itemTypeButtonContainer: {fileID: 1505584017}
   itemButtonContainer: {fileID: 2044864690}
-  characterList: {fileID: 486979458}
+  characterList: {fileID: 1397080382}
   itemList: {fileID: 336052057}
   itemTypeList: {fileID: 467249839}
   backgroundColorButton: {fileID: 1426191247}
@@ -7676,6 +7664,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1357081431}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1784138816}
+        m_TargetAssemblyTypeName: Barnabus.EmotionFace.EmotionFaceController, Assembly-CSharp
+        m_MethodName: ClearList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2132451936
 MonoBehaviour:

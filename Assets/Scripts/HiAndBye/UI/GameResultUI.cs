@@ -9,24 +9,26 @@ namespace HiAndBye
         public UnityAction OnButtonBackMainClick = null;
         public UnityAction OnButtonReplayClick = null;
 
-        private Text textCorrect = null;
+        private Text textCorrectHiNum = null;
+        private Text textCorrectByeNum = null;
         private Text textIncorrect = null;
         private Button buttonBackMain = null;
-        private Button buttonReplay = null;
+        private Button buttonOK = null;
 
         public override void Init()
         {
-            textCorrect = root.Find("Score/Text_Correct").GetComponent<Text>();
-            textIncorrect = root.Find("Score/Text_Incorrect").GetComponent<Text>();
+            textCorrectHiNum = root.Find("Score/Text_CorrectHi/Text_number").GetComponent<Text>();
+            textCorrectByeNum = root.Find("Score/Text_CorrectBye/Text_number").GetComponent<Text>();
+            textIncorrect = root.Find("Score/Text_Incorrect/Text_number").GetComponent<Text>();
             buttonBackMain = root.Find("QuitButton").GetComponent<Button>();
-            buttonReplay = root.Find("ReplayButton").GetComponent<Button>();
+            buttonOK = root.Find("OKButton").GetComponent<Button>();
 
             buttons.Add(buttonBackMain);
-            buttons.Add(buttonReplay);
+            buttons.Add(buttonOK);
 
             ResetPopUp();
 
-            buttonReplay.onClick.AddListener(ProcessButtonReplayClick);
+            buttonOK.onClick.AddListener(ProcessButtonReplayClick);
             buttonBackMain.onClick.AddListener(ProcessButtonBackMainClick);
         }
         public override void UpdateUI()
@@ -37,10 +39,11 @@ namespace HiAndBye
         {
 
         }
-        public void SetScore(int correctNum, int incorrectNum)
+        public void SetScore(int correctHiNum, int correctByeNum, int incorrectNum)
         {
-            textCorrect.text = string.Format("Correct: {0}", correctNum);
-            textIncorrect.text = string.Format("Incorrect: {0}", incorrectNum);
+            textCorrectHiNum.text = correctHiNum.ToString();
+            textCorrectByeNum.text = correctByeNum.ToString();
+            textIncorrect.text = incorrectNum.ToString();
         }
 
         private void ProcessButtonBackMainClick()

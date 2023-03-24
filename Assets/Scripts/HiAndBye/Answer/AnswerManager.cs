@@ -9,13 +9,12 @@ namespace HiAndBye
     /// </summary>
     public class AnswerManager : HiAndByeBaseManager
     {
-        public int CorrectNum => correctNum;
-        public int IncorrectNum => incorrectNum;
         public UnityAction<int> OnUpdateCorrectNum;
 
         private QuestionManager questionManager = null;
 
-        private int correctNum = 0;
+        private int correctHiNum = 0;
+        private int correctByeNum = 0;
         private int incorrectNum = 0;
         private QUESTION_TYPE currentPlayerAnswer;
 
@@ -35,7 +34,8 @@ namespace HiAndBye
         }
         public override void Clear()
         {
-            correctNum = 0;
+            correctHiNum = 0;
+            correctByeNum = 0;
             incorrectNum = 0;
         }
         #endregion
@@ -49,21 +49,25 @@ namespace HiAndBye
             {
                 if(questionInfo.QuestionType == QUESTION_TYPE.HI)
                 {
-                    //Do Correct Hi
+                    correctHiNum++;
                 }
                 else
                 {
-                    //Do Correct Bye
+                    correctByeNum++;
                 }
 
-                correctNum++;
+                var correctNum = correctHiNum + correctByeNum;
                 OnUpdateCorrectNum?.Invoke(correctNum);
             }
             else
             {
-                //Do Incorrect
                 incorrectNum++;
             }
+        }
+
+        public AnswerInfo GetAnswerInfo()
+        {
+            return new AnswerInfo(correctHiNum, correctByeNum, incorrectNum);
         }
 
         public void SetPlayerAnswer(QUESTION_TYPE playerAnswer)
