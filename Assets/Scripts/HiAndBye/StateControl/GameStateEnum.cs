@@ -30,5 +30,9 @@
         /// 暫停
         /// </summary>
         PAUSE,
+        /// <summary>
+        /// 獲得藥水
+        /// </summary>
+        POTION_REWARD,
     }
 }

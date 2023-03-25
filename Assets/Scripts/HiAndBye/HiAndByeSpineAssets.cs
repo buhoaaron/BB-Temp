@@ -48,9 +48,6 @@ namespace HiAndBye
 
         public SkeletonDataAsset GetSpineAsset(string name)
         {
-            foreach (var fd in ListSkeletonDataAsset)
-                print(fd.name);
-
             return ListSkeletonDataAsset.Find(data=>data.name.Contains(name));
         }
     }

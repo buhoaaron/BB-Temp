@@ -1,4 +1,6 @@
-﻿namespace HiAndBye.StateControl
+﻿using UnityEngine;
+
+namespace HiAndBye.StateControl
 {
     public class ResultState : BaseGameState
     {
@@ -8,32 +10,47 @@
 
         public override void Begin()
         {
-            var gameResultUI = gameStateController.HiAndByeGameManager.GameResultUI;
-            var answerInfo = gameStateController.HiAndByeGameManager.AnswerManager.GetAnswerInfo();
+            Debug.Log("Result!!");
 
-            gameResultUI.SetScore(answerInfo.CorrectHiNum, answerInfo.CorrectByeNum, answerInfo.IncorrectNum);
+            var gameResultUI = gameManager.GameResultUI;
+            var answerInfo = gameManager.AnswerManager.GetAnswerInfo();
 
             gameResultUI.Show();
+            gameResultUI.SetScore(answerInfo.CorrectHiNum, answerInfo.CorrectByeNum, answerInfo.IncorrectEmtionsCount);
             gameResultUI.DoPopUp();
 
-            gameResultUI.OnButtonBackMainClick = BackMain;
-            gameResultUI.OnButtonReplayClick = Replay;
+            gameResultUI.OnButtonOKClick = GotoGetPotion;
+
+            CreateIncorrectBarnabus(answerInfo);
         }
 
         public override void StateUpdate()
         { }
 
         public override void End()
-        { }
-
-        private void Replay()
         {
-            gameStateController.SetState(GAME_STATE.GAME_INIT);
+            gameManager.IncorrentBarnabusBuilder.Destroy();
+
+            gameManager.GameResultUI.Hide();
         }
 
-        private void BackMain()
+        private void CreateIncorrectBarnabus(AnswerResultInfo answerResultInfo)
         {
-            gameStateController.HiAndByeGameManager.BackMainScene();
+            var incorrectEmtionsCount = answerResultInfo.IncorrectEmtionsCount;
+            var controllers = gameManager.IncorrentBarnabusBuilder.Create(incorrectEmtionsCount);
+            foreach (var controller in controllers)
+            {
+                int index = controllers.IndexOf(controller);
+                var info = answerResultInfo.ListIncorrectBarnabus[index];
+
+                controller.SetBarnabus(gameManager.GetBarnabusSprite(info.BarnabusBaseData.Name));
+                controller.SetName(info.BarnabusBaseData.Name);
+            }
+        }
+
+        private void GotoGetPotion()
+        {
+            gameStateController.SetState(GAME_STATE.POTION_REWARD);
         }
     }
 }

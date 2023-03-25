@@ -20,6 +20,10 @@ namespace HiAndBye.StateControl
                     return new CheckAnswerState(this);
                 case GAME_STATE.RESULT:
                     return new ResultState(this);
+                case GAME_STATE.POTION_REWARD:
+                    return new PotionRewardState(this);
+                case GAME_STATE.PAUSE:
+                    return new PauseState(this);
                 default:
                     Debug.LogError(string.Format("No state found for {0}", stateName));
                     return null;
