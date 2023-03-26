@@ -4,6 +4,7 @@ using Barnabus;
 using Barnabus.SceneManagement;
 using HiAndBye.Question;
 using HiAndBye.StateControl;
+using Barnabus.UI;
 
 namespace HiAndBye
 {
@@ -16,9 +17,13 @@ namespace HiAndBye
         public CountDownManager CountDownManager = null;
         //題目設定
         public QuestionManager QuestionManager = null;
+        //答錯Barnabus生成管理
+        public IncorrentBarnabusBuilder IncorrentBarnabusBuilder = null;
 
         public GameRootUI GameRootUI = null;
         public GameResultUI GameResultUI = null;
+        public SettingUI SettingUI = null;
+        public PotionRewardUI PotionRewardUI = null;
 
         #region BASE_API
         public void Init()
@@ -33,6 +38,9 @@ namespace HiAndBye
 
             AnswerManager = new AnswerManager(this, QuestionManager);
             AnswerManager.Init();
+
+            IncorrentBarnabusBuilder = GetComponent<IncorrentBarnabusBuilder>();
+            IncorrentBarnabusBuilder.Init();
         }
         public void SystemUpdate()
         {

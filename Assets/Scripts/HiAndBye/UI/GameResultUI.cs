@@ -7,7 +7,7 @@ namespace HiAndBye
     public class GameResultUI : BaseGameUI
     {
         public UnityAction OnButtonBackMainClick = null;
-        public UnityAction OnButtonReplayClick = null;
+        public UnityAction OnButtonOKClick = null;
 
         private Text textCorrectHiNum = null;
         private Text textCorrectByeNum = null;
@@ -26,9 +26,7 @@ namespace HiAndBye
             buttons.Add(buttonBackMain);
             buttons.Add(buttonOK);
 
-            ResetPopUp();
-
-            buttonOK.onClick.AddListener(ProcessButtonReplayClick);
+            buttonOK.onClick.AddListener(ProcessButtonOKClick);
             buttonBackMain.onClick.AddListener(ProcessButtonBackMainClick);
         }
         public override void UpdateUI()
@@ -51,9 +49,9 @@ namespace HiAndBye
             OnButtonBackMainClick?.Invoke();
         }
 
-        private void ProcessButtonReplayClick()
+        private void ProcessButtonOKClick()
         {
-            OnButtonReplayClick?.Invoke();
+            OnButtonOKClick?.Invoke();
         }
     }
 }

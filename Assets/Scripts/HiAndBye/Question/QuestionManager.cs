@@ -6,21 +6,23 @@ namespace HiAndBye.Question
 {
     public class QuestionManager : HiAndByeBaseManager
     {
-        //RANDOM的角色池
+        /// <summary>
+        /// 玩家擁有的角色池
+        /// </summary>
         private List<BarnabusBaseData> listBarnabusOwned = null;
         private SetQuestionInfo currentSetQuestionInfo = null;
         /// <summary>
-        /// CorrectHi出現機率
+        /// Hi出現機率
         /// </summary>
-        private int probabilityCorrectHi = 35;
+        private int probabilityHi = 35;
         /// <summary>
-        /// CorrectHi保底
+        /// Hi保底
         /// </summary>
-        private int guaranteedCorrectHi = 5;
+        private int guaranteedHi = 5;
         /// <summary>
-        /// 目前CorrectBye累積數
+        /// 目前Bye累積數
         /// </summary>
-        private int currentCorrectByeCount = 0;
+        private int currentByeCount = 0;
 
         public QuestionManager(HiAndByeGameManager gm) : base(gm)
         {
@@ -38,7 +40,7 @@ namespace HiAndBye.Question
         }
         public override void Clear()
         {
-            currentCorrectByeCount = 0;
+            currentByeCount = 0;
         }
         #endregion
 
@@ -50,13 +52,14 @@ namespace HiAndBye.Question
 
         public SetQuestionInfo RandomQuestion()
         {
+            //隨機選出一隻角色
             int barnabusOwnedCount = listBarnabusOwned.Count;
             int randomIndex = Random.Range(0, barnabusOwnedCount);
             var barnabus = listBarnabusOwned[randomIndex];
             var sprite = gameManager.GetBarnabusSprite(barnabus.Name);
-
-            bool isCorrectHi = RandomCorrectHi();
-
+            //機率決定是否出Hi
+            bool isHi = RandomHi();
+            //把選中的角色資料傳給題目設定
             currentSetQuestionInfo = new SetQuestionInfo();
             currentSetQuestionInfo.BarnabusBaseData = barnabus;
             currentSetQuestionInfo.BarnabusSprite = sprite;
@@ -64,40 +67,42 @@ namespace HiAndBye.Question
             var asset = gameManager.GetSpineAssets().GetSpineAsset(barnabus.Name);
             currentSetQuestionInfo.BarnabusSkeletonDataAsset = asset;
 
-            if (isCorrectHi)
+            if (isHi)
             {
+                //若是Hi直接設定正確的資料
                 currentSetQuestionInfo.BarnabusFace = barnabus.Vocab;
                 currentSetQuestionInfo.BarnabusVocab = barnabus.Vocab;
                 currentSetQuestionInfo.BarnabusVoice = barnabus.SoundKey;
             }
             else
             {
+                //若不是則隨機設定角色資料
                 currentSetQuestionInfo.BarnabusFace = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].Vocab;
                 currentSetQuestionInfo.BarnabusVocab = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].Vocab;
                 currentSetQuestionInfo.BarnabusVoice = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].SoundKey;
 
-                currentCorrectByeCount++;
+                currentByeCount++;
             }
 
-            //判斷題目類型
+            //判斷該題為Hi或Bye
             currentSetQuestionInfo.QuestionType = CheckHiOrBye(currentSetQuestionInfo);
 
             return currentSetQuestionInfo;
         }
 
-        private bool RandomCorrectHi()
+        private bool RandomHi()
         {
             //保底判斷
-            if (currentCorrectByeCount >= (guaranteedCorrectHi - 1))
+            if (currentByeCount >= (guaranteedHi - 1))
             {
                 //重置累積
-                currentCorrectByeCount = 0;
+                currentByeCount = 0;
                 return true;
             }
 
             //正常機率
             int randomNumber = Random.Range(0, 100);
-            return randomNumber < probabilityCorrectHi;
+            return randomNumber < probabilityHi;
         }
 
         private QUESTION_TYPE CheckHiOrBye(SetQuestionInfo setQuestionInfo)

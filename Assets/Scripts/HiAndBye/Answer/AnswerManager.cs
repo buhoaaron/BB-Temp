@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine.Events;
 using HiAndBye.Question;
+using System.Collections.Generic;
 
 namespace HiAndBye
 {
@@ -9,6 +9,7 @@ namespace HiAndBye
     /// </summary>
     public class AnswerManager : HiAndByeBaseManager
     {
+        public List<SetQuestionInfo> ListIncorrect => listIncorrect;
         public UnityAction<int> OnUpdateCorrectNum;
 
         private QuestionManager questionManager = null;
@@ -17,6 +18,10 @@ namespace HiAndBye
         private int correctByeNum = 0;
         private int incorrectNum = 0;
         private QUESTION_TYPE currentPlayerAnswer;
+        /// <summary>
+        /// 玩家答錯的題目
+        /// </summary>
+        private List<SetQuestionInfo> listIncorrect = new List<SetQuestionInfo>();
 
         public AnswerManager(HiAndByeGameManager gm, QuestionManager qm) : base(gm)
         {
@@ -26,7 +31,7 @@ namespace HiAndBye
         #region BASE_API
         public override void Init()
         {
-
+            listIncorrect = new List<SetQuestionInfo>();
         }
         public override void SystemUpdate()
         {
@@ -37,6 +42,8 @@ namespace HiAndBye
             correctHiNum = 0;
             correctByeNum = 0;
             incorrectNum = 0;
+
+            listIncorrect.Clear();
         }
         #endregion
 
@@ -62,12 +69,22 @@ namespace HiAndBye
             else
             {
                 incorrectNum++;
+
+                AddIncorrect(questionInfo);
             }
         }
 
-        public AnswerInfo GetAnswerInfo()
+        private void AddIncorrect(SetQuestionInfo incorrectInfo)
         {
-            return new AnswerInfo(correctHiNum, correctByeNum, incorrectNum);
+            var checkDuplicate = listIncorrect.Find(info => info.BarnabusBaseData == incorrectInfo.BarnabusBaseData);
+
+            if (checkDuplicate == null)
+                listIncorrect.Add(incorrectInfo);
+        }
+
+        public AnswerResultInfo GetAnswerInfo()
+        {
+            return new AnswerResultInfo(correctHiNum, correctByeNum, incorrectNum, listIncorrect);
         }
 
         public void SetPlayerAnswer(QUESTION_TYPE playerAnswer)

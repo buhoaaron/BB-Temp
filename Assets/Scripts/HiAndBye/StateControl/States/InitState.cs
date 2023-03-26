@@ -24,6 +24,8 @@ namespace HiAndBye.StateControl
             gameManager.QuestionManager.SetBatch(batch);
 
             gameManager.GameResultUI.Hide();
+            gameManager.SettingUI.Hide();
+            gameManager.PotionRewardUI.Hide();
 
             gameManager.AnswerManager.Clear();
             gameManager.QuestionManager.Clear();

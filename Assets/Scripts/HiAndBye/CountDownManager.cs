@@ -11,8 +11,10 @@ namespace HiAndBye
         public bool IsCountDowning => isCountDowning;
 
         private bool isCountDowning = false;
+        private bool isCountDownOver = false;
         private float countDownTime = 0;
-        private float realtime = 0;
+        private float startRealtime = 0;
+        private float pauseRealtime = 0;
 
         public CountDownManager(HiAndByeGameManager gm) : base(gm)
         {
@@ -27,13 +29,15 @@ namespace HiAndBye
         {
             if (isCountDowning)
             {
-                var countDowning = countDownTime - (Time.realtimeSinceStartup - realtime);
+                var countDowning = countDownTime - (Time.realtimeSinceStartup - startRealtime);
 
                 OnCountDown?.Invoke(countDowning);
                 OnCountDownFormat?.Invoke(ConvertCountDownFormat(countDowning));
 
                 if (countDowning <= 0)
                 {
+                    isCountDownOver = true;
+
                     StopCountDown();
                     OnCountDownOver?.Invoke();
                 }
@@ -41,19 +45,41 @@ namespace HiAndBye
         }
         public override void Clear()
         {
-           
+            
         }
         #endregion
 
         public void StartCountDown()
         {
+            isCountDownOver = false;
             isCountDowning = true;
-            realtime = Time.realtimeSinceStartup;
+            startRealtime = Time.realtimeSinceStartup;
+        }
+
+        public void PauseCountDown()
+        {
+            pauseRealtime = Time.realtimeSinceStartup;
+            isCountDowning = false;
+        }
+
+        public void ContinueCountDown()
+        {
+            isCountDowning = true;
+            //把暫停的時間補正回來
+            startRealtime += (Time.realtimeSinceStartup - pauseRealtime);
         }
 
         public void StopCountDown()
         {
             isCountDowning = false;
+        }
+
+        /// <summary>
+        /// 檢查當前的倒數是否結束
+        /// </summary>
+        public bool CheckCountDownOver()
+        {
+            return isCountDownOver;
         }
 
         /// <summary>

@@ -5,19 +5,25 @@ tpsheetFileNames:
 - Assets/Sprite/Atlas/BookLibrary.tpsheet
 - Assets/Sprite/Atlas/ClassRoomScanEffect.tpsheet
 - Assets/Sprite/Atlas/ClassRoomUI.tpsheet
+- Assets/Sprite/Atlas/GameInfo.tpsheet
 - Assets/Sprite/Atlas/HubBrand.tpsheet
 - Assets/Sprite/Atlas/NavigationBar.tpsheet
+- Assets/Sprite/Atlas/PotionHIghlightEffect.tpsheet
 textureFileNames:
 - Assets/Atlas/Shelf/HubBrand.png
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprite/Atlas/BookLibrary.png
 - Assets/Sprite/Atlas/ClassRoomScanEffect.png
 - Assets/Sprite/Atlas/ClassRoomUI.png
+- Assets/Sprite/Atlas/GameInfo.png
 - Assets/Sprite/Atlas/HubBrand.png
 - Assets/Sprite/Atlas/NavigationBar.png
+- Assets/Sprite/Atlas/PotionHIghlightEffect.png
 normalmapFileNames:
 - 
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
 - 
 - 
 - 
