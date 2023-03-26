@@ -45,6 +45,11 @@ namespace HiAndBye.StateControl
 
                 controller.SetBarnabus(gameManager.GetBarnabusSprite(info.BarnabusBaseData.Name));
                 controller.SetName(info.BarnabusBaseData.Name);
+
+                controller.OnButtonBarnabusClick = () => 
+                {
+                    gameManager.PlaySound(info.BarnabusVoice);
+                };
             }
         }
 
