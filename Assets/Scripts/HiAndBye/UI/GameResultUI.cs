@@ -1,6 +1,7 @@
 ﻿using UnityEngine.UI;
 using UnityEngine.Events;
 using Barnabus.UI;
+using TMPro;
 
 namespace HiAndBye
 {
@@ -9,17 +10,17 @@ namespace HiAndBye
         public UnityAction OnButtonBackMainClick = null;
         public UnityAction OnButtonOKClick = null;
 
-        private Text textCorrectHiNum = null;
-        private Text textCorrectByeNum = null;
-        private Text textIncorrect = null;
+        private TMP_Text textCorrectHiNum = null;
+        private TMP_Text textCorrectByeNum = null;
+        private TMP_Text textIncorrect = null;
         private Button buttonBackMain = null;
         private Button buttonOK = null;
 
         public override void Init()
         {
-            textCorrectHiNum = root.Find("Score/Text_CorrectHi/Text_number").GetComponent<Text>();
-            textCorrectByeNum = root.Find("Score/Text_CorrectBye/Text_number").GetComponent<Text>();
-            textIncorrect = root.Find("Score/Text_Incorrect/Text_number").GetComponent<Text>();
+            textCorrectHiNum = root.Find("Score/Text_CorrectHi/Text_number").GetComponent<TMP_Text>();
+            textCorrectByeNum = root.Find("Score/Text_CorrectBye/Text_number").GetComponent<TMP_Text>();
+            textIncorrect = root.Find("Score/Text_Incorrect/Text_number").GetComponent<TMP_Text>();
             buttonBackMain = root.Find("QuitButton").GetComponent<Button>();
             buttonOK = root.Find("OKButton").GetComponent<Button>();
 

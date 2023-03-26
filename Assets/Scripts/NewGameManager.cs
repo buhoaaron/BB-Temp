@@ -17,13 +17,16 @@ public class NewGameManager : MonoBehaviour
     public BarnabusCardManager BarnabusCardManager => barnabusCardManager;
     public JsonManager JsonManager => jsonManager;
     public PlayersBarnabusManager PlayersBarnabusManager => playersBarnabusManager;
+    public MainManager MainManager { get; private set; }
 
+    #region COMMON_MANAGER
     private SceneStateController sceneStateController;
     private BarnabusAudioManager audioeManager;
     private BarnabusCardManager barnabusCardManager;
     private SceneTransitionsManager sceneTransitionsManager;
     private JsonManager jsonManager;
     private PlayersBarnabusManager playersBarnabusManager;
+    #endregion
 
     private void Start()
     {
@@ -69,6 +72,14 @@ public class NewGameManager : MonoBehaviour
     public void SetSceneState(SCENE_STATE state)
     {
         sceneStateController.SetState(state);
+    }
+    /// <summary>
+    /// 設定主選單管理
+    /// </summary>
+    /// <param name="manager"></param>
+    public void SetMainManager(MainManager manager)
+    {
+        MainManager = manager;
     }
 
     /// <summary>

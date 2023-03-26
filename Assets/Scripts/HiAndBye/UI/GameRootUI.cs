@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using Barnabus.UI;
 using Spine.Unity;
+using TMPro;
 
 using DG.Tweening;
 
@@ -22,7 +23,7 @@ namespace HiAndBye
         private readonly float dropDownDuration = 0.8f;
 
         private Text textTime = null;
-        private Text textVocab = null;
+        private TMP_Text textVocab = null;
         private Text textCorrectNum = null;
         private SkeletonGraphic skeletonGraphicBarnabus = null;
         private Text debugTextAnswer = null;
@@ -37,7 +38,7 @@ namespace HiAndBye
             var buttonBackMain = transform.Find("Buttons/Button_BackMain").GetComponent<Button>();
 
             textTime = transform.Find("Time/Text_Value").GetComponent<Text>();
-            textVocab = transform.Find("Vocab/Text_Content").GetComponent<Text>();
+            textVocab = transform.Find("Vocab/TMPText_Content").GetComponent<TMP_Text>();
             textCorrectNum = transform.Find("NumberOfCorrect/Text_Count").GetComponent<Text>();
             transCharacter = transform.Find("Mask/Character").GetComponent<RectTransform>();
             skeletonGraphicBarnabus = transform.Find("Mask/Character/SkeletonGraphic_Char").GetComponent<SkeletonGraphic>();

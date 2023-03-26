@@ -1,28 +1,66 @@
 ﻿using UnityEngine;
 using Barnabus.UI;
 using System.Collections.Generic;
+using Barnabus.Shelf;
 
 namespace Barnabus.SceneManagement
 {
     public class MainSceneState : BaseSceneState
     {
-        private MainUI mainUI = null;
+        private MainManager mainManager = null;
 
+        private MainUI mainUI = null;
         private GameRoomUI gameRoomUI = null;
         private ShelfUI shelfUI = null;
         private BooksUI booksUI = null;
         private LessonsUI lessonsUI = null;
-
-        private List<Object> buttons = null;
 
         public MainSceneState(SceneStateController controller, string sceneName) : base(controller, sceneName)
         {}
 
         public override void Begin()
         {
-            InitUI();
+            FindMainManagerAndInit();
 
+            InitUI();
             AddButtonClickListener();
+            mainManager.LoadAsset(InitShelfAllHub);
+
+            //Debug.Log(string.Format("你現在有{0}藥水", DataManager.Potions[PotionType.Red]));
+            //DataManager.Potions.AddPotion(PotionType.Red, 10);
+            //Debug.Log(string.Format("你現在有{0}藥水", DataManager.Potions[PotionType.Red]));
+        }
+
+        private void FindMainManagerAndInit()
+        {
+            mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
+            mainManager.Init();
+        }
+
+        private void InitUI()
+        {
+            mainManager.MainUI.Init();
+            mainManager.ShelfUI.Init();
+            mainManager.BooksUI.Init();
+            mainManager.LessonsUI.Init();
+            mainManager.GameRoomUI.Init();
+
+            mainUI = mainManager.MainUI;
+            shelfUI = mainManager.ShelfUI;
+            booksUI = mainManager.BooksUI;
+            lessonsUI = mainManager.LessonsUI;
+            gameRoomUI = mainManager.GameRoomUI;
+        }
+
+        private void InitShelfAllHub()
+        {
+            foreach(var hubController in shelfUI.HubControllers)
+            {
+                //設定Barnabus資料
+                var barnabusBaseData = mainManager.GetBarnabusBaseData(hubController.ID);
+                hubController.Init(barnabusBaseData, mainManager);
+                hubController.Refresh();
+            }
         }
 
         public override void StateUpdate()
@@ -37,23 +75,6 @@ namespace Barnabus.SceneManagement
             mainUI.Clear();
         }
 
-        private void InitUI()
-        {
-            mainUI = GameObject.Find("Canvas_Main").GetComponent<MainUI>();
-            mainUI.Init();
-
-            shelfUI = GameObject.Find("Canvas_Shelf").GetComponent<ShelfUI>();
-            shelfUI.Init();
-
-            booksUI = GameObject.Find("Canvas_Library").GetComponent<BooksUI>();
-            booksUI.Init();
-
-            lessonsUI = GameObject.Find("Canvas_ClassRoom").GetComponent<LessonsUI>();
-            lessonsUI.Init();
-
-            gameRoomUI = GameObject.Find("Canvas_GameRoom").GetComponent<GameRoomUI>();
-            gameRoomUI.Init();
-        }
         private void AddButtonClickListener()
         {
             mainUI.ButtonGameRoom.onClick.AddListener(MaximizeGameRoom);

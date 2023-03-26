@@ -31,8 +31,6 @@ namespace Barnabus
         }
         #endregion
 
-
-
         public override void Save()
         {
             
@@ -47,7 +45,10 @@ namespace Barnabus
         {
             playerBarnabusData = allBaseData.Copy();
         }
-
+        public BarnabusBaseData GetBarnabusBaseData(int id)
+        {
+            return playerBarnabusData.GetBarnabusBaseData(id);
+        }
         /// <summary>
         /// 擁有的Barnabus數目
         /// </summary>

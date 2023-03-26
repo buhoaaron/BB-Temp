@@ -46,22 +46,19 @@ namespace Barnabus.Card
             }
             catch(System.Exception ex)
             {
-                Debug.Log("GetCard Fail: " + ex);
+                Debug.LogError("GetCard Fail: " + ex);
                 return null;
             }
         }
 
         public BarnabusScanScriptable GetCard(string name)
         {
-            try
-            {
-                return barnabusCardList.cards.Find(card => card.barnabusName == name);
-            }
-            catch (System.Exception ex)
-            {
-                Debug.Log("GetCard Fail: " + ex);
-                return null;
-            }
+            var card = barnabusCardList.cards.Find(card => card.barnabusName.Contains(name));
+
+            if (card == null)
+                Debug.LogError("GetCard Fail: " + name);
+
+            return card;
         }
 
         public void LoadJson()
@@ -69,10 +66,6 @@ namespace Barnabus.Card
             allBarnabusBaseData = GameManager.JsonManager.DeserializeObject<AllBarnabusBaseData>(0);
         }
 
-        public BarnabusBaseData GetBarnabusBaseData(int id)
-        {
-            return allBarnabusBaseData.GetBarnabusBaseData(id);
-        }
         public AllBarnabusBaseData GetAllBarnabusBaseData()
         {
             return allBarnabusBaseData;

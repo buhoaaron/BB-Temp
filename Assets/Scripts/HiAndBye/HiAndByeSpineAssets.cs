@@ -11,14 +11,14 @@ namespace HiAndBye
     {
         public readonly string Label = "HiAndByeSpine";
         public UnityAction OnLoadCompleted = null;
-        public List<SkeletonDataAsset> ListSkeletonDataAsset;
 
+        private List<SkeletonDataAsset> listSkeletonDataAsset;
         private Coroutine coroutineLoadSpineAsset = null;
 
         #region BASE_API
         public void Init()
         {
-            ListSkeletonDataAsset = new List<SkeletonDataAsset>();
+            listSkeletonDataAsset = new List<SkeletonDataAsset>();
         }
         public void SystemUpdate()
         {
@@ -37,18 +37,18 @@ namespace HiAndBye
 
         private IEnumerator ILoadSpineAssets()
         {
-            var handle = Addressables.LoadAssetsAsync<SkeletonDataAsset>(Label, ListSkeletonDataAsset.Add);
+            var handle = Addressables.LoadAssetsAsync<SkeletonDataAsset>(Label, listSkeletonDataAsset.Add);
 
             yield return handle;
 
             OnLoadCompleted?.Invoke();
 
-            //Addressables.Release(handle);
+            Addressables.Release(handle);
         }
 
         public SkeletonDataAsset GetSpineAsset(string name)
         {
-            return ListSkeletonDataAsset.Find(data=>data.name.Contains(name));
+            return listSkeletonDataAsset.Find(data=>data.name.Contains(name));
         }
     }
 }

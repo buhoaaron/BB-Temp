@@ -13,6 +13,8 @@
             LoadBarnabusBaseData();
             //設定玩家擁有的角色
             SetPlayerBarnabus();
+            //讀取玩家的藥水
+            DataManager.LoadPotions();
         }
         public override void StateUpdate()
         {

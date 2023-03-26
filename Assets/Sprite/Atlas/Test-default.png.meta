@@ -1,0 +1,840 @@
+fileFormatVersion: 2
+guid: 52a71fa87b519f2498979a17a048223c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Amazement
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 767
+        width: 81
+        height: 126
+      alignment: 9
+      pivot: {x: 0.43209878, y: 0.50793654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674664c0393594a4fa962d4772546eea
+      internalID: 906172745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Annoyance
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 679
+        width: 119
+        height: 94
+      alignment: 9
+      pivot: {x: 0.53781515, y: 0.68085104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847701d9b5628114d840d644c6d75012
+      internalID: -742205698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boredom
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 266
+        width: 128
+        height: 62
+      alignment: 9
+      pivot: {x: 0.5, y: 1.032258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f28e09e977ba9449788901c65f9919
+      internalID: -554130979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compassion
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 411
+        width: 114
+        height: 102
+      alignment: 9
+      pivot: {x: 0.49122807, y: 0.60784316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999edcf5614560640af2ff0818ef0645
+      internalID: -87138774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Disappointment
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 810
+        width: 110
+        height: 90
+      alignment: 9
+      pivot: {x: 0.47272727, y: 0.7111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af316bd3521f2f24a8502b1798256556
+      internalID: -519137500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Disgust
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 266
+        width: 123
+        height: 113
+      alignment: 9
+      pivot: {x: 0.5121951, y: 0.54867256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5efd6cec06ffa4647b5cca6165afaed1
+      internalID: -1268378780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Excitement
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 472
+        width: 128
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.90140843}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded50cf1b55b4af4f9657ebbfcb8f33e
+      internalID: 956699134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fear
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 765
+        width: 124
+        height: 128
+      alignment: 9
+      pivot: {x: 0.4919355, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8506143f0d55a8a41834b6ecb828e4f4
+      internalID: -1334128258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frustration
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 515
+        width: 95
+        height: 123
+      alignment: 9
+      pivot: {x: 0.50526315, y: 0.5203252}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce312dd9feca9524696b80fa7675ca1c
+      internalID: 1166795914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gratitude
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 935
+        width: 125
+        height: 88
+      alignment: 9
+      pivot: {x: 0.512, y: 0.72727275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8dc392f2031c9344a2a87530ca4db64
+      internalID: 589518528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guilt
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 899
+        width: 100
+        height: 124
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5080645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89d37dafd89fdd48a2292ce64766f15
+      internalID: -1524883426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 902
+        width: 128
+        height: 121
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5206612}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b0bced323b5d1042bcb5fbb1c8dc2f4
+      internalID: 1017327697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joy
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 775
+        width: 100
+        height: 122
+      alignment: 9
+      pivot: {x: 0.46, y: 0.5163934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2f0ad24641f2948ae1ab09aaabc3cc
+      internalID: 1661754078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Love
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 545
+        width: 98
+        height: 100
+      alignment: 9
+      pivot: {x: 0.56122446, y: 0.64}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8768232fdc8d174cafb82c2a6366aaf
+      internalID: 1037965994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nervousness
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 183
+        width: 126
+        height: 81
+      alignment: 9
+      pivot: {x: 0.50793654, y: 0.79012346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1a3d00e66de044eb45d292f6e0c293
+      internalID: 1701678204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sadness
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 506
+        width: 112
+        height: 127
+      alignment: 9
+      pivot: {x: 0.45535713, y: 0.496063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6343d9a3fa2b6e742954417b553cf19a
+      internalID: -1724201898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satisfaction
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 23
+        width: 127
+        height: 107
+      alignment: 9
+      pivot: {x: 0.496063, y: 0.58878505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2cf19a10259184ca56f10ae6201b8b
+      internalID: 910251647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Silliness
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 132
+        width: 121
+        height: 117
+      alignment: 9
+      pivot: {x: 0.5123967, y: 0.5470086}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f57633cba173a746be3768a4fa12abf
+      internalID: 1916302452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Surprise
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 6
+        width: 117
+        height: 120
+      alignment: 9
+      pivot: {x: 0.47863248, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d4fd2e399952b4bb86626695e34cca
+      internalID: -1902669439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trustfulness
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 330
+        width: 126
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8101266}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81509d2e1c66c8649bd599e2364a8f41
+      internalID: 482992271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anger
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 772
+        width: 115
+        height: 124
+      alignment: 9
+      pivot: {x: 0.5043478, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb35ed088ccfc514686f95828f72a1f5
+      internalID: 1698969373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxiety
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 505
+        width: 94
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5531915, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 201418e2d526a444898d0d0e51f540b2
+      internalID: 903590962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Awfulness
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 637
+        width: 105
+        height: 126
+      alignment: 9
+      pivot: {x: 0.47619048, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1461e258144a3fb4a88378a4668327e0
+      internalID: 1384604664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bravery
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 635
+        width: 95
+        height: 128
+      alignment: 9
+      pivot: {x: 0.48421052, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78032c35ce98e324182dcf8df68cf80a
+      internalID: -1739814995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confusion
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 376
+        width: 120
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5083333, y: 0.496063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4beb9d0b7b94e42479e6a55815783ed6
+      internalID: 1530965681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dislike
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 381
+        width: 113
+        height: 123
+      alignment: 9
+      pivot: {x: 0.50442475, y: 0.50406504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74c4c8c8ba1ebe4dbca7db57f891a8d
+      internalID: -2018007612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Embarrassment
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 128
+        width: 105
+        height: 121
+      alignment: 9
+      pivot: {x: 0.40952381, y: 0.5289256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e089d5b9eafb2a479dd75308ff32034
+      internalID: -559160694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Impatience
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 895
+        width: 126
+        height: 128
+      alignment: 9
+      pivot: {x: 0.50793654, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c33de4553689c04fbae72628826dc28
+      internalID: 623383667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jealousy
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 640
+        width: 78
+        height: 125
+      alignment: 9
+      pivot: {x: 0.5, y: 0.496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8d02ab85f60b347ac2aa5effa28517
+      internalID: 1861510983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pride
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 898
+        width: 127
+        height: 125
+      alignment: 9
+      pivot: {x: 0.503937, y: 0.512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496a2a8b9aca95e4e92290989d936ccf
+      internalID: 597057842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shame
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 251
+        width: 127
+        height: 123
+      alignment: 9
+      pivot: {x: 0.496063, y: 0.5121951}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a73255d3fb6e6144b43c1f98ba21bc7
+      internalID: -1173354262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worry
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 647
+        width: 91
+        height: 123
+      alignment: 9
+      pivot: {x: 0.4065934, y: 0.5203252}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ba3607d62819548b4a507219d0718c
+      internalID: -322766986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 69abd038ec243834f83b6ad9e1a48eea
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hurt: 1017327697
+      Surprise: -1902669439
+      Anger: 1698969373
+      Bravery: -1739814995
+      Sadness: -1724201898
+      Silliness: 1916302452
+      Trustfulness: 482992271
+      Embarrassment: -559160694
+      Confusion: 1530965681
+      Worry: -322766986
+      Amazement: 906172745
+      Jealousy: 1861510983
+      Pride: 597057842
+      Dislike: -2018007612
+      Frustration: 1166795914
+      Excitement: 956699134
+      Annoyance: -742205698
+      Disgust: -1268378780
+      Impatience: 623383667
+      Joy: 1661754078
+      Shame: -1173354262
+      Awfulness: 1384604664
+      Guilt: -1524883426
+      Disappointment: -519137500
+      Love: 1037965994
+      Nervousness: 1701678204
+      Fear: -1334128258
+      Anxiety: 903590962
+      Boredom: -554130979
+      Gratitude: 589518528
+      Satisfaction: 910251647
+      Compassion: -87138774
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

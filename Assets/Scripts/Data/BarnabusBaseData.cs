@@ -8,7 +8,9 @@
         public int Batch;
         public AUDIO_NAME SoundKey;
         public bool AlreadyOwned;
-
+        public string Element;
+        public COLOR Color;
+        public int PotionExchange;
         public BarnabusBaseData Copy()
         {
             var newData = new BarnabusBaseData();
@@ -18,6 +20,9 @@
             newData.Batch = Batch;
             newData.SoundKey = SoundKey;
             newData.AlreadyOwned = AlreadyOwned;
+            newData.Element = Element;
+            newData.Color = Color;
+            newData.PotionExchange = PotionExchange;
             return newData;
         }
     }

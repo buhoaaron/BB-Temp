@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 06523c4bc299d20438c46348dc42b5c8
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: 83bbda74daa7189fffd2478e6ac5d853
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: d004d2c11c36b3142ab2c1e2eeb93d01, type: 2}
   - {fileID: 11400000, guid: e16c4b4bd03e0b24ab564cedd73746ed, type: 2}
+  - {fileID: 11400000, guid: b38ddd247f99dfa46a0326466fa56222, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -88,6 +89,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - HiAndByeSpine
+    - HubBrand
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 65ae69526a392124aa45e51227cff62c, type: 2}
