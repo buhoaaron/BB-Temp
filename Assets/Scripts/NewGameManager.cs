@@ -80,6 +80,7 @@ public class NewGameManager : MonoBehaviour
     public void SetMainManager(MainManager manager)
     {
         MainManager = manager;
+        MainManager.AudioManager = AudioManager;
     }
 
     /// <summary>

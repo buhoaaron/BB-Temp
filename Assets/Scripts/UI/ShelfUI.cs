@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using Barnabus.Shelf;
 using System.Collections.Generic;
 

@@ -42,5 +42,10 @@ namespace Barnabus.UI
 
             ButtonReturn.image.enabled = false;
         }
+
+        public GameObject AddChild(GameObject prefab)
+        {
+            return Instantiate(prefab);
+        }
     }
 }

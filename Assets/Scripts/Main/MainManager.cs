@@ -21,12 +21,16 @@ public class MainManager : MonoBehaviour, IBaseSystem
     [Header("Set Canvas ClassRoom")]
     public LessonsUI LessonsUI = null;
 
+    public BarnabusAudioManager AudioManager = null;
+
     private ShelfAssets shelfAssets = null;
+    private PrefabPool shelfPrefabPool = null;
 
     #region BASE_API
     public void Init()
     {
         shelfAssets = transform.Find("ShelfAssets").GetComponent<ShelfAssets>();
+        shelfPrefabPool = shelfAssets.GetComponent<PrefabPool>();
     }
     public void SystemUpdate()
     {
@@ -37,6 +41,17 @@ public class MainManager : MonoBehaviour, IBaseSystem
 
     }
     #endregion
+
+    public HubInfoUI CreateHubInfoUIAndInit(HUB_STATE state)
+    {
+        var prefab = GetShelfPrefab("HubInfo");
+        var hubInfoUI = ShelfUI.AddChild(prefab).GetComponent<HubInfoUI>();
+        hubInfoUI.Init(state);
+        //註冊按鈕音效
+        AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, hubInfoUI.Buttons);
+
+        return hubInfoUI;
+    }
 
     public void LoadAsset(UnityAction onComplete)
     {
@@ -49,6 +64,43 @@ public class MainManager : MonoBehaviour, IBaseSystem
         return NewGameManager.Instance.PlayersBarnabusManager.GetBarnabusBaseData(id);
     }
 
+    #region MAIN_COMMON_UI
+    public void MaximizeShelf()
+    {
+        ShelfUI.Maximize();
+    }
+    public void MinimizeShelf()
+    {
+        ShelfUI.Minimize();
+    }
+    public void MaximizeLessons()
+    {
+        LessonsUI.Maximize();
+    }
+    public void MinimizeLessons()
+    {
+        LessonsUI.Minimize();
+    }
+    public void MaximizeBooks()
+    {
+        BooksUI.Maximize();
+    }
+    public void MinimizeBooks()
+    {
+        BooksUI.Minimize();
+    }
+
+    public void MaximizeGameRoom()
+    {
+        GameRoomUI.Maximize();
+    }
+    public void MinimizeGameRoom()
+    {
+        GameRoomUI.Minimize();
+    }
+    #endregion
+
+    #region SHELF_ASSETS
     public Sprite GetBarnabusSprite(string name)
     {
         return shelfAssets.GetHubBrandBarnabusSprite(name);
@@ -63,4 +115,10 @@ public class MainManager : MonoBehaviour, IBaseSystem
     {
         return shelfAssets.GetHubBrand((int)color);
     }
+
+    public GameObject GetShelfPrefab(string name)
+    {
+        return shelfPrefabPool.GetPrefab(name);
+    }
+    #endregion
 }

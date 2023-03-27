@@ -35,6 +35,8 @@ namespace Barnabus.SceneManagement
         {
             mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
             mainManager.Init();
+            //將它交給GameManager強化功能
+            NewGameManager.Instance.SetMainManager(mainManager);
         }
 
         private void InitUI()
@@ -77,15 +79,15 @@ namespace Barnabus.SceneManagement
 
         private void AddButtonClickListener()
         {
-            mainUI.ButtonGameRoom.onClick.AddListener(MaximizeGameRoom);
-            mainUI.ButtonLessons.onClick.AddListener(MaximizeLessons);
-            mainUI.ButtonShelf.onClick.AddListener(MaximizeShelf);
-            mainUI.ButtonBooks.onClick.AddListener(MaximizeBooks);
+            mainUI.ButtonGameRoom.onClick.AddListener(mainManager.MaximizeGameRoom);
+            mainUI.ButtonLessons.onClick.AddListener(mainManager.MaximizeLessons);
+            mainUI.ButtonShelf.onClick.AddListener(mainManager.MaximizeShelf);
+            mainUI.ButtonBooks.onClick.AddListener(mainManager.MaximizeBooks);
 
-            gameRoomUI.ButtonReturn.onClick.AddListener(MinimizeGameRoom);
-            lessonsUI.ButtonReturn.onClick.AddListener(MinimizeLessons);
-            shelfUI.ButtonReturn.onClick.AddListener(MinimizeShelf);
-            booksUI.ButtonReturn.onClick.AddListener(MinimizeBooks);
+            gameRoomUI.ButtonReturn.onClick.AddListener(mainManager.MinimizeGameRoom);
+            lessonsUI.ButtonReturn.onClick.AddListener(mainManager.MinimizeLessons);
+            shelfUI.ButtonReturn.onClick.AddListener(mainManager.MinimizeShelf);
+            booksUI.ButtonReturn.onClick.AddListener(mainManager.MinimizeBooks);
 
             gameRoomUI.GameButtons[0].onClick.AddListener(GotoFace);
             gameRoomUI.GameButtons[1].onClick.AddListener(GotoMusic);
@@ -100,15 +102,15 @@ namespace Barnabus.SceneManagement
         }
         private void RemoveButtonClickListener()
         {
-            mainUI.ButtonGameRoom.onClick.RemoveListener(MaximizeGameRoom);
-            mainUI.ButtonLessons.onClick.RemoveListener(MaximizeLessons);
-            mainUI.ButtonShelf.onClick.RemoveListener(MaximizeShelf);
-            mainUI.ButtonBooks.onClick.RemoveListener(MaximizeBooks);
+            mainUI.ButtonGameRoom.onClick.RemoveListener(mainManager.MaximizeGameRoom);
+            mainUI.ButtonLessons.onClick.RemoveListener(mainManager.MaximizeLessons);
+            mainUI.ButtonShelf.onClick.RemoveListener(mainManager.MaximizeShelf);
+            mainUI.ButtonBooks.onClick.RemoveListener(mainManager.MaximizeBooks);
 
-            gameRoomUI.ButtonReturn.onClick.RemoveListener(MinimizeGameRoom);
-            lessonsUI.ButtonReturn.onClick.RemoveListener(MinimizeLessons);
-            shelfUI.ButtonReturn.onClick.RemoveListener(MinimizeShelf);
-            booksUI.ButtonReturn.onClick.RemoveListener(MinimizeBooks);
+            gameRoomUI.ButtonReturn.onClick.RemoveListener(mainManager.MinimizeGameRoom);
+            lessonsUI.ButtonReturn.onClick.RemoveListener(mainManager.MinimizeLessons);
+            shelfUI.ButtonReturn.onClick.RemoveListener(mainManager.MinimizeShelf);
+            booksUI.ButtonReturn.onClick.RemoveListener(mainManager.MinimizeBooks);
 
             controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, mainUI.Buttons);
             controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, gameRoomUI.Buttons);
@@ -116,38 +118,7 @@ namespace Barnabus.SceneManagement
             controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, shelfUI.Buttons);
             controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, booksUI.Buttons);
         }
-        private void MaximizeShelf()
-        {
-            shelfUI.Maximize();
-        }
-        private void MinimizeShelf()
-        {
-            shelfUI.Minimize();
-        }
-        private void MaximizeLessons()
-        {
-            lessonsUI.Maximize();
-        }
-        private void MinimizeLessons()
-        {
-            lessonsUI.Minimize();
-        }
-        private void MaximizeGameRoom()
-        {
-            gameRoomUI.Maximize();
-        }
-        private void MinimizeGameRoom()
-        {
-            gameRoomUI.Minimize();
-        }
-        private void MaximizeBooks()
-        {
-            booksUI.Maximize();
-        }
-        private void MinimizeBooks()
-        {
-            booksUI.Minimize();
-        }
+        
         private void GotoFace()
         {
             controller.SetState(SCENE_STATE.LOADING_FACE);

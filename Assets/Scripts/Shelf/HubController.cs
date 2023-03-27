@@ -10,15 +10,18 @@ namespace Barnabus.Shelf
         public int ID = 0;
         public BarnabusBaseData BarnabusData = null;
         public MainManager MainManager = null;
-        public HUB_STATE State = HUB_STATE.UNLOCK;
+        public HUB_STATE State => strategy.State;
+        public Image ImageChar => imageChar;
+        public SkeletonGraphic SkeletonGraphicEgg => skeletonGraphicEgg;
 
+        private BaseHubStrategy strategy = null;
         private Image imageHubBrandBg = null;
-        private Image imageHubBrand = null;
+        private Button buttonHubBrand = null;
         private Image imageChar = null;
         private Text textElement = null;
         private SkeletonGraphic skeletonGraphicEgg = null;
 
-        private int fakePotions = 15;
+        public int FakePotions = 15;
 
         #region BASE_API
         public void Init(BarnabusBaseData data, MainManager mainManager)
@@ -27,12 +30,14 @@ namespace Barnabus.Shelf
             BarnabusData = data;
 
             Init();
-            InitState();
+            InitStrategy();
+
+            buttonHubBrand.onClick.AddListener(ProcessHubClick);
         }
         public void Init()
         {
             imageHubBrandBg = transform.Find("Image_Hub_Brand_Bg").GetComponent<Image>();
-            imageHubBrand = transform.Find("Image_Hub_Brand").GetComponent<Image>();
+            buttonHubBrand = transform.Find("Button_Hub_Brand").GetComponent<Button>();
             imageChar = transform.Find("Barnabus/Image_Char").GetComponent<Image>();
             textElement = transform.Find("Text_Element").GetComponent<Text>();
             skeletonGraphicEgg = transform.Find("Barnabus/SkeletonGraphic_Egg").GetComponent<SkeletonGraphic>();
@@ -41,47 +46,43 @@ namespace Barnabus.Shelf
         /// <summary>
         /// 根據資料決定狀態
         /// </summary>
-        private void InitState()
+        private void InitStrategy()
         {
             if (BarnabusData.AlreadyOwned)
             {
-                State = HUB_STATE.SLEEP;
+                strategy = new HubStrategy_Sleep(this);
                 return;
             }
 
-            if (IsPotionExchange() && fakePotions >= BarnabusData.PotionExchange)
+            if (IsPotionExchange() && FakePotions >= BarnabusData.PotionExchange)
             {
-                State = HUB_STATE.CAN_LOCK;
+                strategy = new HubStrategy_Unlock(this);
                 return;
             }
 
-            State = HUB_STATE.UNLOCK;
+            strategy = new HubStrategy_NotUnlock(this);
         }
 
         public void Refresh()
         {
             textElement.text = BarnabusData.Element;
             imageHubBrandBg.sprite = MainManager.GetHubBrandBg(BarnabusData.Color);
-            imageHubBrand.sprite = MainManager.GetHubBrand(BarnabusData.Color);
+            buttonHubBrand.image.sprite = MainManager.GetHubBrand(BarnabusData.Color);
 
             var barnabusSprite = MainManager.GetBarnabusSprite(BarnabusData.Name);
             imageChar.sprite = barnabusSprite;
 
-            imageChar.enabled = CheckHatch();
-            skeletonGraphicEgg.enabled = !CheckHatch();
-
-            if (State == HUB_STATE.CAN_LOCK)
-                skeletonGraphicEgg.AnimationState.SetAnimation(0, "idle_Green", true);
+            strategy.Refresh();
         }
         public void Clear()
         {
-
+            buttonHubBrand.onClick.RemoveListener(ProcessHubClick);
         }
         #endregion
 
-        private bool CheckHatch()
+        private void ProcessHubClick()
         {
-            return State != HUB_STATE.UNLOCK && State != HUB_STATE.CAN_LOCK;
+            strategy.ProcessHubClick();
         }
 
         private bool IsPotionExchange()

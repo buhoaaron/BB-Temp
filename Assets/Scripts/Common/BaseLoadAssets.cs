@@ -3,7 +3,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using System;
 
-namespace Barnabus.Shelf
+namespace Barnabus
 {
     public class BaseLoadAssets : MonoBehaviour
     {

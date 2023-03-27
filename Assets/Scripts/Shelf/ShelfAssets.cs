@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Barnabus.Shelf
@@ -13,8 +11,11 @@ namespace Barnabus.Shelf
 
         [Header("Set HubBrand")]
         public List<Sprite> ListHubBrandSprite = null;
+
         [Header("Set HubBrand Bg")]
         public List<Sprite> ListHubBrandBgSprite = null;
+
+        [Header("Call LoadAssets")]
         [SerializeField]
         private List<Sprite> listHubBrandBarnabusSprite = null;
 

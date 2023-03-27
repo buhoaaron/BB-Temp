@@ -27,6 +27,11 @@ namespace Barnabus.UI
             gameObject.SetActive(false);
         }
 
+        public void Destroy()
+        {
+            Destroy(gameObject);
+        }
+
         public void DoPopUp(TweenCallback onComplete = null)
         {
             Debug.AssertFormat(root != null, "not set to Root");
