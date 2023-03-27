@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Disgust Christmas
   bpm: 160
   sprite: {fileID: 21300000, guid: a288bb49f0600f648b8e83734f4a8227, type: 3}
-  audioClip: {fileID: 8300000, guid: 376935fbfc7469249a17241615eff1ae, type: 3}
+  audioClip: {fileID: 8300000, guid: 28f17a577b2d5a54da4b76f323ca99c4, type: 3}

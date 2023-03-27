@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Fear Theme 1
   bpm: 160
   sprite: {fileID: 21300000, guid: 1b9873e731e9e214fbfcc00820409331, type: 3}
-  audioClip: {fileID: 8300000, guid: ea26af7ded040514eaf6699ba296e194, type: 3}
+  audioClip: {fileID: 8300000, guid: bbdebd7296a207847a15900750c68424, type: 3}

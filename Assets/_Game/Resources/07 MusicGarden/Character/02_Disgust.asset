@@ -21,7 +21,7 @@ MonoBehaviour:
   longNoteIcon: {fileID: 21300000, guid: e55f0f2d74aa0aa49b67c1130d7441b4, type: 3}
   noteColor: {r: 0.58431375, g: 0.8901961, b: 0.59607846, a: 1}
   sound: {fileID: 8300000, guid: 8b39f68d473f5704082fd8fb4541462b, type: 3}
-  longSound: {fileID: 8300000, guid: 630faf306cad9d54a867f49557cd409a, type: 3}
+  longSound: {fileID: 8300000, guid: 282c6d5336569e449a7e0929977aca71, type: 3}
   songList:
   - {fileID: 11400000, guid: 9af750a14459fa749b98d377efbf2d78, type: 2}
   - {fileID: 11400000, guid: 6ddaa058a987cbe47b8b068288cf225b, type: 2}

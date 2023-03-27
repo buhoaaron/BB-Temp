@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Joy Theme 1
   bpm: 160
   sprite: {fileID: 21300000, guid: dde8c2d3c6bf008409438ecf3dbfb8cd, type: 3}
-  audioClip: {fileID: 8300000, guid: 2145d8faa7a8957439306f28d2b6a521, type: 3}
+  audioClip: {fileID: 8300000, guid: e1949e5503c7407488d8dce4547edd39, type: 3}

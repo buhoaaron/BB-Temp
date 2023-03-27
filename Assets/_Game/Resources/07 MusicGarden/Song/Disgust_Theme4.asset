@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Disgust Theme 4
   bpm: 160
   sprite: {fileID: 21300000, guid: e9404a0e5ea3fef4cba49ceab6a92303, type: 3}
-  audioClip: {fileID: 8300000, guid: 06e97565d1ce3c0488e7d0bd560e5594, type: 3}
+  audioClip: {fileID: 8300000, guid: 58fe7f9cab866384b9ced0c9251abdf4, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Scared Christmas
   bpm: 160
   sprite: {fileID: 21300000, guid: a288bb49f0600f648b8e83734f4a8227, type: 3}
-  audioClip: {fileID: 8300000, guid: e7452eefebd181f4e89ab221fd444f6e, type: 3}
+  audioClip: {fileID: 8300000, guid: da1ba1d8ce8ac7e48b75926b8dc95ba7, type: 3}

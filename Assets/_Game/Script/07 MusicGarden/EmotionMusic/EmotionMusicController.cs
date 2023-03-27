@@ -151,6 +151,7 @@ namespace Barnabus.EmotionMusic
                     sheetController.OnClick_StopPlaySheet();
                     characterSelector.SetActive(true);
                     editMusicCanvas.SetActive(false);
+                    selectedStageIndex = 1;
                     for (int i = 0; i < selectedCharactersID.Length; i++)
                     {
                         SetStageCharacter(i, asset.GetCharacterAssetByID(selectedCharactersID[i]));
@@ -166,12 +167,12 @@ namespace Barnabus.EmotionMusic
 
         public void OnClick_SelectStageConfirm()
         {
+
             switch (gameState)
             {
                 case MusicGameState.SelectMain:
                     ChangeGameState(MusicGameState.SelectSupport);
                     selectedStageIndex++;
-
                     break;
                 case MusicGameState.SelectSupport:
                     ChangeGameState(MusicGameState.SelectFinalCheck);
@@ -340,10 +341,12 @@ namespace Barnabus.EmotionMusic
 
         private void OnClick_CharacterButton(CharacterButton button)
         {
+
             if (currentSelectedCharacterID == button.characterID && selectedStageIndex != 0)
             {
                 currentSelectedCharacterID = -1;
                 button.SetFrameVisable(false);
+               
             }
             else
             {
@@ -356,7 +359,7 @@ namespace Barnabus.EmotionMusic
                 currentSelectedCharacterID = button.characterID;
                 button.SetFrameVisable(true);
                 button.SetFrameSprite(asset.selectedFrames[selectedStageIndex]);
-
+                
                 AudioClip clip = asset.GetCharacterAssetByID(button.characterID).sound;
                 if (!AudioManager.instance.IsSoundExist(clip)) AudioManager.instance.PlaySound(clip);
             }
@@ -368,13 +371,16 @@ namespace Barnabus.EmotionMusic
                 SetStageCharacter(i, asset.GetCharacterAssetByID(selectedCharactersID[i]));
 
             RefreshCharacterButtonStates();
-            
 
-            if (selectedStageIndex != 0)
+
+            if (selectedStageIndex != 0&&currentSelectedCharacterID!=-1)
             {
                 selectedStageIndex++;
 
             }
+
+
+
             if (selectedStageIndex > 4)
             {
                 selectedStageIndex = 4;

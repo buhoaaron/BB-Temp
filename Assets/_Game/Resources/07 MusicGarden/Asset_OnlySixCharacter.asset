@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968a678758a211348ac1f70d75a2f059, type: 3}
   m_Name: Asset_OnlySixCharacter
   m_EditorClassIdentifier: 
-  defaultSoundButtonBackground: {fileID: 21300000, guid: a7c543e15dd7c584a85225cd1c7a54da,
-    type: 3}
+  defaultSoundButtonBackground: {fileID: 21300000, guid: a7c543e15dd7c584a85225cd1c7a54da, type: 3}
   characterList:
   - {fileID: 11400000, guid: 20b8eae50f4e52d43a90d67560370ff9, type: 2}
   - {fileID: 11400000, guid: c3bbe562c10d696429499241e89d3164, type: 2}

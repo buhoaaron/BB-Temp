@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Happy Christmas
   bpm: 160
   sprite: {fileID: 21300000, guid: a288bb49f0600f648b8e83734f4a8227, type: 3}
-  audioClip: {fileID: 8300000, guid: 284bafd3ef7e6d640a796935f76d8730, type: 3}
+  audioClip: {fileID: 8300000, guid: 4ee9a3c0c869bb84185ed70f24ee8235, type: 3}
