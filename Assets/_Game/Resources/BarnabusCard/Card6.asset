@@ -22,12 +22,11 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 716265d0455314038b774a4277d5ef46, type: 3}
   barnabusImage: {fileID: 21300000, guid: b6294e57b7eb144d78decaa885422c98, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: cfa525701cc0f4801ab97b8917141803,
-    type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: cfa525701cc0f4801ab97b8917141803, type: 3}
   barnabusNo: 10
   element: Sa
   elementColor: 196AD8
-  barnabusName: Sad
+  barnabusName: Sadness
   eyerbow: Dropping upper eyelids
   face: Sagging cheeks and jaw
   mouth: Drooping mouth

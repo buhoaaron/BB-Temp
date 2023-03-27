@@ -3,10 +3,11 @@ using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Barnabus.Shelf
 {
-    public class ShelfAssets : MonoBehaviour, IBaseSystem
+    public class ShelfAssets : BaseLoadAssets
     {
         public UnityAction OnLoadCompleted = null;
 
@@ -17,37 +18,18 @@ namespace Barnabus.Shelf
         [SerializeField]
         private List<Sprite> listHubBrandBarnabusSprite = null;
 
-        #region BASE_API
-        public void Init()
-        {
-
-        }
-        public void SystemUpdate()
-        {
-            
-        }
-        public void Clear()
-        {
-            
-        }
-        #endregion
-
         public void LoadAssets()
         {
-            StartCoroutine(ILoadAssets());
+            LoadAsset<Sprite[]>(AddressablesLabels.HubBrandSprites, ProcessLoadCompleted);
         }
 
-        private IEnumerator ILoadAssets()
+        private void ProcessLoadCompleted(AsyncOperationHandle<Sprite[]> handle)
         {
-            var handle = Addressables.LoadAssetAsync<Sprite[]>("HubBrandSprites");
-
-            yield return handle;
-
             listHubBrandBarnabusSprite = new List<Sprite>(handle.Result);
 
             OnLoadCompleted?.Invoke();
-
-            Addressables.Release(handle);
+            
+            Release(handle);
         }
 
         public Sprite GetHubBrandBarnabusSprite(string name)

@@ -9,7 +9,7 @@ namespace HiAndBye
 {
     public class HiAndByeSpineAssets : MonoBehaviour, IBaseSystem
     {
-        public readonly string Label = "HiAndByeSpine";
+        public readonly string Label = AddressablesLabels.HiAndByeSpines;
         public UnityAction OnLoadCompleted = null;
 
         private List<SkeletonDataAsset> listSkeletonDataAsset;

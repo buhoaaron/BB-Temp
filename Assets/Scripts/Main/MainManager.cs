@@ -27,7 +27,6 @@ public class MainManager : MonoBehaviour, IBaseSystem
     public void Init()
     {
         shelfAssets = transform.Find("ShelfAssets").GetComponent<ShelfAssets>();
-        shelfAssets.Init();
     }
     public void SystemUpdate()
     {
