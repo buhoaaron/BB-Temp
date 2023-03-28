@@ -30,9 +30,9 @@ public class BarnabusAudioManager : IBaseSystem
 
     }
 
-    public void PlaySound(AUDIO_NAME audioName)
+    public void PlaySound(AUDIO_NAME audioName, float delay = 0)
     {
-        audioSourceManager.PlaySound(audioName.ToString());
+        audioSourceManager.PlaySound(audioName.ToString(), delay);
     }
 
     public void AddButton(AUDIO_NAME name, Button button)

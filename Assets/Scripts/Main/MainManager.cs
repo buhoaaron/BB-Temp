@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using Barnabus;
 using Barnabus.UI;
-
 using Barnabus.Shelf;
-using UnityEngine.Events;
+using Barnabus.SceneTransitions;
 
 /// <summary>
 /// 主選單管理者
@@ -22,9 +22,14 @@ public class MainManager : MonoBehaviour, IBaseSystem
     public LessonsUI LessonsUI = null;
 
     public BarnabusAudioManager AudioManager = null;
+    public SceneTransitionsManager SceneTransitionsManager = null;
+    public GameSceneData GameSceneData = null;
 
     private ShelfAssets shelfAssets = null;
     private PrefabPool shelfPrefabPool = null;
+
+    private bool isDoWakeUp = false;
+    private bool isDoUnlock = false;
 
     #region BASE_API
     public void Init()
@@ -42,6 +47,10 @@ public class MainManager : MonoBehaviour, IBaseSystem
     }
     #endregion
 
+    public void ChangeState()
+    {
+
+    }
     public HubInfoUI CreateHubInfoUIAndInit(HUB_STATE state)
     {
         var prefab = GetShelfPrefab("HubInfo");
@@ -62,6 +71,23 @@ public class MainManager : MonoBehaviour, IBaseSystem
     public BarnabusBaseData GetBarnabusBaseData(int id)
     {
         return NewGameManager.Instance.PlayersBarnabusManager.GetBarnabusBaseData(id);
+    }
+
+    public void GotoWakeUpState()
+    {
+        isDoWakeUp = true;
+    }
+    public bool CheckWakeUp()
+    {
+        return isDoWakeUp;
+    }
+    public void GotoUnlockState()
+    {
+        isDoUnlock = true;
+    }
+    public bool CheckUnlock()
+    {
+        return isDoUnlock;
     }
 
     #region MAIN_COMMON_UI

@@ -28,6 +28,8 @@ public class NewGameManager : MonoBehaviour
     private PlayersBarnabusManager playersBarnabusManager;
     #endregion
 
+    public GameSceneData GameSceneData = new GameSceneData(MAIN_MENU.MAIN);
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -80,7 +82,9 @@ public class NewGameManager : MonoBehaviour
     public void SetMainManager(MainManager manager)
     {
         MainManager = manager;
-        MainManager.AudioManager = AudioManager;
+        MainManager.AudioManager = audioeManager;
+        MainManager.SceneTransitionsManager = sceneTransitionsManager;
+        MainManager.GameSceneData = GameSceneData;
     }
 
     /// <summary>

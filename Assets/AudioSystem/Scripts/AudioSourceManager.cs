@@ -63,23 +63,23 @@ namespace AudioSystem
         /// 播放音效
         /// </summary>
         /// <param name="audioName">音源列舉</param>
-        public void PlaySound(string audioClipName)
+        public void PlaySound(string audioClipName, float delay = 0)
         {
             var audioClipPair = GetAudioClip(audioClipName);
-            StartCoroutine(IPlaySound(audioClipPair));
+            StartCoroutine(IPlaySound(audioClipPair, delay));
         }
-        public void PlaySound(int audioClipIndex)
+        public void PlaySound(int audioClipIndex, float delay = 0)
         {
             var audioClipPair = GetAudioClip(audioClipIndex);
-            StartCoroutine(IPlaySound(audioClipPair));
+            StartCoroutine(IPlaySound(audioClipPair, delay));
         }
-        private IEnumerator IPlaySound(AudioClipPair audioClipPair)
+        private IEnumerator IPlaySound(AudioClipPair audioClipPair, float delay = 0)
         {
             var source = CreateAudioSource(audioClipPair.Name, audioClipPair.Clip);
             source.loop = false;
-            source.Play();
+            source.PlayDelayed(delay);
 
-            yield return new WaitForSeconds(audioClipPair.Clip.length);
+            yield return new WaitForSeconds(audioClipPair.Clip.length + delay);
 
             Destroy(source.gameObject);
         }

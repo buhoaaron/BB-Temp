@@ -37,16 +37,20 @@ namespace Barnabus.UI
             seq.onComplete = onComplete;
         }
 
-        public void DoFadeOut(TweenCallback onComplete)
+        public void DoFadeOut(TweenCallback onComplete, float duration)
         {
             Init();
 
             UITool.SetAlpha(imageDarkScreen, 1);
 
             var seq = DOTween.Sequence();
-            //seq.AppendInterval(0.05f);
-            seq.Append(imageDarkScreen.DOFade(0, fadeDuration));
+            seq.Append(imageDarkScreen.DOFade(0, duration));
             seq.onComplete = onComplete;
+        }
+
+        public void DoFadeOut(TweenCallback onComplete)
+        {
+            DoFadeOut(onComplete, fadeDuration);
         }
     }
 }

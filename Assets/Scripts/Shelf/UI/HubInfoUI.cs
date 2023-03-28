@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using Barnabus.UI;
 using Spine.Unity;
+using RenderHeads.Media.AVProVideo;
 
 namespace Barnabus.Shelf
 {
@@ -27,6 +28,8 @@ namespace Barnabus.Shelf
         public UnityAction OnButtonGameRoomClick = null;
         public UnityAction OnButtonUnlockClick = null;
 
+        public MediaPlayer MediaPlayer = null;
+
         public HUB_STATE State;
 
         private Color32 colorNotEnoughPotion = new Color32(0xFF, 0x2B, 0x2B, 0xff);
@@ -49,7 +52,9 @@ namespace Barnabus.Shelf
 
             ButtonClose.onClick.AddListener(ProcessButtonCloseClick);
             ButtonGameRoom.onClick.AddListener(ProcessButtonGameRoomClick);
-            ButtonUnlock.onClick.AddListener(ProcessButtonGameRoomClick);
+            ButtonUnlock.onClick.AddListener(ProcessButtonUnlockClick);
+
+            MediaPlayer.gameObject.SetActive(false);
         }
         public override void UpdateUI()
         {
@@ -59,6 +64,14 @@ namespace Barnabus.Shelf
             TextPotionRequireTip.enabled = (State == HUB_STATE.NOT_UNLOCK);
 
             TextPotionRequire.color = (State == HUB_STATE.NOT_UNLOCK) ? colorNotEnoughPotion : colorEnoughPotion;
+        }
+
+        public MediaPlayer DoUnlockVideo()
+        {
+            MediaPlayer.gameObject.SetActive(true);
+            MediaPlayer.Play();
+
+            return MediaPlayer;
         }
         public override void Clear()
         {
@@ -97,7 +110,7 @@ namespace Barnabus.Shelf
         {
             OnButtonUnlockClick?.Invoke();
 
-            Destroy();
+            //Destroy();
         }
     }
 }
