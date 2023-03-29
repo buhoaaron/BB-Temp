@@ -7280,10 +7280,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PotionReward
       objectReference: {fileID: 0}
-    - target: {fileID: 8331841452915495899, guid: 0f3b1165f3e22694498bf2fd1f765168, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
