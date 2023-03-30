@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 8
     yellow: 9
     blue: 8
-  cardImage: {fileID: 21300000, guid: 1fc9b9c7dfef241b181769327658ce77, type: 3}
-  barnabusImage: {fileID: 21300000, guid: 15ff4e610d98aa4458bd913e3ec6a8fb, type: 3}
+  cardImage: {fileID: 21300000, guid: 716265d0455314038b774a4277d5ef46, type: 3}
+  barnabusImage: {fileID: 21300000, guid: d0ecc095b592cef47b34c7fdb0e402e0, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: cf334472e01e4ba41bb54bab20243717,
-    type: 3}
-  barnabusNo: 30
-  element: Fr
-  elementColor: ED1818
-  barnabusName: 'Frustration '
-  eyerbow: Eyes starring hard
-  face: Nose might wrinkle
+  lockedBarnabusImage: {fileID: 21300000, guid: 079f78b9197ca92478d0f8a005545230, type: 3}
+  barnabusNo: 12
+  element: Hu
+  elementColor: 196AD8
+  barnabusName: Hurt
+  eyerbow: Eyebrows pulled down
+  face: Nose is wrinkled
   mouth: 'Lips pressed tightly '
   body: 'Clenched fists '
   soundDescribe: Argh!
-  barnabusSound: {fileID: 8300000, guid: 1483cdb9f6b32084a9d4e8f37b3637c1, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: aa8476b76f5d0394dbbe0cc050beb807, type: 3}
+  barnabusSound: {fileID: 8300000, guid: adef06c6b44bd4c4c8350af94e9ebfe1, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: a3167fe8e73debb42884d3c430ea7682, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: idle
+  idleSleepAnimation: idle_sleep
+  storySound: {fileID: 0}

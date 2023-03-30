@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 10
     yellow: 12
     blue: 10
-  cardImage: {fileID: 21300000, guid: 75ead648b9f1b1a4a924024f4374ffd8, type: 3}
-  barnabusImage: {fileID: 21300000, guid: 94d2506dc45b8e74cbdaa04b9d0ac817, type: 3}
+  cardImage: {fileID: 21300000, guid: 4eaa17e71a7e24e788fb0a3959c1fa21, type: 3}
+  barnabusImage: {fileID: 21300000, guid: a4c8cbc85f763f3458e29c795230e315, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 5f05555638396fc438e9ca20869ee572,
-    type: 3}
-  barnabusNo: 2
-  element: Gt
-  elementColor: 30E37F
-  barnabusName: Guilt
-  eyerbow: Eyes look away
-  face: neutral in expressions
-  mouth: Lips turn downward
-  body: Head down, body hover down
-  soundDescribe: "\u201Cwhy\u2026.?!\u201D"
-  barnabusSound: {fileID: 8300000, guid: 22fbe537354c64c44a0a63671601473f, type: 3}
-  huntingFoundSound: {fileID: 0}
+  lockedBarnabusImage: {fileID: 21300000, guid: 4bc66f19e972f9e479d33fa7b42d07f9, type: 3}
+  barnabusNo: 13
+  element: St
+  elementColor: E8C400
+  barnabusName: Satisfaction
+  eyerbow: Crow's feet wrinkles
+  face: Pushed up cheeks
+  mouth: Lips corners raised diagonally
+  body: Waving arms
+  soundDescribe: Yay!
+  barnabusSound: {fileID: 8300000, guid: 5ee29e49a2a066347bd6f3465b7ea450, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: 2f5fa53efff03284fab637c6178ca5fe, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: idle
+  idleSleepAnimation: idle_sleep
+  storySound: {fileID: 0}

@@ -20,19 +20,22 @@ MonoBehaviour:
     yellow: 12
     blue: 10
   cardImage: {fileID: 21300000, guid: 75ead648b9f1b1a4a924024f4374ffd8, type: 3}
-  barnabusImage: {fileID: 21300000, guid: 66c4e3e046438e74ca67ae3f41eda262, type: 3}
+  barnabusImage: {fileID: 21300000, guid: 94d2506dc45b8e74cbdaa04b9d0ac817, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: cc0b621abf372a643b60f69cd41da063,
-    type: 3}
-  barnabusNo: 1
-  element: Em
+  lockedBarnabusImage: {fileID: 21300000, guid: 5f05555638396fc438e9ca20869ee572, type: 3}
+  barnabusNo: 10
+  element: Gu
   elementColor: 30E37F
-  barnabusName: Embarrassed
-  eyerbow: Eyes look downward, or look away
-  face: neutral in these expressions
-  mouth: Awkward laughs, smiles
-  body: Head down, body cringes away
-  soundDescribe: "\"\u201COh boy\u2026\u201D  \u201COh my\u2026\u201D  \u201Coops
-    my bad..\u201D\""
-  barnabusSound: {fileID: 8300000, guid: f7467c2c5b7151e4caaf07415f120fea, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: a732831dfa1b658439133802bb19c78a, type: 3}
+  barnabusName: Guilt
+  eyerbow: Warmness in eyes
+  face: Hot flush cheeks
+  mouth: O-shaped mouth as in surprise
+  body: Relaxed or tense muscles
+  soundDescribe: Aww!
+  barnabusSound: {fileID: 8300000, guid: 22fbe537354c64c44a0a63671601473f, type: 3}
+  huntingFoundSound: {fileID: 0}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: idle
+  idleSleepAnimation: idle_sleep
+  storySound: {fileID: 0}

@@ -22,9 +22,8 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 5e3758a868778459798ef0027dda217e, type: 3}
   barnabusImage: {fileID: 21300000, guid: 6aa187d187b8f450fa197459e3c1caca, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: aa9d2235ce08446c7b83b235e7078733,
-    type: 3}
-  barnabusNo: 11
+  lockedBarnabusImage: {fileID: 21300000, guid: aa9d2235ce08446c7b83b235e7078733, type: 3}
+  barnabusNo: 8
   element: Su
   elementColor: F67D1A
   barnabusName: Surprise

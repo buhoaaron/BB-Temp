@@ -19,24 +19,23 @@ MonoBehaviour:
     green: 2
     yellow: 2
     blue: 2
-  cardImage: {fileID: 21300000, guid: 4eaa17e71a7e24e788fb0a3959c1fa21, type: 3}
-  barnabusImage: {fileID: 21300000, guid: b54e27a06435b473d8fd9b3256f62c42, type: 3}
+  cardImage: {fileID: 21300000, guid: 9b418dfeac2c5433ba09405f11b559a8, type: 3}
+  barnabusImage: {fileID: -1268378780, guid: 52a71fa87b519f2498979a17a048223c, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 8da770b16a7cb46afa84e4fe898f6d1c,
-    type: 3}
-  barnabusNo: 13
-  element: Jo
-  elementColor: E8C400
-  barnabusName: Joy
-  eyerbow: 'Crow''s feet wrinkles '
-  face: 'Pushed up cheeks '
-  mouth: Lip corners raised
-  body: Jumping up and down
-  soundDescribe: Hahaha!
-  barnabusSound: {fileID: 8300000, guid: f9840c203e9c10c4594f2ba88c08cfc9, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: c882712e6c6a7b74eaf3176a989ab046, type: 3}
-  skeletonData: {fileID: 11400000, guid: 55e6659909847754781dc7e08b3e1f9d, type: 2}
-  skeletonMaterial: {fileID: 2100000, guid: 0f47feb6a597e044fa159d6306492320, type: 2}
+  lockedBarnabusImage: {fileID: 21300000, guid: b6c11c5d397dc4b49ada2e160a87c83d, type: 3}
+  barnabusNo: 2
+  element: Dg
+  elementColor: 68B218
+  barnabusName: Disgust
+  eyerbow: Eyebrows pulled down
+  face: Wrinkle on the side
+  mouth: Upper lip is raised
+  body: Head tilts or turns away
+  soundDescribe: Eww!
+  barnabusSound: {fileID: 8300000, guid: 8b39f68d473f5704082fd8fb4541462b, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: 9e06820758b55354284d4f6d9a727227, type: 3}
+  skeletonData: {fileID: 11400000, guid: f3a2c046fc8ed3b498bf9a1025e0b17d, type: 2}
+  skeletonMaterial: {fileID: 2100000, guid: d4efe99803595134791a499348af17fd, type: 2}
   idleAnimation: idle
   idleSleepAnimation: idle_sleep
-  storySound: {fileID: 8300000, guid: 3344b12ce8fe9a543a4e91f49a61b72f, type: 3}
+  storySound: {fileID: 8300000, guid: 3194f2e3406c0384189c30c98c8cdf54, type: 3}

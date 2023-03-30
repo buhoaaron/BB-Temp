@@ -50,7 +50,9 @@ namespace Barnabus.EmotionFace
         [SerializeField]
         private GameObject itemTypeList;
 
-        [Header("Color")]
+        [Header("Bases&Color")]
+        [SerializeField]
+        private SelectableButton characterBaseButton;
         [SerializeField]
         private SelectableButton backgroundColorButton;
         [SerializeField]
@@ -135,6 +137,10 @@ namespace Barnabus.EmotionFace
             OnClick_SelectColorTarget(0);
             OnClick_BackgroundColor(itemButtons[0]);
 
+            characterBaseButton.backgroundImage.color = Color.black;
+            backgroundColorButton.backgroundImage.color = Color.black;
+            characterColorButton.backgroundImage.color = Color.black;
+
             //DialogController.ShowDialog(DialogController.StringAsset.emotionFaceStartDialog, () => nameController.ShowNameSelector());
         }
 
@@ -204,8 +210,14 @@ namespace Barnabus.EmotionFace
             {
                 //Destroy(characterList.transform.GetChild(i).gameObject);
                 characterButtonContainer.GetChild(i).gameObject.SetActive(false);
-                
-        }
+            }
+
+            if(characterColorButton.backgroundImage.color==Color.black)
+            {
+                characterColorButton.backgroundImage.color = Color.white;
+                backgroundColorButton.backgroundImage.color = Color.white;
+                characterBaseButton.backgroundImage.color = Color.white;
+            }
 
         }
 

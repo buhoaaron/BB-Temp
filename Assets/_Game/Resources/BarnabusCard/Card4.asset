@@ -19,24 +19,23 @@ MonoBehaviour:
     green: 4
     yellow: 4
     blue: 4
-  cardImage: {fileID: 21300000, guid: 794993e23d19749718638d9f8f514532, type: 3}
-  barnabusImage: {fileID: 21300000, guid: 3f8e71a6b205b4915b790326eb458e7a, type: 3}
+  cardImage: {fileID: 21300000, guid: 4eaa17e71a7e24e788fb0a3959c1fa21, type: 3}
+  barnabusImage: {fileID: 21300000, guid: b54e27a06435b473d8fd9b3256f62c42, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 9e0df8eff47bc42b4a2dc9904dabd01a,
-    type: 3}
-  barnabusNo: 23
-  element: Fe
-  elementColor: A113B9
-  barnabusName: Fear
-  eyerbow: Raised upper eyelids
-  face: Wrinkles in the forehead
-  mouth: Lips slightly stretched horizontally
-  body: Shiverring Body
-  soundDescribe: (Wimpering)
-  barnabusSound: {fileID: 8300000, guid: 78e907e87144ca649888d5e7fe8bec3d, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: 24c18d4ec25710f47b8c404a6a8427f7, type: 3}
-  skeletonData: {fileID: 11400000, guid: 87baedf5c4e974f42804e0c27664fc04, type: 2}
-  skeletonMaterial: {fileID: 2100000, guid: 6696c823e2fd080409bae914e7b99a52, type: 2}
+  lockedBarnabusImage: {fileID: 21300000, guid: 8da770b16a7cb46afa84e4fe898f6d1c, type: 3}
+  barnabusNo: 6
+  element: Jo
+  elementColor: E8C400
+  barnabusName: Joy
+  eyerbow: Crow's feet wrinkles
+  face: Pushed up cheeks
+  mouth: Lips corners raised
+  body: Jumping up and down
+  soundDescribe: Hahaha!
+  barnabusSound: {fileID: 8300000, guid: f9840c203e9c10c4594f2ba88c08cfc9, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: c882712e6c6a7b74eaf3176a989ab046, type: 3}
+  skeletonData: {fileID: 11400000, guid: 55e6659909847754781dc7e08b3e1f9d, type: 2}
+  skeletonMaterial: {fileID: 2100000, guid: 0f47feb6a597e044fa159d6306492320, type: 2}
   idleAnimation: idle
   idleSleepAnimation: idle_sleep
-  storySound: {fileID: 8300000, guid: 18ae8532aaa94244aa4efb1554fcf8b6, type: 3}
+  storySound: {fileID: 8300000, guid: 3344b12ce8fe9a543a4e91f49a61b72f, type: 3}

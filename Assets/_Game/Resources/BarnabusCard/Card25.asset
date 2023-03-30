@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 8
     yellow: 9
     blue: 8
-  cardImage: {fileID: 21300000, guid: 9b418dfeac2c5433ba09405f11b559a8, type: 3}
-  barnabusImage: {fileID: 21300000, guid: ad6d14b6d0d2e8d4493166f8e0051111, type: 3}
+  cardImage: {fileID: 21300000, guid: c0ccd7cf6698d164a82a9395911d968c, type: 3}
+  barnabusImage: {fileID: 21300000, guid: 81736d256debc63468d3bf0fa3d023d2, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 1b9335c00a104bc4baddddb61e4f168a,
-    type: 3}
-  barnabusNo: 12
-  element: Aw
-  elementColor: 68B218
-  barnabusName: Awfulness
-  eyerbow: Eyes are narrowed.
-  face: 'Nose is wrinkled. '
-  mouth: 'Lip corner tightened '
-  body: 
-  soundDescribe: Gross!
-  barnabusSound: {fileID: 8300000, guid: f19c1426b13beb6419f43dd724db707e, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: 5cb066ded8a220d439c7327b0b93dafe, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: fdaef9c3b1639cb47847245214de1692, type: 3}
+  barnabusNo: 
+  element: Lo
+  elementColor: 
+  barnabusName: Love
+  eyerbow: Heart shapes in eyes
+  face: Blushed cheeks
+  mouth: Smiles
+  body: '"melting" muscles'
+  soundDescribe: (Chirping) awww~
+  barnabusSound: {fileID: 8300000, guid: d4af2b024e0e5f241ba899f0034097be, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: 8e336dd9f8efbba44b008137e58c7c73, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: idle
+  idleSleepAnimation: idle_sleep
+  storySound: {fileID: 0}
