@@ -35,7 +35,7 @@ MonoBehaviour:
   barnabusSound: {fileID: 8300000, guid: f9840c203e9c10c4594f2ba88c08cfc9, type: 3}
   huntingFoundSound: {fileID: 8300000, guid: c882712e6c6a7b74eaf3176a989ab046, type: 3}
   skeletonData: {fileID: 11400000, guid: 55e6659909847754781dc7e08b3e1f9d, type: 2}
-  skeletonMaterial: {fileID: 2100000, guid: 0f47feb6a597e044fa159d6306492320, type: 2}
-  idleAnimation: idle
-  idleSleepAnimation: idle_sleep
+  skeletonMaterial: {fileID: 2100000, guid: 8b970d8bb967add41a49a6f79955e63e, type: 2}
+  idleAnimation: s2
+  idleSleepAnimation: s1
   storySound: {fileID: 8300000, guid: 3344b12ce8fe9a543a4e91f49a61b72f, type: 3}

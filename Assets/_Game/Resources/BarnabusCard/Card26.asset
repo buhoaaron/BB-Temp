@@ -22,8 +22,7 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 794993e23d19749718638d9f8f514532, type: 3}
   barnabusImage: {fileID: 21300000, guid: ee87adc0065bc1446bf4e371a7644d9d, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 3242c514b5fe3dc47ac3a29e63b5f2a6,
-    type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: 3242c514b5fe3dc47ac3a29e63b5f2a6, type: 3}
   barnabusNo: 7
   element: Nv
   elementColor: A113B9
@@ -35,3 +34,8 @@ MonoBehaviour:
   soundDescribe: Err....
   barnabusSound: {fileID: 8300000, guid: bbf16972e35806448b2fa3d05c180e31, type: 3}
   huntingFoundSound: {fileID: 8300000, guid: 2d8f553df6e23e747aac60e475221d84, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

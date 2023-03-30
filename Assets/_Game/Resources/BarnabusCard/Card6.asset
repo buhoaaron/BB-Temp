@@ -36,6 +36,6 @@ MonoBehaviour:
   huntingFoundSound: {fileID: 8300000, guid: 24c18d4ec25710f47b8c404a6a8427f7, type: 3}
   skeletonData: {fileID: 11400000, guid: 87baedf5c4e974f42804e0c27664fc04, type: 2}
   skeletonMaterial: {fileID: 2100000, guid: 6696c823e2fd080409bae914e7b99a52, type: 2}
-  idleAnimation: idle
-  idleSleepAnimation: idle_sleep
+  idleAnimation: s2
+  idleSleepAnimation: s1
   storySound: {fileID: 8300000, guid: 18ae8532aaa94244aa4efb1554fcf8b6, type: 3}
