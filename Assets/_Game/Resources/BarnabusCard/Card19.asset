@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 8
     yellow: 9
     blue: 8
-  cardImage: {fileID: 21300000, guid: c0ccd7cf6698d164a82a9395911d968c, type: 3}
-  barnabusImage: {fileID: 21300000, guid: 1ff2be67f02d14b48b9db8b36b861a4e, type: 3}
+  cardImage: {fileID: 21300000, guid: 1fc9b9c7dfef241b181769327658ce77, type: 3}
+  barnabusImage: {fileID: 21300000, guid: 3eafb79c8c7c7ff48b9e3be898212bfa, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: da93b71d48c1df34b9ab38ee688b136e,
-    type: 3}
-  barnabusNo: 32
-  element: Pr
-  elementColor: F94D9E
-  barnabusName: Pride
-  eyerbow: Raised eyebrows
-  face: Raised cheeks and forehead
-  mouth: Big smile
-  body: Chest position upward
-  soundDescribe: "\u201CI did awesome\u201D; \u201CI did it!\u201D"
-  barnabusSound: {fileID: 8300000, guid: f0837d666ed138b419d71e6fe43fab5e, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: f98ea2985b0099e4ebcc0a728fa5e3c7, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: 61951f94422db194f8e4252820c5ba6d, type: 3}
+  barnabusNo: 11
+  element: Im
+  elementColor: ED1818
+  barnabusName: Impatience
+  eyerbow: Eyes staring hard
+  face: Nose might wrinkle
+  mouth: Lips pressed tightly
+  body: Clenched fists
+  soundDescribe: Argh!
+  barnabusSound: {fileID: 8300000, guid: c5b703f8a38780b4c9cc3be61941e5e9, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: e1c2fcdd303982649bfcbe7fd1558ed7, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

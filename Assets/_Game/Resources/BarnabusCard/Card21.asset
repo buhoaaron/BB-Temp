@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 8
     yellow: 9
     blue: 8
-  cardImage: {fileID: 21300000, guid: 1fc9b9c7dfef241b181769327658ce77, type: 3}
-  barnabusImage: {fileID: 21300000, guid: c500e1662f5cd7642aeaf27ae4ba0377, type: 3}
+  cardImage: {fileID: 21300000, guid: 716265d0455314038b774a4277d5ef46, type: 3}
+  barnabusImage: {fileID: 21300000, guid: b20cfb39ff27c4143a13cdce8b0bd0bf, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: dcb6a724491df7f4b8894f643ecf25f2,
-    type: 3}
-  barnabusNo: 22
-  element: An
-  elementColor: ED1818
-  barnabusName: Annoyance
-  eyerbow: 'Eyebrows pulled down. '
-  face: Nose might wrinkle
-  mouth: 'Lips pressed tightly '
-  body: 'Clenched fists '
-  soundDescribe: Duh!
-  barnabusSound: {fileID: 8300000, guid: 2f5b66fd800b54b498c26c22e3041bdf, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: 5f88bd64b77f8c54cb851f85c624eecd, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: edafe4c73dd2f6e40bc96ef35e9ad191, type: 3}
+  barnabusNo: 19
+  element: Di
+  elementColor: 196AD8
+  barnabusName: Disappointment
+  eyerbow: Eyes look away
+  face: Neutral in expressions
+  mouth: Lips turn downward
+  body: Head down, body hover down
+  soundDescribe: '"why...?!"'
+  barnabusSound: {fileID: 8300000, guid: 2f64f0b199ae54a44986b4eaad5e0c3d, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: 486fc16446567cb4c98994d5d3e23221, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 10
     yellow: 12
     blue: 10
-  cardImage: {fileID: 21300000, guid: 75ead648b9f1b1a4a924024f4374ffd8, type: 3}
-  barnabusImage: {fileID: 21300000, guid: 09d21081af141b54d8775416a4e2bbba, type: 3}
+  cardImage: {fileID: 21300000, guid: 5e3758a868778459798ef0027dda217e, type: 3}
+  barnabusImage: {fileID: 21300000, guid: c81a56f8a4539e64e85e3b0c2c140cb1, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: eb51166a71c98cb4390268aed280e1eb,
-    type: 3}
-  barnabusNo: 25
-  element: Sm
-  elementColor: 30E37F
-  barnabusName: Shame
-  eyerbow: Eyes look down
-  face: Frowned eyebrows
-  mouth: Lips downward
-  body: Body slouches downward
-  soundDescribe: "\u201Csigh\u2026\u201D"
-  barnabusSound: {fileID: 8300000, guid: e163153c560d63b46a3eff831f008ce8, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: 9a900f9ce2c35ca4bbf5b6d68de6bc68, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: f5851ae0a8581de489ef62969790b6e9, type: 3}
+  barnabusNo: 22
+  element: Am
+  elementColor: F67D1A
+  barnabusName: Amazement
+  eyerbow: Eyebrows pulled down
+  face: Nose might wrinkle
+  mouth: Lips pressed tightly
+  body: Clenched fists
+  soundDescribe: Duh!
+  barnabusSound: {fileID: 8300000, guid: f6b675b0030f523458e9cda048486400, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: 5f6a77e2f28ef194ea9167452e013433, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

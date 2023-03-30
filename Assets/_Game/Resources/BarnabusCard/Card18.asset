@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 8
     yellow: 9
     blue: 8
-  cardImage: {fileID: 21300000, guid: 4eaa17e71a7e24e788fb0a3959c1fa21, type: 3}
-  barnabusImage: {fileID: 21300000, guid: c70ad96350afc01469206de0a4896adf, type: 3}
+  cardImage: {fileID: 21300000, guid: 794993e23d19749718638d9f8f514532, type: 3}
+  barnabusImage: {fileID: 21300000, guid: 353f488530ddea64db77c2f370e19cc7, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 460eaedd915d6af489b9c65ff35e085e,
-    type: 3}
-  barnabusNo: 21
-  element: Ex
-  elementColor: E8C400
-  barnabusName: Excitement
-  eyerbow: 'Crow''s feet wrinkles '
-  face: 'Pushed up cheeks '
-  mouth: Lip corners raised diagonally
-  body: Waving arms
-  soundDescribe: Yay!
-  barnabusSound: {fileID: 8300000, guid: cd6ca3912f87f224483b2a2636e23dd9, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: 27ac6af61a37c014388f8b24cc5c9e15, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: 1dd502296d71c3c408f9e0ed4a9f6ed2, type: 3}
+  barnabusNo: 14
+  element: Wo
+  elementColor: A113B9
+  barnabusName: Worry
+  eyerbow: Raised eyebrows
+  face: Raised cheeks and forehead
+  mouth: Big smile
+  body: Chest position upward
+  soundDescribe: I did awesome
+  barnabusSound: {fileID: 8300000, guid: aeea3f39467880346b5a5372c6e986a4, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: 8d2b9c62193217e46b61f538b668f0df, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

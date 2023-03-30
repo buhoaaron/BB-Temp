@@ -22,16 +22,20 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 9b418dfeac2c5433ba09405f11b559a8, type: 3}
   barnabusImage: {fileID: 21300000, guid: 75e42788274132549835c619b85dccf6, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: bae4592e600afd44884e453733254224,
-    type: 3}
-  barnabusNo: 14
-  element: Di
+  lockedBarnabusImage: {fileID: 21300000, guid: bae4592e600afd44884e453733254224, type: 3}
+  barnabusNo: 9
+  element: Ds
   elementColor: 68B218
   barnabusName: Dislike
-  eyerbow: 'Eyebrows pulled down '
-  face: Nose is wrinkled
-  mouth: Upper lip is raised
-  body: 
-  soundDescribe: Yuck!
+  eyerbow: Eyes look down
+  face: Frowned eyebrows
+  mouth: Lips downward
+  body: Body slouches downward
+  soundDescribe: '"sigh..."'
   barnabusSound: {fileID: 8300000, guid: 1400619bef4f4084fa5e8b9e5d4d2960, type: 3}
   huntingFoundSound: {fileID: 8300000, guid: 3eaf4a7a965b1d449915fa3f446e75c2, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

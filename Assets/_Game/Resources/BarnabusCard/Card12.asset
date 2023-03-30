@@ -19,14 +19,13 @@ MonoBehaviour:
     green: 8
     yellow: 9
     blue: 8
-  cardImage: {fileID: 21300000, guid: 716265d0455314038b774a4277d5ef46, type: 3}
+  cardImage: {fileID: 21300000, guid: 75ead648b9f1b1a4a924024f4374ffd8, type: 3}
   barnabusImage: {fileID: 21300000, guid: a445b5357dd80f4408aa207c2b2496ac, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 84183f420002f4245907016d400d7203,
-    type: 3}
-  barnabusNo: 26
+  lockedBarnabusImage: {fileID: 21300000, guid: 84183f420002f4245907016d400d7203, type: 3}
+  barnabusNo: 24
   element: Bo
-  elementColor: 196AD8
+  elementColor: 30E37F
   barnabusName: Boredom
   eyerbow: Losing focus in eyes
   face: cheeks seem to sag
@@ -35,3 +34,8 @@ MonoBehaviour:
   soundDescribe: Sigh...
   barnabusSound: {fileID: 8300000, guid: a9f791dfef4751c4dafc69939b98dfb7, type: 3}
   huntingFoundSound: {fileID: 8300000, guid: 09b79d1229f4bb341bf8f733a5e928e1, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

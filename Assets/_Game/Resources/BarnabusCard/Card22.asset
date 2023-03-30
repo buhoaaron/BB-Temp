@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 8
     yellow: 9
     blue: 8
-  cardImage: {fileID: 21300000, guid: 716265d0455314038b774a4277d5ef46, type: 3}
-  barnabusImage: {fileID: 21300000, guid: d0ecc095b592cef47b34c7fdb0e402e0, type: 3}
+  cardImage: {fileID: 21300000, guid: 4eaa17e71a7e24e788fb0a3959c1fa21, type: 3}
+  barnabusImage: {fileID: 956699134, guid: 52a71fa87b519f2498979a17a048223c, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 079f78b9197ca92478d0f8a005545230,
-    type: 3}
-  barnabusNo: 18
-  element: Hu
-  elementColor: 196AD8
-  barnabusName: 'Hurt '
-  eyerbow: Dropping upper eyelids
-  face: Cheeks seem to sag
-  mouth: Drooping mouth
-  body: Lowering the head
-  soundDescribe: Ow....
-  barnabusSound: {fileID: 8300000, guid: adef06c6b44bd4c4c8350af94e9ebfe1, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: a3167fe8e73debb42884d3c430ea7682, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: 460eaedd915d6af489b9c65ff35e085e, type: 3}
+  barnabusNo: 20
+  element: Ex
+  elementColor: E8C400
+  barnabusName: Excitement
+  eyerbow: Eyebrows raised, eyes wide open
+  face: Wrinkles form in the forehead
+  mouth: Mouth open wide
+  body: Hands up to shield the face
+  soundDescribe: Huh?
+  barnabusSound: {fileID: 8300000, guid: cd6ca3912f87f224483b2a2636e23dd9, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: 27ac6af61a37c014388f8b24cc5c9e15, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

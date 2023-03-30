@@ -22,16 +22,20 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 5e3758a868778459798ef0027dda217e, type: 3}
   barnabusImage: {fileID: 21300000, guid: 0b0b5d6d6f27e63488fbd78d11029210, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 95e9ca3e0da87da4cbc8ff03c183e883,
-    type: 3}
-  barnabusNo: 27
+  lockedBarnabusImage: {fileID: 21300000, guid: 95e9ca3e0da87da4cbc8ff03c183e883, type: 3}
+  barnabusNo: 15
   element: Co
   elementColor: F67D1A
   barnabusName: 'Confusion '
-  eyerbow: Eyebrows raised. Eyes open wide
-  face: wrinkles form in the forehead
-  mouth: Mouth open wide
-  body: Hands up to shield the face
-  soundDescribe: Huh?
+  eyerbow: Dropping upper eyelids
+  face: Cheeks seem to sag
+  mouth: Drooping mouth
+  body: Lowering the head
+  soundDescribe: Ow...
   barnabusSound: {fileID: 8300000, guid: ecd8d4a0c6638fa4aa1e468b69e72043, type: 3}
   huntingFoundSound: {fileID: 8300000, guid: ff1f5ca44799ccf418e0b5b496d3789d, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

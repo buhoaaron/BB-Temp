@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 8
     yellow: 9
     blue: 8
-  cardImage: {fileID: 21300000, guid: c0ccd7cf6698d164a82a9395911d968c, type: 3}
-  barnabusImage: {fileID: 21300000, guid: 81736d256debc63468d3bf0fa3d023d2, type: 3}
+  cardImage: {fileID: 21300000, guid: 75ead648b9f1b1a4a924024f4374ffd8, type: 3}
+  barnabusImage: {fileID: 21300000, guid: 66c4e3e046438e74ca67ae3f41eda262, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: fdaef9c3b1639cb47847245214de1692,
-    type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: cc0b621abf372a643b60f69cd41da063, type: 3}
   barnabusNo: 3
-  element: Lo
-  elementColor: F94D9E
-  barnabusName: Love
-  eyerbow: heart shapes in eyes
-  face: blushed cheeks
-  mouth: smiles
-  body: "\u201Cmelting\u201D muscles"
-  soundDescribe: (Chirping), awww~
-  barnabusSound: {fileID: 8300000, guid: d4af2b024e0e5f241ba899f0034097be, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: 8e336dd9f8efbba44b008137e58c7c73, type: 3}
+  element: Em
+  elementColor: 30E37F
+  barnabusName: Embarassment
+  eyerbow: Eyebrows pulled down
+  face: Nose might wrinkle
+  mouth: Lips pressed tightly
+  body: Tapping feet
+  soundDescribe: Sigh (exasperated)
+  barnabusSound: {fileID: 8300000, guid: f7467c2c5b7151e4caaf07415f120fea, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: a732831dfa1b658439133802bb19c78a, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

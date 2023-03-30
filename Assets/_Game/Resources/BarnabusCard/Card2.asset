@@ -19,24 +19,23 @@ MonoBehaviour:
     green: 1
     yellow: 1
     blue: 1
-  cardImage: {fileID: 21300000, guid: 9b418dfeac2c5433ba09405f11b559a8, type: 3}
-  barnabusImage: {fileID: 21300000, guid: f388961c577514ad38501029ba8781f4, type: 3}
+  cardImage: {fileID: 21300000, guid: 716265d0455314038b774a4277d5ef46, type: 3}
+  barnabusImage: {fileID: 21300000, guid: b6294e57b7eb144d78decaa885422c98, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: b6c11c5d397dc4b49ada2e160a87c83d,
-    type: 3}
-  barnabusNo: 20
-  element: Dg
-  elementColor: 68B218
-  barnabusName: Disgust
-  eyerbow: 'Eyebrows pulled down '
-  face: Wrinkle on the side
-  mouth: Upper lip is raised
-  body: 'Head tilts or turns away '
-  soundDescribe: Eww!
-  barnabusSound: {fileID: 8300000, guid: 8b39f68d473f5704082fd8fb4541462b, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: 9e06820758b55354284d4f6d9a727227, type: 3}
-  skeletonData: {fileID: 11400000, guid: f3a2c046fc8ed3b498bf9a1025e0b17d, type: 2}
-  skeletonMaterial: {fileID: 2100000, guid: d4efe99803595134791a499348af17fd, type: 2}
-  idleAnimation: idle
-  idleSleepAnimation: idle_sleep
-  storySound: {fileID: 8300000, guid: c4361564d07b6d049b231e8bee639124, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: cfa525701cc0f4801ab97b8917141803, type: 3}
+  barnabusNo: 5
+  element: Sa
+  elementColor: 196AD8
+  barnabusName: Sadness
+  eyerbow: Dropping upper eyelids
+  face: Sagging cheeks and jaw
+  mouth: Dropping mouth
+  body: Lowering the head
+  soundDescribe: Sigh...
+  barnabusSound: {fileID: 8300000, guid: c081d6254253da7438eb634bdeede728, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: b437b93e16076064298f4166bb1a1e30, type: 3}
+  skeletonData: {fileID: 11400000, guid: 153cb2b607ebdc243b6d13763940a6cd, type: 2}
+  skeletonMaterial: {fileID: 2100000, guid: 26a4ecd705da05a448fc0e8541241da0, type: 2}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 8300000, guid: 4b48877a65b997c429f4aa463fb6a1f6, type: 3}

@@ -19,19 +19,23 @@ MonoBehaviour:
     green: 8
     yellow: 9
     blue: 8
-  cardImage: {fileID: 21300000, guid: c0ccd7cf6698d164a82a9395911d968c, type: 3}
-  barnabusImage: {fileID: 21300000, guid: 3223f8be8fd8fe24db5fd73d7ca23b63, type: 3}
+  cardImage: {fileID: 21300000, guid: 794993e23d19749718638d9f8f514532, type: 3}
+  barnabusImage: {fileID: 21300000, guid: ee87adc0065bc1446bf4e371a7644d9d, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 7c44824aa192c9547b995570a069dd19,
-    type: 3}
-  barnabusNo: 16
-  element: Cm
-  elementColor: F94D9E
-  barnabusName: Compassion
-  eyerbow: Gentleness in eyes
-  face: Neutral in these expressions
-  mouth: Neutral in these expressions
-  body: Giving hands
-  soundDescribe: Eh-huh eh-huh. I hear you, that must have been hard.
-  barnabusSound: {fileID: 8300000, guid: ad362646047b75e4d950cdc295fed06e, type: 3}
-  huntingFoundSound: {fileID: 8300000, guid: 0eb54ec2578f2fc43bcc6e4b3f675b10, type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: 3242c514b5fe3dc47ac3a29e63b5f2a6, type: 3}
+  barnabusNo: 21
+  element: Nv
+  elementColor: A113B9
+  barnabusName: Nervousness
+  eyerbow: Eyes looks fierce and roll
+  face: Crinkled nose
+  mouth: Lips turn downward
+  body: Rapid chest heaving
+  soundDescribe: '"tsk..."'
+  barnabusSound: {fileID: 8300000, guid: bbf16972e35806448b2fa3d05c180e31, type: 3}
+  huntingFoundSound: {fileID: 8300000, guid: 2d8f553df6e23e747aac60e475221d84, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

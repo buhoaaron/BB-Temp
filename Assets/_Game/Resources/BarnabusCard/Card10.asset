@@ -22,17 +22,20 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 75ead648b9f1b1a4a924024f4374ffd8, type: 3}
   barnabusImage: {fileID: 21300000, guid: 8691bedd1ecf3d341b7db31d0a28620f, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: 0b84d6313b4fef544b5f0c4e35104528,
-    type: 3}
-  barnabusNo: 9
+  lockedBarnabusImage: {fileID: 21300000, guid: 0b84d6313b4fef544b5f0c4e35104528, type: 3}
+  barnabusNo: 17
   element: Si
   elementColor: 30E37F
   barnabusName: Silliness
-  eyerbow: Playfulness in eyes
-  face: Eyebrows expanded
-  mouth: Wide smiles and loud laughter
-  body: Body bounces around
-  soundDescribe: "\"Weeeeeeee, \u201Ccatch me if you can\u201D \u201Cla la la la
-    la~\u201D\""
+  eyerbow: Eyes look downward or look away
+  face: Neutral in these expressions
+  mouth: Awkward laughs, smiles
+  body: Head down, body cringes away
+  soundDescribe: '"Oh boy..."'
   barnabusSound: {fileID: 8300000, guid: 10c656b89a1b23f42b05a2f75b94afe5, type: 3}
   huntingFoundSound: {fileID: 8300000, guid: cad7893d6751db44bb8cc64f190912d3, type: 3}
+  skeletonData: {fileID: 0}
+  skeletonMaterial: {fileID: 0}
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}
