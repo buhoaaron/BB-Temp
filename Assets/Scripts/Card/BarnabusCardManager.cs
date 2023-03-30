@@ -63,7 +63,7 @@ namespace Barnabus.Card
 
         public void LoadJson()
         {
-            allBarnabusBaseData = GameManager.JsonManager.DeserializeObject<AllBarnabusBaseData>(0);
+            allBarnabusBaseData = GameManager.JsonManager.DeserializeObject<AllBarnabusBaseData>(JsonText.BarnabusBaseData);
         }
 
         public AllBarnabusBaseData GetAllBarnabusBaseData()

@@ -7,6 +7,8 @@ namespace Barnabus
     public static class DataManager
     {
         public static string PlayerID { get; private set; }
+
+        private static string keyCharacters = "Characters";
         public static void SetPlayerID()
         {
             PlayerID = PlayerPrefs.GetString("PlayerID", "null");
@@ -23,9 +25,19 @@ namespace Barnabus
 
         private static CharacterDataList characters = new CharacterDataList();
         public static CharacterDataList Characters { get { return characters; } private set { characters = value; } }
-        public static void LoadCharacterData() { Characters = new CharacterDataList(PlayerPrefs.GetString("Characters", "")); }
-        public static void SaveCharacterData() { PlayerPrefs.SetString("Characters", Characters.ToJson()); }
+        public static void LoadCharacterData() { Characters = new CharacterDataList(PlayerPrefs.GetString(keyCharacters, "")); }
+        public static void SaveCharacterData() { PlayerPrefs.SetString(keyCharacters, Characters.ToJson()); }
         public static bool IsCharacterUnlocked(int id) { return Characters[id] != null && Characters[id].isUnlocked; }
+
+        public static bool IsLocalCharacterData() 
+        {
+            return PlayerPrefs.HasKey(keyCharacters);
+        }
+
+        public static void DeleteLocalCharacterData()
+        {
+            PlayerPrefs.DeleteKey(keyCharacters);
+        }
 
         public static int GamePassedTime { get; set; }
         public static void LoadGamePassedTime() { GamePassedTime = PlayerPrefs.GetInt("GamePassedTime", 0); }

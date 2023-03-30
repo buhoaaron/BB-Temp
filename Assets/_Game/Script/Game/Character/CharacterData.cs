@@ -1,3 +1,5 @@
+/*FIXED: 2023.3.30 Remove unused property*/
+
 namespace Barnabus
 {
     [System.Serializable]
@@ -5,31 +7,23 @@ namespace Barnabus
     {
         public int id;
         public bool isUnlocked;
-        public string hatchTimestampUTC;
-        public int timeSinceLastHatchSec;
 
         public CharacterData()
         {
             id = -1;
             isUnlocked = false;
-            hatchTimestampUTC = "null";
-            timeSinceLastHatchSec = -1;
         }
 
-        public CharacterData(int id, bool isUnlocked, string hatchTimestampUTC, int timeSinceLastHatchSec)
+        public CharacterData(int id, bool isUnlocked)
         {
             this.id = id;
             this.isUnlocked = isUnlocked;
-            this.hatchTimestampUTC = hatchTimestampUTC;
-            this.timeSinceLastHatchSec = timeSinceLastHatchSec;
         }
 
         public CharacterData(CharacterData data)
         {
             id = data.id;
             isUnlocked = data.isUnlocked;
-            hatchTimestampUTC = data.hatchTimestampUTC;
-            timeSinceLastHatchSec = data.timeSinceLastHatchSec;
         }
     }
 }

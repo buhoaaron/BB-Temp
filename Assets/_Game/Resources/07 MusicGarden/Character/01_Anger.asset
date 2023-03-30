@@ -28,6 +28,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 54c857174882bcf489c7e966ae2a00f6, type: 2}
   - {fileID: 11400000, guid: 0abdf428618bac8448991855e43ec579, type: 2}
   - {fileID: 11400000, guid: a21c08d7b57581740a015d91795e0f40, type: 2}
-  spineAsset: {fileID: 11400000, guid: 1c13766eb4464ff43aa52fc6f94506aa, type: 2}
-  idleAnimationName: idle
+  spineAsset: {fileID: 11400000, guid: d3e1aaa9e8c237b40b34236ed55ae4f8, type: 2}
+  idleAnimationName: s2
   danceAnimationName: song_01

@@ -52,7 +52,7 @@ public class MainSceneTest : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("Characters");
         DataManager.LoadCharacterData();
-        DataManager.Characters.SetCharacter(new CharacterData(1, true, System.DateTime.UtcNow.ToString("MM/dd/yyyy HH:mm:ss"), -1));
+        DataManager.Characters.SetCharacter(new CharacterData(1, true));
         DataManager.SaveCharacterData();
     }
     public void OnClick_ResetGame()

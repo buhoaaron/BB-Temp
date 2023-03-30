@@ -133,9 +133,9 @@ namespace Barnabus.EmotionFace
             items.Add(characterItem);
 
             //OnClick_CharacterType(defaultCharacterTypeButton);
-            OnClick_Character(characterButtons[0]);
-            OnClick_SelectColorTarget(0);
-            OnClick_BackgroundColor(itemButtons[0]);
+            //OnClick_Character(characterButtons[0]);
+            //OnClick_SelectColorTarget(0);
+            //OnClick_BackgroundColor(itemButtons[0]);
 
             characterBaseButton.backgroundImage.color = Color.black;
             backgroundColorButton.backgroundImage.color = Color.black;

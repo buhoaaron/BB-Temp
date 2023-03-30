@@ -39,7 +39,7 @@ namespace Barnabus.SceneManagement
 
         protected void SetLoadingPrograss(float loadingPrograss)
         {
-            Debug.Log("loadingPrograss = " + loadingPrograss);
+            //Debug.Log("loadingPrograss = " + loadingPrograss);
             sceneLoadingUI.SetPrograss(loadingPrograss);
         }
     }

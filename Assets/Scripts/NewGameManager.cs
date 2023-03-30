@@ -42,6 +42,11 @@ public class NewGameManager : MonoBehaviour
     private void Update()
     {
         sceneStateController.StateUpdate();
+
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            DataManager.DeleteLocalCharacterData();
+        }
     }
 
     private void Init()

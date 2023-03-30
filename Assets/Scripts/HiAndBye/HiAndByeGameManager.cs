@@ -57,7 +57,7 @@ namespace HiAndBye
         {
             return NewGameManager.Instance.PlayersBarnabusManager.GetPlayerBarnabusCount();
         }
-        public List<BarnabusBaseData> GetBatch(int batchNo)
+        public List<PlayerBarnabusData> GetBatch(int batchNo)
         {
             return NewGameManager.Instance.PlayersBarnabusManager.GetBatch(batchNo);
         }
