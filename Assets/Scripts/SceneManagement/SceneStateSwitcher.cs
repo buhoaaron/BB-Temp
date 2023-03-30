@@ -20,7 +20,7 @@ namespace Barnabus.SceneManagement
                 case SCENE_STATE.MAIN:
                     return new MainSceneState(sceneStateController, "MainScene");
                 case SCENE_STATE.FACE:
-                    return new FaceSceneState(sceneStateController, "EmotionFace");
+                    return new FaceSceneState(sceneStateController, "N_EmotionFace");
                 case SCENE_STATE.MUSIC:
                     return new MusicSceneState(sceneStateController, "EmotionMusic");
                 case SCENE_STATE.DOT_TO_DOT:

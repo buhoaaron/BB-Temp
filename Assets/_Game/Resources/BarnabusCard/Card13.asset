@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Card13
   m_EditorClassIdentifier: 
   id: 13
-  isLocked: 1
+  isLocked: 0
   potionRequirement:
     red: 7
     green: 8
