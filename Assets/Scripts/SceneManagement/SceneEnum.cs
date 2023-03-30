@@ -11,6 +11,8 @@
         MUSIC = 6,
         DOT_TO_DOT = 7,
         HI_AND_BYE = 8,
+        WAKE_UP,
+        WAKE_UP_WITH_UNLOCK,
         //讀取場景
         LOADING_MAIN = 101,
         LOADING_FACE = 105,

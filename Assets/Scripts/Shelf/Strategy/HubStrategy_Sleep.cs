@@ -17,7 +17,7 @@ namespace Barnabus.Shelf
 
         public override void ProcessHubClick()
         {
-
+            hubController.MainManager.GotoWakeUpState();
         }
     }
 }

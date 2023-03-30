@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ButtonClickSubject : BaseAudioSubject
 {
-    public UnityAction<string> OnPlaySound;
+    public UnityAction<string, float> OnPlaySound;
 
     private List<Button> buttons = new List<Button>();
 
@@ -32,6 +32,6 @@ public class ButtonClickSubject : BaseAudioSubject
 
     private void PlaySound()
     {
-        OnPlaySound?.Invoke(audioClipName);
+        OnPlaySound?.Invoke(audioClipName, 0);
     }
 }

@@ -1,9 +1,12 @@
-﻿
+﻿using UnityEngine;
+using RenderHeads.Media.AVProVideo;
 
 namespace Barnabus.Shelf
 {
     public class HubStrategy_Unlock : BaseHubStrategy
     {
+        private HubInfoUI hubInfoUI = null;
+
         public HubStrategy_Unlock(HubController hubController) : base(hubController)
         {
             State = HUB_STATE.UNLOCK;
@@ -24,7 +27,7 @@ namespace Barnabus.Shelf
 
         public override void ProcessHubClick()
         {
-            var hubInfoUI = hubController.MainManager.CreateHubInfoUIAndInit(hubController.State);
+            hubInfoUI = hubController.MainManager.CreateHubInfoUIAndInit(hubController.State);
 
             hubInfoUI.SetPlayerPotions(hubController.FakePotions);
             hubInfoUI.SetPotionRequire(hubController.BarnabusData.PotionExchange);
@@ -34,8 +37,12 @@ namespace Barnabus.Shelf
 
             hubInfoUI.SkeletonGraphicEgg.AnimationState.SetAnimation(0, "idle_Green", true);
 
-            //hubInfoUI.OnButtonGameRoomClick = GotoGameRoom;
+            hubInfoUI.OnButtonUnlockClick = ProcessUnlock;
         }
 
+        private void ProcessUnlock()
+        {
+            hubController.MainManager.GotoUnlockState();
+        }
     }
 }

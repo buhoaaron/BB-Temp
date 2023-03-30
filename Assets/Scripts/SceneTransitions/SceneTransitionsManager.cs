@@ -46,15 +46,24 @@ namespace Barnabus.SceneTransitions
         private void ProcessFadeInComplete()
         {
             OnFadeInComplete?.Invoke();
+            //Invoke完就清除
+            OnFadeInComplete = null;
         }
         public void FadeOut()
         {
             sceneTransitionsUI.DoFadeOut(ProcessFadeOutComplete);
         }
 
+        public void FadeOut(float duration)
+        {
+            sceneTransitionsUI.DoFadeOut(ProcessFadeOutComplete, duration);
+        }
+
         private void ProcessFadeOutComplete()
         {
             OnFadeOutComplete?.Invoke();
+            //Invoke完就清除
+            OnFadeOutComplete = null;
         }
     }
 }

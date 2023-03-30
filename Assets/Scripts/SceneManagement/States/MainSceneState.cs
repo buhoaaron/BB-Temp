@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using Barnabus.UI;
-using System.Collections.Generic;
-using Barnabus.Shelf;
 
 namespace Barnabus.SceneManagement
 {
@@ -21,24 +19,21 @@ namespace Barnabus.SceneManagement
         public override void Begin()
         {
             FindMainManagerAndInit();
-
             InitUI();
+
             AddButtonClickListener();
-            mainManager.LoadAsset(InitShelfAllHub);
+            CheckMainMenuType();
 
-            //Debug.Log(string.Format("你現在有{0}藥水", DataManager.Potions[PotionType.Red]));
-            //DataManager.Potions.AddPotion(PotionType.Red, 10);
-            //Debug.Log(string.Format("你現在有{0}藥水", DataManager.Potions[PotionType.Red]));
+            mainManager.LoadAsset(ProcessLoadAssetComplete);
         }
-
         private void FindMainManagerAndInit()
         {
+            //取得主選單管理器
             mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
             mainManager.Init();
             //將它交給GameManager強化功能
             NewGameManager.Instance.SetMainManager(mainManager);
         }
-
         private void InitUI()
         {
             mainManager.MainUI.Init();
@@ -52,6 +47,27 @@ namespace Barnabus.SceneManagement
             booksUI = mainManager.BooksUI;
             lessonsUI = mainManager.LessonsUI;
             gameRoomUI = mainManager.GameRoomUI;
+        }
+
+        private void ProcessLoadAssetComplete()
+        {
+            InitShelfAllHub();
+        }
+
+        private void CheckMainMenuType()
+        {
+            switch(mainManager.GameSceneData.MainMenuType)
+            {
+                case MAIN_MENU.GAME_ROOM:
+                    mainManager.MaximizeGameRoom();
+                    break;
+                case MAIN_MENU.SHELF:
+                    mainManager.MaximizeShelf();
+                    break;
+                case MAIN_MENU.LESSONS:
+                    mainManager.MaximizeLessons();
+                    break;
+            }
         }
 
         private void InitShelfAllHub()
@@ -68,6 +84,12 @@ namespace Barnabus.SceneManagement
         public override void StateUpdate()
         {
             mainUI.UpdateUI();
+
+            if (mainManager.CheckUnlock())
+                GotoUnlockBarnabus();
+
+            if (mainManager.CheckWakeUp())
+                GotoWakeUpBarnabus();
         }
 
         public override void End()
@@ -134,6 +156,14 @@ namespace Barnabus.SceneManagement
         private void GotoHiAndBye()
         {
             controller.SetState(SCENE_STATE.LOADING_HI_AND_BYE);
+        }
+        private void GotoWakeUpBarnabus()
+        {
+            controller.SetState(SCENE_STATE.WAKE_UP);
+        }
+        private void GotoUnlockBarnabus()
+        {
+            controller.SetState(SCENE_STATE.WAKE_UP_WITH_UNLOCK);
         }
     }
 }

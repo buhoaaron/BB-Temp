@@ -27,6 +27,10 @@ namespace Barnabus.SceneManagement
                     return new DotToDotSceneState(sceneStateController, "DotToDot");
                 case SCENE_STATE.HI_AND_BYE:
                     return new HiAndByeSceneState(sceneStateController, "GameHiAndByeScene");
+                case SCENE_STATE.WAKE_UP:
+                    return new WakeUpSceneState(sceneStateController, "WakeUpScene");
+                case SCENE_STATE.WAKE_UP_WITH_UNLOCK:
+                    return new WakeUpSceneUnlockState(sceneStateController, "WakeUpScene");
 
                 case SCENE_STATE.LOADING_MAIN:
                     return new LoadingMainSceneState(sceneStateController, "LoadingScene");

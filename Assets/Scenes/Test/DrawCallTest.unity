@@ -223,6 +223,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4592596641411712133, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756005152412761047, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7049111876454359979, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
       propertyPath: m_Name
       value: Canvas_WakeUp
@@ -328,9 +336,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2080072173, guid: b527ed837c2c4604d912786d1ba2d323, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080072175, guid: b527ed837c2c4604d912786d1ba2d323, type: 3}
+      propertyPath: _autoPlayOnStart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3346200291959275540, guid: b527ed837c2c4604d912786d1ba2d323, type: 3}
       propertyPath: m_Name
       value: Canvas_HubInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346200291959275540, guid: b527ed837c2c4604d912786d1ba2d323, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3346200291959275624, guid: b527ed837c2c4604d912786d1ba2d323, type: 3}
       propertyPath: m_Pivot.x
