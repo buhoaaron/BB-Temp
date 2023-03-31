@@ -89,7 +89,7 @@ namespace HiAndBye
         /// </summary>
         public float SetTime(int barnabusCount)
         {
-            countDownTime = 10 + (barnabusCount/24) * 50;
+            countDownTime = 10 + (barnabusCount / 24f) * 50;
             return countDownTime;
         }
 
