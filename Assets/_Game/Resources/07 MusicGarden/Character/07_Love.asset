@@ -26,5 +26,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 67c3fb891dd61c74eb2d5ebb4cd8f776, type: 2}
   - {fileID: 11400000, guid: d86c1a8b49fd17547baed6e6af52e4a8, type: 2}
   spineAsset: {fileID: 11400000, guid: 7bc4405ebfe6ea94498f026a76b5ef5f, type: 2}
-  idleAnimationName: idle
+  idleAnimationName: s2
   danceAnimationName: yoga

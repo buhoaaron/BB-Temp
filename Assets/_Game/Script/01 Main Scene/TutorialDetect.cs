@@ -37,7 +37,7 @@ public class TutorialDetect : MonoBehaviour
         {
             PlayerPrefs.SetInt("IsTutorialPlayed", 1);
             DataManager.LoadCharacterData();
-            DataManager.Characters.SetCharacter(new CharacterData(1, true, System.DateTime.UtcNow.ToString("MM/dd/yyyy HH:mm:ss"), DataManager.GamePassedTime));
+            DataManager.Characters.SetCharacter(new CharacterData(1, true));
             DataManager.SaveCharacterData();
             DataManager.LastHatchTime = DataManager.GamePassedTime;
         }

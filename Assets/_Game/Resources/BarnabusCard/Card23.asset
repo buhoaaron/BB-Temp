@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Card23
   m_EditorClassIdentifier: 
   id: 23
-  isLocked: 1
+  isLocked: 0
   potionRequirement:
     red: 10
     green: 10
@@ -36,6 +36,6 @@ MonoBehaviour:
   huntingFoundSound: {fileID: 8300000, guid: 5f6a77e2f28ef194ea9167452e013433, type: 3}
   skeletonData: {fileID: 0}
   skeletonMaterial: {fileID: 0}
-  idleAnimation: idle
-  idleSleepAnimation: idle_sleep
+  idleAnimation: s2
+  idleSleepAnimation: s1
   storySound: {fileID: 0}

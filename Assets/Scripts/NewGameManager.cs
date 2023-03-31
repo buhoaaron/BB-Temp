@@ -16,8 +16,8 @@ public class NewGameManager : MonoBehaviour
     public BarnabusAudioManager AudioManager => audioeManager;
     public BarnabusCardManager BarnabusCardManager => barnabusCardManager;
     public JsonManager JsonManager => jsonManager;
-    public PlayersBarnabusManager PlayersBarnabusManager => playersBarnabusManager;
     public MainManager MainManager { get; private set; }
+    public PlayerDataManager PlayerDataManager => playerDataManager;
 
     #region COMMON_MANAGER
     private SceneStateController sceneStateController;
@@ -25,10 +25,10 @@ public class NewGameManager : MonoBehaviour
     private BarnabusCardManager barnabusCardManager;
     private SceneTransitionsManager sceneTransitionsManager;
     private JsonManager jsonManager;
-    private PlayersBarnabusManager playersBarnabusManager;
+    private PlayerDataManager playerDataManager;
     #endregion
 
-    public GameSceneData GameSceneData = new GameSceneData(MAIN_MENU.MAIN);
+    public GameSceneCacheData GameSceneCacheData = new GameSceneCacheData(MAIN_MENU.MAIN);
 
     private void Start()
     {
@@ -42,6 +42,7 @@ public class NewGameManager : MonoBehaviour
     private void Update()
     {
         sceneStateController.StateUpdate();
+        playerDataManager.SystemUpdate();
     }
 
     private void Init()
@@ -64,8 +65,8 @@ public class NewGameManager : MonoBehaviour
         jsonManager = GetComponentInChildren<JsonManager>();
         jsonManager.Init();
 
-        playersBarnabusManager = new PlayersBarnabusManager(this);
-        playersBarnabusManager.Init();
+        playerDataManager = new PlayerDataManager(this);
+        playerDataManager.Init();
     }
 
     /// <summary>
@@ -84,7 +85,8 @@ public class NewGameManager : MonoBehaviour
         MainManager = manager;
         MainManager.AudioManager = audioeManager;
         MainManager.SceneTransitionsManager = sceneTransitionsManager;
-        MainManager.GameSceneData = GameSceneData;
+        MainManager.GameSceneCacheData = GameSceneCacheData;
+        MainManager.PlayerDataManager = playerDataManager;
     }
 
     /// <summary>

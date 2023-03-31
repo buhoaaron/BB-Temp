@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using Barnabus.SceneManagement;
 
 public class AwardController : MonoBehaviour
 {
@@ -117,8 +118,12 @@ public class AwardController : MonoBehaviour
     public void OnClick_Menu()
     {
         StopAllCoroutines();
-        onClick_Menu?.Invoke();
+        
         canvas.gameObject.SetActive(false);
+
+        //FIXED: Use the new scene state machine instead
+        //onClick_Menu?.Invoke();
+        NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
     }
 
     public void OnClick_Replay()

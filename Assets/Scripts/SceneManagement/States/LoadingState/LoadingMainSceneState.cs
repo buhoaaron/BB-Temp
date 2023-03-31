@@ -11,10 +11,10 @@
             base.Begin();
             //讀取角色基本資料
             LoadBarnabusBaseData();
-            //設定玩家擁有的角色
-            SetPlayerBarnabus();
-            //讀取玩家的藥水
-            DataManager.LoadPotions();
+            //讀取玩家擁有的角色資料
+            LoadPlayerBarnabus();
+            //讀取玩家擁有的藥水資料
+            LoadPlayerPotions();
         }
         public override void StateUpdate()
         {
@@ -27,10 +27,14 @@
             controller.GameManager.BarnabusCardManager.LoadJson();
         }
 
-        private void SetPlayerBarnabus()
+        private void LoadPlayerBarnabus()
         {
-            var allData = controller.GameManager.BarnabusCardManager.GetAllBarnabusBaseData();
-            controller.GameManager.PlayersBarnabusManager.SetPlayerBarnabusData(allData);
+            controller.GameManager.PlayerDataManager.LoadPlayerBarnabus();
+        }
+
+        private void LoadPlayerPotions()
+        {
+            controller.GameManager.PlayerDataManager.LoadPlayerPotions();
         }
     }
 }

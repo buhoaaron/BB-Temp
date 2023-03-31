@@ -39,8 +39,10 @@ public class SettingController : MonoBehaviour
 
     public void ToHomeScene()
     {
-        SceneTransit.LoadSceneAsync(homeSceneName);
-        //SceneTransit.LoadScene(homeSceneName);
+        //SceneTransit.LoadSceneAsync(homeSceneName);
+
+        //FIXED: Use the new scene state machine instead
+        NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
     }
 
     public void ToMapScene()

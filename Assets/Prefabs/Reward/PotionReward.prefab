@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 8220555360230264369}
   - component: {fileID: 8220555360230264374}
   m_Layer: 5
-  m_Name: Text_Title
+  m_Name: TMPText_Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 8220555360534022215}
   - component: {fileID: 8220555360534022212}
   m_Layer: 5
-  m_Name: Text_PotionValue
+  m_Name: TMPText_PotionValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

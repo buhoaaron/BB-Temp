@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: card1
   m_EditorClassIdentifier: 
   id: 1
-  isLocked: 0
+  isLocked: 1
   potionRequirement:
     red: 2
     green: 2
@@ -34,8 +34,8 @@ MonoBehaviour:
   soundDescribe: Grr!
   barnabusSound: {fileID: 8300000, guid: f11a3fba56770e948adf7a7a488063ca, type: 3}
   huntingFoundSound: {fileID: 8300000, guid: 171abce547f2f1d4db1c09e3f6f6e0d6, type: 3}
-  skeletonData: {fileID: 11400000, guid: 1c13766eb4464ff43aa52fc6f94506aa, type: 2}
-  skeletonMaterial: {fileID: 2100000, guid: d67a63b293f70dc49ba9022984b12abd, type: 2}
-  idleAnimation: idle
-  idleSleepAnimation: idle_sleep
+  skeletonData: {fileID: 11400000, guid: d3e1aaa9e8c237b40b34236ed55ae4f8, type: 2}
+  skeletonMaterial: {fileID: 2100000, guid: fdc1ea132419c0c49b3ecbdbcfe623f0, type: 2}
+  idleAnimation: s2
+  idleSleepAnimation: s1
   storySound: {fileID: 8300000, guid: 394bd0944a1c54c4c9815f1dd827c222, type: 3}

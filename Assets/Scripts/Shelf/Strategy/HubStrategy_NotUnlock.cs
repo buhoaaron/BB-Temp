@@ -11,7 +11,7 @@ namespace Barnabus.Shelf
 
         public override void Refresh()
         {
-            hubController.ImageChar.enabled = false;
+            hubController.SkeletonGraphicBarnabus.enabled = false;
             hubController.SkeletonGraphicEgg.enabled = true;
         }
 
@@ -19,7 +19,7 @@ namespace Barnabus.Shelf
         {
             var hubInfoUI = hubController.MainManager.CreateHubInfoUIAndInit(hubController.State);
 
-            hubInfoUI.SetPlayerPotions(hubController.FakePotions);
+            hubInfoUI.SetPlayerPotions(hubController.MainManager.GetPotionAmount());
             hubInfoUI.SetPotionRequire(hubController.BarnabusData.PotionExchange);
             hubInfoUI.SetElement(hubController.BarnabusData.Element);
             

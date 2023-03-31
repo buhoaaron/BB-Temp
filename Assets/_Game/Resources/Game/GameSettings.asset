@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   emotionFacePotionType: 0
-  emotionMusicPotionType: 2
-  dotToDotPotionType: 1
-  breathingPotionType: 3
+  emotionMusicPotionType: 0
+  dotToDotPotionType: 0
+  breathingPotionType: 0
   accessType: 0
   dataType: 0
   emotionMusicDataPath: EmotionSong

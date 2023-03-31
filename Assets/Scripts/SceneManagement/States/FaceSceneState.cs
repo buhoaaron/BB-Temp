@@ -17,8 +17,15 @@ namespace Barnabus.SceneManagement
         }
         public override void End()
         {
-            AudioManager.instance.StopAllSound();
-            AudioManager.instance.StopBGM();
+            try
+            {
+                AudioManager.instance.StopAllSound();
+                AudioManager.instance.StopBGM();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

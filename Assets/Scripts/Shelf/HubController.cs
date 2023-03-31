@@ -1,30 +1,28 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using Barnabus;
 using Spine.Unity;
+using TMPro;
 
 namespace Barnabus.Shelf
 {
     public class HubController: MonoBehaviour, IBaseController
     {
         public int ID = 0;
-        public BarnabusBaseData BarnabusData = null;
+        public PlayerBarnabusData BarnabusData = null;
         public MainManager MainManager = null;
         public HUB_STATE State => strategy.State;
-        public Image ImageChar => imageChar;
         public SkeletonGraphic SkeletonGraphicEgg => skeletonGraphicEgg;
+        public SkeletonGraphic SkeletonGraphicBarnabus => skeletonGraphicBarnabus;
 
         private BaseHubStrategy strategy = null;
         private Image imageHubBrandBg = null;
         private Button buttonHubBrand = null;
-        private Image imageChar = null;
-        private Text textElement = null;
+        private TMP_Text textElement = null;
         private SkeletonGraphic skeletonGraphicEgg = null;
-
-        public int FakePotions = 15;
+        private SkeletonGraphic skeletonGraphicBarnabus = null;
 
         #region BASE_API
-        public void Init(BarnabusBaseData data, MainManager mainManager)
+        public void Init(PlayerBarnabusData data, MainManager mainManager)
         {
             MainManager = mainManager;
             BarnabusData = data;
@@ -38,8 +36,8 @@ namespace Barnabus.Shelf
         {
             imageHubBrandBg = transform.Find("Image_Hub_Brand_Bg").GetComponent<Image>();
             buttonHubBrand = transform.Find("Button_Hub_Brand").GetComponent<Button>();
-            imageChar = transform.Find("Barnabus/Image_Char").GetComponent<Image>();
-            textElement = transform.Find("Text_Element").GetComponent<Text>();
+            textElement = transform.Find("TMPText_Element").GetComponent<TMP_Text>();
+            skeletonGraphicBarnabus = transform.Find("Barnabus/SkeletonGraphic_Barnabus").GetComponent<SkeletonGraphic>();
             skeletonGraphicEgg = transform.Find("Barnabus/SkeletonGraphic_Egg").GetComponent<SkeletonGraphic>();
         }
 
@@ -48,13 +46,20 @@ namespace Barnabus.Shelf
         /// </summary>
         private void InitStrategy()
         {
-            if (BarnabusData.AlreadyOwned)
+            if (!IsOpen())
             {
-                strategy = new HubStrategy_Sleep(this);
+                //TOFIX: 之後要新增未開放的策略
+                strategy = new HubStrategy_NotUnlock(this);
                 return;
             }
 
-            if (IsPotionExchange() && FakePotions >= BarnabusData.PotionExchange)
+            if (BarnabusData.IsUnlocked)
+            {
+                strategy = BarnabusData.IsWokenUp ? new HubStrategy_Idle(this) : new HubStrategy_Sleep(this);
+                return;
+            }
+
+            if (IsPotionExchange() && MainManager.GetPotionAmount() >= BarnabusData.BaseData.PotionExchange)
             {
                 strategy = new HubStrategy_Unlock(this);
                 return;
@@ -65,12 +70,9 @@ namespace Barnabus.Shelf
 
         public void Refresh()
         {
-            textElement.text = BarnabusData.Element;
-            imageHubBrandBg.sprite = MainManager.GetHubBrandBg(BarnabusData.Color);
-            buttonHubBrand.image.sprite = MainManager.GetHubBrand(BarnabusData.Color);
-
-            var barnabusSprite = MainManager.GetBarnabusSprite(BarnabusData.Name);
-            imageChar.sprite = barnabusSprite;
+            textElement.text = BarnabusData.BaseData.Element;
+            imageHubBrandBg.sprite = MainManager.GetHubBrandBg(BarnabusData.BaseData.Color);
+            buttonHubBrand.image.sprite = MainManager.GetHubBrand(BarnabusData.BaseData.Color);
 
             strategy.Refresh();
         }
@@ -85,9 +87,33 @@ namespace Barnabus.Shelf
             strategy.ProcessHubClick();
         }
 
+        public SkeletonGraphic ChangeBarnabusSpine(int characterID, string initAnimationName = "")
+        {
+            var barnabusCard = NewGameManager.Instance.BarnabusCardManager.GetCard(characterID);
+            SkeletonGraphicBarnabus.skeletonDataAsset = barnabusCard.skeletonData;
+            SkeletonGraphicBarnabus.Initialize(true);
+
+            if (!string.IsNullOrEmpty(initAnimationName))
+                SkeletonGraphicBarnabus.AnimationState.SetAnimation(0, initAnimationName, true);
+
+            return SkeletonGraphicBarnabus;
+        }
+        /// <summary>
+        /// 是否是以藥水解鎖
+        /// </summary>
+        /// <returns></returns>
         private bool IsPotionExchange()
         {
-            return BarnabusData.PotionExchange > 0;
+            return BarnabusData.BaseData.PotionExchange > 0;
+        }
+
+        /// <summary>
+        /// 是否已開放
+        /// </summary>
+        /// <returns></returns>
+        private bool IsOpen()
+        {
+            return BarnabusData.BaseData.IsOpen;
         }
     }
 }

@@ -56,7 +56,7 @@ namespace Barnabus.SceneManagement
 
         private void CheckMainMenuType()
         {
-            switch(mainManager.GameSceneData.MainMenuType)
+            switch(mainManager.GameSceneCacheData.MainMenuType)
             {
                 case MAIN_MENU.GAME_ROOM:
                     mainManager.MaximizeGameRoom();
@@ -75,8 +75,8 @@ namespace Barnabus.SceneManagement
             foreach(var hubController in shelfUI.HubControllers)
             {
                 //設定Barnabus資料
-                var barnabusBaseData = mainManager.GetBarnabusBaseData(hubController.ID);
-                hubController.Init(barnabusBaseData, mainManager);
+                var playerBarnabusData = mainManager.GetBarnabusBaseData(hubController.ID);
+                hubController.Init(playerBarnabusData, mainManager);
                 hubController.Refresh();
             }
         }

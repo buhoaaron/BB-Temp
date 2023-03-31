@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Card27
   m_EditorClassIdentifier: 
   id: 27
-  isLocked: 1
+  isLocked: 0
   potionRequirement:
     red: 10
     green: 10
@@ -22,8 +22,7 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 75ead648b9f1b1a4a924024f4374ffd8, type: 3}
   barnabusImage: {fileID: 21300000, guid: a7a057be6b74cf04aaad6e389c4c34ab, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
-  lockedBarnabusImage: {fileID: 21300000, guid: f9cef77925ea8f34db944980d0bc8904,
-    type: 3}
+  lockedBarnabusImage: {fileID: 21300000, guid: f9cef77925ea8f34db944980d0bc8904, type: 3}
   barnabusNo: 17
   element: Br
   elementColor: 30E37F
@@ -37,5 +36,6 @@ MonoBehaviour:
   huntingFoundSound: {fileID: 8300000, guid: a6205d9136f4525448d816e0553d8b7e, type: 3}
   skeletonData: {fileID: 0}
   skeletonMaterial: {fileID: 0}
-  idleAnimation: idle
-  idleSleepAnimation: idle_sleep
+  idleAnimation: s2
+  idleSleepAnimation: s1
+  storySound: {fileID: 0}

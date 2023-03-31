@@ -8,6 +8,8 @@ namespace HiAndBye
         public UnityAction<string> OnCountDownFormat = null;
         public UnityAction<float> OnCountDown = null;
         public UnityAction OnCountDownOver = null;
+
+        public float CountDownTime => countDownTime;
         public bool IsCountDowning => isCountDowning;
 
         private bool isCountDowning = false;

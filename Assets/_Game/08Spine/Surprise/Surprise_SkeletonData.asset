@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atlasAssets:
   - {fileID: 11400000, guid: 7a6f3af3b01cb5e41b0c4fe28846ed6b, type: 2}
-  scale: 0.0048
+  scale: 0.01
   skeletonJSON: {fileID: 4900000, guid: 1195f7a9641c45b488dfdc155154ea80, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
-    applyAdditiveMaterial: 0
+    applyAdditiveMaterial: 1
     additiveMaterials: []
     multiplyMaterials: []
     screenMaterials: []

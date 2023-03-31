@@ -2,28 +2,29 @@
 {
     public class BarnabusBaseData
     {
-        public int CharacterID;
-        public string Name;
-        public string Vocab;
-        public int Batch;
-        public AUDIO_NAME SoundKey;
-        public bool AlreadyOwned;
-        public string Element;
-        public COLOR Color;
-        public int PotionExchange;
-        public BarnabusBaseData Copy()
+        public readonly int CharacterID;
+        public readonly string Name;
+        public readonly string Vocab;
+        public readonly int Batch;
+        public readonly AUDIO_NAME SoundKey;
+        public readonly bool AlreadyOwned;
+        public readonly string Element;
+        public readonly COLOR Color;
+        public readonly int PotionExchange;
+        public readonly bool IsOpen;
+
+        public BarnabusBaseData(int characterID, string name, string vocab, int batch, AUDIO_NAME soundKey, bool alreadyOwned, string element, COLOR color, int potionExchange, bool isOpen)
         {
-            var newData = new BarnabusBaseData();
-            newData.CharacterID = CharacterID;
-            newData.Name = Name;
-            newData.Vocab = Vocab;
-            newData.Batch = Batch;
-            newData.SoundKey = SoundKey;
-            newData.AlreadyOwned = AlreadyOwned;
-            newData.Element = Element;
-            newData.Color = Color;
-            newData.PotionExchange = PotionExchange;
-            return newData;
+            CharacterID = characterID;
+            Name = name;
+            Vocab = vocab;
+            Batch = batch;
+            SoundKey = soundKey;
+            AlreadyOwned = alreadyOwned;
+            Element = element;
+            Color = color;
+            PotionExchange = potionExchange;
+            IsOpen = isOpen;
         }
     }
 }

@@ -77,7 +77,10 @@ public class BarnabusScanScriptable : ScriptableObject
     public Material skeletonMaterial;
     [SpineAnimation(dataField: "skeletonData")]
 
-    [SerializeField] string idleAnimation = "idle", idleSleepAnimation = "idle_sleep";
+    //FIXED: new Animation name
+    //s1: sleep
+    //s2: idle
+    [SerializeField] string idleAnimation = "s2", idleSleepAnimation = "s1";
 
     [Header("Story")]
     public AudioClip storySound;

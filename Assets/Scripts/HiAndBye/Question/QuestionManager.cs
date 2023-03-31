@@ -9,7 +9,7 @@ namespace HiAndBye.Question
         /// <summary>
         /// 玩家擁有的角色池
         /// </summary>
-        private List<BarnabusBaseData> listBarnabusOwned = null;
+        private List<PlayerBarnabusData> listBarnabusOwned = null;
         private SetQuestionInfo currentSetQuestionInfo = null;
         /// <summary>
         /// Hi出現機率
@@ -44,10 +44,10 @@ namespace HiAndBye.Question
         }
         #endregion
 
-        public void SetBatch(List<BarnabusBaseData> batch)
+        public void SetBatch(List<PlayerBarnabusData> batch)
         {
             //取出該組內玩家有的角色
-            listBarnabusOwned = batch.FindAll(barnabus => barnabus.AlreadyOwned);
+            listBarnabusOwned = batch.FindAll(barnabus => barnabus.IsUnlocked);
         }
 
         public SetQuestionInfo RandomQuestion()
@@ -56,30 +56,30 @@ namespace HiAndBye.Question
             int barnabusOwnedCount = listBarnabusOwned.Count;
             int randomIndex = Random.Range(0, barnabusOwnedCount);
             var barnabus = listBarnabusOwned[randomIndex];
-            var sprite = gameManager.GetBarnabusSprite(barnabus.Name);
+            var sprite = gameManager.GetBarnabusSprite(barnabus.BaseData.Name);
             //機率決定是否出Hi
             bool isHi = RandomHi();
             //把選中的角色資料傳給題目設定
             currentSetQuestionInfo = new SetQuestionInfo();
-            currentSetQuestionInfo.BarnabusBaseData = barnabus;
+            currentSetQuestionInfo.BarnabusBaseData = barnabus.BaseData;
             currentSetQuestionInfo.BarnabusSprite = sprite;
             
-            var asset = gameManager.GetSpineAssets().GetSpineAsset(barnabus.Name);
+            var asset = gameManager.GetSpineAssets().GetSpineAsset(barnabus.BaseData.Name);
             currentSetQuestionInfo.BarnabusSkeletonDataAsset = asset;
 
             if (isHi)
             {
                 //若是Hi直接設定正確的資料
-                currentSetQuestionInfo.BarnabusFace = barnabus.Vocab;
-                currentSetQuestionInfo.BarnabusVocab = barnabus.Vocab;
-                currentSetQuestionInfo.BarnabusVoice = barnabus.SoundKey;
+                currentSetQuestionInfo.BarnabusFace = barnabus.BaseData.Vocab;
+                currentSetQuestionInfo.BarnabusVocab = barnabus.BaseData.Vocab;
+                currentSetQuestionInfo.BarnabusVoice = barnabus.BaseData.SoundKey;
             }
             else
             {
                 //若不是則隨機設定角色資料
-                currentSetQuestionInfo.BarnabusFace = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].Vocab;
-                currentSetQuestionInfo.BarnabusVocab = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].Vocab;
-                currentSetQuestionInfo.BarnabusVoice = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].SoundKey;
+                currentSetQuestionInfo.BarnabusFace = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].BaseData.Vocab;
+                currentSetQuestionInfo.BarnabusVocab = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].BaseData.Vocab;
+                currentSetQuestionInfo.BarnabusVoice = listBarnabusOwned[Random.Range(0, barnabusOwnedCount)].BaseData.SoundKey;
 
                 currentByeCount++;
             }

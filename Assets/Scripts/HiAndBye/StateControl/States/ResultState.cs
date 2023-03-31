@@ -10,10 +10,9 @@ namespace HiAndBye.StateControl
 
         public override void Begin()
         {
-            Debug.Log("Result!!");
-
             var gameResultUI = gameManager.GameResultUI;
             var answerInfo = gameManager.AnswerManager.GetAnswerInfo();
+            var countDownTime = gameManager.CountDownManager.CountDownTime;
 
             gameResultUI.Show();
             gameResultUI.SetScore(answerInfo.CorrectHiNum, answerInfo.CorrectByeNum, answerInfo.IncorrectEmtionsCount);
@@ -22,6 +21,9 @@ namespace HiAndBye.StateControl
             gameResultUI.OnButtonOKClick = GotoGetPotion;
 
             CreateIncorrectBarnabus(answerInfo);
+
+            //分析階級
+            gameManager.RankManager.Check(answerInfo.CorrectNum, countDownTime);
         }
 
         public override void StateUpdate()

@@ -29,5 +29,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b22e7430f5de9946bd2f382651befb7, type: 2}
   - {fileID: 11400000, guid: b28bcfdf0ec422d4ab60bf0b01645cbc, type: 2}
   spineAsset: {fileID: 11400000, guid: 715115614bf471842b2e6bec681d8fe6, type: 2}
-  idleAnimationName: idle
+  idleAnimationName: s2
   danceAnimationName: song_01
