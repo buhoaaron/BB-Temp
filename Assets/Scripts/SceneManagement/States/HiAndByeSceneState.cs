@@ -40,6 +40,8 @@ namespace Barnabus.SceneManagement
             //啟動遊戲狀態機
             gameManager.StateController.SetState(GAME_STATE.GAME_INIT);
             gameManager.StateController.SetDebugEnabled(false);
+
+            gameManager.LoadRankInfo();
         }
 
         private void AddButtonClickListener()

@@ -12,4 +12,11 @@
         CORRECT_BYE,
         WRONG,
     }
+
+    public enum RANK
+    {
+        RANK_1,
+        RANK_2,
+        RANK_3,
+    }
 }

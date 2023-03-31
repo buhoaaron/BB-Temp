@@ -46,6 +46,13 @@ namespace Barnabus.Shelf
         /// </summary>
         private void InitStrategy()
         {
+            if (!IsOpen())
+            {
+                //TOFIX: 之後要新增未開放的策略
+                strategy = new HubStrategy_NotUnlock(this);
+                return;
+            }
+
             if (BarnabusData.IsUnlocked)
             {
                 strategy = BarnabusData.IsWokenUp ? new HubStrategy_Idle(this) : new HubStrategy_Sleep(this);
@@ -98,6 +105,15 @@ namespace Barnabus.Shelf
         private bool IsPotionExchange()
         {
             return BarnabusData.BaseData.PotionExchange > 0;
+        }
+
+        /// <summary>
+        /// 是否已開放
+        /// </summary>
+        /// <returns></returns>
+        private bool IsOpen()
+        {
+            return BarnabusData.BaseData.IsOpen;
         }
     }
 }

@@ -17,6 +17,8 @@ namespace HiAndBye
         public CountDownManager CountDownManager = null;
         //題目設定
         public QuestionManager QuestionManager = null;
+        //階級判定
+        public RankManager RankManager = null;
         //答錯Barnabus生成管理
         public IncorrentBarnabusBuilder IncorrentBarnabusBuilder = null;
 
@@ -39,6 +41,9 @@ namespace HiAndBye
             AnswerManager = new AnswerManager(this, QuestionManager);
             AnswerManager.Init();
 
+            RankManager = new RankManager(this);
+            RankManager.Init();
+
             IncorrentBarnabusBuilder = GetComponent<IncorrentBarnabusBuilder>();
             IncorrentBarnabusBuilder.Init();
         }
@@ -52,6 +57,12 @@ namespace HiAndBye
            
         }
         #endregion
+
+        public void IncreasePlayerPotionAndSave(int value)
+        {
+            NewGameManager.Instance.PlayerDataManager.IncreasePotionAmount(value);
+            NewGameManager.Instance.PlayerDataManager.Save();
+        }
 
         public int GetPlayerBarnabusCount()
         {
@@ -79,6 +90,15 @@ namespace HiAndBye
         public void BackMainScene()
         {
             NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
+        }
+
+        public List<RankInfo> LoadRankInfo()
+        {
+            var infos = NewGameManager.Instance.JsonManager.DeserializeObject<AllRankInfo>(JsonText.RankData);
+
+            RankManager.SetAllRankInfo(infos);
+
+            return infos;
         }
     }
 }

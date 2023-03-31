@@ -72,6 +72,11 @@ public class PlayerDataManager : BaseBarnabusManager
         potionManager.ReducePotionAmount(value);
     }
 
+    public void IncreasePotionAmount(int value)
+    {
+        potionManager.IncreasePotionAmount(value);
+    }
+
     public int GetPotionAmount()
     {
         return potionManager.PotionAmount;

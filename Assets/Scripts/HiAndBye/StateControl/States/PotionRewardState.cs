@@ -16,7 +16,11 @@
             potionRewardUI.OnButtonBackMainClick = BackMain;
             potionRewardUI.OnButtonReplayClick = GameReplay;
 
-            potionRewardUI.SetPotionValue(5);
+            //根據階級給予玩家藥水
+            var potions = gameManager.RankManager.GetRankInfo().Potions;
+            potionRewardUI.SetPotionValue(potions);
+            //更新玩家資料
+            gameManager.IncreasePlayerPotionAndSave(potions);
         }
 
         private void BackMain()

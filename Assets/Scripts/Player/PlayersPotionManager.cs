@@ -71,6 +71,13 @@ namespace Barnabus
             DataManager.Potions.ReducePotion(PotionType.Red, value);
         }
 
+        public void IncreasePotionAmount(int value)
+        {
+            playerPotionData.Amount += value;
+            //同步給DataManager
+            DataManager.Potions.AddPotion(PotionType.Red, value);
+        }
+
         public override void Save()
         {
             DataManager.SavePotions();

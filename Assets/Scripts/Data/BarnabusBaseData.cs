@@ -11,8 +11,9 @@
         public readonly string Element;
         public readonly COLOR Color;
         public readonly int PotionExchange;
+        public readonly bool IsOpen;
 
-        public BarnabusBaseData(int characterID, string name, string vocab, int batch, AUDIO_NAME soundKey, bool alreadyOwned, string element, COLOR color, int potionExchange)
+        public BarnabusBaseData(int characterID, string name, string vocab, int batch, AUDIO_NAME soundKey, bool alreadyOwned, string element, COLOR color, int potionExchange, bool isOpen)
         {
             CharacterID = characterID;
             Name = name;
@@ -23,6 +24,7 @@
             Element = element;
             Color = color;
             PotionExchange = potionExchange;
+            IsOpen = isOpen;
         }
     }
 }
