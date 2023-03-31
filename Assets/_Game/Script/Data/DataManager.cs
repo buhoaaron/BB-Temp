@@ -9,6 +9,8 @@ namespace Barnabus
         public static string PlayerID { get; private set; }
 
         private static string keyCharacters = "Characters";
+        private static string keyPotions = "Potions";
+
         public static void SetPlayerID()
         {
             PlayerID = PlayerPrefs.GetString("PlayerID", "null");
@@ -20,8 +22,18 @@ namespace Barnabus
 
         private static Potions potions = new Potions();
         public static Potions Potions { get { return potions; } private set { potions = value; } }
-        public static void LoadPotions() { Potions = new Potions(PlayerPrefs.GetString("Potions", "")); }
-        public static void SavePotions() { PlayerPrefs.SetString("Potions", Potions.ToJson()); }
+        public static void LoadPotions() { Potions = new Potions(PlayerPrefs.GetString(keyPotions, "")); }
+        public static void SavePotions() { PlayerPrefs.SetString(keyPotions, Potions.ToJson()); }
+
+        public static bool IsLocalPotionData()
+        {
+            return PlayerPrefs.HasKey(keyPotions);
+        }
+
+        public static void DeleteLocalPotionData()
+        {
+            PlayerPrefs.DeleteKey(keyPotions);
+        }
 
         private static CharacterDataList characters = new CharacterDataList();
         public static CharacterDataList Characters { get { return characters; } private set { characters = value; } }

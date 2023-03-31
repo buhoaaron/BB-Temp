@@ -21,8 +21,6 @@ namespace Barnabus.Shelf
         private TMP_Text textElement = null;
         private SkeletonGraphic skeletonGraphicEgg = null;
 
-        public int FakePotions = 15;
-
         #region BASE_API
         public void Init(BarnabusBaseData data, MainManager mainManager)
         {
@@ -54,7 +52,7 @@ namespace Barnabus.Shelf
                 return;
             }
 
-            if (IsPotionExchange() && FakePotions >= BarnabusData.PotionExchange)
+            if (IsPotionExchange() && MainManager.GetPotionAmount() >= BarnabusData.PotionExchange)
             {
                 strategy = new HubStrategy_Unlock(this);
                 return;

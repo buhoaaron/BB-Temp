@@ -55,11 +55,11 @@ namespace HiAndBye
 
         public int GetPlayerBarnabusCount()
         {
-            return NewGameManager.Instance.PlayersBarnabusManager.GetPlayerBarnabusCount();
+            return NewGameManager.Instance.PlayerDataManager.GetPlayerBarnabusCount();
         }
         public List<PlayerBarnabusData> GetBatch(int batchNo)
         {
-            return NewGameManager.Instance.PlayersBarnabusManager.GetBatch(batchNo);
+            return NewGameManager.Instance.PlayerDataManager.GetBatch(batchNo);
         }
         public Sprite GetBarnabusSprite(string name)
         {

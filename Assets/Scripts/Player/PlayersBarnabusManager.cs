@@ -37,11 +37,12 @@ namespace Barnabus
 
         public override void Load()
         {
-
+            LoadPlayerBarnabusData();
         }
         /// <summary>
         /// 初始化玩家的角色資料
         /// </summary>
+        /// <param name="allBaseData">角色初始資料</param>
         public void InitPlayerBarnabusData(AllBarnabusBaseData allBaseData)
         {            
             allPlayerBarnabusData = new AllPlayerBarnabusData();
@@ -55,7 +56,7 @@ namespace Barnabus
         /// <summary>
         /// 讀取玩家本地存的角色資料
         /// </summary>
-        public void LoadPlayerBarnabusData()
+        private void LoadPlayerBarnabusData()
         {
             //本地是否有存檔
             var isLocal = DataManager.IsLocalCharacterData();
@@ -92,8 +93,6 @@ namespace Barnabus
                 DataManager.SaveCharacterData();
             }
         }
-
-        
 
         public BarnabusBaseData GetBarnabusBaseData(int id)
         {

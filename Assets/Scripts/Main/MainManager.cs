@@ -21,6 +21,7 @@ public class MainManager : MonoBehaviour, IBaseSystem
     [Header("Set Canvas ClassRoom")]
     public LessonsUI LessonsUI = null;
 
+    public PlayerDataManager PlayerDataManager = null;
     public BarnabusAudioManager AudioManager = null;
     public SceneTransitionsManager SceneTransitionsManager = null;
     public GameSceneData GameSceneData = null;
@@ -68,11 +69,6 @@ public class MainManager : MonoBehaviour, IBaseSystem
         shelfAssets.LoadAssets();
     }
 
-    public BarnabusBaseData GetBarnabusBaseData(int id)
-    {
-        return NewGameManager.Instance.PlayersBarnabusManager.GetBarnabusBaseData(id);
-    }
-
     public void GotoWakeUpState()
     {
         isDoWakeUp = true;
@@ -88,6 +84,15 @@ public class MainManager : MonoBehaviour, IBaseSystem
     public bool CheckUnlock()
     {
         return isDoUnlock;
+    }
+
+    public int GetPotionAmount()
+    {
+        return PlayerDataManager.GetPotionAmount();
+    }
+    public BarnabusBaseData GetBarnabusBaseData(int id)
+    {
+        return PlayerDataManager.GetBarnabusBaseData(id);
     }
 
     #region MAIN_COMMON_UI
