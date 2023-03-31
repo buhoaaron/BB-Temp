@@ -10,7 +10,7 @@ namespace Barnabus
     {
         public int PotionAmount => playerPotionData.Amount;
 
-        public PlayerPotionData playerPotionData = null;
+        private PlayerPotionData playerPotionData = null;
 
         public PlayersPotionManager(NewGameManager gm) : base(gm)
         {
@@ -60,13 +60,20 @@ namespace Barnabus
             {
                 Debug.Log("無Potions本地資料: " + DataManager.Potions.ToJson());
 
-                DataManager.SavePotions();
+                Save();
             }
+        }
+
+        public void ReducePotionAmount(int value)
+        {
+            playerPotionData.Amount -= value;
+            //同步給DataManager
+            DataManager.Potions.ReducePotion(PotionType.Red, value);
         }
 
         public override void Save()
         {
-
+            DataManager.SavePotions();
         }
 
         public override void Load()

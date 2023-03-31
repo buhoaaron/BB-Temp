@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 using Spine.Unity;
+using TMPro;
 
 namespace Barnabus.UI
 {
@@ -16,6 +17,7 @@ namespace Barnabus.UI
         public Button ButtonLessons;
         public Button ButtonReturn;
         public Button ButtonGameRoom;
+        public TMP_Text TextBarnabusName;
 
         public SkeletonGraphic SpineBarnabus = null;
 
@@ -75,6 +77,19 @@ namespace Barnabus.UI
         private void ProcessButtonReturnClick()
         {
             OnButtonReturnClick?.Invoke();
+        }
+
+        public void SetBarnabusName(string name)
+        {
+            TextBarnabusName.text = name;
+        }
+        public SkeletonGraphic ChangeBarnabusSpine(int characterID)
+        {
+            var barnabusCard = NewGameManager.Instance.BarnabusCardManager.GetCard(characterID);
+            SpineBarnabus.skeletonDataAsset = barnabusCard.skeletonData;
+            SpineBarnabus.Initialize(true);
+
+            return SpineBarnabus;
         }
     }
 }

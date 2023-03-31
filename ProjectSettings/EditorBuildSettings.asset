@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Game/00 GameScenes/10 EmotionFace/EmotionFace.unity
     guid: 72d0dcfb25b00004dac24e60b7080e45
   - enabled: 1
@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WakeUpScene.unity
     guid: 0934ccfedf08e264ea677e19e747f20b
+  - enabled: 1
+    path: Assets/_Game/00 GameScenes/10 EmotionFace/N_EmotionFace.unity
+    guid: 80e7280a8388faf4088b3b603cd05b9b
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 802379ba2b66f144ab58a26b6f86e8d1, type: 2}

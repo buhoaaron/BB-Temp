@@ -18,6 +18,13 @@ namespace Barnabus.SceneManagement
             wakeUpUI = GameObject.Find("Canvas_WakeUp").GetComponent<WakeUpUI>();
             wakeUpUI.Init();
 
+            var playerWakeUpBarnabusData = controller.GameManager.PlayerDataManager.UnlockBarnabusData;
+            //喚醒
+            playerWakeUpBarnabusData.IsWokenUp = true;
+            //更換玩家選擇的角色
+            wakeUpUI.ChangeBarnabusSpine(playerWakeUpBarnabusData.CharacterID);
+            wakeUpUI.SetBarnabusName(playerWakeUpBarnabusData.Name);
+
             wakeUpUI.OnButtonReturnClick = BackMainAndOpenShelf;
             wakeUpUI.OnButtonLessonsClick = BackMainAndOpenLessons;
             wakeUpUI.OnButtonGameRoomClick = BackMainAndOpenGameRoom;
@@ -38,23 +45,21 @@ namespace Barnabus.SceneManagement
         {
             wakeUpUI.SpineBarnabus.AnimationState.SetAnimation(0, "s4", false);
             wakeUpUI.SpineBarnabus.AnimationState.AddAnimation(0, "s2", true, 0);
-
-            controller.GameManager.AudioManager.PlaySound(AUDIO_NAME.ANGER_SOUND_01, 1.0f);
         }
 
         private void BackMainAndOpenShelf()
         {
-            controller.GameManager.GameSceneData = new GameSceneData(MAIN_MENU.SHELF);
+            controller.GameManager.GameSceneCacheData = new GameSceneCacheData(MAIN_MENU.SHELF);
             controller.SetState(SCENE_STATE.LOADING_MAIN);
         }
         private void BackMainAndOpenGameRoom()
         {
-            controller.GameManager.GameSceneData = new GameSceneData(MAIN_MENU.GAME_ROOM);
+            controller.GameManager.GameSceneCacheData = new GameSceneCacheData(MAIN_MENU.GAME_ROOM);
             controller.SetState(SCENE_STATE.LOADING_MAIN);
         }
         private void BackMainAndOpenLessons()
         {
-            controller.GameManager.GameSceneData = new GameSceneData(MAIN_MENU.LESSONS);
+            controller.GameManager.GameSceneCacheData = new GameSceneCacheData(MAIN_MENU.LESSONS);
             controller.SetState(SCENE_STATE.LOADING_MAIN);
         }
     }

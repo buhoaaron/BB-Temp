@@ -26,15 +26,5 @@ namespace Barnabus
 
             return result;
         }
-
-        public AllBarnabusBaseData Copy()
-        {
-            var newData = new AllBarnabusBaseData();
-
-            foreach(var data in this)
-                newData.Add(data.Copy());
-
-            return newData;
-        }
     }
 }

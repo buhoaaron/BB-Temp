@@ -7,6 +7,10 @@ using System.Collections.Generic;
 /// </summary>
 public class PlayerDataManager : BaseBarnabusManager
 {
+    #region CACHE_GAME_INFO
+    public PlayerBarnabusData UnlockBarnabusData { get; private set; }
+    #endregion
+
     private PlayersPotionManager potionManager;
     private PlayersBarnabusManager barnabusManager;
 
@@ -40,6 +44,12 @@ public class PlayerDataManager : BaseBarnabusManager
     }
     #endregion
 
+    public override void Save()
+    {
+        barnabusManager.Save();
+        potionManager.Save();
+    }
+
     public void LoadPlayerBarnabus()
     {
         var allData = GameManager.BarnabusCardManager.GetAllBarnabusBaseData();
@@ -52,15 +62,32 @@ public class PlayerDataManager : BaseBarnabusManager
         potionManager.Load();
     }
 
+    public void SetUnlockInfo(PlayerBarnabusData barnabusData)
+    {
+        UnlockBarnabusData = barnabusData;
+    }
+
+    public void ReducePotionAmount(int value)
+    {
+        potionManager.ReducePotionAmount(value);
+    }
 
     public int GetPotionAmount()
     {
         return potionManager.PotionAmount;
     }
 
-    public BarnabusBaseData GetBarnabusBaseData(int id)
+    /// <summary>
+    /// 解鎖角色
+    /// </summary>
+    public void UnlockCharacter(int charID)
     {
-        return barnabusManager.GetBarnabusBaseData(id);
+        barnabusManager.SetCharacter(charID);
+    }
+
+    public PlayerBarnabusData GetPlayerBarnabusData(int id)
+    {
+        return barnabusManager.GetPlayerBarnabusData(id);
     }
     public int GetPlayerBarnabusCount()
     {

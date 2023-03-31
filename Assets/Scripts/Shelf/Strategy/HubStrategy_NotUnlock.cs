@@ -11,7 +11,7 @@ namespace Barnabus.Shelf
 
         public override void Refresh()
         {
-            hubController.ImageChar.enabled = false;
+            hubController.SkeletonGraphicBarnabus.enabled = false;
             hubController.SkeletonGraphicEgg.enabled = true;
         }
 

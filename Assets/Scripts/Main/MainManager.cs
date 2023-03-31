@@ -24,7 +24,7 @@ public class MainManager : MonoBehaviour, IBaseSystem
     public PlayerDataManager PlayerDataManager = null;
     public BarnabusAudioManager AudioManager = null;
     public SceneTransitionsManager SceneTransitionsManager = null;
-    public GameSceneData GameSceneData = null;
+    public GameSceneCacheData GameSceneCacheData = null;
 
     private ShelfAssets shelfAssets = null;
     private PrefabPool shelfPrefabPool = null;
@@ -90,9 +90,9 @@ public class MainManager : MonoBehaviour, IBaseSystem
     {
         return PlayerDataManager.GetPotionAmount();
     }
-    public BarnabusBaseData GetBarnabusBaseData(int id)
+    public PlayerBarnabusData GetBarnabusBaseData(int id)
     {
-        return PlayerDataManager.GetBarnabusBaseData(id);
+        return PlayerDataManager.GetPlayerBarnabusData(id);
     }
 
     #region MAIN_COMMON_UI
