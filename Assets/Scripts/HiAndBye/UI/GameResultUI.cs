@@ -18,8 +18,8 @@ namespace HiAndBye
 
         public override void Init()
         {
-            textCorrectHiNum = root.Find("Score/Text_CorrectHi/Text_number").GetComponent<TMP_Text>();
-            textCorrectByeNum = root.Find("Score/Text_CorrectBye/Text_number").GetComponent<TMP_Text>();
+            textCorrectHiNum = root.Find("Score/Image_CorrectHi/Text_number").GetComponent<TMP_Text>();
+            textCorrectByeNum = root.Find("Score/Image_CorrectBye/Text_number").GetComponent<TMP_Text>();
             textIncorrect = root.Find("Score/Text_Incorrect/Text_number").GetComponent<TMP_Text>();
             buttonBackMain = root.Find("QuitButton").GetComponent<Button>();
             buttonOK = root.Find("OKButton").GetComponent<Button>();

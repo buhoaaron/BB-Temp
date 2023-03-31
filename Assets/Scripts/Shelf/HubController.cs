@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using Barnabus;
 using Spine.Unity;
+using TMPro;
 
 namespace Barnabus.Shelf
 {
@@ -18,7 +18,7 @@ namespace Barnabus.Shelf
         private Image imageHubBrandBg = null;
         private Button buttonHubBrand = null;
         private Image imageChar = null;
-        private Text textElement = null;
+        private TMP_Text textElement = null;
         private SkeletonGraphic skeletonGraphicEgg = null;
 
         public int FakePotions = 15;
@@ -39,7 +39,7 @@ namespace Barnabus.Shelf
             imageHubBrandBg = transform.Find("Image_Hub_Brand_Bg").GetComponent<Image>();
             buttonHubBrand = transform.Find("Button_Hub_Brand").GetComponent<Button>();
             imageChar = transform.Find("Barnabus/Image_Char").GetComponent<Image>();
-            textElement = transform.Find("Text_Element").GetComponent<Text>();
+            textElement = transform.Find("TMPText_Element").GetComponent<TMP_Text>();
             skeletonGraphicEgg = transform.Find("Barnabus/SkeletonGraphic_Egg").GetComponent<SkeletonGraphic>();
         }
 

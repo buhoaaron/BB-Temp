@@ -17,7 +17,7 @@ namespace Barnabus.UI
         {
             buttonBackMain = root.Find("Box/Buttons/Button_BackMain").GetComponent<Button>();
             buttonReplay = root.Find("Box/Buttons/Button_Replay").GetComponent<Button>();
-            textPotionValue = root.Find("Box/Text_PotionValue").GetComponent<TMP_Text>();
+            textPotionValue = root.Find("Box/TMPText_PotionValue").GetComponent<TMP_Text>();
 
             buttons.Add(buttonBackMain);
             buttons.Add(buttonReplay);
