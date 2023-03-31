@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using Barnabus.UI;
 using Spine.Unity;
-using RenderHeads.Media.AVProVideo;
+using TMPro;
 
 namespace Barnabus.Shelf
 {
@@ -15,10 +15,10 @@ namespace Barnabus.Shelf
 
         public SkeletonGraphic SkeletonGraphicEgg = null;
 
-        public Text TextPlayerPotionValue = null;
-        public Text TextPotionRequire = null;
-        public Text TextPotionRequireTip = null;
-        public Text TextElement = null;
+        public TMP_Text TextPlayerPotionValue = null;
+        public TMP_Text TextPotionRequire = null;
+        public TMP_Text TextPotionRequireTip = null;
+        public TMP_Text TextElement = null;
 
         public Button ButtonClose = null;
         public Button ButtonGameRoom = null;
@@ -27,8 +27,6 @@ namespace Barnabus.Shelf
         public UnityAction OnButtonCloseClick = null;
         public UnityAction OnButtonGameRoomClick = null;
         public UnityAction OnButtonUnlockClick = null;
-
-        public MediaPlayer MediaPlayer = null;
 
         public HUB_STATE State;
 
@@ -53,8 +51,6 @@ namespace Barnabus.Shelf
             ButtonClose.onClick.AddListener(ProcessButtonCloseClick);
             ButtonGameRoom.onClick.AddListener(ProcessButtonGameRoomClick);
             ButtonUnlock.onClick.AddListener(ProcessButtonUnlockClick);
-
-            MediaPlayer.gameObject.SetActive(false);
         }
         public override void UpdateUI()
         {
@@ -64,14 +60,6 @@ namespace Barnabus.Shelf
             TextPotionRequireTip.enabled = (State == HUB_STATE.NOT_UNLOCK);
 
             TextPotionRequire.color = (State == HUB_STATE.NOT_UNLOCK) ? colorNotEnoughPotion : colorEnoughPotion;
-        }
-
-        public MediaPlayer DoUnlockVideo()
-        {
-            MediaPlayer.gameObject.SetActive(true);
-            MediaPlayer.Play();
-
-            return MediaPlayer;
         }
         public override void Clear()
         {
@@ -109,8 +97,6 @@ namespace Barnabus.Shelf
         private void ProcessButtonUnlockClick()
         {
             OnButtonUnlockClick?.Invoke();
-
-            //Destroy();
         }
     }
 }
