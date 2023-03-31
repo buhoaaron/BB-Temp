@@ -32,7 +32,7 @@ namespace Barnabus
 
         public override void Save()
         {
-            
+            DataManager.SaveCharacterData();
         }
 
         public override void Load()
@@ -44,13 +44,19 @@ namespace Barnabus
         /// </summary>
         /// <param name="allBaseData">角色初始資料</param>
         public void InitPlayerBarnabusData(AllBarnabusBaseData allBaseData)
-        {            
-            allPlayerBarnabusData = new AllPlayerBarnabusData();
+        {
+            if (allPlayerBarnabusData == null)
+                allPlayerBarnabusData = new AllPlayerBarnabusData();
 
             foreach (var baseData in allBaseData)
             {
-                var playerBarnabusData = new PlayerBarnabusData(baseData);
-                allPlayerBarnabusData.Add(playerBarnabusData);
+                var playerBarnabusData = allPlayerBarnabusData.GetBarnabusData(baseData.CharacterID);
+
+                if (playerBarnabusData == null)
+                {
+                    playerBarnabusData = new PlayerBarnabusData(baseData);
+                    allPlayerBarnabusData.Add(playerBarnabusData);
+                }
             }
         }
         /// <summary>
@@ -90,13 +96,21 @@ namespace Barnabus
 
                 Debug.Log("本地無玩家角色資料，建立：" + DataManager.Characters.ToJson());
 
-                DataManager.SaveCharacterData();
+                Save();
             }
         }
 
-        public BarnabusBaseData GetBarnabusBaseData(int id)
+        public void SetCharacter(int charID)
         {
-            return allPlayerBarnabusData.GetBarnabusData(id).BaseData;
+            allPlayerBarnabusData.GetBarnabusData(charID).IsUnlocked = true;
+            //同步給DataManager
+            var charData = new CharacterData(charID, true);
+            DataManager.Characters.SetCharacter(charData);
+        }
+
+        public PlayerBarnabusData GetPlayerBarnabusData(int id)
+        {
+            return allPlayerBarnabusData.GetBarnabusData(id);
         }
         /// <summary>
         /// 擁有的Barnabus數目

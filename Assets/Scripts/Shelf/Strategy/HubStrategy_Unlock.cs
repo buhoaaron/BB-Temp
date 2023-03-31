@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using RenderHeads.Media.AVProVideo;
-
+﻿
 namespace Barnabus.Shelf
 {
     public class HubStrategy_Unlock : BaseHubStrategy
@@ -14,7 +12,7 @@ namespace Barnabus.Shelf
 
         public override void Refresh()
         {
-            hubController.ImageChar.enabled = false;
+            hubController.SkeletonGraphicBarnabus.enabled = false;
             hubController.SkeletonGraphicEgg.enabled = true;
 
             SetEggIdleAnimation();
@@ -42,6 +40,8 @@ namespace Barnabus.Shelf
 
         private void ProcessUnlock()
         {
+            hubController.MainManager.PlayerDataManager.SetUnlockInfo(hubController.BarnabusData);
+
             hubController.MainManager.GotoUnlockState();
         }
     }

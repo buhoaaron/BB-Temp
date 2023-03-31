@@ -28,7 +28,7 @@ public class NewGameManager : MonoBehaviour
     private PlayerDataManager playerDataManager;
     #endregion
 
-    public GameSceneData GameSceneData = new GameSceneData(MAIN_MENU.MAIN);
+    public GameSceneCacheData GameSceneCacheData = new GameSceneCacheData(MAIN_MENU.MAIN);
 
     private void Start()
     {
@@ -85,7 +85,7 @@ public class NewGameManager : MonoBehaviour
         MainManager = manager;
         MainManager.AudioManager = audioeManager;
         MainManager.SceneTransitionsManager = sceneTransitionsManager;
-        MainManager.GameSceneData = GameSceneData;
+        MainManager.GameSceneCacheData = GameSceneCacheData;
         MainManager.PlayerDataManager = playerDataManager;
     }
 
