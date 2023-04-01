@@ -68,6 +68,8 @@ namespace Barnabus.SceneManagement
                     mainManager.MaximizeLessons();
                     break;
             }
+
+            controller.GameManager.GameSceneCacheData.Clear();
         }
 
         private void InitShelfAllHub()
