@@ -50,8 +50,8 @@ namespace Barnabus.SceneManagement
 
             BaseSceneState state = stateSwitcher.CaseSceneState(sceneName);
 
-            //無場景，直接切狀態
-            if (string.IsNullOrEmpty(state.SceneName))
+            //判斷是否不需要切場景
+            if (IsNotChangeScene(state.SceneName))
             {
                 base.SetState(state);
             }
@@ -94,6 +94,16 @@ namespace Barnabus.SceneManagement
             }
 
             base.StateUpdate();
+        }
+
+        /// <summary>
+        /// 是否符合不轉場的情況
+        /// </summary>
+        private bool IsNotChangeScene(string targetSceneName)
+        {
+            var isNoScene = targetSceneName == SceneLabels.NoScene;
+
+            return isNoScene;
         }
     }
 }
