@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Spine.Unity;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace HiAndBye
 {
@@ -13,7 +14,7 @@ namespace HiAndBye
         public UnityAction OnLoadCompleted = null;
 
         private List<SkeletonDataAsset> listSkeletonDataAsset;
-        private Coroutine coroutineLoadSpineAsset = null;
+        private AsyncOperationHandle handleLoadSpineAsset;
 
         #region BASE_API
         public void Init()
@@ -26,24 +27,22 @@ namespace HiAndBye
         }
         public void Clear()
         {
-            Destroy(this);
+            Addressables.Release(handleLoadSpineAsset);
         }
         #endregion
 
         public void LoadSpineAssets()
         {
-            coroutineLoadSpineAsset = StartCoroutine(ILoadSpineAssets());
+            StartCoroutine(ILoadSpineAssets());
         }
 
         private IEnumerator ILoadSpineAssets()
         {
-            var handle = Addressables.LoadAssetsAsync<SkeletonDataAsset>(Label, listSkeletonDataAsset.Add);
+            handleLoadSpineAsset = Addressables.LoadAssetsAsync<SkeletonDataAsset>(Label, listSkeletonDataAsset.Add);
 
-            yield return handle;
+            yield return handleLoadSpineAsset;
 
             OnLoadCompleted?.Invoke();
-
-            Addressables.Release(handle);
         }
 
         public SkeletonDataAsset GetSpineAsset(string name)
