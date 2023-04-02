@@ -1,4 +1,5 @@
 ﻿using Barnabus.UI;
+using Spine;
 using UnityEngine;
 
 namespace Barnabus.SceneManagement
@@ -41,10 +42,25 @@ namespace Barnabus.SceneManagement
             DoWakeUp();
         }
 
+        //TOFIX: 待美術統一EventName後要重構
+        EventData eventData;
         protected void DoWakeUp()
         {
             wakeUpUI.SpineBarnabus.AnimationState.SetAnimation(0, "s4", false);
             wakeUpUI.SpineBarnabus.AnimationState.AddAnimation(0, "s2", true, 0);
+
+            eventData = wakeUpUI.SpineBarnabus.Skeleton.Data.FindEvent("s_anger");
+            wakeUpUI.SpineBarnabus.AnimationState.Event += HandleAnimationStateEvent;
+        }
+
+        private void HandleAnimationStateEvent(TrackEntry trackEntry, Spine.Event e)
+        {
+            //bool eventMatch = string.Equals(e.Data.Name, eventName, System.StringComparison.Ordinal); // Testing recommendation: String compare.
+            bool eventMatch = (eventData == e.Data); // Performance recommendation: Match cached reference instead of string.
+            if (eventMatch)
+            {
+                controller.GameManager.AudioManager.PlaySound(AUDIO_NAME.ANGER_SOUND_01);
+            }
         }
 
         private void BackMainAndOpenShelf()
