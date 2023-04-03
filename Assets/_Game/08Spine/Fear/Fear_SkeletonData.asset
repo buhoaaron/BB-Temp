@@ -18,11 +18,13 @@ MonoBehaviour:
   skeletonJSON: {fileID: 4900000, guid: d0b969429d289814fb8e17a8a07d57c1, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
-    requiresBlendModeMaterials: 0
+    requiresBlendModeMaterials: 1
     applyAdditiveMaterial: 1
     additiveMaterials: []
     multiplyMaterials: []
-    screenMaterials: []
+    screenMaterials:
+    - pageName: Fear.png
+      material: {fileID: 2100000, guid: 49910be73e42cec42a59b74901191d09, type: 2}
   skeletonDataModifiers: []
   fromAnimation: []
   toAnimation: []

@@ -18,9 +18,11 @@ MonoBehaviour:
   skeletonJSON: {fileID: 4900000, guid: 1195f7a9641c45b488dfdc155154ea80, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
-    requiresBlendModeMaterials: 0
+    requiresBlendModeMaterials: 1
     applyAdditiveMaterial: 1
-    additiveMaterials: []
+    additiveMaterials:
+    - pageName: Surprise.png
+      material: {fileID: 2100000, guid: be35babbe97ba8c458b2adcd2d558207, type: 2}
     multiplyMaterials: []
     screenMaterials: []
   skeletonDataModifiers: []
