@@ -9,4 +9,9 @@ public class GameSceneCacheData : BaseData
     {
         MainMenuType = mainMenuType;
     }
+
+    public void Clear()
+    {
+        MainMenuType = MAIN_MENU.MAIN;
+    }
 }

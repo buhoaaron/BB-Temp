@@ -14,6 +14,7 @@
         WAKE_UP,
         WAKE_UP_WITH_UNLOCK,
         //讀取場景
+        LOADING_BASE = 100,
         LOADING_MAIN = 101,
         LOADING_FACE = 105,
         LOADING_MUSIC = 106,
