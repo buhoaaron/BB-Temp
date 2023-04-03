@@ -9,11 +9,12 @@ using Barnabus.SceneManagement;
 public class AwardController : MonoBehaviour
 {
     private static AwardController instance;
+
     private static AwardController Instance
     {
         get
         {
-            if (!instance) instance = Instantiate(Resources.LoadAll<AwardController>("Game")[0]).GetComponent<AwardController>();
+            if (!instance) instance = Instantiate(Resources.LoadAll<AwardController>("Reward 1")[0]).GetComponent<AwardController>();
             if (!instance)
             {
                 Debug.LogError("AwardController not found...");
@@ -25,7 +26,7 @@ public class AwardController : MonoBehaviour
 
     private void Awake()
     {
-        if (FindObjectsOfType<AwardController>().Length > 1)
+        if (FindObjectsOfType<AwardController>().Length>1)
         {
             Debug.Log("Destroy AwardController");
             Destroy(gameObject);
@@ -92,6 +93,8 @@ public class AwardController : MonoBehaviour
 
         Instance.StartCoroutine(Instance.PotionValueTextAnimation(potionValue));
         SetNextLevelButtonActice(clickNextLevelButtonCallback != null);
+
+        Debug.Log(instance);
     }
 
     public static void SetPotionSprite(PotionType potionType)

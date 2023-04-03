@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Barnabus.EmotionMusic;
 
 namespace Barnabus.EmotionFace
 {
@@ -133,15 +132,10 @@ namespace Barnabus.EmotionFace
             items.Add(characterItem);
 
             //OnClick_CharacterType(defaultCharacterTypeButton);
-<<<<<<< HEAD
-            /*OnClick_Character(characterButtons[0]);
-            OnClick_SelectColorTarget(0);
-            OnClick_BackgroundColor(itemButtons[0]);*/
-=======
             //OnClick_Character(characterButtons[0]);
             //OnClick_SelectColorTarget(0);
             //OnClick_BackgroundColor(itemButtons[0]);
->>>>>>> 2496724306db0907d27d25b836da62dfcfc87b24
+
 
             characterBaseButton.backgroundImage.color = Color.black;
             backgroundColorButton.backgroundImage.color = Color.black;
