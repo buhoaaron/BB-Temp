@@ -3,8 +3,6 @@ namespace Barnabus.Shelf
 {
     public class HubStrategy_Unlock : BaseHubStrategy
     {
-        private HubInfoUI hubInfoUI = null;
-
         public HubStrategy_Unlock(HubController hubController) : base(hubController)
         {
             State = HUB_STATE.UNLOCK;
@@ -25,7 +23,7 @@ namespace Barnabus.Shelf
 
         public override void ProcessHubClick()
         {
-            hubInfoUI = hubController.MainManager.CreateHubInfoUIAndInit(hubController.State);
+            var hubInfoUI = hubController.MainManager.CreateHubInfoUIAndInit(hubController.State);
 
             hubInfoUI.SetPlayerPotions(hubController.MainManager.GetPotionAmount());
             hubInfoUI.SetPotionRequire(hubController.BarnabusData.PotionExchange);
@@ -36,6 +34,8 @@ namespace Barnabus.Shelf
             hubInfoUI.SkeletonGraphicEgg.AnimationState.SetAnimation(0, "idle_Green", true);
 
             hubInfoUI.OnButtonUnlockClick = ProcessUnlock;
+
+            InitHubLayout(hubInfoUI);
         }
 
         private void ProcessUnlock()
@@ -43,6 +43,11 @@ namespace Barnabus.Shelf
             hubController.MainManager.PlayerDataManager.SetUnlockInfo(hubController.BarnabusData);
 
             hubController.MainManager.GotoUnlockState();
+        }
+
+        private void InitHubLayout(HubInfoUI hubInfoUI)
+        {
+            hubInfoUI.NotOpen.gameObject.SetActive(false);
         }
     }
 }

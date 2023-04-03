@@ -12,6 +12,7 @@ namespace Barnabus.Shelf
         [Header("Set UI Component")]
         public Transform PotionRequire = null;
         public Transform PlayerPotions = null;
+        public Transform NotOpen = null;
 
         public SkeletonGraphic SkeletonGraphicEgg = null;
 
