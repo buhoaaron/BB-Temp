@@ -9,6 +9,8 @@ public class PlayerDataManager : BaseBarnabusManager
 {
     #region CACHE_GAME_INFO
     public PlayerBarnabusData UnlockBarnabusData { get; private set; }
+
+    private GameSceneCacheData sceneCacheData = new GameSceneCacheData(MAIN_MENU.MAIN);
     #endregion
 
     private PlayersPotionManager potionManager;
@@ -41,6 +43,23 @@ public class PlayerDataManager : BaseBarnabusManager
     public override void Clear()
     {
 
+    }
+    #endregion
+
+    #region GAME_SCENE_CACHE
+    public GameSceneCacheData GetSceneCacheData()
+    {
+        return sceneCacheData;
+    }
+
+    public void SetSceneCacheData(GameSceneCacheData sceneCacheData)
+    {
+        this.sceneCacheData = sceneCacheData;
+    }
+
+    public void ResetSceneCacheData()
+    {
+        this.sceneCacheData.Reset();
     }
     #endregion
 

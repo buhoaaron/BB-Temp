@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 暫存用遊戲場景資訊
+/// 場景溝通資訊
 /// </summary>
 public class GameSceneCacheData : BaseData
 {
@@ -10,7 +10,7 @@ public class GameSceneCacheData : BaseData
         MainMenuType = mainMenuType;
     }
 
-    public void Clear()
+    public void Reset()
     {
         MainMenuType = MAIN_MENU.MAIN;
     }

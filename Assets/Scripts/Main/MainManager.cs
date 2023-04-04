@@ -26,7 +26,6 @@ public class MainManager : MonoBehaviour, IBaseSystem
     public BarnabusAudioManager AudioManager = null;
     public BarnabusCardManager CardManager = null;
     public SceneTransitionsManager SceneTransitionsManager = null;
-    public GameSceneCacheData GameSceneCacheData = null;
 
     private ShelfAssets shelfAssets = null;
     private PrefabPool shelfPrefabPool = null;
@@ -65,7 +64,7 @@ public class MainManager : MonoBehaviour, IBaseSystem
         return hubInfoUI;
     }
 
-    public void LoadAsset(UnityAction onComplete)
+    public void LoadShelfAsset(UnityAction onComplete)
     {
         shelfAssets.OnLoadCompleted = onComplete;
         shelfAssets.LoadAssets();

@@ -55,8 +55,7 @@ namespace Barnabus.SceneManagement
 
         private void HandleAnimationStateEvent(TrackEntry trackEntry, Spine.Event e)
         {
-            //bool eventMatch = string.Equals(e.Data.Name, eventName, System.StringComparison.Ordinal); // Testing recommendation: String compare.
-            bool eventMatch = (eventData == e.Data); // Performance recommendation: Match cached reference instead of string.
+            bool eventMatch = (eventData == e.Data); 
             if (eventMatch)
             {
                 controller.GameManager.AudioManager.PlaySound(AUDIO_NAME.ANGER_SOUND_01);
@@ -65,17 +64,17 @@ namespace Barnabus.SceneManagement
 
         private void BackMainAndOpenShelf()
         {
-            controller.GameManager.GameSceneCacheData = new GameSceneCacheData(MAIN_MENU.SHELF);
+            controller.GameManager.PlayerDataManager.SetSceneCacheData(new GameSceneCacheData(MAIN_MENU.SHELF));
             controller.SetState(SCENE_STATE.LOADING_MAIN);
         }
         private void BackMainAndOpenGameRoom()
         {
-            controller.GameManager.GameSceneCacheData = new GameSceneCacheData(MAIN_MENU.GAME_ROOM);
+            controller.GameManager.PlayerDataManager.SetSceneCacheData(new GameSceneCacheData(MAIN_MENU.GAME_ROOM));
             controller.SetState(SCENE_STATE.LOADING_MAIN);
         }
         private void BackMainAndOpenLessons()
         {
-            controller.GameManager.GameSceneCacheData = new GameSceneCacheData(MAIN_MENU.LESSONS);
+            controller.GameManager.PlayerDataManager.SetSceneCacheData(new GameSceneCacheData(MAIN_MENU.LESSONS));
             controller.SetState(SCENE_STATE.LOADING_MAIN);
         }
     }

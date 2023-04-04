@@ -28,8 +28,6 @@ public class NewGameManager : MonoBehaviour
     private PlayerDataManager playerDataManager;
     #endregion
 
-    public GameSceneCacheData GameSceneCacheData = new GameSceneCacheData(MAIN_MENU.MAIN);
-
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -85,7 +83,6 @@ public class NewGameManager : MonoBehaviour
         MainManager = manager;
         MainManager.AudioManager = audioeManager;
         MainManager.SceneTransitionsManager = sceneTransitionsManager;
-        MainManager.GameSceneCacheData = GameSceneCacheData;
         MainManager.PlayerDataManager = playerDataManager;
         MainManager.CardManager = barnabusCardManager;
     }

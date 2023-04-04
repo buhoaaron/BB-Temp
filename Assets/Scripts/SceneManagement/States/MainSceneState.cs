@@ -24,7 +24,7 @@ namespace Barnabus.SceneManagement
             AddButtonClickListener();
             CheckMainMenuType();
 
-            mainManager.LoadAsset(ProcessLoadAssetComplete);
+            mainManager.LoadShelfAsset(ProcessLoadShelfAssetComplete);
         }
         private void FindMainManagerAndInit()
         {
@@ -49,14 +49,16 @@ namespace Barnabus.SceneManagement
             gameRoomUI = mainManager.GameRoomUI;
         }
 
-        private void ProcessLoadAssetComplete()
+        private void ProcessLoadShelfAssetComplete()
         {
             InitShelfAllHub();
         }
 
         private void CheckMainMenuType()
         {
-            switch(mainManager.GameSceneCacheData.MainMenuType)
+            var scenCache = mainManager.PlayerDataManager.GetSceneCacheData();
+
+            switch (scenCache.MainMenuType)
             {
                 case MAIN_MENU.GAME_ROOM:
                     mainManager.MaximizeGameRoom();
@@ -69,7 +71,7 @@ namespace Barnabus.SceneManagement
                     break;
             }
 
-            controller.GameManager.GameSceneCacheData.Clear();
+            mainManager.PlayerDataManager.ResetSceneCacheData();
         }
 
         private void InitShelfAllHub()
