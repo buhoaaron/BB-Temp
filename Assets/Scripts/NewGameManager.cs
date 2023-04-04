@@ -87,6 +87,7 @@ public class NewGameManager : MonoBehaviour
         MainManager.SceneTransitionsManager = sceneTransitionsManager;
         MainManager.GameSceneCacheData = GameSceneCacheData;
         MainManager.PlayerDataManager = playerDataManager;
+        MainManager.CardManager = barnabusCardManager;
     }
 
     /// <summary>

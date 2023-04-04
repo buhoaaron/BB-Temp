@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using Spine.Unity;
 using TMPro;
+using System.Collections.Generic;
+using DG.Tweening;
 
 namespace Barnabus.Shelf
 {
@@ -21,6 +23,8 @@ namespace Barnabus.Shelf
         private SkeletonGraphic skeletonGraphicEgg = null;
         private SkeletonGraphic skeletonGraphicBarnabus = null;
 
+        private List<Graphic> pool = null;
+
         #region BASE_API
         public void Init(PlayerBarnabusData data, MainManager mainManager)
         {
@@ -39,6 +43,13 @@ namespace Barnabus.Shelf
             textElement = transform.Find("TMPText_Element").GetComponent<TMP_Text>();
             skeletonGraphicBarnabus = transform.Find("Barnabus/SkeletonGraphic_Barnabus").GetComponent<SkeletonGraphic>();
             skeletonGraphicEgg = transform.Find("Barnabus/SkeletonGraphic_Egg").GetComponent<SkeletonGraphic>();
+
+            pool = new List<Graphic>();
+            pool.Add(imageHubBrandBg);
+            pool.Add(buttonHubBrand.image);
+            pool.Add(textElement);
+            pool.Add(skeletonGraphicBarnabus);
+            pool.Add(skeletonGraphicEgg);
         }
 
         /// <summary>
@@ -48,8 +59,7 @@ namespace Barnabus.Shelf
         {
             if (!IsOpen())
             {
-                //TOFIX: 之後要新增未開放的策略
-                strategy = new HubStrategy_NotUnlock(this);
+                strategy = new HubStrategy_NotOpen(this);
                 return;
             }
 
@@ -84,12 +94,14 @@ namespace Barnabus.Shelf
 
         private void ProcessHubClick()
         {
+            MainManager.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+
             strategy.ProcessHubClick();
         }
 
         public SkeletonGraphic ChangeBarnabusSpine(int characterID, string initAnimationName = "")
         {
-            var barnabusCard = NewGameManager.Instance.BarnabusCardManager.GetCard(characterID);
+            var barnabusCard = MainManager.GetBarnabusCard(characterID);
             SkeletonGraphicBarnabus.skeletonDataAsset = barnabusCard.skeletonData;
             SkeletonGraphicBarnabus.Initialize(true);
 
@@ -114,6 +126,14 @@ namespace Barnabus.Shelf
         private bool IsOpen()
         {
             return BarnabusData.BaseData.IsOpen;
+        }
+
+        public void ChangeColor(Color color)
+        {
+            foreach (var graphic in pool)
+            {
+                graphic.DOColor(color, 0);
+            }
         }
     }
 }

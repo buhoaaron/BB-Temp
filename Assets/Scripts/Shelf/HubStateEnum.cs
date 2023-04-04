@@ -18,5 +18,9 @@
         /// 閒置
         /// </summary>
         IDLE,
+        /// <summary>
+        /// 未開放
+        /// </summary>
+        NOT_OPEN,
     }
 }

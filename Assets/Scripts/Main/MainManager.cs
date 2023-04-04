@@ -4,6 +4,7 @@ using Barnabus;
 using Barnabus.UI;
 using Barnabus.Shelf;
 using Barnabus.SceneTransitions;
+using Barnabus.Card;
 
 /// <summary>
 /// 主選單管理者
@@ -23,6 +24,7 @@ public class MainManager : MonoBehaviour, IBaseSystem
 
     public PlayerDataManager PlayerDataManager = null;
     public BarnabusAudioManager AudioManager = null;
+    public BarnabusCardManager CardManager = null;
     public SceneTransitionsManager SceneTransitionsManager = null;
     public GameSceneCacheData GameSceneCacheData = null;
 
@@ -93,6 +95,11 @@ public class MainManager : MonoBehaviour, IBaseSystem
     public PlayerBarnabusData GetBarnabusBaseData(int id)
     {
         return PlayerDataManager.GetPlayerBarnabusData(id);
+    }
+
+    public BarnabusScanScriptable GetBarnabusCard(int characterID)
+    {
+        return CardManager.GetCard(characterID);
     }
 
     #region MAIN_COMMON_UI
