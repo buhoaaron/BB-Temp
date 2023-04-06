@@ -12,7 +12,7 @@ namespace HiAndBye.StateControl
         {
             var gameResultUI = gameManager.GameResultUI;
             var answerInfo = gameManager.AnswerManager.GetAnswerInfo();
-            var countDownTime = gameManager.CountDownManager.CountDownTime;
+            var gameTime = gameManager.CountDownManager.CountDownTime;
 
             gameResultUI.Show();
             gameResultUI.SetScore(answerInfo.CorrectHiNum, answerInfo.CorrectByeNum, answerInfo.IncorrectEmtionsCount);
@@ -23,7 +23,7 @@ namespace HiAndBye.StateControl
             CreateIncorrectBarnabus(answerInfo);
 
             //分析階級
-            gameManager.RankManager.Check(answerInfo.CorrectNum, countDownTime);
+            gameManager.RankManager.Check(answerInfo.CorrectNum, gameTime);
         }
 
         public override void StateUpdate()

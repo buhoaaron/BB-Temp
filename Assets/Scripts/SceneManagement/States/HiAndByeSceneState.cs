@@ -30,18 +30,19 @@ namespace Barnabus.SceneManagement
             gameResultUI.Init();
             settingUI.Init();
             potionRewardUI.Init();
-            //
+            //交接介面
             gameManager.GameRootUI = gameRootUI;
             gameManager.GameResultUI = gameResultUI;
             gameManager.SettingUI = settingUI;
             gameManager.PotionRewardUI = potionRewardUI;
             //註冊事件
             AddButtonClickListener();
+            //讀取hi & bye的遊戲資料
+            gameManager.LoadRankInfo();
+            gameManager.LoadInterferenceInfo();
             //啟動遊戲狀態機
             gameManager.StateController.SetState(GAME_STATE.GAME_INIT);
             gameManager.StateController.SetDebugEnabled(false);
-
-            gameManager.LoadRankInfo();
         }
 
         private void AddButtonClickListener()

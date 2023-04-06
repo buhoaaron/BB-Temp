@@ -19,4 +19,12 @@
         RANK_2,
         RANK_3,
     }
+
+    public enum EFFECT
+    {
+        A,
+        B,
+        C,
+        D,
+    }
 }

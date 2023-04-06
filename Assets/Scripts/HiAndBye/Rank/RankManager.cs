@@ -5,7 +5,6 @@ namespace HiAndBye
     public class RankManager : HiAndByeBaseManager
     {
         private AllRankInfo allRankInfo = null;
-
         private RankInfo playerRankInfo = null;
 
         public RankManager(HiAndByeGameManager gm) : base(gm)

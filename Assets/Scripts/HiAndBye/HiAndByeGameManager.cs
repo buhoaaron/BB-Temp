@@ -22,6 +22,8 @@ namespace HiAndBye
         //答錯Barnabus生成管理
         public IncorrentBarnabusBuilder IncorrentBarnabusBuilder = null;
 
+        public InterferenceManager InterferenceManager = null;
+
         public GameRootUI GameRootUI = null;
         public GameResultUI GameResultUI = null;
         public SettingUI SettingUI = null;
@@ -46,11 +48,16 @@ namespace HiAndBye
 
             IncorrentBarnabusBuilder = GetComponent<IncorrentBarnabusBuilder>();
             IncorrentBarnabusBuilder.Init();
+
+            InterferenceManager = new InterferenceManager(this);
+            InterferenceManager.Init();
         }
         public void SystemUpdate()
         {
             StateController?.StateUpdate();
             CountDownManager?.SystemUpdate();
+
+            InterferenceManager?.SystemUpdate();
         }
         public void Clear()
         {
@@ -92,11 +99,20 @@ namespace HiAndBye
             NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
         }
 
-        public List<RankInfo> LoadRankInfo()
+        public AllRankInfo LoadRankInfo()
         {
             var infos = NewGameManager.Instance.JsonManager.DeserializeObject<AllRankInfo>(JsonText.RankData);
 
             RankManager.SetAllRankInfo(infos);
+
+            return infos;
+        }
+
+        public AllInterferenceInfo LoadInterferenceInfo()
+        {
+            var infos = NewGameManager.Instance.JsonManager.DeserializeObject<AllInterferenceInfo>(JsonText.InterferenceData);
+
+            InterferenceManager.SetAllInterferenceInfo(infos);
 
             return infos;
         }

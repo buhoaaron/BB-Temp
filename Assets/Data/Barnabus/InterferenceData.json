@@ -1,0 +1,26 @@
+[
+    {
+        "EffectType": "A",
+        "t": 0.3,
+        "W_Time": 100,
+        "W_CorrectNum": 120
+    },
+    {
+        "EffectType": "B",
+        "t": 0.3,
+        "W_Time": 158,
+        "W_CorrectNum": 200
+    },
+    {
+        "EffectType": "C",
+        "t": 0.3,
+        "W_Time": 316,
+        "W_CorrectNum": 250
+    },
+    {
+        "EffectType": "D",
+        "t": 0.3,
+        "W_Time": 1000,
+        "W_CorrectNum": 300
+    }
+]

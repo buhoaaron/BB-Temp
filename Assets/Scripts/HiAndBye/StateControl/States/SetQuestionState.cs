@@ -11,7 +11,11 @@ namespace HiAndBye.StateControl
 
         public override void Begin()
         {
-            setQuestionInfo = gameStateController.HiAndByeGameManager.QuestionManager.RandomQuestion();
+            setQuestionInfo = gameManager.QuestionManager.RandomQuestion();
+
+            var gameTime = gameManager.CountDownManager.CountDownTime;
+            var correctNum = gameManager.AnswerManager.GetAnswerInfo().CorrectNum;
+            var interferenceEffectInfo = gameManager.InterferenceManager.RandomInterferenceEffect(gameTime, correctNum);
 
             SetQuestion();
 
@@ -19,7 +23,7 @@ namespace HiAndBye.StateControl
         }
         private void SetQuestion()
         {
-            var gameRootUI = gameStateController.HiAndByeGameManager.GameRootUI;
+            var gameRootUI = gameManager.GameRootUI;
 
             gameRootUI.SetBarnabusSpine(setQuestionInfo.BarnabusSkeletonDataAsset, setQuestionInfo.BarnabusFace);
             gameRootUI.SetTextVocab(setQuestionInfo.BarnabusVocab);
@@ -27,9 +31,7 @@ namespace HiAndBye.StateControl
         }
         private void DoDropDown()
         {
-            var gameRootUI = gameStateController.HiAndByeGameManager.GameRootUI;
-
-            gameRootUI.DoDropDown(OnDropDownComplete);
+            gameManager.GameRootUI.DoDropDown(OnDropDownComplete);
         }
         private void OnDropDownComplete()
         {
@@ -38,7 +40,7 @@ namespace HiAndBye.StateControl
         }
         private void PlayBarnabusSound()
         {
-            gameStateController.HiAndByeGameManager.PlaySound(setQuestionInfo.BarnabusVoice);
+            gameManager.PlaySound(setQuestionInfo.BarnabusVoice);
         }
         private void GotoAnswerQuestionState()
         {
