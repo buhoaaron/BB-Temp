@@ -324,11 +324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: bedf9be913997d1479f1d3c93a74f13d, type: 3}
       propertyPath: ShapeModule.m_Scale.x
-      value: 9.425827
+      value: 3.8058705
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: bedf9be913997d1479f1d3c93a74f13d, type: 3}
       propertyPath: ShapeModule.m_Scale.y
-      value: 7.247459
+      value: 4.7953844
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: bedf9be913997d1479f1d3c93a74f13d, type: 3}
       propertyPath: ShapeModule.radiusThickness
@@ -353,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 7419717194333257187, guid: bedf9be913997d1479f1d3c93a74f13d, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b980609ecfd75e14d8b61587ba019e8e, type: 3}
+      objectReference: {fileID: 21300000, guid: ec74f35d426b647acad810072bb10ed8, type: 3}
     - target: {fileID: 7419717194333257187, guid: bedf9be913997d1479f1d3c93a74f13d, type: 3}
       propertyPath: SubModule.subEmitters.Array.data[0].type
       value: 0
@@ -6590,7 +6590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ShapeModule.type
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ColorModule.enabled
@@ -6602,11 +6602,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ForceModule.x.scalar
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ForceModule.y.scalar
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
+      propertyPath: ForceModule.z.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ShapeModule.arc.mode
@@ -6622,11 +6626,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ShapeModule.m_Scale.y
-      value: 2.3251371
+      value: 6.219701
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: VelocityModule.enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
+      propertyPath: ForceModule.x.minScalar
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
+      propertyPath: ForceModule.y.minScalar
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ShapeModule.donutRadius
@@ -6638,11 +6650,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: VelocityModule.y.scalar
-      value: -1
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.53872925
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
+      propertyPath: ForceModule.x.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
+      propertyPath: ForceModule.y.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
+      propertyPath: ForceModule.z.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: SizeBySpeedModule.enabled
@@ -6654,7 +6678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: VelocityModule.y.minScalar
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ShapeModule.radiusThickness
@@ -6681,8 +6705,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
+      propertyPath: ForceModule.randomizePerFrame
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 1000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -6690,7 +6718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 1000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -6698,7 +6726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.40392157
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -6707,7 +6735,7 @@ PrefabInstance:
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3bd4f2b0d052840508f02f3168e5f055, type: 3}
+      objectReference: {fileID: 21300000, guid: c96a1be359e114793a7a69d7f70d012f, type: 3}
     - target: {fileID: 7419717194333257187, guid: eb6ce7b2fbda669409d82d3c0b2b99dc, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime1
       value: 65342
