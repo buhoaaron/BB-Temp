@@ -46,8 +46,8 @@ namespace Barnabus.SceneManagement
         EventData eventData;
         protected void DoWakeUp()
         {
-            wakeUpUI.SpineBarnabus.AnimationState.SetAnimation(0, "s4", false);
-            wakeUpUI.SpineBarnabus.AnimationState.AddAnimation(0, "s2", true, 0);
+            wakeUpUI.SpineBarnabus.AnimationState.SetAnimation(0, SpineLabels.BarnabusAction2, false);
+            wakeUpUI.SpineBarnabus.AnimationState.AddAnimation(0, SpineLabels.BarnabusIdle, true, 0);
 
             eventData = wakeUpUI.SpineBarnabus.Skeleton.Data.FindEvent("s_anger");
             wakeUpUI.SpineBarnabus.AnimationState.Event += HandleAnimationStateEvent;

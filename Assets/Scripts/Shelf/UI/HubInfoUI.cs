@@ -99,5 +99,13 @@ namespace Barnabus.Shelf
         {
             OnButtonUnlockClick?.Invoke();
         }
+
+        public SkeletonGraphic ChangeEggSkin(string skinName)
+        {
+            SkeletonGraphicEgg.initialSkinName = skinName;
+            SkeletonGraphicEgg.Initialize(true);
+
+            return SkeletonGraphicEgg;
+        }
     }
 }

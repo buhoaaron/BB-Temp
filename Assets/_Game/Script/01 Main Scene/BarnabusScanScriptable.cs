@@ -80,7 +80,7 @@ public class BarnabusScanScriptable : ScriptableObject
     //FIXED: new Animation name
     //s1: sleep
     //s2: idle
-    [SerializeField] string idleAnimation = "s2", idleSleepAnimation = "s1";
+    [SerializeField] string idleAnimation = SpineLabels.BarnabusIdle, idleSleepAnimation = SpineLabels.BarnabusSleep;
 
     [Header("Story")]
     public AudioClip storySound;

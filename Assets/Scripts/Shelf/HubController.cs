@@ -99,6 +99,14 @@ namespace Barnabus.Shelf
             strategy.ProcessHubClick();
         }
 
+        public SkeletonGraphic ChangeEggSkin(string skinName)
+        {
+            SkeletonGraphicEgg.initialSkinName = skinName;
+            SkeletonGraphicEgg.Initialize(true);
+
+            return SkeletonGraphicEgg;
+        }
+
         public SkeletonGraphic ChangeBarnabusSpine(int characterID, string initAnimationName = "")
         {
             var barnabusCard = MainManager.GetBarnabusCard(characterID);

@@ -1,12 +1,12 @@
 public enum COLOR
 {
-	Red,
-	Blue,
-	Green,
-	Yellow,
-	Orange,
-	Purple,
-	Rainbow,
+	red,
+	blue,
+	green,
+	yellow,
+	orange,
+	purple,
+	rainbow,
 }
 
 public enum MAIN_MENU

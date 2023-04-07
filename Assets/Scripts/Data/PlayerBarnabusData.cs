@@ -6,6 +6,7 @@
         public int PotionExchange => BaseData.PotionExchange;
         public string Element => BaseData.Element;
         public string Name => BaseData.Name;
+        public string ColorName => BaseData.Color.ToString();
 
         public BarnabusBaseData BaseData { get; private set; }
         /// <summary>

@@ -3,6 +3,8 @@ namespace Barnabus.Shelf
 {
     public class HubStrategy_Unlock : BaseHubStrategy
     {
+        private string eggUnlockAnimation = SpineLabels.EggUnlockAnimation;
+
         public HubStrategy_Unlock(HubController hubController) : base(hubController)
         {
             State = HUB_STATE.UNLOCK;
@@ -18,7 +20,8 @@ namespace Barnabus.Shelf
 
         private void SetEggIdleAnimation()
         {
-            hubController.SkeletonGraphicEgg.AnimationState.SetAnimation(0, "idle_Green", true);
+            var spineEgg = hubController.ChangeEggSkin(hubController.BarnabusData.ColorName);
+            spineEgg.AnimationState.SetAnimation(0, eggUnlockAnimation, true);
         }
 
         public override void ProcessHubClick()
@@ -31,7 +34,8 @@ namespace Barnabus.Shelf
 
             hubInfoUI.DoPopUp();
 
-            hubInfoUI.SkeletonGraphicEgg.AnimationState.SetAnimation(0, "idle_Green", true);
+            var spineEgg = hubInfoUI.ChangeEggSkin(hubController.BarnabusData.ColorName);
+            spineEgg.AnimationState.SetAnimation(0, eggUnlockAnimation, true);
 
             hubInfoUI.OnButtonUnlockClick = ProcessUnlock;
 

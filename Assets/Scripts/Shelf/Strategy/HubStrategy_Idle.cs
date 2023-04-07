@@ -15,7 +15,7 @@ namespace Barnabus.Shelf
 
         protected override void ChangeBarnabusSpine(int characterID)
         {
-            hubController.ChangeBarnabusSpine(characterID, "s2");
+            hubController.ChangeBarnabusSpine(characterID, SpineLabels.BarnabusIdle);
         }
     }
 }
