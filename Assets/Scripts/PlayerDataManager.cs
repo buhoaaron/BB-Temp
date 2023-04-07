@@ -34,9 +34,10 @@ public class PlayerDataManager : BaseBarnabusManager
     public override void SystemUpdate()
     {
     #if DEBUG_MODE
-        if (Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.A))
         {
-            DataManager.DeleteLocalCharacterData();
+            NewGameManager.Instance.PlayerDataManager.IncreasePotionAmount(50);
+            NewGameManager.Instance.PlayerDataManager.Save();
         }
     #endif
     }
