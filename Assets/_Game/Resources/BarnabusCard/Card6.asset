@@ -20,7 +20,7 @@ MonoBehaviour:
     yellow: 7
     blue: 10
   cardImage: {fileID: 21300000, guid: 794993e23d19749718638d9f8f514532, type: 3}
-  barnabusImage: {fileID: -1334128258, guid: 52a71fa87b519f2498979a17a048223c, type: 3}
+  barnabusImage: {fileID: 21300000, guid: 3f8e71a6b205b4915b790326eb458e7a, type: 3}
   lockedCardImage: {fileID: 21300000, guid: a9ce5c26580ee904b8be8402bd9150f2, type: 3}
   lockedBarnabusImage: {fileID: 21300000, guid: 9e0df8eff47bc42b4a2dc9904dabd01a, type: 3}
   barnabusNo: 7

@@ -20,11 +20,10 @@ namespace Barnabus.SceneManagement
         {
             FindMainManagerAndInit();
             InitUI();
+            InitShelfAllHub();
 
             AddButtonClickListener();
             CheckMainMenuType();
-
-            mainManager.LoadShelfAsset(ProcessLoadShelfAssetComplete);
         }
         private void FindMainManagerAndInit()
         {

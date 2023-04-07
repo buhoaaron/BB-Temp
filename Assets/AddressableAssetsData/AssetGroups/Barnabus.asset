@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 1fc2eff8931e2c54d8cf5e5ddf7e18df
-  m_SerializeEntries:
-  - m_GUID: 52a71fa87b519f2498979a17a048223c
-    m_Address: HubBrandSprites
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8bac6ea6add247b42a85463bbe989d6c, type: 2}
   m_SchemaSet:

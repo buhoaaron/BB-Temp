@@ -15,28 +15,6 @@ namespace Barnabus.Shelf
         [Header("Set HubBrand Bg")]
         public List<Sprite> ListHubBrandBgSprite = null;
 
-        [Header("Call LoadAssets")]
-        [SerializeField]
-        private List<Sprite> listHubBrandBarnabusSprite = null;
-
-        public void LoadAssets()
-        {
-            LoadAsset<Sprite[]>(AddressablesLabels.HubBrandSprites, ProcessLoadCompleted);
-        }
-
-        private void ProcessLoadCompleted(AsyncOperationHandle<Sprite[]> handle)
-        {
-            listHubBrandBarnabusSprite = new List<Sprite>(handle.Result);
-
-            OnLoadCompleted?.Invoke();
-            
-            Release(handle);
-        }
-
-        public Sprite GetHubBrandBarnabusSprite(string name)
-        {
-            return listHubBrandBarnabusSprite.Find(data => data.name.Contains(name));
-        }
 
         public Sprite GetHubBrandBg(int index)
         {

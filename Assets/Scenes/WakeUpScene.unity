@@ -251,6 +251,10 @@ PrefabInstance:
       propertyPath: _mediaPath._pathType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 428958919096510258, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1091034003, guid: 255ab719202467b4bb9e1cb117ebae9d, type: 3}
     - target: {fileID: 737570103929959641, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
       propertyPath: m_fontColor.b
       value: 0.39215687
@@ -267,6 +271,22 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4284769380
       objectReference: {fileID: 0}
+    - target: {fileID: 3473665724920279954, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1056816705, guid: 255ab719202467b4bb9e1cb117ebae9d, type: 3}
+    - target: {fileID: 4607000073894257577, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -570027267, guid: 255ab719202467b4bb9e1cb117ebae9d, type: 3}
+    - target: {fileID: 5703979085310277136, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1056816705, guid: 255ab719202467b4bb9e1cb117ebae9d, type: 3}
+    - target: {fileID: 5734957274826599577, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1342362832, guid: 5d517c03d2d10f4498c9306c3449b69e, type: 3}
     - target: {fileID: 5809410661949787997, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
       propertyPath: m_Interactable
       value: 0
@@ -395,6 +415,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8801166637879807071, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2016006057, guid: 5d517c03d2d10f4498c9306c3449b69e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -64,12 +64,6 @@ public class MainManager : MonoBehaviour, IBaseSystem
         return hubInfoUI;
     }
 
-    public void LoadShelfAsset(UnityAction onComplete)
-    {
-        shelfAssets.OnLoadCompleted = onComplete;
-        shelfAssets.LoadAssets();
-    }
-
     public void GotoWakeUpState()
     {
         isDoWakeUp = true;
@@ -138,11 +132,6 @@ public class MainManager : MonoBehaviour, IBaseSystem
     #endregion
 
     #region SHELF_ASSETS
-    public Sprite GetBarnabusSprite(string name)
-    {
-        return shelfAssets.GetHubBrandBarnabusSprite(name);
-    }
-
     public Sprite GetHubBrandBg(COLOR color)
     {
         return shelfAssets.GetHubBrandBg((int)color);
