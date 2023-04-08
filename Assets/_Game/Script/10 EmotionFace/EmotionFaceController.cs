@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Barnabus.UI;
+using Barnabus.SceneManagement;
 
 namespace Barnabus.EmotionFace
 {
@@ -30,6 +32,8 @@ namespace Barnabus.EmotionFace
         private SelectableButton rightButtonPrefab;
         [SerializeField]
         private Item itemPrefab;
+        [SerializeField]
+        private PotionRewardUI potionRewardUIPrefab;
 
         [Header("ButtonContainer")]
        /* [SerializeField]
@@ -776,15 +780,30 @@ namespace Barnabus.EmotionFace
 
         private void ShowEndDialog()
         {
-            DialogController.ShowDialog(DialogController.StringAsset.emotionFaceEndDialog, ShowAward);
+            ShowAward();
+            // DialogController.ShowDialog(DialogController.StringAsset.emotionFaceEndDialog, ShowAward);
         }
 
         private void ShowAward()
         {
-            AwardController.SetPotionSprite(Game.GameSettings.EmotionFacePotionType);
-            AwardController.ShowAward(3, 3, () => SceneTransit.LoadSceneAsync("MainScene"),
-                                           null,
-                                           () => SceneTransit.LoadSceneAsync("EmotionFace"));
+            //FIXED: Unified potion reward UI
+            var potionRewardUI = Instantiate(potionRewardUIPrefab, canvas);
+            potionRewardUI.Init(POTION_REWARD_MODE.TWO_BUTTONS);
+            potionRewardUI.DoPopUp();
+            potionRewardUI.SetPotionValue(3);
+            
+            potionRewardUI.OnButtonBackMainClick = () =>
+            {
+                //�^MainRoom
+                NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+                NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
+            };
+            potionRewardUI.OnButtonReplayClick = () =>
+            {
+                //�A�i�@��Face
+                NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+                NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_FACE);
+            };
 
             DataManager.LoadPotions();
             DataManager.Potions.AddPotion(Game.GameSettings.EmotionFacePotionType, 3);

@@ -36,10 +36,12 @@ public class BreathingEnd : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "AngerBreathing":
-                DialogController.ShowDialog(DialogController.StringAsset.angerbreathingEndDialog, () => ShowAward());
+                ShowAward();
+                // DialogController.ShowDialog(DialogController.StringAsset.angerbreathingEndDialog, () => ShowAward());
                 break;
             case "PropBreathing":
-                DialogController.ShowDialog(DialogController.StringAsset.propbreathingEndDialog, () => ShowAward());
+                ShowAward();
+                // DialogController.ShowDialog(DialogController.StringAsset.propbreathingEndDialog, () => ShowAward());
                 break;
         }
     }

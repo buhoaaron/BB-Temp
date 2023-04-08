@@ -29,7 +29,7 @@ namespace Barnabus.SceneManagement
             gameRootUI.Init();
             gameResultUI.Init();
             settingUI.Init();
-            potionRewardUI.Init();
+            potionRewardUI.Init(POTION_REWARD_MODE.TWO_BUTTONS);
             //交接介面
             gameManager.GameRootUI = gameRootUI;
             gameManager.GameResultUI = gameResultUI;

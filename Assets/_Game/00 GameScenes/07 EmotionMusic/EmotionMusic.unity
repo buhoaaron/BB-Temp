@@ -557,11 +557,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755ea937c731925418fb936037395018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 2059368655}
   asset: {fileID: 11400000, guid: f93c0e594eeef1a45b27ec5ee5a57bc6, type: 2}
   characterSelector: {fileID: 1096898893}
   characterButtonContainer: {fileID: 145697505}
   characterButtonPrefab: {fileID: 2098063219232397794, guid: 2c91bbacd2c922e4cb10752ba83e9d52, type: 3}
   selectorConfirmButton: {fileID: 982505102}
+  potionRewardUIPrefab: {fileID: 4761105340444323856, guid: 0f3b1165f3e22694498bf2fd1f765168, type: 3}
   selectCharacterCanvas: {fileID: 1633241792}
   stageCharacters:
   - {fileID: 1108131711}

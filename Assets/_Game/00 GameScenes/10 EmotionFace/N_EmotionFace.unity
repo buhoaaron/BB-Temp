@@ -6754,6 +6754,7 @@ MonoBehaviour:
   leftButtonPrefab: {fileID: 5533691673835322680, guid: 1a27e3df13c23944983fad14075fd70b, type: 3}
   rightButtonPrefab: {fileID: 6452456944091575454, guid: 598a2b9e3a2736b4a948484acbd287af, type: 3}
   itemPrefab: {fileID: 8920748706788762419, guid: c408759da33c0a44692de22a68bd990d, type: 3}
+  potionRewardUIPrefab: {fileID: 4761105340444323856, guid: 0f3b1165f3e22694498bf2fd1f765168, type: 3}
   characterButtonContainer: {fileID: 486979459}
   itemTypeButtonContainer: {fileID: 1505584017}
   itemButtonContainer: {fileID: 2044864690}

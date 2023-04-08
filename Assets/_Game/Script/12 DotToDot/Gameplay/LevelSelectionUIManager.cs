@@ -49,7 +49,7 @@ namespace DrawDotGame
             {
                 splashScreen.SetActive(false);
             }
-            DialogController.ShowDialog(DialogController.StringAsset.dotToDotStartDialog, null);
+            // DialogController.ShowDialog(DialogController.StringAsset.dotToDotStartDialog, null);
 
             menuAnimator = menuUI.GetComponentInChildren<Animator>();
             menuUI.SetActive(false);
