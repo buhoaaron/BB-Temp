@@ -787,7 +787,7 @@ namespace Barnabus.EmotionFace
         {
             //FIXED: Unified potion reward UI
             var potionRewardUI = Instantiate(potionRewardUIPrefab, canvas);
-            potionRewardUI.Init();
+            potionRewardUI.Init(POTION_REWARD_MODE.TWO_BUTTONS);
             potionRewardUI.DoPopUp();
             potionRewardUI.SetPotionValue(3);
             

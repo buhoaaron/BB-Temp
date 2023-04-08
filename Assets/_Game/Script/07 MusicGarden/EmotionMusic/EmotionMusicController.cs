@@ -1,3 +1,5 @@
+using Barnabus.SceneManagement;
+using Barnabus.UI;
 using CustomAudio;
 using System;
 using System.Collections;
@@ -12,6 +14,8 @@ namespace Barnabus.EmotionMusic
     public class EmotionMusicController : MonoBehaviour
     {
         [SerializeField]
+        private RectTransform canvas;
+        [SerializeField]
         private EmotionMusicAsset asset;
         public EmotionMusicAsset Asset { get { return asset; } }
 
@@ -24,6 +28,10 @@ namespace Barnabus.EmotionMusic
         private CharacterButton characterButtonPrefab;
         [SerializeField]
         private GameObject selectorConfirmButton;
+
+        [Header("Prefab")]
+        [SerializeField]
+        private PotionRewardUI potionRewardUIPrefab;
 
         [Header("Select Character")]
         [SerializeField]
@@ -214,15 +222,25 @@ namespace Barnabus.EmotionMusic
 
         public void ShowAward()
         {
-            AwardController.SetPotionSprite(Game.GameSettings.EmotionMusicPotionType);
-            AwardController.ShowAward(3, 3, () => SceneTransit.LoadSceneAsync("MainScene"),
-                                           () => OnClick_SelectStageBack(),
-                                           () => SceneTransit.LoadSceneAsync("EmotionMusic"));
-            /*
-            AwardController.ShowAward(3, 3,() => ConfirmAutoSave(() => SceneTransit.LoadSceneAsync("MainScene")),
-                                           () => OnClick_SelectStageBack(),
-                                           () => ConfirmAutoSave(() => SceneTransit.LoadSceneAsync("EmotionMusic")));
-            */
+            //FIXED: Unified potion reward UI
+            var potionRewardUI = Instantiate(potionRewardUIPrefab, canvas);
+            potionRewardUI.Init(POTION_REWARD_MODE.TWO_BUTTONS);
+            potionRewardUI.DoPopUp();
+            potionRewardUI.SetPotionValue(3);
+
+            potionRewardUI.OnButtonBackMainClick = () =>
+            {
+                //回MainRoom
+                NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+                NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
+            };
+            potionRewardUI.OnButtonReplayClick = () =>
+            {
+                //再進一次Music
+                NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+                NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MUSIC);
+            };
+
             DataManager.LoadPotions();
             DataManager.Potions.AddPotion(Game.GameSettings.EmotionMusicPotionType, 3);
             DataManager.SavePotions();

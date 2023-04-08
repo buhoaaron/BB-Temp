@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Barnabus.UI;
+using Barnabus.SceneManagement;
 
 #if EASY_MOBILE
 using EasyMobile;
@@ -25,6 +27,9 @@ namespace DrawDotGame
         public AnimationClip showMenuPanel;
         public AnimationClip hideMenuPanel;
 
+        [SerializeField]
+        private RectTransform settingCanvas;
+
         [Header("Premium Features Buttons")]
         public GameObject btnWatchRewardedAd;
         public GameObject btnInAppPurchase;
@@ -35,6 +40,10 @@ namespace DrawDotGame
         [Header("Sharing-Specific")]
         public GameObject shareUI;
         public ShareUIController shareUIController;
+
+        [Header("Prefab")]
+        [SerializeField]
+        private PotionRewardUI potionRewardUIPrefab;
 
         private bool hasWatchedAd;
         private bool isFirstWin;
@@ -103,22 +112,23 @@ namespace DrawDotGame
 
         void ShowUIWhenGameOver()
         {
-            /*
-             gameEndUI.SetActive(true);
-            btnNext.SetActive(false);
-            btnRetry.SetActive(true);
+            //FIXED: Unified potion reward UI
+            var potionRewardUI = Instantiate(potionRewardUIPrefab, settingCanvas);
+            potionRewardUI.Init(POTION_REWARD_MODE.TWO_BUTTONS);
+            potionRewardUI.DoPopUp();
+            potionRewardUI.SetPotionValue(0);
 
-            // Whether to show share button (premium feature)
-
-            //Get the img and showing up
-            if (PremiumFeaturesManager.Instance.enablePremiumFeatures)
-                ShowShareUI();
-             */
-
-            AwardController.SetPotionSprite(Game.GameSettings.DotToDotPotionType);
-            AwardController.ShowAward(0, 0, () => SceneTransit.LoadSceneAsync("MainScene"),
-                                           () => Retry(),
-                                           null);
+            potionRewardUI.OnButtonBackMainClick = () =>
+            {
+                //回MainRoom
+                NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+                NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
+            };
+            potionRewardUI.OnButtonReplayClick = () =>
+            {
+                NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+                Retry();
+            };
         }
 
         void ShowUIWhenWin()
@@ -155,10 +165,30 @@ namespace DrawDotGame
 
         private void ShowAward()
         {
-            AwardController.SetPotionSprite(Game.GameSettings.DotToDotPotionType);
-            AwardController.ShowAward(3, 3, () => SceneTransit.LoadSceneAsync("MainScene"),
-                                           () => gameManager.Restart(),
-                                           () => NextLevel());
+            //FIXED: Unified potion reward UI
+            var potionRewardUI = Instantiate(potionRewardUIPrefab, settingCanvas);
+            potionRewardUI.Init(POTION_REWARD_MODE.THREE_BUTTONS);
+            potionRewardUI.DoPopUp();
+            potionRewardUI.SetPotionValue(3);
+
+            potionRewardUI.OnButtonBackMainClick = () =>
+            {
+                //回MainRoom
+                NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+                NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
+            };
+            potionRewardUI.OnButtonReplayClick = () =>
+            {
+                NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+                gameManager.Restart();
+                potionRewardUI.Destroy();
+            };
+            potionRewardUI.OnButtonNextLevelClick = () =>
+            {
+                NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+                NextLevel();
+                potionRewardUI.Destroy();
+            };
 
             Barnabus.DataManager.LoadPotions();
             Barnabus.DataManager.Potions.AddPotion(Game.GameSettings.DotToDotPotionType, 3);

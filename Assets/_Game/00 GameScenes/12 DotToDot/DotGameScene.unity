@@ -690,11 +690,13 @@ MonoBehaviour:
   heartShortageAlert: {fileID: 1673768820}
   showMenuPanel: {fileID: 7400000, guid: 63ff76247f71f0f46af3a761ff39c7b1, type: 2}
   hideMenuPanel: {fileID: 7400000, guid: 42dc2ea54b18a824bb53a88d9f81726b, type: 2}
+  settingCanvas: {fileID: 1255942994}
   btnWatchRewardedAd: {fileID: 1273366293}
   btnInAppPurchase: {fileID: 906278855}
   storeUI: {fileID: 1825831437}
   shareUI: {fileID: 544194425}
   shareUIController: {fileID: 544194424}
+  potionRewardUIPrefab: {fileID: 4761105340444323856, guid: 0f3b1165f3e22694498bf2fd1f765168, type: 3}
 --- !u!4 &253007710
 Transform:
   m_ObjectHideFlags: 0
@@ -3312,6 +3314,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb070e30bd957b645a02b294fd65ab50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1255942994 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3346200291959275624, guid: 04329982389b3584193abd88109827bb, type: 3}
+  m_PrefabInstance: {fileID: 1255942992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1270705631
 GameObject:
   m_ObjectHideFlags: 0
