@@ -217,7 +217,8 @@ namespace Barnabus.EmotionMusic
 
         public void ShowEndDialog()
         {
-            DialogController.ShowDialog(DialogController.StringAsset.emotionMusicEndDialog, () => ShowAward());
+            ShowAward();
+            // DialogController.ShowDialog(DialogController.StringAsset.emotionMusicEndDialog, () => ShowAward());
         }
 
         public void ShowAward()

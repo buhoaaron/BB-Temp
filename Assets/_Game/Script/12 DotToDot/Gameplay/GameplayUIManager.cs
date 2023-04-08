@@ -160,7 +160,8 @@ namespace DrawDotGame
 
         private void ShowEndDialog()
         {
-            DialogController.ShowDialog(DialogController.StringAsset.dotToDotEndDialog, () => ShowAward());
+            ShowAward();
+            // DialogController.ShowDialog(DialogController.StringAsset.dotToDotEndDialog, () => ShowAward());
         }
 
         private void ShowAward()

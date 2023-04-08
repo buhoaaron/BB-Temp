@@ -780,7 +780,8 @@ namespace Barnabus.EmotionFace
 
         private void ShowEndDialog()
         {
-            DialogController.ShowDialog(DialogController.StringAsset.emotionFaceEndDialog, ShowAward);
+            ShowAward();
+            // DialogController.ShowDialog(DialogController.StringAsset.emotionFaceEndDialog, ShowAward);
         }
 
         private void ShowAward()
@@ -793,13 +794,13 @@ namespace Barnabus.EmotionFace
             
             potionRewardUI.OnButtonBackMainClick = () =>
             {
-                //¦^MainRoom
+                //ï¿½^MainRoom
                 NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
                 NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
             };
             potionRewardUI.OnButtonReplayClick = () =>
             {
-                //¦A¶i¤@¦¸Face
+                //ï¿½Aï¿½iï¿½@ï¿½ï¿½Face
                 NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
                 NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_FACE);
             };
