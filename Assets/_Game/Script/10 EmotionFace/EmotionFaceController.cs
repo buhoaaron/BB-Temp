@@ -794,13 +794,13 @@ namespace Barnabus.EmotionFace
             
             potionRewardUI.OnButtonBackMainClick = () =>
             {
-                //�^MainRoom
+                //Back MainRoom
                 NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
                 NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
             };
             potionRewardUI.OnButtonReplayClick = () =>
             {
-                //�A�i�@��Face
+                //ReEnter Face
                 NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
                 NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_FACE);
             };

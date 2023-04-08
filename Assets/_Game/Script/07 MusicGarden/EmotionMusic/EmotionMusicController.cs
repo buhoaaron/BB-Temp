@@ -231,13 +231,13 @@ namespace Barnabus.EmotionMusic
 
             potionRewardUI.OnButtonBackMainClick = () =>
             {
-                //回MainRoom
+                //Back MainRoom
                 NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
                 NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
             };
             potionRewardUI.OnButtonReplayClick = () =>
             {
-                //再進一次Music
+                //ReEnter Music
                 NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
                 NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MUSIC);
             };
