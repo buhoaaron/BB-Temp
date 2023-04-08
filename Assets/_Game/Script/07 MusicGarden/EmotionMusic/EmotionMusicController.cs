@@ -87,7 +87,7 @@ namespace Barnabus.EmotionMusic
         void Update()
         {
          
-            //RefreshCharacterButtonStates();
+           
             
         }
 
@@ -106,6 +106,7 @@ namespace Barnabus.EmotionMusic
                     selectConfirmButton.SetActive(selectedCharactersID[0] != -1);
                     break;
                 case MusicGameState.SelectSupport:
+                    selectCharacterCanvas.SetActive(true);
                     for (int i = 0; i < selectedCharactersID.Length; i++)
                     {
                         spotlights[i].SetActive(i != 0);
@@ -149,6 +150,8 @@ namespace Barnabus.EmotionMusic
                     }
                     selectedStageIndex = 0;
                     ChangeGameState(MusicGameState.SelectMain);
+                    //RefreshCharacterButtonStates();
+                    GenerateCharacterButtons();
                     break;
                 case MusicGameState.SelectFinalCheck:
                     ChangeGameState(MusicGameState.SelectSupport);
@@ -160,11 +163,12 @@ namespace Barnabus.EmotionMusic
                     characterSelector.SetActive(true);
                     editMusicCanvas.SetActive(false);
                     selectedStageIndex = 1;
+                    ChangeGameState(MusicGameState.SelectSupport);
                     for (int i = 0; i < selectedCharactersID.Length; i++)
                     {
                         SetStageCharacter(i, asset.GetCharacterAssetByID(selectedCharactersID[i]));
                     }
-                    ChangeGameState(MusicGameState.SelectSupport);
+                    RefreshCharacterButtonStates();
                     break;
                 case MusicGameState.Dance:
                     dancePlayer.Stop();
@@ -315,7 +319,7 @@ namespace Barnabus.EmotionMusic
             currentSelectedCharacterID = -1;
             characterSelector.SetActive(false);
         }
-
+/*
         public void OnClick_SelectConfirm()
         {
             selectedCharactersID[selectedStageIndex] = currentSelectedCharacterID;
@@ -335,9 +339,9 @@ namespace Barnabus.EmotionMusic
                 FillUpEmptyCharacter();
             }
             //OnClick_CloseCharacterSelector();
-        }
+        }*/
 
-        private void FillUpEmptyCharacter()
+       /* private void FillUpEmptyCharacter()
         {
             int index = 999;
             for (int i = 0; i < selectedCharactersID.Length; i++)
@@ -356,7 +360,7 @@ namespace Barnabus.EmotionMusic
                 }
                 selectedCharactersID[selectedCharactersID.Length - 1] = -1;
             }
-        }
+        }*/
 
         private void OnClick_CharacterButton(CharacterButton button)
         {
@@ -365,7 +369,7 @@ namespace Barnabus.EmotionMusic
             {
                 currentSelectedCharacterID = -1;
                 button.SetFrameVisable(false);
-               
+                
             }
             else
             {
@@ -381,16 +385,19 @@ namespace Barnabus.EmotionMusic
                 
                 AudioClip clip = asset.GetCharacterAssetByID(button.characterID).sound;
                 if (!AudioManager.instance.IsSoundExist(clip)) AudioManager.instance.PlaySound(clip);
+
+                selectedCharactersID[selectedStageIndex] = currentSelectedCharacterID;
+
+ 
             }
+
+                for (int i = 0; i < selectedCharactersID.Length; i++)
+                    SetStageCharacter(i, asset.GetCharacterAssetByID(selectedCharactersID[i]));
+
             selectorConfirmButton.SetActive(true);
 
-            selectedCharactersID[selectedStageIndex] = currentSelectedCharacterID;
-
-            for (int i = 0; i < selectedCharactersID.Length; i++)
-                SetStageCharacter(i, asset.GetCharacterAssetByID(selectedCharactersID[i]));
-
+               
             RefreshCharacterButtonStates();
-
 
             if (selectedStageIndex != 0&&currentSelectedCharacterID!=-1)
             {
@@ -398,8 +405,7 @@ namespace Barnabus.EmotionMusic
 
             }
 
-
-
+            
             if (selectedStageIndex > 4)
             {
                 selectedStageIndex = 4;
@@ -428,6 +434,7 @@ namespace Barnabus.EmotionMusic
                 {
                     characterButtons[i].SetEnable(true);
                     characterButtons[i].SetCharacterSprite(asset.GetCharacterAssetByID(characterButtons[i].characterID).icon);
+
                 }
                 else
                 {
@@ -436,10 +443,13 @@ namespace Barnabus.EmotionMusic
                 }
 
                 frameID = GetCharacterFrameID(characterButtons[i].characterID);
+
                 if (frameID != -1)
                 {
                     characterButtons[i].SetFrameVisable(true);
                     characterButtons[i].SetFrameSprite(asset.selectedFrames[frameID]);
+                    characterButtons[i].SetEnable(false);
+                    characterButtons[i].SetCharacterSprite(asset.GetCharacterAssetByID(characterButtons[i].characterID).lockedIcon);
                 }
                 else characterButtons[i].SetFrameVisable(false);
             }
