@@ -254,12 +254,20 @@ namespace Barnabus.EmotionFace
             for (int i = 0; i < asset.CharacterTypeCount; i++)
             {
                 newButton = Instantiate(leftButtonPrefab, characterButtonContainer);
-                newButton.backgroundImage.sprite = asset.buttonUnselectedSprite;
-                newButton.buttonIcon.sprite = asset.GetCharacterType(i).Icon;
-                newButton.parameter = asset.GetCharacterType(i).Name;
-                newButton.onClick = OnClick_CharacterType;
 
+                /*if (asset.IsCharacterUnlocked(int.Parse(asset.GetCharacterType(i).Name)))
+                {*/
+                    newButton.backgroundImage.sprite = asset.buttonUnselectedSprite;
+                    newButton.buttonIcon.sprite = asset.GetCharacterType(i).Icon;
+                    newButton.parameter = asset.GetCharacterType(i).Name;
+                    newButton.onClick = OnClick_CharacterType;
+              /*  }
+                else
+                    newButton.buttonIcon.sprite = asset.GetCharacterType(i).LockedIcon;
+                    newButton.backgroundImage.sprite = asset.buttonUnselectedSprite;
+*/
                 if (i == 0) defaultCharacterTypeButton = newButton;
+
             }
         }
 
@@ -324,9 +332,15 @@ namespace Barnabus.EmotionFace
                 clickedButton.backgroundImage.sprite = asset.buttonSelectedSprite;
                 selectedCharacterTypeButton = clickedButton;
 
-                RefreshCharacterButton(clickedButton.parameter);
+                pictureCharacter.sprite = asset.GetCharacterType(selectedCharacterTypeButton.parameter).Sprite;
+                SetCharacterColor();
+
+                //RefreshCharacterButton(clickedButton.parameter);
                 characterList.SetActive(true);
             }
+
+          
+
         }
 
         private void OnClick_Character(SelectableButton clickedButton)
@@ -794,13 +808,13 @@ namespace Barnabus.EmotionFace
             
             potionRewardUI.OnButtonBackMainClick = () =>
             {
-                //�^MainRoom
+                //Back MainRoom
                 NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
                 NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
             };
             potionRewardUI.OnButtonReplayClick = () =>
             {
-                //�A�i�@��Face
+                //ReEnter Face
                 NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
                 NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_FACE);
             };

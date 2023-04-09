@@ -174,7 +174,6 @@ namespace DrawDotGame
 
             potionRewardUI.OnButtonBackMainClick = () =>
             {
-                //回MainRoom
                 NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
                 NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
             };
