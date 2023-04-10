@@ -33,16 +33,17 @@ namespace HiAndBye
             {
                 var countDowning = countDownTime - (Time.realtimeSinceStartup - startRealtime);
 
-                OnCountDown?.Invoke(countDowning);
-                OnCountDownFormat?.Invoke(ConvertCountDownFormat(countDowning));
-
                 if (countDowning <= 0)
                 {
+                    countDowning = 0;
                     isCountDownOver = true;
 
                     StopCountDown();
                     OnCountDownOver?.Invoke();
                 }
+
+                OnCountDown?.Invoke(countDowning);
+                OnCountDownFormat?.Invoke(ConvertCountDownFormat(countDowning));
             }
         }
         public override void Clear()
