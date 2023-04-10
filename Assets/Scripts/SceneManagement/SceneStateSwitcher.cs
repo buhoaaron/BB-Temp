@@ -31,6 +31,8 @@ namespace Barnabus.SceneManagement
                     return new WakeUpSceneState(sceneStateController, SceneLabels.WakeUp);
                 case SCENE_STATE.WAKE_UP_WITH_UNLOCK:
                     return new WakeUpSceneUnlockState(sceneStateController, SceneLabels.WakeUp);
+                case SCENE_STATE.BREATHING:
+                    return new BreathingSceneState(sceneStateController, SceneLabels.Breathing);
 
                 case SCENE_STATE.LOADING_MAIN:
                     return new LoadingMainSceneState(sceneStateController, SceneLabels.Loading);
@@ -42,6 +44,8 @@ namespace Barnabus.SceneManagement
                     return new LoadingDotToDotSceneState(sceneStateController, SceneLabels.Loading);
                 case SCENE_STATE.LOADING_HI_AND_BYE:
                     return new LoadingHiAndByeSceneState(sceneStateController, SceneLabels.Loading);
+                case SCENE_STATE.LOADING_BREATHING:
+                    return new LoadingBreathingSceneState(sceneStateController, SceneLabels.Loading);
                 case SCENE_STATE.LOADING_BASE:
                     return new LoadingBaseState(sceneStateController, SceneLabels.Loading);
                 default:

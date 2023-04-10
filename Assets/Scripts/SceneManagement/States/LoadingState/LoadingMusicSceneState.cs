@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-
-namespace Barnabus.SceneManagement
+﻿namespace Barnabus.SceneManagement
 {
     public class LoadingMusicSceneState : BaseLoadingSceneState
     {

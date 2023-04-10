@@ -122,6 +122,7 @@ namespace Barnabus.SceneManagement
             gameRoomUI.GameButtons[1].onClick.AddListener(GotoMusic);
             gameRoomUI.GameButtons[2].onClick.AddListener(GotoDotToDot);
             gameRoomUI.GameButtons[3].onClick.AddListener(GotoHiAndBye);
+            gameRoomUI.GameButtons[4].onClick.AddListener(GotoBreathing);
 
             controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, mainUI.Buttons);
             controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, gameRoomUI.Buttons);
@@ -165,6 +166,10 @@ namespace Barnabus.SceneManagement
         private void GotoHiAndBye()
         {
             controller.SetState(SCENE_STATE.LOADING_HI_AND_BYE);
+        }
+        private void GotoBreathing()
+        {
+            controller.SetState(SCENE_STATE.LOADING_BREATHING);
         }
         private void GotoWakeUpBarnabus()
         {

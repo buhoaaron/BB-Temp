@@ -13,6 +13,7 @@
         HI_AND_BYE = 8,
         WAKE_UP,
         WAKE_UP_WITH_UNLOCK,
+        BREATHING,
         //讀取場景
         LOADING_BASE = 100,
         LOADING_MAIN = 101,
@@ -20,5 +21,6 @@
         LOADING_MUSIC = 106,
         LOADING_DOT_TO_DOT = 107,
         LOADING_HI_AND_BYE = 108,
+        LOADING_BREATHING = 111,
     }
 }
