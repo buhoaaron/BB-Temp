@@ -12,6 +12,7 @@ namespace Barnabus.SceneManagement
         private ShelfUI shelfUI = null;
         private BooksUI booksUI = null;
         private LessonsUI lessonsUI = null;
+        private NavigationBarUI navigationBarUI = null;
 
         public MainSceneState(SceneStateController controller, string sceneName) : base(controller, sceneName)
         {}
@@ -19,10 +20,12 @@ namespace Barnabus.SceneManagement
         public override void Begin()
         {
             FindMainManagerAndInit();
+
             InitUI();
             InitShelfAllHub();
 
             AddButtonClickListener();
+
             CheckMainMenuType();
         }
         private void FindMainManagerAndInit()
@@ -31,7 +34,7 @@ namespace Barnabus.SceneManagement
             mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
             mainManager.Init();
             //將它交給GameManager強化功能
-            NewGameManager.Instance.SetMainManager(mainManager);
+            controller.GameManager.SetMainManager(mainManager);
         }
         private void InitUI()
         {
@@ -41,16 +44,15 @@ namespace Barnabus.SceneManagement
             mainManager.LessonsUI.Init();
             mainManager.GameRoomUI.Init();
 
+            var isMute = controller.GameManager.AudioManager.IsMute;
+            mainManager.NavigationBarUI.Init(!isMute);
+
             mainUI = mainManager.MainUI;
             shelfUI = mainManager.ShelfUI;
             booksUI = mainManager.BooksUI;
             lessonsUI = mainManager.LessonsUI;
             gameRoomUI = mainManager.GameRoomUI;
-        }
-
-        private void ProcessLoadShelfAssetComplete()
-        {
-            InitShelfAllHub();
+            navigationBarUI = mainManager.NavigationBarUI;
         }
 
         private void CheckMainMenuType()
@@ -114,6 +116,8 @@ namespace Barnabus.SceneManagement
             shelfUI.ButtonReturn.onClick.AddListener(mainManager.MinimizeShelf);
             booksUI.ButtonReturn.onClick.AddListener(mainManager.MinimizeBooks);
 
+            navigationBarUI.OnButtonSoundClick = ProcessSoundMute;
+
             gameRoomUI.GameButtons[0].onClick.AddListener(GotoFace);
             gameRoomUI.GameButtons[1].onClick.AddListener(GotoMusic);
             gameRoomUI.GameButtons[2].onClick.AddListener(GotoDotToDot);
@@ -124,6 +128,7 @@ namespace Barnabus.SceneManagement
             controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, lessonsUI.Buttons);
             controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, shelfUI.Buttons);
             controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, booksUI.Buttons);
+            controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, navigationBarUI.Buttons);
         }
         private void RemoveButtonClickListener()
         {
@@ -142,6 +147,7 @@ namespace Barnabus.SceneManagement
             controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, lessonsUI.Buttons);
             controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, shelfUI.Buttons);
             controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, booksUI.Buttons);
+            controller.GameManager.AudioManager.RemoveButton(AUDIO_NAME.BUTTON_CLICK, navigationBarUI.Buttons);
         }
         
         private void GotoFace()
@@ -167,6 +173,13 @@ namespace Barnabus.SceneManagement
         private void GotoUnlockBarnabus()
         {
             controller.SetState(SCENE_STATE.WAKE_UP_WITH_UNLOCK);
+        }
+
+        private void ProcessSoundMute(bool isOn)
+        {
+            var isMute = !isOn;
+
+            controller.GameManager.AudioManager.SetMuteAll(isMute);
         }
     }
 }

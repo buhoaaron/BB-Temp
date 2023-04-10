@@ -14,6 +14,8 @@
             base.Begin();
             //讀取角色基本資料
             LoadBarnabusBaseData();
+            //讀取音樂音效靜音設定
+            LoadAudioMuteSetting();
         }
         public override void StateUpdate()
         {
@@ -24,6 +26,14 @@
         {
             controller.GameManager.CustomStartCoroutine(controller.GameManager.BarnabusCardManager.LoadBarnabusListAsync());
             controller.GameManager.BarnabusCardManager.LoadJson();
+        }
+
+        private void LoadAudioMuteSetting()
+        {
+            var isMuteSound = controller.GameManager.PlayerDataManager.GetMuteSound();
+            var isMuteBGM = controller.GameManager.PlayerDataManager.GetMuteBGM();
+
+            controller.GameManager.AudioManager.SetMuteAll(isMuteSound || isMuteBGM);
         }
     }
 }
