@@ -25,22 +25,26 @@ namespace Barnabus.UI
             ButtonReturn.image.enabled = false;
         }
 
-        public void Maximize()
+        public BaseMainCommonUI Maximize()
         {
             GetComponent<Canvas>().sortingOrder = Order;
             UIRoot.localScale = Vector2.one;
             UIRoot.localPosition = Vector2.zero;
 
             ButtonReturn.image.enabled = true;
+
+            return this;
         }
 
-        public void Minimize()
+        public BaseMainCommonUI Minimize()
         {
             GetComponent<Canvas>().sortingOrder = 0;
             UIRoot.localScale = originScale;
             UIRoot.localPosition = originPos;
 
             ButtonReturn.image.enabled = false;
+
+            return this;
         }
 
         public GameObject AddChild(GameObject prefab)

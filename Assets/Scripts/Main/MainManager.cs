@@ -34,6 +34,8 @@ public class MainManager : MonoBehaviour, IBaseSystem
 
     private bool isDoWakeUp = false;
     private bool isDoUnlock = false;
+    //使用者目前選中的房間
+    private BaseMainCommonUI curretnSelect = null;
 
     #region BASE_API
     public void Init()
@@ -96,7 +98,7 @@ public class MainManager : MonoBehaviour, IBaseSystem
     #region MAIN_COMMON_UI
     public void MaximizeShelf()
     {
-        ShelfUI.Maximize();
+        curretnSelect = ShelfUI.Maximize();
     }
     public void MinimizeShelf()
     {
@@ -104,7 +106,7 @@ public class MainManager : MonoBehaviour, IBaseSystem
     }
     public void MaximizeLessons()
     {
-        LessonsUI.Maximize();
+        curretnSelect = LessonsUI.Maximize();
     }
     public void MinimizeLessons()
     {
@@ -112,7 +114,7 @@ public class MainManager : MonoBehaviour, IBaseSystem
     }
     public void MaximizeBooks()
     {
-        BooksUI.Maximize();
+        curretnSelect = BooksUI.Maximize();
     }
     public void MinimizeBooks()
     {
@@ -121,11 +123,19 @@ public class MainManager : MonoBehaviour, IBaseSystem
 
     public void MaximizeGameRoom()
     {
-        GameRoomUI.Maximize();
+        curretnSelect = GameRoomUI.Maximize();
     }
     public void MinimizeGameRoom()
     {
         GameRoomUI.Minimize();
+    }
+    public void BackHome()
+    {
+        if (curretnSelect != null)
+        {
+            curretnSelect.Minimize();
+            curretnSelect = null;
+        }
     }
     #endregion
 

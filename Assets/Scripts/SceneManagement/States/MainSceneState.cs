@@ -117,6 +117,7 @@ namespace Barnabus.SceneManagement
             booksUI.ButtonReturn.onClick.AddListener(mainManager.MinimizeBooks);
 
             navigationBarUI.OnButtonSoundClick = ProcessSoundMute;
+            navigationBarUI.OnButtonHomeClick = ProcessBackHome;
 
             gameRoomUI.GameButtons[0].onClick.AddListener(GotoFace);
             gameRoomUI.GameButtons[1].onClick.AddListener(GotoMusic);
@@ -185,6 +186,11 @@ namespace Barnabus.SceneManagement
             var isMute = !isOn;
 
             controller.GameManager.AudioManager.SetMuteAll(isMute);
+        }
+
+        private void ProcessBackHome()
+        {
+            mainManager.BackHome();
         }
     }
 }
