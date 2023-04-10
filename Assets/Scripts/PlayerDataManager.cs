@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Barnabus;
+using System;
 using System.Collections.Generic;
 
 /// <summary>
@@ -33,17 +34,41 @@ public class PlayerDataManager : BaseBarnabusManager
     }
     public override void SystemUpdate()
     {
-    #if DEBUG_MODE
+#if DEBUG_MODE
         if (Input.GetKeyUp(KeyCode.A))
         {
-            NewGameManager.Instance.PlayerDataManager.IncreasePotionAmount(50);
-            NewGameManager.Instance.PlayerDataManager.Save();
+            IncreasePotionAmount(50);
+            Save();
         }
-    #endif
+#endif
     }
     public override void Clear()
     {
 
+    }
+    #endregion
+
+    public override void Save()
+    {
+        barnabusManager.Save();
+        potionManager.Save();
+    }
+
+    #region AUDIO
+    public void SetMuteAll(bool isMute)
+    {
+        var muteState = Convert.ToInt16(isMute); 
+
+        DataManager.IsMuteBGM = muteState;
+        DataManager.IsMuteSFX = muteState;
+    }
+    public bool GetMuteBGM()
+    {
+        return Convert.ToBoolean(DataManager.IsMuteBGM);
+    }
+    public bool GetMuteSound()
+    {
+        return Convert.ToBoolean(DataManager.IsMuteSFX);
     }
     #endregion
 
@@ -63,45 +88,18 @@ public class PlayerDataManager : BaseBarnabusManager
         this.sceneCacheData.Reset();
     }
     #endregion
-
-    public override void Save()
-    {
-        barnabusManager.Save();
-        potionManager.Save();
-    }
-
+    
+    #region BARNABUS
     public void LoadPlayerBarnabus()
     {
         var allData = GameManager.BarnabusCardManager.GetAllBarnabusBaseData();
         barnabusManager.InitPlayerBarnabusData(allData);
         barnabusManager.Load();
     }
-
-    public void LoadPlayerPotions()
-    {
-        potionManager.Load();
-    }
-
     public void SetUnlockInfo(PlayerBarnabusData barnabusData)
     {
         UnlockBarnabusData = barnabusData;
     }
-
-    public void ReducePotionAmount(int value)
-    {
-        potionManager.ReducePotionAmount(value);
-    }
-
-    public void IncreasePotionAmount(int value)
-    {
-        potionManager.IncreasePotionAmount(value);
-    }
-
-    public int GetPotionAmount()
-    {
-        return potionManager.PotionAmount;
-    }
-
     /// <summary>
     /// 解鎖角色
     /// </summary>
@@ -109,7 +107,6 @@ public class PlayerDataManager : BaseBarnabusManager
     {
         barnabusManager.SetCharacter(charID);
     }
-
     public PlayerBarnabusData GetPlayerBarnabusData(int id)
     {
         return barnabusManager.GetPlayerBarnabusData(id);
@@ -122,4 +119,25 @@ public class PlayerDataManager : BaseBarnabusManager
     {
         return barnabusManager.GetBatch(batchNo);
     }
+    #endregion
+
+    #region POTIONS
+
+    public void LoadPlayerPotions()
+    {
+        potionManager.Load();
+    }
+    public void ReducePotionAmount(int value)
+    {
+        potionManager.ReducePotionAmount(value);
+    }
+    public void IncreasePotionAmount(int value)
+    {
+        potionManager.IncreasePotionAmount(value);
+    }
+    public int GetPotionAmount()
+    {
+        return potionManager.PotionAmount;
+    }
+    #endregion
 }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Barnabus;
+using AudioSystem;
 using Barnabus.SceneManagement;
 using Barnabus.Card;
 using Barnabus.SceneTransitions;
@@ -47,10 +47,6 @@ public class NewGameManager : MonoBehaviour
     {
         instance = this;
 
-        var audioSourceManager = GetComponentInChildren<AudioSystem.AudioSourceManager>();
-        audioeManager = new BarnabusAudioManager(audioSourceManager);
-        audioeManager.Init();
-
         sceneTransitionsManager = GetComponentInChildren<SceneTransitionsManager>();
         sceneTransitionsManager.Init();
 
@@ -65,6 +61,10 @@ public class NewGameManager : MonoBehaviour
 
         playerDataManager = new PlayerDataManager(this);
         playerDataManager.Init();
+
+        var audioSourceManager = GetComponentInChildren<AudioSourceManager>();
+        audioeManager = new BarnabusAudioManager(this, audioSourceManager);
+        audioeManager.Init();
     }
 
     /// <summary>

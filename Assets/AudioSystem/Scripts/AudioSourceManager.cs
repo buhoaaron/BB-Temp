@@ -14,6 +14,9 @@ namespace AudioSystem
         private AudioSource currentPlayBGM = null;
         private AudioClipResources audioClipResources = null;
 
+        public bool IsMuteBGM { get; private set; } = false;
+        public bool IsMuteSound { get; private set; } = false;
+
         private void Awake()
         {
             if (instance == null)
@@ -41,6 +44,7 @@ namespace AudioSystem
 
             currentPlayBGM.clip = audioClip;
             currentPlayBGM.loop = true;
+            currentPlayBGM.volume = IsMuteBGM ? 0 : 1;
             currentPlayBGM.Play();
         }
         /// <summary>
@@ -78,10 +82,23 @@ namespace AudioSystem
             var source = CreateAudioSource(audioClipPair.Name, audioClipPair.Clip);
             source.loop = false;
             source.PlayDelayed(delay);
+            source.volume = IsMuteSound ? 0 : 1;
 
             yield return new WaitForSeconds(audioClipPair.Clip.length + delay);
 
             Destroy(source.gameObject);
+        }
+
+        public void SetMuteBGM(bool isMute)
+        {
+            IsMuteBGM = isMute;
+
+            currentPlayBGM.volume = IsMuteBGM ? 0 : 1;
+        }
+
+        public void SetMuteSound(bool isMute)
+        {
+            IsMuteSound = isMute;
         }
 
         private AudioClipPair GetAudioClip(int audioClipIndex)

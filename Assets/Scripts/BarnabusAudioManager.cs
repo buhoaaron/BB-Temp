@@ -5,27 +5,35 @@ using AudioSystem;
 /// <summary>
 /// 遊戲音樂音效管理
 /// </summary>
-public class BarnabusAudioManager : IBaseSystem 
+public class BarnabusAudioManager : BaseBarnabusManager
 {
+    public bool IsMute
+    {
+        get
+        {
+            return audioSourceManager.IsMuteBGM || audioSourceManager.IsMuteSound;
+        }
+    }
+
     private AudioSourceManager audioSourceManager;
     private Dictionary<AUDIO_NAME, ButtonClickSubject> dictButtonClickSubjects;
 
-    public BarnabusAudioManager(AudioSourceManager audioSourceManager)
+    public BarnabusAudioManager(NewGameManager gm, AudioSourceManager asm) : base(gm)
     {
-        this.audioSourceManager = audioSourceManager;
+        audioSourceManager = asm;
     }
 
-    public void Init()
+    public override void Init()
     {
         dictButtonClickSubjects = new Dictionary<AUDIO_NAME, ButtonClickSubject>();
     }
 
-    public void SystemUpdate()
+    public override void SystemUpdate()
     {
 
     }
 
-    public void Clear()
+    public override void Clear()
     {
 
     }
@@ -33,6 +41,14 @@ public class BarnabusAudioManager : IBaseSystem
     public void PlaySound(AUDIO_NAME audioName, float delay = 0)
     {
         audioSourceManager.PlaySound(audioName.ToString(), delay);
+    }
+
+    public void SetMuteAll(bool isMute)
+    {
+        audioSourceManager.SetMuteBGM(isMute);
+        audioSourceManager.SetMuteSound(isMute);
+
+        GameManager.PlayerDataManager.SetMuteAll(isMute);
     }
 
     public void AddButton(AUDIO_NAME name, Button button)

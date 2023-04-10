@@ -7,6 +7,7 @@
         public string Element => BaseData.Element;
         public string Name => BaseData.Name;
         public string ColorName => BaseData.Color.ToString();
+        public AUDIO_NAME SoundKey => BaseData.SoundKey;
 
         public BarnabusBaseData BaseData { get; private set; }
         /// <summary>

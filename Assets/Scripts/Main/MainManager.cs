@@ -21,11 +21,13 @@ public class MainManager : MonoBehaviour, IBaseSystem
     public BooksUI BooksUI = null;
     [Header("Set Canvas ClassRoom")]
     public LessonsUI LessonsUI = null;
-
+    [Header("Set Canvas NavigationBar")]
+    public NavigationBarUI NavigationBarUI = null;
+    [Space(20)]
+    public SceneTransitionsManager SceneTransitionsManager = null;
     public PlayerDataManager PlayerDataManager = null;
     public BarnabusAudioManager AudioManager = null;
     public BarnabusCardManager CardManager = null;
-    public SceneTransitionsManager SceneTransitionsManager = null;
 
     private ShelfAssets shelfAssets = null;
     private PrefabPool shelfPrefabPool = null;
@@ -49,10 +51,6 @@ public class MainManager : MonoBehaviour, IBaseSystem
     }
     #endregion
 
-    public void ChangeState()
-    {
-
-    }
     public HubInfoUI CreateHubInfoUIAndInit(HUB_STATE state)
     {
         var prefab = GetShelfPrefab("HubInfo");
@@ -145,6 +143,11 @@ public class MainManager : MonoBehaviour, IBaseSystem
     public GameObject GetShelfPrefab(string name)
     {
         return shelfPrefabPool.GetPrefab(name);
+    }
+
+    public void LoadNavigationBarAsset()
+    {
+        shelfAssets.LoadNavigationBarAsset();
     }
     #endregion
 }
