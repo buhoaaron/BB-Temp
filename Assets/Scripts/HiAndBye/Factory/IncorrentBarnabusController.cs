@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 namespace HiAndBye
 {
@@ -9,7 +10,7 @@ namespace HiAndBye
         public UnityAction OnButtonBarnabusClick = null;
 
         private Button buttonBarnabus = null;
-        private Text textName = null;
+        private TMP_Text textName = null;
 
         public IncorrentBarnabusController(GameObject target) : base(target)
         {}
@@ -18,7 +19,7 @@ namespace HiAndBye
         public override void Init()
         {
             buttonBarnabus = Transform.Find("Mode/Button_Barnabus").GetComponent<Button>();
-            textName = Transform.Find("Mode/Text_Name").GetComponent<Text>();
+            textName = Transform.Find("Mode/Text_Name").GetComponent<TMP_Text>();
 
             buttonBarnabus.onClick.AddListener(ProcessButtonBarnabusClick);
         }

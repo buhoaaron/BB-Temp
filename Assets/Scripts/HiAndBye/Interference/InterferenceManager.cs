@@ -21,21 +21,9 @@ namespace HiAndBye
             probability.Init();
         }
 
-        int correctNum = 0;
-
         public override void SystemUpdate()
         {
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                var info = RandomInterferenceEffect(10, correctNum);
 
-                if (info != null)
-                    Debug.Log("Show " + info.EffectType);
-                else
-                    Debug.Log("not Show");
-
-                correctNum++;
-            }
         }
         public override void Clear()
         {

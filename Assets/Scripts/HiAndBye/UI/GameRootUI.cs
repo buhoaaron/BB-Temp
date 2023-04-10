@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using Barnabus.UI;
 using Spine.Unity;
 using TMPro;
-
+using Coffee.UIExtensions;
 using DG.Tweening;
 
 namespace HiAndBye
@@ -17,6 +17,9 @@ namespace HiAndBye
         public Button ButtonHi => buttons[0];
         public Button ButtonBye => buttons[1];
         public Button buttonBackMain => buttons[2];
+
+        [Header("Set Interference Particles")]
+        public UIParticle InterferenceParticles = null;
 
         private readonly int dropDownDistanceY = 1000;
         private readonly int dropDownPosY = -400;
@@ -122,6 +125,16 @@ namespace HiAndBye
         public void SetDebugTextAnswer(string value)
         {
             debugTextAnswer.text = string.Format("Answer: {0}", value);
+        }
+
+        public ParticleSystem GetInterferenceParticle(INTERFERENCE_EFFECT effect)
+        {
+            var effectName = effect.ToString();
+            var result = InterferenceParticles.particles.Find(particle => particle.name.Contains(effectName));
+
+            Debug.Assert(result != null, "GetInterferenceParticle: Can't find " + effectName);
+
+            return result;
         }
     }
 }

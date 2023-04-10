@@ -20,7 +20,7 @@
         RANK_3,
     }
 
-    public enum EFFECT
+    public enum INTERFERENCE_EFFECT
     {
         A,
         B,

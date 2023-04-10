@@ -4,7 +4,7 @@ namespace HiAndBye
 {
     public class AllInterferenceInfo : List<InterferenceInfo>
     {
-        public InterferenceInfo GetInterferenceInfo(EFFECT effect)
+        public InterferenceInfo GetInterferenceInfo(INTERFERENCE_EFFECT effect)
         {
             return Find(info => info.EffectType == effect);
         }
