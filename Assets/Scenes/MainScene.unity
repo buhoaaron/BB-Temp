@@ -1994,8 +1994,6 @@ MonoBehaviour:
   Prefabs:
   - Name: HubInfo
     Prefab: {fileID: 3346200291959275540, guid: b527ed837c2c4604d912786d1ba2d323, type: 3}
-  - Name: WakeUp
-    Prefab: {fileID: 7049111876454359979, guid: 7fb4e3fcab888ab43ba378b20b82fcbc, type: 3}
 --- !u!1 &1193218375
 GameObject:
   m_ObjectHideFlags: 0

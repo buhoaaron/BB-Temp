@@ -19,7 +19,7 @@
         }
         public override void StateUpdate()
         {
-            controller.SetState(SCENE_STATE.LOADING_MAIN);
+            controller.SetState(SCENE_STATE.LOADING_LOGIN);
         }
 
         private void LoadBarnabusBaseData()

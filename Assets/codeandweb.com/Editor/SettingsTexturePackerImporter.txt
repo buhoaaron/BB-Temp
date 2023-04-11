@@ -7,6 +7,7 @@ tpsheetFileNames:
 - Assets/Sprite/Atlas/ClassRoomUI.tpsheet
 - Assets/Sprite/Atlas/GameInfo.tpsheet
 - Assets/Sprite/Atlas/HubBrand.tpsheet
+- Assets/Sprite/Atlas/LoginCommon.tpsheet
 - Assets/Sprite/Atlas/NavigationBar.tpsheet
 - Assets/Sprite/Atlas/PotionHIghlightEffect.tpsheet
 textureFileNames:
@@ -17,11 +18,13 @@ textureFileNames:
 - Assets/Sprite/Atlas/ClassRoomUI.png
 - Assets/Sprite/Atlas/GameInfo.png
 - Assets/Sprite/Atlas/HubBrand.png
+- Assets/Sprite/Atlas/LoginCommon.png
 - Assets/Sprite/Atlas/NavigationBar.png
 - Assets/Sprite/Atlas/PotionHIghlightEffect.png
 normalmapFileNames:
 - 
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 
