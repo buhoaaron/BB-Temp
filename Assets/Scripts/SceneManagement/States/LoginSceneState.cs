@@ -18,8 +18,7 @@ namespace Barnabus.SceneManagement
             manager = GameObject.FindObjectOfType<LoginSceneManager>();
             manager.Init();
 
-            controller.GameManager.AudioManager.AddButton(AUDIO_NAME.BUTTON_CLICK, manager.IdentificationUI.Buttons);
-
+            //TOFIX: 測試用SKip鍵，後續可拔
             manager.IdentificationUI.ButtonSkip.onClick.AddListener(SkipLogin);
         }
 
