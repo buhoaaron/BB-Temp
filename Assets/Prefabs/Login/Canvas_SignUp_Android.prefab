@@ -124,6 +124,7 @@ MonoBehaviour:
   ButtonShowPassword: {fileID: 9078133047582179736}
   InputFieldEmail: {fileID: 3206345589391808997}
   InputFieldPassword: {fileID: 3206345589167690162}
+  ToggleOK: {fileID: 3206345589685112290}
 --- !u!1001 &1135757988094178445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -261,6 +262,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3206345589685112290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2575002957669480815, guid: 827bcc8393fe0694d9f453f1ffa99df1, type: 3}
+  m_PrefabInstance: {fileID: 1135757988094178445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5804441791030135030 stripped

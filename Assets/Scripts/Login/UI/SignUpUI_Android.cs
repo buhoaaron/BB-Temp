@@ -24,6 +24,8 @@ namespace Barnabus.Login
         public TMP_InputField InputFieldEmail = null;
         public TMP_InputField InputFieldPassword = null;
 
+        public Toggle ToggleOK = null;
+
         private bool isShowPassword = false;
 
         public override void Init()
@@ -81,6 +83,11 @@ namespace Barnabus.Login
 
             var changeSprite = ButtonShowPassword.GetComponent<UIButtonChangeSprite>();
             changeSprite.Change(System.Convert.ToInt16(isShowPassword));
+        }
+
+        public bool CheckToggleStatus()
+        {
+            return ToggleOK.isOn;
         }
     }
 }

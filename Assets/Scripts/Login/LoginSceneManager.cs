@@ -12,16 +12,19 @@ namespace Barnabus.Login
 
         private PrefabPool prefabPool = null;
         private LoginSceneStateController stateController = null;
+        private PageManager pageManager = null;
 
         #region BASE_API
         public void Init()
         {
+            pageManager = new PageManager();
             prefabPool = transform.Find("PrefabPool").GetComponent<PrefabPool>();
+
+            pageManager.Init();
+            IdentificationUI.Init();
 
             stateController = new LoginSceneStateController(this);
             stateController.SetState(LOGIN_SCENE_STATE.IDENTIFICATION);
-
-            IdentificationUI.Init();
         }
         public void SystemUpdate()
         {
