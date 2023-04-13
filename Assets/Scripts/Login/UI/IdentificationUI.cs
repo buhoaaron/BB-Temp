@@ -5,7 +5,7 @@ using Barnabus.UI;
 
 namespace Barnabus.Login
 {
-    public class IdentificationUI : BaseGameUI
+    public class IdentificationUI : BaseLoginCommonUI
     {
         public UnityAction OnButtonFamiliesClick = null;
         public UnityAction OnButtonEducatorsClick = null;

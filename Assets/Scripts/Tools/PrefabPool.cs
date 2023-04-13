@@ -23,7 +23,11 @@ namespace Barnabus
 
         public GameObject GetPrefab(string name)
         {
-            return Prefabs.Find(pair => pair.Name == name).Prefab;
+            var prefabPair = Prefabs.Find(pair => pair.Name == name);
+
+            Debug.Assert(prefabPair.Prefab != null, "GetPrefab Fail:" + name);
+
+            return prefabPair.Prefab;
         }
     }
 }

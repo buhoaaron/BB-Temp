@@ -7,7 +7,7 @@ namespace Barnabus
 {
     public class BaseLoadAssets : MonoBehaviour
     {
-        protected AsyncOperationHandle LoadAsset<T>(string label, Action<AsyncOperationHandle<T>> onComplete)
+        protected AsyncOperationHandle LoadAssetAsync<T>(string label, Action<AsyncOperationHandle<T>> onComplete)
         {
             var handle = Addressables.LoadAssetAsync<T>(label);
             handle.Completed += onComplete;

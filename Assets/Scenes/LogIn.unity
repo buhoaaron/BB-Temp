@@ -14243,7 +14243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &560988485
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15722,7 +15722,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1603056537}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15738,6 +15739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac62008cfca0e104a944fdce76279d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneCamera: {fileID: 519420031}
   IdentificationUI: {fileID: 1502147205}
 --- !u!1 &615054607
 GameObject:
@@ -26987,7 +26989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271883141
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30460,7 +30462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1445354615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33111,6 +33113,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592388888}
   m_CullTransparentMesh: 1
+--- !u!1 &1603056536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1603056537}
+  - component: {fileID: 1603056538}
+  m_Layer: 0
+  m_Name: PrefabPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1603056537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603056536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 606897410}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1603056538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603056536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce912d17601cec41bcf2f75a5928667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefabs:
+  - Name: Canvas_SignUp_Android
+    Prefab: {fileID: 2763600287452626253, guid: efe60cede49aa994aadcbd008589abee, type: 3}
+  - Name: Canvas_SignUp_iOS
+    Prefab: {fileID: 251880810070759003, guid: 8072044180141534788a29b296a9c26e, type: 3}
 --- !u!1 &1604068510
 GameObject:
   m_ObjectHideFlags: 0
@@ -41378,6 +41429,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7916781645974012849, guid: e93b7dbd39d765542b2047aa06bccec2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7916781645974012852, guid: e93b7dbd39d765542b2047aa06bccec2, type: 3}
       propertyPath: m_Name
       value: Canvas_Identification

@@ -30,7 +30,7 @@ namespace Barnabus.Shelf
 
         public void LoadNavigationBarAsset()
         {
-            base.LoadAsset<Sprite[]>(AddressablesLabels.NavigationBarSprites, OnLoadNavigationBarAssetComplete);
+            base.LoadAssetAsync<Sprite[]>(AddressablesLabels.NavigationBarSprites, OnLoadNavigationBarAssetComplete);
         }
 
         private void OnLoadNavigationBarAssetComplete(AsyncOperationHandle<Sprite[]> handle)

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: LoginScene
+  m_EditorClassIdentifier: 
+  m_GroupName: LoginScene
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5af6da7a5ad3d764e881713f368f31e5
+  m_SerializeEntries:
+  - m_GUID: efe60cede49aa994aadcbd008589abee
+    m_Address: Canvas_SignUp_Android.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SignUp
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8072044180141534788a29b296a9c26e
+    m_Address: Canvas_SignUp_iOS.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SignUp
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8bac6ea6add247b42a85463bbe989d6c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6b14ace0a3016a849abde0d37aee6740, type: 2}
+    - {fileID: 11400000, guid: cc8fe87ad6cd86b4d8ad05891fbf5719, type: 2}
