@@ -10,7 +10,8 @@ namespace Barnabus.Login.StateControl
 
         public override void Begin()
         {
-            stateController.SceneManager.IdentificationUI.Show();
+            stateController.SceneManager.IdentificationUI.DoShift(false);
+            //stateController.SceneManager.IdentificationUI.Show();
             stateController.SceneManager.IdentificationUI.OnButtonFamiliesClick = CheckPlatformAndGoSignUp;
         }
 
@@ -21,7 +22,8 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
-            stateController.SceneManager.IdentificationUI.Hide();
+            //stateController.SceneManager.IdentificationUI.Hide();
+            stateController.SceneManager.IdentificationUI.DoShift(true);
         }
 
         private void CheckPlatformAndGoSignUp()

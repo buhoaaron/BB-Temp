@@ -16,13 +16,19 @@ namespace Barnabus.Login.StateControl
             signUpUI.Init();
 
             signUpUI.OnButtonPreviousClick = PreviousPage;
-            signUpUI.OnButtonCreateClick = CreateAccount;
+            signUpUI.OnButtonCreateClick = CheckCreateAccount;
         }
 
-        protected void CreateAccount()
+        protected void CheckCreateAccount()
         {
             //獲取玩家輸入的資料
             Debug.Log(signUpUI.GetSignUpInfo().ToString());
+
+            //檢查使用者規章及隱私條款是否同意
+            if (!CheckToggleStatus())
+                return;
+
+            //TODO: 
         }
 
         protected void PreviousPage()
@@ -43,6 +49,16 @@ namespace Barnabus.Login.StateControl
         protected virtual SignUpUI_Android CreateSignUpUI()
         {
             return stateController.SceneManager.CreateUI<SignUpUI_Android>(AddressablesLabels.CanvasSignUpAndroid);
+        }
+
+        private bool CheckToggleStatus()
+        {
+            var isOn = signUpUI.CheckToggleStatus();
+
+            if (!isOn)
+                Debug.Log("You must agree to the Terms of Use.");
+
+            return isOn;
         }
     }
 }

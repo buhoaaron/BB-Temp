@@ -41,7 +41,7 @@ namespace Barnabus.UI
 
             Sequence seq = DOTween.Sequence();
             seq.Append(root.DOScale(1, 0.3f).SetEase(Ease.OutBack));
-            seq.Append(mask.DOFade(0.78f, 0.2f));
+            seq.Join(mask.DOFade(0.78f, 0.2f));
             seq.onComplete = onComplete;
         }
 

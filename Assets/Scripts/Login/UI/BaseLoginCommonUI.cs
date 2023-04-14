@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Barnabus.UI;
+using DG.Tweening;
 
 namespace Barnabus.Login
 {
@@ -18,6 +19,11 @@ namespace Barnabus.Login
         public void SetCanvasCamera(Camera camera)
         {
             GetComponent<Canvas>().worldCamera = camera;
+        }
+
+        public void DoShift(bool isForward)
+        {
+            root.DOLocalMoveX(isForward ? -1920 : 0, 0.3f).SetEase(Ease.Linear);
         }
     }
 }
