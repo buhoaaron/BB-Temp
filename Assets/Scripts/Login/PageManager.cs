@@ -28,6 +28,22 @@ namespace Barnabus.Login
         }
         #endregion
 
+        public void AddPage(string pageKey, BaseLoginCommonUI page)
+        {
+            if (pages.ContainsKey(pageKey))
+                return;
+
+            pages.Add(pageKey, page);
+        }
+
+        public BaseLoginCommonUI GetPage(string pageKey)
+        {
+            if (pages.ContainsKey(pageKey))
+                return pages[pageKey];
+
+            return null;
+        }
+
         public void SetCurrentPage(BaseLoginCommonUI page)
         {
             if (currentPage != null && currentPage != page)

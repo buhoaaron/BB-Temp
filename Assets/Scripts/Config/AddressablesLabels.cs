@@ -6,4 +6,5 @@ public class AddressablesLabels
 
     public static string CanvasSignUpAndroid = "Canvas_SignUp_Android";
     public static string CanvasSignUpiOS = "Canvas_SignUp_iOS";
+    public static string CanvasVerifyAge = "Canvas_VerifyAge";
 }

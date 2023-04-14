@@ -33240,6 +33240,8 @@ MonoBehaviour:
     Prefab: {fileID: 2763600287452626253, guid: efe60cede49aa994aadcbd008589abee, type: 3}
   - Name: Canvas_SignUp_iOS
     Prefab: {fileID: 251880810070759003, guid: 8072044180141534788a29b296a9c26e, type: 3}
+  - Name: Canvas_VerifyAge
+    Prefab: {fileID: 3820567601389082945, guid: dcfa18ed64d9d1e4f96891c7a33b4d13, type: 3}
 --- !u!1 &1604068510
 GameObject:
   m_ObjectHideFlags: 0
@@ -41585,7 +41587,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 7916781645974012849, guid: e93b7dbd39d765542b2047aa06bccec2, type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7916781645974012852, guid: e93b7dbd39d765542b2047aa06bccec2, type: 3}
       propertyPath: m_Name

@@ -42,7 +42,14 @@ namespace Barnabus.Login
             var ui = GameObject.Instantiate(prefab).GetComponent<T>();
             ui.SetCanvasCamera(SceneCamera);
 
+            pageManager.AddPage(label, ui);
+
             return ui;
+        }
+
+        public BaseLoginCommonUI GetPage(string pageKey)
+        {
+            return pageManager.GetPage(pageKey);
         }
     }
 }

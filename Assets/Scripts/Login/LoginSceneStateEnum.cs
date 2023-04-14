@@ -14,5 +14,9 @@
         /// 註冊(iOS)
         /// </summary>
         SIGN_UP_IOS,
+        /// <summary>
+        /// 驗證年齡
+        /// </summary>
+        VERIFY_AGE,
     }
 }

@@ -14,6 +14,8 @@ namespace Barnabus.Login.StateControl
                     return new SignUpAndroidState(this);
                 case LOGIN_SCENE_STATE.SIGN_UP_IOS:
                     return new SignUpiOSState(this);
+                case LOGIN_SCENE_STATE.VERIFY_AGE:
+                    return new VerifyAgeState(this);
                 default:
                     Debug.LogError(string.Format("No state found for {0}", stateName));
                     return null;

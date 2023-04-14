@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Net.Mail;
+using UnityEngine;
 
 namespace Barnabus.Login.StateControl
 {
@@ -14,6 +15,7 @@ namespace Barnabus.Login.StateControl
         {
             signUpUI = CreateSignUpUI();
             signUpUI.Init();
+            signUpUI.Show();
 
             signUpUI.OnButtonPreviousClick = PreviousPage;
             signUpUI.OnButtonCreateClick = CheckCreateAccount;
@@ -24,11 +26,21 @@ namespace Barnabus.Login.StateControl
             //獲取玩家輸入的資料
             Debug.Log(signUpUI.GetSignUpInfo().ToString());
 
+            //檢查Email格式
+            var isValidEmail = IsValidEmail(signUpUI.GetSignUpInfo().EmailAddress);
+            if (!isValidEmail)
+                return;
+
             //檢查使用者規章及隱私條款是否同意
             if (!CheckToggleStatus())
                 return;
 
-            //TODO: 
+            NextPage();
+        }
+        private void NextPage()
+        {
+            signUpUI.Hide();
+            stateController.SetState(LOGIN_SCENE_STATE.VERIFY_AGE);
         }
 
         protected void PreviousPage()
@@ -43,12 +55,18 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
-            signUpUI.Destroy();
+            
         }
 
         protected virtual SignUpUI_Android CreateSignUpUI()
         {
-            return stateController.SceneManager.CreateUI<SignUpUI_Android>(AddressablesLabels.CanvasSignUpAndroid);
+            var key = AddressablesLabels.CanvasSignUpAndroid;
+            var ui = stateController.SceneManager.GetPage(key);
+
+            if (ui == null)
+                ui = stateController.SceneManager.CreateUI<SignUpUI_Android>(key);
+
+            return ui as SignUpUI_Android;
         }
 
         private bool CheckToggleStatus()
@@ -59,6 +77,19 @@ namespace Barnabus.Login.StateControl
                 Debug.Log("You must agree to the Terms of Use.");
 
             return isOn;
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
