@@ -144,7 +144,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 556
-        y: 814
+        y: 937
         width: 100
         height: 86
       alignment: 0
@@ -165,7 +165,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 556
-        y: 726
+        y: 849
         width: 100
         height: 86
       alignment: 0
@@ -185,8 +185,8 @@ TextureImporter:
       name: BG_BTN_02
       rect:
         serializedVersion: 2
-        x: 711
-        y: 380
+        x: 814
+        y: 477
         width: 100
         height: 86
       alignment: 0
@@ -206,8 +206,8 @@ TextureImporter:
       name: BG_BTN_Lock
       rect:
         serializedVersion: 2
-        x: 621
-        y: 194
+        x: 916
+        y: 444
         width: 100
         height: 86
       alignment: 0
@@ -227,8 +227,8 @@ TextureImporter:
       name: BG_BTN_NoOutline
       rect:
         serializedVersion: 2
-        x: 719
-        y: 292
+        x: 814
+        y: 389
         width: 100
         height: 86
       alignment: 0
@@ -248,8 +248,8 @@ TextureImporter:
       name: BG_Importing
       rect:
         serializedVersion: 2
-        x: 661
-        y: 106
+        x: 711
+        y: 367
         width: 100
         height: 86
       alignment: 0
@@ -359,7 +359,7 @@ TextureImporter:
         height: 90
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 42, y: 42, z: 42, w: 42}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -416,7 +416,7 @@ TextureImporter:
       name: BG_Selection
       rect:
         serializedVersion: 2
-        x: 814
+        x: 817
         y: 701
         width: 160
         height: 64
@@ -443,7 +443,7 @@ TextureImporter:
         height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 20, y: 20, z: 20, w: 20}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -458,8 +458,8 @@ TextureImporter:
       name: BTN_Add
       rect:
         serializedVersion: 2
-        x: 814
-        y: 565
+        x: 556
+        y: 713
         width: 134
         height: 134
       alignment: 0
@@ -480,7 +480,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 814
-        y: 429
+        y: 565
         width: 134
         height: 134
       alignment: 0
@@ -521,8 +521,8 @@ TextureImporter:
       name: BTN_Close_Lock
       rect:
         serializedVersion: 2
-        x: 621
-        y: 282
+        x: 916
+        y: 346
         width: 96
         height: 96
       alignment: 0
@@ -564,9 +564,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 621
-        y: 917
-        width: 70
-        height: 106
+        y: 359
+        width: 57
+        height: 94
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -584,12 +584,12 @@ TextureImporter:
       name: BTN_ShowSN_Off
       rect:
         serializedVersion: 2
-        x: 950
-        y: 635
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 752
+        y: 725
+        width: 63
+        height: 40
+      alignment: 9
+      pivot: {x: 0.50793654, y: 0.525}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -605,8 +605,8 @@ TextureImporter:
       name: BTN_ShowSN_On
       rect:
         serializedVersion: 2
-        x: 556
-        y: 983
+        x: 752
+        y: 725
         width: 63
         height: 40
       alignment: 9
@@ -669,7 +669,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 556
-        y: 468
+        y: 455
         width: 256
         height: 256
       alignment: 0
@@ -690,7 +690,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 661
-        y: 865
+        y: 973
         width: 30
         height: 50
       alignment: 0
@@ -710,8 +710,8 @@ TextureImporter:
       name: Icon_Confirm_OK
       rect:
         serializedVersion: 2
-        x: 556
-        y: 939
+        x: 692
+        y: 723
         width: 58
         height: 42
       alignment: 0
@@ -732,7 +732,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 950
-        y: 569
+        y: 635
         width: 64
         height: 64
       alignment: 0
@@ -753,7 +753,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 950
-        y: 503
+        y: 569
         width: 64
         height: 64
       alignment: 0
@@ -774,7 +774,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 661
-        y: 813
+        y: 921
         width: 30
         height: 50
       alignment: 0
@@ -794,8 +794,8 @@ TextureImporter:
       name: Icon_PullDownList
       rect:
         serializedVersion: 2
-        x: 556
-        y: 902
+        x: 950
+        y: 532
         width: 58
         height: 35
       alignment: 0
@@ -828,6 +828,48 @@ TextureImporter:
       bones: []
       spriteID: db0097bd707701045a65089dfa282437
       internalID: 2095869672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageBanner_Point_Off
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 893
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5bd0996f64bf6c43a351762ac76360a
+      internalID: 1744223421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImageBanner_Point_On
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 865
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32b6394e1766cc48a854958ab503851
+      internalID: 1284940542
       vertices: []
       indices: 
       edges: []
@@ -865,6 +907,7 @@ TextureImporter:
       BTN_Add_Lock: 1517676440
       BG_Importing: -244412508
       BTN_ShowSN_Off: 1413647414
+      ImageBanner_Point_On: 1284940542
       GoogleID: -2025955307
       BTN_Close_Lock: -1673368647
       FBID: -532984741
@@ -874,6 +917,7 @@ TextureImporter:
       BG_Selected: -1296202056
       BTN_Add: -1111315317
       Icon_Girl: 1800187014
+      ImageBanner_Point_Off: 1744223421
       BTN_Del: 1230962385
       Icon_Confirm_OK: 1970732144
       Icon_Boy: -168629008

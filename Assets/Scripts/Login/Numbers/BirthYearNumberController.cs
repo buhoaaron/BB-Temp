@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using Barnabus.UI;
 
 namespace Barnabus.Login
 {
     public class BirthYearNumberController : MonoBehaviour, IBaseController
     {
         public TMP_Text TextNumber = null;
+        public UIImageSwitch ImageSwitch = null;
 
         private Vector2 originPos = Vector2.zero;
 

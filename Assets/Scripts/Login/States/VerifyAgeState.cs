@@ -49,7 +49,7 @@ namespace Barnabus.Login.StateControl
         private void CheckBirthYearVaild()
         {
             var empty = verifyAgeUI.BirthYearUI.CheckControllerEmpty();
-
+            //是否有未輸入的欄位
             if (empty != null)
             {
                 empty.DoShake();
