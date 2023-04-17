@@ -17,6 +17,8 @@ namespace Barnabus.Login
         {
             originPos = transform.localPosition;
             TextNumber.text = "";
+
+            ImageSwitch.Switch(false);
         }
         public void Refresh()
         {
@@ -59,6 +61,11 @@ namespace Barnabus.Login
         {
             transform.localPosition = originPos;
             transform.DOShakePosition(0.5f, 10);
+        }
+
+        public void ChangeSwitchSprite(bool isOn)
+        {
+            ImageSwitch.Switch(isOn);
         }
     }
 }

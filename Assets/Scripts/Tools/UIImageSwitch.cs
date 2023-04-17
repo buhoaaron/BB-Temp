@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace Barnabus.UI
 {
@@ -18,6 +19,11 @@ namespace Barnabus.UI
         {
             if (!TryGetComponent<Image>(out image))
                 Debug.LogError("Image component is required.");
+        }
+
+        public void Switch(bool isOn)
+        {
+            image.sprite = isOn ? SpriteOn : SpriteOff;
         }
     }
 }

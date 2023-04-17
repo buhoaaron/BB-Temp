@@ -19,6 +19,8 @@ namespace Barnabus.SceneManagement
             manager.Init();
             //TOFIX: 測試用SKip鍵，後續可拔
             manager.IdentificationUI.ButtonSkip.onClick.AddListener(SkipLogin);
+
+            manager.LoadErrorMessageJson();
         }
 
         public override void StateUpdate()

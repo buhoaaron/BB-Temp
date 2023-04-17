@@ -7,7 +7,12 @@
     {
         protected BaseState currentState = null;
         protected bool isBegin = false;
+
+        #if STATE_MACHINE_DEBUG
         protected bool isDebugEnabled = true;
+        #else
+        protected bool isDebugEnabled = false;
+        #endif
         public virtual void SetState(BaseState state)
         {
             //通知前一個狀態結束

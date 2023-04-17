@@ -14,14 +14,18 @@ namespace Barnabus.Login
         private LoginSceneStateController stateController = null;
         private PageManager pageManager = null;
 
+        private MessageManager messageManager = null;
+
         #region BASE_API
         public void Init()
         {
             pageManager = new PageManager();
+            messageManager = new MessageManager(this);
             prefabPool = transform.Find("PrefabPool").GetComponent<PrefabPool>();
-
+            
             pageManager.Init();
             IdentificationUI.Init();
+            messageManager.Init(prefabPool.GetPrefab(AddressablesLabels.CanvasMessage));
 
             stateController = new LoginSceneStateController(this);
             stateController.SetState(LOGIN_SCENE_STATE.IDENTIFICATION);
@@ -49,7 +53,26 @@ namespace Barnabus.Login
 
         public BaseLoginCommonUI GetPage(string pageKey)
         {
-            return pageManager.GetPage(pageKey);
+            var page = pageManager.GetPage(pageKey);
+
+            if (page == null)
+                page = CreateUI<BaseLoginCommonUI>(pageKey);
+
+            return page;
+        }
+
+        public MessageUI DoShowErrorMessage(int errorCode)
+        {
+           return messageManager.DoShowErrorMessage(errorCode);
+        }
+
+        public AllErrorMessageInfo LoadErrorMessageJson()
+        {
+            var infos = NewGameManager.Instance.JsonManager.DeserializeObject<AllErrorMessageInfo>(JsonText.ErrorMessages);
+
+            messageManager.SetAllErrorMessageInfo(infos);
+
+            return infos;
         }
     }
 }

@@ -33211,6 +33211,8 @@ MonoBehaviour:
     Prefab: {fileID: 251880810070759003, guid: 8072044180141534788a29b296a9c26e, type: 3}
   - Name: Canvas_VerifyAge
     Prefab: {fileID: 3820567601389082945, guid: dcfa18ed64d9d1e4f96891c7a33b4d13, type: 3}
+  - Name: Canvas_Message
+    Prefab: {fileID: 5253207026524842759, guid: 761dbcc6680b93c498d026f4881db678, type: 3}
 --- !u!1 &1604068510
 GameObject:
   m_ObjectHideFlags: 0

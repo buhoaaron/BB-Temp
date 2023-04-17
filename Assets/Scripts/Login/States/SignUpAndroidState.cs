@@ -29,11 +29,17 @@ namespace Barnabus.Login.StateControl
             //檢查Email格式
             var isValidEmail = IsValidEmail(signUpUI.GetSignUpInfo().EmailAddress);
             if (!isValidEmail)
+            {
+                stateController.SceneManager.DoShowErrorMessage(1);
                 return;
+            }
 
             //檢查使用者規章及隱私條款是否同意
             if (!CheckToggleStatus())
+            {
+                stateController.SceneManager.DoShowErrorMessage(2);
                 return;
+            }
 
             NextPage();
         }
@@ -61,12 +67,9 @@ namespace Barnabus.Login.StateControl
         protected virtual SignUpUI_Android CreateSignUpUI()
         {
             var key = AddressablesLabels.CanvasSignUpAndroid;
-            var ui = stateController.SceneManager.GetPage(key);
+            var ui = stateController.SceneManager.GetPage(key) as SignUpUI_Android;
 
-            if (ui == null)
-                ui = stateController.SceneManager.CreateUI<SignUpUI_Android>(key);
-
-            return ui as SignUpUI_Android;
+            return ui;
         }
 
         private bool CheckToggleStatus()

@@ -2170,7 +2170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextNumber: {fileID: 3820567600906722307}
-  ImageSwitch: {fileID: 0}
+  ImageSwitch: {fileID: 7705098430909016029}
 --- !u!1 &3820567601389082945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,7 +2536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextNumber: {fileID: 3820567601522759892}
-  ImageSwitch: {fileID: 0}
+  ImageSwitch: {fileID: 1825496458652904924}
 --- !u!1 &3820567601475115914
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,7 +3799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextNumber: {fileID: 3820567602396592357}
-  ImageSwitch: {fileID: 0}
+  ImageSwitch: {fileID: 1347666441058243642}
 --- !u!1 &3820567601751837087
 GameObject:
   m_ObjectHideFlags: 0
@@ -4716,7 +4716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextNumber: {fileID: 3820567600530163698}
-  ImageSwitch: {fileID: 0}
+  ImageSwitch: {fileID: 8028664289894513279}
 --- !u!1 &3820567602173602089
 GameObject:
   m_ObjectHideFlags: 0

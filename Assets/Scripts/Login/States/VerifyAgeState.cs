@@ -5,6 +5,7 @@ namespace Barnabus.Login.StateControl
     public class VerifyAgeState : BaseLoginSceneState
     {
         private VerifyAgeUI verifyAgeUI = null;
+        private BirthYearNumberController currentBirthYearNumber = null;
 
         public VerifyAgeState(LoginSceneStateController controller) : base(controller)
         {
@@ -19,9 +20,11 @@ namespace Barnabus.Login.StateControl
 
             //設定事件
             verifyAgeUI.OnButtonPreviousClick = PreviousPage;
-            verifyAgeUI.NumericKeypad.OnKeypadClick = verifyAgeUI.BirthYearUI.SetNumber;
-            verifyAgeUI.OnButtonClearClick = verifyAgeUI.BirthYearUI.ResetNumbers;
+            verifyAgeUI.NumericKeypad.OnKeypadClick = InputNumber;
+            verifyAgeUI.OnButtonClearClick = ResetNumbers;
             verifyAgeUI.OnButtonContinueClick = CheckBirthYearVaild;
+
+            HighlightBirthYearField();
         }
 
         private void PreviousPage()
@@ -30,33 +33,49 @@ namespace Barnabus.Login.StateControl
             stateController.SetState(LOGIN_SCENE_STATE.SIGN_UP_ANDROID);
         }
 
-        private void GetBirthYear()
+        private void InputNumber(int number)
         {
-            Debug.Log(GetBirthYearInputResult());
+            verifyAgeUI.BirthYearUI.SetNumber(number);
+
+            HighlightBirthYearField();
         }
 
-        protected virtual VerifyAgeUI CreateVerifyAgeUI()
+        private void ResetNumbers()
         {
-            var key = AddressablesLabels.CanvasVerifyAge;
-            var ui = stateController.SceneManager.GetPage(key);
+            verifyAgeUI.BirthYearUI.ResetNumbers();
 
-            if (ui == null)
-                ui = stateController.SceneManager.CreateUI<VerifyAgeUI>(key);
-
-            return ui as VerifyAgeUI;
+            HighlightBirthYearField();
         }
 
+        /// <summary>
+        /// 高光使用者即將輸入的欄位
+        /// </summary>
+        private void HighlightBirthYearField()
+        {
+            currentBirthYearNumber?.ChangeSwitchSprite(false);
+            currentBirthYearNumber = verifyAgeUI.BirthYearUI.CheckControllerEmpty();
+            currentBirthYearNumber?.ChangeSwitchSprite(true);
+        }
+
+        /// <summary>
+        /// 檢查輸入是否有效
+        /// </summary>
         private void CheckBirthYearVaild()
         {
-            var empty = verifyAgeUI.BirthYearUI.CheckControllerEmpty();
             //是否有未輸入的欄位
-            if (empty != null)
+            if (currentBirthYearNumber != null)
             {
-                empty.DoShake();
+                //振動提示
+                currentBirthYearNumber.DoShake();
                 return;
             }
 
             GetBirthYear();
+        }
+
+        private void GetBirthYear()
+        {
+            Debug.Log(GetBirthYearInputResult());
         }
 
         private int GetBirthYearInputResult()
@@ -76,6 +95,13 @@ namespace Barnabus.Login.StateControl
             result += thousandsDigit * Mathf.Pow(10, 3);
 
             return (int)result;
+        }
+        protected virtual VerifyAgeUI CreateVerifyAgeUI()
+        {
+            var key = AddressablesLabels.CanvasVerifyAge;
+            var ui = stateController.SceneManager.GetPage(key) as VerifyAgeUI;
+
+            return ui;
         }
     }
 }
