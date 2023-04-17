@@ -38,7 +38,10 @@ namespace Barnabus.Login
         }
         public override void Clear()
         {
-
+            ButtonFamilies.onClick.RemoveListener(ProcessButtonFamiliesClick);
+            ButtonEducators.onClick.RemoveListener(ProcessButtonEducatorsClick);
+            ButtonStudents.onClick.RemoveListener(ProcessButtonStudentsClick);
+            ButtonHaveAccount.onClick.RemoveListener(ProcessButtonHaveAccountClick);
         }
         
 

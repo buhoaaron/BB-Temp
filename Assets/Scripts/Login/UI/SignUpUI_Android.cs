@@ -44,6 +44,11 @@ namespace Barnabus.Login
         }
         public override void Clear()
         {
+            ButtonGoogle.onClick.RemoveListener(ProcessButtonGoogleClick);
+            ButtonFacebook.onClick.RemoveListener(ProcessButtonFacebookClick);
+            ButtonPrevious.onClick.RemoveListener(ProcessButtonPreviousClick);
+            ButtonCreate.onClick.RemoveListener(ProcessButtonCreateClick);
+
             ButtonShowPassword.onClick.RemoveListener(ProcessShowPassword);
         }
 

@@ -24,7 +24,8 @@ namespace Barnabus.Login
         }
         public override void Clear()
         {
-
+            ButtonNewAccount.onClick.RemoveListener(ProcessButtonNewAccountClick);
+            ButtonHasAnAccount.onClick.RemoveListener(ProcessButtonHasAnAccountClick);
         }
         
         private void ProcessButtonNewAccountClick()

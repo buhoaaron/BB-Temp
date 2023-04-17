@@ -23,7 +23,7 @@ namespace Barnabus.Login
         }
         public void Clear()
         {
-
+            button.onClick.RemoveListener(ProcessButtonClick);
         }
         #endregion
 

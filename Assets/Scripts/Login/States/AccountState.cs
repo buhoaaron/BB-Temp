@@ -13,7 +13,6 @@ namespace Barnabus.Login.StateControl
         public override void Begin()
         {
             accountUI = CreateVerifyAgeUI();
-            accountUI.Init();
         }
 
         protected virtual AccountUI CreateVerifyAgeUI()

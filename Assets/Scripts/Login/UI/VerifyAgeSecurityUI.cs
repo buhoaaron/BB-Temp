@@ -22,7 +22,7 @@ namespace Barnabus.Login
         }
         public override void Clear()
         {
-
+            ButtonClose.onClick.RemoveListener(ProcessButtonCloseClick);
         }
 
         private void ProcessButtonCloseClick()
