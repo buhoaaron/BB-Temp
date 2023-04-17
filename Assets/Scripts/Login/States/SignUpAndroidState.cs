@@ -14,7 +14,6 @@ namespace Barnabus.Login.StateControl
         public override void Begin()
         {
             signUpUI = CreateSignUpUI();
-            signUpUI.Init();
             signUpUI.Show();
 
             signUpUI.OnButtonPreviousClick = PreviousPage;
@@ -61,7 +60,7 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
-            
+
         }
 
         protected virtual SignUpUI_Android CreateSignUpUI()

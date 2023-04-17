@@ -60,7 +60,10 @@ namespace Barnabus.Login
             var page = pageManager.GetPage(pageKey);
 
             if (page == null)
+            {
                 page = CreateUI<BaseLoginCommonUI>(pageKey);
+                page.Init();
+            }
 
             return page;
         }

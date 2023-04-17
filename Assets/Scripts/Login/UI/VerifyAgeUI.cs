@@ -34,7 +34,13 @@ namespace Barnabus.Login
         }
         public override void Clear()
         {
+            ButtonPrevious.onClick.RemoveListener(ProcessButtonPreviousClick);
+            ButtonContinue.onClick.RemoveListener(ProcessButtonContinueClick);
+            ButtonClear.onClick.RemoveListener(ProcessButtonClearClick);
 
+            NumericKeypad.Clear();
+            SecurityUI.Clear();
+            BirthYearUI.Clear();
         }
         
         private void ProcessButtonPreviousClick()

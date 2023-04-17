@@ -25,7 +25,9 @@ namespace Barnabus.Login
         }
         public override void Clear()
         {
+            base.Clear();
 
+            ButtonApple.onClick.RemoveListener(ProcessButtonAppleClick);
         }
         private void ProcessButtonAppleClick()
         {

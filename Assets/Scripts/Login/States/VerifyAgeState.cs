@@ -14,7 +14,6 @@ namespace Barnabus.Login.StateControl
         public override void Begin()
         {
             verifyAgeUI = CreateVerifyAgeUI();
-            verifyAgeUI.Init();
             verifyAgeUI.HideSecurity();
             verifyAgeUI.Show();
 
@@ -31,6 +30,7 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
+            ResetNumbers();
             verifyAgeUI.Hide();
         }
 
