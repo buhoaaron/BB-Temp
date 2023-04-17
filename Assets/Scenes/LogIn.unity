@@ -33213,6 +33213,8 @@ MonoBehaviour:
     Prefab: {fileID: 3820567601389082945, guid: dcfa18ed64d9d1e4f96891c7a33b4d13, type: 3}
   - Name: Canvas_Message
     Prefab: {fileID: 5253207026524842759, guid: 761dbcc6680b93c498d026f4881db678, type: 3}
+  - Name: Canvas_Account
+    Prefab: {fileID: 6733362697423441829, guid: ca2fa1f07e418fa41b30238e9ea01825, type: 3}
 --- !u!1 &1604068510
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,12 +24,23 @@ namespace Barnabus.Login.StateControl
             verifyAgeUI.OnButtonClearClick = ResetNumbers;
             verifyAgeUI.OnButtonContinueClick = CheckBirthYearVaild;
 
+            verifyAgeUI.SecurityUI.OnButtonCloseClick = verifyAgeUI.HideSecurity;
+
             HighlightBirthYearField();
+        }
+
+        public override void End()
+        {
+            verifyAgeUI.Hide();
+        }
+
+        private void NextPage()
+        {
+            stateController.SetState(LOGIN_SCENE_STATE.ACCOUNT);
         }
 
         private void PreviousPage()
         {
-            verifyAgeUI.Hide();
             stateController.SetState(LOGIN_SCENE_STATE.SIGN_UP_ANDROID);
         }
 
@@ -70,12 +81,23 @@ namespace Barnabus.Login.StateControl
                 return;
             }
 
-            GetBirthYear();
+            var isAdult = CheckAdultAge();
+
+            if (isAdult)
+            {
+                //TODO: 送signup給Server
+                NextPage();
+            }
+            else
+            {
+                //未滿18跳標語
+                verifyAgeUI.DoPopUpSecurity();
+            }
         }
 
-        private void GetBirthYear()
+        private bool CheckAdultAge()
         {
-            Debug.Log(GetBirthYearInputResult());
+            return sceneManager.CheckAdultAge(GetBirthYearInputResult());
         }
 
         private int GetBirthYearInputResult()

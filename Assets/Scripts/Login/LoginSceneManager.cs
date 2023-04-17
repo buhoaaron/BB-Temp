@@ -15,16 +15,20 @@ namespace Barnabus.Login
         private PageManager pageManager = null;
 
         private MessageManager messageManager = null;
+        private VerifyAgeManager verifyAgeManager = null;
 
         #region BASE_API
         public void Init()
         {
             pageManager = new PageManager();
             messageManager = new MessageManager(this);
+            verifyAgeManager = new VerifyAgeManager(this);
             prefabPool = transform.Find("PrefabPool").GetComponent<PrefabPool>();
             
             pageManager.Init();
             IdentificationUI.Init();
+            verifyAgeManager.Init();
+
             messageManager.Init(prefabPool.GetPrefab(AddressablesLabels.CanvasMessage));
 
             stateController = new LoginSceneStateController(this);
@@ -73,6 +77,11 @@ namespace Barnabus.Login
             messageManager.SetAllErrorMessageInfo(infos);
 
             return infos;
+        }
+
+        public bool CheckAdultAge(int birthyear)
+        {
+            return verifyAgeManager.CheckAdultAge(birthyear);
         }
     }
 }

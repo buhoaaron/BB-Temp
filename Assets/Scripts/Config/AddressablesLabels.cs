@@ -8,4 +8,5 @@ public class AddressablesLabels
     public static string CanvasSignUpiOS = "Canvas_SignUp_iOS";
     public static string CanvasVerifyAge = "Canvas_VerifyAge";
     public static string CanvasMessage = "Canvas_Message";
+    public static string CanvasAccount = "Canvas_Account";
 }

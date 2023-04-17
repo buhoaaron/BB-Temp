@@ -18,5 +18,9 @@
         /// 驗證年齡
         /// </summary>
         VERIFY_AGE,
+        /// <summary>
+        /// 連結小孩帳號
+        /// </summary>
+        ACCOUNT,
     }
 }

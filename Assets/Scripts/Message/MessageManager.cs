@@ -4,16 +4,14 @@ using UnityEngine;
 
 namespace Barnabus.Login
 {
-    public class MessageManager : IBaseSystem
+    public class MessageManager : BaseLoginManager
     {
-        public LoginSceneManager SceneManager = null;
-
         private GameObject messagePrefab = null;
         private AllErrorMessageInfo errorMessageInfos = null;
 
-        public MessageManager(LoginSceneManager lsm)
+        public MessageManager(LoginSceneManager lsm) : base(lsm)
         {
-            SceneManager = lsm;
+
         }
 
         public void Init(GameObject messagePrefab)
@@ -24,15 +22,15 @@ namespace Barnabus.Login
         }
 
         #region BASE_API
-        public void Init()
+        public override void Init()
         {
 
         }
-        public void SystemUpdate()
+        public override void SystemUpdate()
         {
 
         }
-        public void Clear()
+        public override void Clear()
         { 
 
         }
@@ -46,7 +44,7 @@ namespace Barnabus.Login
         public MessageUI DoShowErrorMessage(int errorCode)
         {
             var ui = GameObject.Instantiate(messagePrefab).GetComponent<MessageUI>();
-            ui.SetCanvasCamera(SceneManager.SceneCamera);
+            ui.SetCanvasCamera(loginSceneManager.SceneCamera);
 
             ui.Init();
             ui.DoPopUp();
