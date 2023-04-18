@@ -11,6 +11,7 @@ namespace Barnabus.EmotionMusic
     public class EM_SheetPlayer : MonoBehaviour
     {
         public bool IsPlaying { get { return !isBreak; } }
+        public Canvas EditMusicCanvas;
 
         [SerializeField]
         private EM_SheetController sheetController;
@@ -32,6 +33,8 @@ namespace Barnabus.EmotionMusic
         [Header("Progress Slider")]
         [SerializeField]
         private Slider songProgressSlider;
+        [SerializeField]
+        private Slider songProgressSliderDance;
 
         private bool isBreak = true;
         private float linePosition;
@@ -46,6 +49,7 @@ namespace Barnabus.EmotionMusic
 
         private void Update()
         {
+
             if (IsPlaying)
             {
                 deltaTimeSinceSheetStart += Time.deltaTime;
@@ -54,7 +58,10 @@ namespace Barnabus.EmotionMusic
             else
             {
                 SetLinePosition(songProgressSlider.value, false);
+                SetLinePosition(songProgressSliderDance.value, false);
             }
+
+            
         }
 
         public void InitializeBySong(Song song)
@@ -76,16 +83,19 @@ namespace Barnabus.EmotionMusic
             isBreak = false;
             StopAllCoroutines();
             StartCoroutine(PlaySheet(sheet, songProgressSlider.value));
+            
         }
 
         public void OnSliderValueChanged()
         {
             SetLinePosition(songProgressSlider.value, !IsPlaying);
+            SetLinePosition(songProgressSliderDance.value, !IsPlaying);
         }
 
         private void SetSliderValue(float progress)
         {
             songProgressSlider.value = progress;
+            songProgressSliderDance.value = progress;
         }
 
         public void Stop()
@@ -96,6 +106,16 @@ namespace Barnabus.EmotionMusic
             OnPlayEnd();
             StopAllCoroutines();
             //SetSliderValue(0);
+        }
+
+        public void DanceProgress()
+        {
+            isBreak = true;
+            AudioManager.instance.StopAllSound();
+            if (!sheetController.IsPreviewingSong) AudioManager.instance.StopBGM();
+            StopAllCoroutines();
+            SetSliderValue(0);
+            StartCoroutine(PlaySheet(sheet, songProgressSliderDance.value));
         }
 
         private void SetLinePosition(float progress, bool autoMoveSheet = true)
@@ -169,6 +189,8 @@ namespace Barnabus.EmotionMusic
 
         private IEnumerator PlaySheet(Sheet<CharacterSound> sheet, float progress)
         {
+            isBreak = false;
+
             this.sheet = sheet;
 
             bool isFirstCycle = true;

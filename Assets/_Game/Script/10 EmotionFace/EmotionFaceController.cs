@@ -72,7 +72,7 @@ namespace Barnabus.EmotionFace
       /*  [SerializeField]
         private float deleteItemSensitivity;*/
         [SerializeField]
-        private RectTransform deleteItemIcon;
+        private RectTransform deleteItemIcon, clearItemIcon;
        /* [SerializeField]
         private GameObject deleteHint;*/
         [SerializeField]
@@ -455,6 +455,7 @@ namespace Barnabus.EmotionFace
         private void ShowDeleteIcon()
         {
             deleteItemIcon.gameObject.SetActive(true);
+            clearItemIcon.gameObject.SetActive(true);
             //SetDeleteIconPosition();
             isReadyDelete = true;
         }
@@ -462,6 +463,7 @@ namespace Barnabus.EmotionFace
         private void HideDeleteIcon()
         {
             deleteItemIcon.gameObject.SetActive(false);
+            clearItemIcon.gameObject.SetActive(false);
             isReadyDelete = false;
         }
 
@@ -478,6 +480,18 @@ namespace Barnabus.EmotionFace
             //StartCoroutine(SetItemsLayer());
 
             //HideDeleteIcon();
+        }
+
+        public void ClearItem()
+        {
+            GameObject[] ActiveItems;
+
+            ActiveItems = GameObject.FindGameObjectsWithTag("MakeAFaceItem");
+            for(int i =0;i<ActiveItems.Length;i++)
+            {
+                Destroy(ActiveItems[i].gameObject);
+            }
+
         }
 
         public void OnClick_LayerDown()

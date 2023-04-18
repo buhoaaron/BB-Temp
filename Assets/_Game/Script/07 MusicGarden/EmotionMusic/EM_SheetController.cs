@@ -896,8 +896,10 @@ namespace Barnabus.EmotionMusic
             for (int i = 0; i < charactersID.Length; i++) charactersID[i] = soundButtons[i].characterID;
 
             OnClick_StopPlaySheet();
+            sheetPlayer.DanceProgress();
             emotionMusicController.ChangeGameState(MusicGameState.Dance);
             dancePlayer.Play(CurrentSong, sheet, charactersID);
+            
         }
         #endregion
     }

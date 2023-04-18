@@ -33,6 +33,7 @@ namespace Barnabus.EmotionMusic
         {
             InitializeCharacters(charactersID);
             StartCoroutine(WaitForPlay(0.5f, sheet, song));
+            
         }
 
         public void Stop()

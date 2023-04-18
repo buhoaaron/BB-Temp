@@ -25,5 +25,18 @@ namespace Barnabus.Login
         {
             root.DOLocalMoveX(isForward ? -1920 : 0, 0.3f).SetEase(Ease.Linear);
         }
+
+        public override void DoPopUp(TweenCallback onComplete = null)
+        {
+            Debug.AssertFormat(root != null, "not set to Root");
+            Debug.AssertFormat(mask != null, "not set to Mask");
+
+            ResetPopUp();
+
+            Sequence seq = DOTween.Sequence();
+            seq.Append(root.DOScale(1, 0.3f).SetEase(Ease.OutBack));
+            seq.Join(mask.DOFade(0.4f, 0.2f));
+            seq.onComplete = onComplete;
+        }
     }
 }
