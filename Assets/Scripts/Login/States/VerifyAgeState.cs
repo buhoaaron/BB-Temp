@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Barnabus.Network;
 
 namespace Barnabus.Login.StateControl
 {
@@ -7,6 +8,7 @@ namespace Barnabus.Login.StateControl
         private VerifyAgeUI verifyAgeUI = null;
         private BirthYearNumberController currentBirthYearNumber = null;
 
+        private int birthYear = 0;
         public VerifyAgeState(LoginSceneStateController controller) : base(controller)
         {
         }
@@ -81,12 +83,12 @@ namespace Barnabus.Login.StateControl
                 return;
             }
 
-            var isAdult = CheckAdultAge();
+            birthYear = GetBirthYearInputResult();
+            var isAdult = sceneManager.CheckAdultAge(birthYear);
 
             if (isAdult)
             {
-                //TODO: 送signup給Server
-                NextPage();
+                SendSignUp();
             }
             else
             {
@@ -95,9 +97,28 @@ namespace Barnabus.Login.StateControl
             }
         }
 
-        private bool CheckAdultAge()
+        private void SendSignUp()
         {
-            return sceneManager.CheckAdultAge(GetBirthYearInputResult());
+            var email = sceneManager.CurrentSignUpInfo.EmailAddress;
+            var password = sceneManager.CurrentSignUpInfo.Password;
+            var data = new SendSignUp(email, password, birthYear);
+
+            var callbacks = new NetworkCallbacks();
+            callbacks.OnSuccess = OnSignUpSuccess;
+            callbacks.OnFail = OnSignUpFail;
+
+            sceneManager.PostRequest(API_PATH.SignUp, data, callbacks);
+        }
+
+
+        private void OnSignUpSuccess(string text)
+        {
+            NextPage();
+        }
+
+        private void OnSignUpFail(ReceiveErrorMessage errorMessage)
+        {
+            stateController.SceneManager.DoShowErrorMessage(errorMessage.error);
         }
 
         private int GetBirthYearInputResult()

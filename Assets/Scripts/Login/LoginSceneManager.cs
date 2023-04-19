@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Barnabus.Login.StateControl;
+using Barnabus.Network;
 
 namespace Barnabus.Login
 {
@@ -16,6 +17,8 @@ namespace Barnabus.Login
 
         private MessageManager messageManager = null;
         private VerifyAgeManager verifyAgeManager = null;
+
+        public SignUpInfo CurrentSignUpInfo = null;
 
         #region BASE_API
         public void Init()
@@ -44,6 +47,10 @@ namespace Barnabus.Login
         }
         #endregion
 
+        public void PostRequest(API_PATH path, BaseSendPacket sendPacket, NetworkCallbacks callbacks = null)
+        {
+            NewGameManager.Instance.NetworkManager.PostRequest(path, sendPacket, callbacks);
+        }
         public T CreateUI<T>(string label) where T : BaseLoginCommonUI
         {
             var prefab = prefabPool.GetPrefab(label);
@@ -66,6 +73,16 @@ namespace Barnabus.Login
             }
 
             return page;
+        }
+
+        public MessageUI DoShowErrorMessage(string title, string msg)
+        {
+            return messageManager.DoShowErrorMessage(title, msg);
+        }
+
+        public MessageUI DoShowErrorMessage(string msg)
+        {
+            return messageManager.DoShowErrorMessage(msg);
         }
 
         public MessageUI DoShowErrorMessage(int errorCode)

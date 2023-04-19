@@ -1,4 +1,10 @@
-﻿namespace Barnabus.SceneManagement
+﻿using System.IO;
+using UnityEngine;
+using UnityEngine.Networking;
+using System.Collections;
+using Newtonsoft.Json;
+
+namespace Barnabus.SceneManagement
 {
     /// <summary>
     /// 讀取遊戲基本資料
@@ -16,9 +22,16 @@
             LoadBarnabusBaseData();
             //讀取音樂音效靜音設定
             LoadAudioMuteSetting();
+            //讀取網路設定檔
+            LoadNetworkSetting();
         }
         public override void StateUpdate()
         {
+            if (!controller.GameManager.NetworkManager.IsNetworkReady)
+                return;
+
+            Debug.Log("NetworkManager ready.");
+
             controller.SetState(SCENE_STATE.LOADING_LOGIN);
         }
 
@@ -34,6 +47,12 @@
             var isMuteBGM = controller.GameManager.PlayerDataManager.GetMuteBGM();
 
             controller.GameManager.AudioManager.SetMuteAll(isMuteSound || isMuteBGM);
+        }
+
+        private void LoadNetworkSetting()
+        {
+            controller.GameManager.NetworkManager.LoadNetworkConfig();
+            controller.GameManager.NetworkManager.LoadNetworkPaths();
         }
     }
 }

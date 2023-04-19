@@ -43,15 +43,32 @@ namespace Barnabus.Login
 
         public MessageUI DoShowErrorMessage(int errorCode)
         {
+            var info = errorMessageInfos.Find(info => info.ErrorCode == errorCode);
+            return DoShowErrorMessage(info.Title, info.Message);
+        }
+
+        public MessageUI DoShowErrorMessage(string msg)
+        {
+            var ui = CreateMessage();
+            ui.SetMessage(msg);
+            return ui;
+        }
+
+        public MessageUI DoShowErrorMessage(string title, string msg)
+        {
+            var ui = CreateMessage();
+            ui.SetTitleAndMessage(title, msg);
+            return ui;
+        }
+
+        private MessageUI CreateMessage()
+        {
             var ui = GameObject.Instantiate(messagePrefab).GetComponent<MessageUI>();
             ui.SetCanvasCamera(loginSceneManager.SceneCamera);
 
             ui.Init();
             ui.DoPopUp();
 
-            var info = errorMessageInfos.Find(info => info.ErrorCode == errorCode);
-            ui.SetMessage(info.Title, info.Message);
-            
             return ui;
         }
     }

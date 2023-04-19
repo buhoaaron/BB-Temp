@@ -32,7 +32,7 @@ namespace Barnabus.UI
             Destroy(gameObject);
         }
 
-        public void DoPopUp(TweenCallback onComplete = null)
+        public virtual void DoPopUp(TweenCallback onComplete = null)
         {
             Debug.AssertFormat(root != null, "not set to Root");
             Debug.AssertFormat(mask != null, "not set to Mask");

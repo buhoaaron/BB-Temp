@@ -26,10 +26,15 @@ namespace Barnabus.Login
         }
         public override void Clear()
         {
-
+            ButtonConfirm.onClick.RemoveListener(ProcessButtonConfirmClick);
         }
 
-        public void SetMessage(string title, string message)
+        public void SetMessage(string message)
+        {
+            TextMessage.text = message;
+        }
+
+        public void SetTitleAndMessage(string title, string message)
         {
             TextTitle.text = title;
             TextMessage.text = message;

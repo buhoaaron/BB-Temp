@@ -1,0 +1,10 @@
+[
+    {
+        "code":"SignUp",
+	"path":"api/v1/signup"
+    },
+    {
+        "code":"Login",
+	"path":"api/v1/login"
+    }
+]

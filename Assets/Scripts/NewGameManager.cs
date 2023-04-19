@@ -4,6 +4,8 @@ using Barnabus.SceneManagement;
 using Barnabus.Card;
 using Barnabus.SceneTransitions;
 using System.Collections;
+using Barnabus.Network;
+using Barnabus;
 
 /// <summary>
 /// 新的遊戲管理者
@@ -18,6 +20,7 @@ public class NewGameManager : MonoBehaviour
     public JsonManager JsonManager => jsonManager;
     public MainManager MainManager { get; private set; }
     public PlayerDataManager PlayerDataManager => playerDataManager;
+    public NetworkManager NetworkManager => networkManager;
 
     #region COMMON_MANAGER
     private SceneStateController sceneStateController;
@@ -26,6 +29,7 @@ public class NewGameManager : MonoBehaviour
     private SceneTransitionsManager sceneTransitionsManager;
     private JsonManager jsonManager;
     private PlayerDataManager playerDataManager;
+    private NetworkManager networkManager;
     #endregion
 
     private void Start()
@@ -65,6 +69,9 @@ public class NewGameManager : MonoBehaviour
         var audioSourceManager = GetComponentInChildren<AudioSourceManager>();
         audioeManager = new BarnabusAudioManager(this, audioSourceManager);
         audioeManager.Init();
+
+        networkManager = new NetworkManager(this);
+        networkManager.Init();
     }
 
     /// <summary>

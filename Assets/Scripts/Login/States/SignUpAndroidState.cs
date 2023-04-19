@@ -23,7 +23,7 @@ namespace Barnabus.Login.StateControl
         protected void CheckCreateAccount()
         {
             //獲取玩家輸入的資料
-            Debug.Log(signUpUI.GetSignUpInfo().ToString());
+            sceneManager.CurrentSignUpInfo = signUpUI.GetSignUpInfo();
 
             //檢查Email格式
             var isValidEmail = IsValidEmail(signUpUI.GetSignUpInfo().EmailAddress);
