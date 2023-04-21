@@ -21,9 +21,10 @@ namespace Barnabus.Login
             GetComponent<Canvas>().worldCamera = camera;
         }
 
-        public void DoShift(bool isForward)
+        public void DoShift(bool isForward, TweenCallback onComplete = null)
         {
-            root.DOLocalMoveX(isForward ? -1920 : 0, 0.3f).SetEase(Ease.Linear);
+            var tweener = root.DOLocalMoveX(isForward ? -1920 : 0, 0.3f).SetEase(Ease.Linear);
+            tweener.onComplete = onComplete;
         }
 
         public override void DoPopUp(TweenCallback onComplete = null)

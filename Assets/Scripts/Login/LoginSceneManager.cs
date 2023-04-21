@@ -61,7 +61,10 @@ namespace Barnabus.Login
 
             return ui;
         }
-
+        public void ResetPages()
+        {
+            pageManager.ResetPages();
+        }
         public BaseLoginCommonUI GetPage(string pageKey)
         {
             var page = pageManager.GetPage(pageKey);

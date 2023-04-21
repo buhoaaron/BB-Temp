@@ -44,7 +44,6 @@ namespace Barnabus.Login
             ButtonHaveAccount.onClick.RemoveListener(ProcessButtonHaveAccountClick);
         }
         
-
         private void ProcessButtonFamiliesClick()
         {
             OnButtonFamiliesClick?.Invoke();

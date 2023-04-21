@@ -4,15 +4,23 @@ namespace Barnabus.Login.StateControl
 {
     public class IdentificationState : BaseLoginSceneState
     {
+        private IdentificationUI identificationUI = null;
+
         public IdentificationState(LoginSceneStateController controller) : base(controller)
         {
         }
 
         public override void Begin()
         {
-            stateController.SceneManager.IdentificationUI.DoShift(false);
-            //stateController.SceneManager.IdentificationUI.Show();
-            stateController.SceneManager.IdentificationUI.OnButtonFamiliesClick = CheckPlatformAndGoSignUp;
+            identificationUI = sceneManager.IdentificationUI;
+            identificationUI.DoShift(false, ResetPage);
+            identificationUI.OnButtonFamiliesClick = CheckPlatformAndGoSignUpState;
+            identificationUI.OnButtonHaveAccountClick = GotoLoginState;
+        }
+
+        private void ResetPage()
+        {
+            sceneManager.ResetPages();
         }
 
         public override void StateUpdate()
@@ -22,16 +30,20 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
-            //stateController.SceneManager.IdentificationUI.Hide();
-            stateController.SceneManager.IdentificationUI.DoShift(true);
+            identificationUI.DoShift(true);
         }
 
-        private void CheckPlatformAndGoSignUp()
+        private void CheckPlatformAndGoSignUpState()
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
                 stateController.SetState(LOGIN_SCENE_STATE.SIGN_UP_IOS);
             else
                 stateController.SetState(LOGIN_SCENE_STATE.SIGN_UP_ANDROID);
+        }
+
+        private void GotoLoginState()
+        {
+            stateController.SetState(LOGIN_SCENE_STATE.LOGIN);
         }
     }
 }

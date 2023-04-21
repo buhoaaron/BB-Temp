@@ -22,5 +22,9 @@
         /// 連結小孩帳號
         /// </summary>
         ACCOUNT,
+        /// <summary>
+        /// 登入
+        /// </summary>
+        LOGIN,
     }
 }

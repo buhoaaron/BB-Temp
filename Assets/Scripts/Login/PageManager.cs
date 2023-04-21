@@ -49,10 +49,15 @@ namespace Barnabus.Login
             if (currentPage != null && currentPage != page)
             {
                 previousPage = currentPage;
-                //移出去
             }
 
             currentPage = page;
+        }
+
+        public void ResetPages()
+        {
+            foreach(var page in pages.Values)
+                page.Hide();
         }
     }
 }

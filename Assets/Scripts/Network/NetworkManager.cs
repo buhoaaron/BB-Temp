@@ -90,7 +90,7 @@ namespace Barnabus.Network
             //顯示訊息
             string result = request.downloadHandler.text;
             var output = string.Format("PostRequest callback: statusCode {0}, Value: {1}", request.responseCode, result);
-            Debug.unityLogger.LogError(postRequestTag, output);
+            Debug.unityLogger.Log(postRequestTag, output);
 
             if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
             {

@@ -60,7 +60,7 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
-
+            signUpUI.Clear();
         }
 
         protected virtual SignUpUI_Android CreateSignUpUI()
