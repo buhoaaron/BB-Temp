@@ -2,25 +2,24 @@
 
 namespace Barnabus.Network
 {
-    public class ConnectingManager : IBaseSystem
+    public class ConnectingManager : BaseNetworkManager
     {
-        private NetworkManager networkManager = null;
         private ConnectingUI connectingUI = null;
-        public ConnectingManager(NetworkManager networkManager) 
+        public ConnectingManager(NetworkManager networkManager) :base(networkManager)
         {
-            this.networkManager = networkManager;
+
         }
 
         #region BASE_API
-        public void Init()
+        public override void Init()
         {
             Debug.Assert(networkManager.ConnectingUIPrefab != null, "you must set ConnectingUIPrefab.");
         }
-        public void SystemUpdate()
+        public override void SystemUpdate()
         {
 
         }
-        public void Clear()
+        public override void Clear()
         { 
 
         }

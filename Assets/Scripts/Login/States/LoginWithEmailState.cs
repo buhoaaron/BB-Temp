@@ -13,10 +13,14 @@ namespace Barnabus.Login.StateControl
 
         public override void Begin()
         {
-            loginWithEmailUI = CreateLoginWithEmailUI();
+            var pageKey = AddressablesLabels.CanvasLoginWithEmail;
+
+            loginWithEmailUI = stateController.SceneManager.GetPage<LoginWithEmailUI>(pageKey);
             loginWithEmailUI.Show();
 
             loginWithEmailUI.OnButtonLoginClick = ProcessLogin;
+
+            sceneManager.NetworkManager.Dispatcher.OnReceiveLogin += OnLoginSuccess;
         }
 
         private void ProcessLogin()
@@ -45,6 +49,15 @@ namespace Barnabus.Login.StateControl
             sceneManager.PostRequest(API_PATH.Login, data, callbacks);
         }
 
+        private void OnLoginSuccess(ReceiveLogin receiveLogin)
+        {
+            var networkInfo = new NetworkInfo(receiveLogin.meandmineid, receiveLogin.access_token);
+
+            sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
+
+            NextPage();
+        }
+
         private void OnLoginSuccess(string text)
         {
             NextPage();
@@ -58,6 +71,8 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
+            sceneManager.NetworkManager.Dispatcher.OnReceiveLogin -= OnLoginSuccess;
+
             loginWithEmailUI.Hide();
         }
 
@@ -69,14 +84,6 @@ namespace Barnabus.Login.StateControl
         private void PreviousPage()
         {
             
-        }
-
-        protected virtual LoginWithEmailUI CreateLoginWithEmailUI()
-        {
-            var key = AddressablesLabels.CanvasLoginWithEmail;
-            var ui = stateController.SceneManager.GetPage(key) as LoginWithEmailUI;
-
-            return ui;
         }
     }
 }

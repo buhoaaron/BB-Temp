@@ -11,6 +11,9 @@ namespace Barnabus.Login
         [Header("Set IdentificationUI")]
         public IdentificationUI IdentificationUI = null;
 
+        public NetworkManager NetworkManager { private set; get; } = null;
+        public SignUpInfo CurrentSignUpInfo = null;
+
         private PrefabPool prefabPool = null;
         private LoginSceneStateController stateController = null;
         private PageManager pageManager = null;
@@ -18,7 +21,12 @@ namespace Barnabus.Login
         private MessageManager messageManager = null;
         private VerifyAgeManager verifyAgeManager = null;
 
-        public SignUpInfo CurrentSignUpInfo = null;
+        public void Init(NetworkManager nm)
+        {
+            NetworkManager = nm;
+
+            Init();
+        }
 
         #region BASE_API
         public void Init()
@@ -62,13 +70,13 @@ namespace Barnabus.Login
         {
             pageManager.ResetPages();
         }
-        public BaseLoginCommonUI GetPage(string pageKey)
+        public T GetPage<T>(string pageKey) where T : BaseLoginCommonUI
         {
-            var page = pageManager.GetPage(pageKey);
+            var page = pageManager.GetPage(pageKey) as T;
 
             if (page == null)
             {
-                page = CreateUI<BaseLoginCommonUI>(pageKey);
+                page = CreateUI<T>(pageKey);
                 page.Init();
             }
 

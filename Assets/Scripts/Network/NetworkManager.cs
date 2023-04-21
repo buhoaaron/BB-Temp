@@ -18,11 +18,15 @@ namespace Barnabus.Network
             }
         }
         public GameObject ConnectingUIPrefab = null;
+
+        public NetworkInfo NetworkInfo { get; private set; } = null;
         public NetworkConfig NetworkConfig { get; private set; } = null;
         public NetworkPaths NetworkPaths { get; private set; } = null;
+        public NetworkDispatcher Dispatcher { get; private set; } = null;
 
         private ConnectingManager connectingManager = null;
         private PathParser pathParser = null;
+        
         private string postRequestTag = "POST";
 
         public void LoadNetworkConfig()
@@ -50,9 +54,11 @@ namespace Barnabus.Network
         {
             connectingManager = new ConnectingManager(this);
             pathParser = new PathParser(this);
+            Dispatcher = new NetworkDispatcher(this);
 
             connectingManager.Init();
             pathParser.Init();
+            Dispatcher.Init();
         }
         public void SystemUpdate()
         {
@@ -74,10 +80,10 @@ namespace Barnabus.Network
             //開啟連線提示
             connectingManager.CreateConnectingTip();
             //送出請求
-            StartCoroutine(IPostRequest(url, jsonStr, callbacks));
+            StartCoroutine(IPostRequest(path, url, jsonStr, callbacks));
         }
 
-        private IEnumerator IPostRequest(string url, string jsonStr, NetworkCallbacks callbacks)
+        private IEnumerator IPostRequest(API_PATH path, string url, string jsonStr, NetworkCallbacks callbacks)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(jsonStr);
             UnityWebRequest request = new UnityWebRequest(url, UnityWebRequest.kHttpVerbPOST)
@@ -105,7 +111,9 @@ namespace Barnabus.Network
             }
             else
             {
-                callbacks?.OnSuccess?.Invoke(result);
+                //callbacks?.OnSuccess?.Invoke(result);
+
+                Dispatcher.Dispatch(path, result);
             }
         }
         #endregion
@@ -130,6 +138,11 @@ namespace Barnabus.Network
             }
         }
         #endregion
+
+        public void UpdatePlayerNetworkInfo(NetworkInfo info)
+        {
+            NetworkInfo = info;
+        }
 
         public string CaseUrl(API_PATH path)
         {

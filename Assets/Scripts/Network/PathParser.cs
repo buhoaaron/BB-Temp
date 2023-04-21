@@ -3,25 +3,23 @@ using System.Collections;
 
 namespace Barnabus.Network
 {
-    public class PathParser : IBaseSystem
+    public class PathParser : BaseNetworkManager
     {
-        private NetworkManager networkManager = null;
-
-        public PathParser(NetworkManager networkManager)
+        public PathParser(NetworkManager networkManager) : base(networkManager)
         {
-            this.networkManager = networkManager;
+
         }
 
         #region BASE_API
-        public void Init()
+        public override void Init()
         {
 
         }
-        public void SystemUpdate()
+        public override void SystemUpdate()
         {
 
         }
-        public void Clear()
+        public override void Clear()
         {
 
         }

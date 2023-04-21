@@ -59,13 +59,13 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
-            signUpUI.Clear();
+
         }
 
         protected virtual SignUpUI_Android CreateSignUpUI()
         {
             var key = AddressablesLabels.CanvasSignUpAndroid;
-            var ui = stateController.SceneManager.GetPage(key) as SignUpUI_Android;
+            var ui = stateController.SceneManager.GetPage<SignUpUI_Android>(key);
 
             return ui;
         }

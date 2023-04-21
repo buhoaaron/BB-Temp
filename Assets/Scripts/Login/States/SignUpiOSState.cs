@@ -13,12 +13,14 @@ namespace Barnabus.Login.StateControl
             base.Begin();
 
             var signUpUI_iOS = signUpUI as SignUpUI_iOS;
-            
         }
 
         protected override SignUpUI_Android CreateSignUpUI()
         {
-            return stateController.SceneManager.CreateUI<SignUpUI_iOS>(AddressablesLabels.CanvasSignUpiOS);
+            var key = AddressablesLabels.CanvasSignUpiOS;
+            var ui = stateController.SceneManager.GetPage<SignUpUI_iOS>(key);
+
+            return ui;
         }
     }
 }

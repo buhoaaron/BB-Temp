@@ -15,7 +15,8 @@ namespace Barnabus.Login.StateControl
 
         public override void Begin()
         {
-            verifyAgeUI = CreateVerifyAgeUI();
+            var key = AddressablesLabels.CanvasVerifyAge;
+            verifyAgeUI = stateController.SceneManager.GetPage<VerifyAgeUI>(key);
             verifyAgeUI.HideSecurity();
             verifyAgeUI.Show();
 
@@ -26,6 +27,7 @@ namespace Barnabus.Login.StateControl
             verifyAgeUI.OnButtonContinueClick = CheckBirthYearVaild;
 
             verifyAgeUI.SecurityUI.OnButtonCloseClick = verifyAgeUI.HideSecurity;
+            sceneManager.NetworkManager.Dispatcher.OnReceiveSignUp += OnSignUpSuccess;
 
             HighlightBirthYearField();
         }
@@ -69,6 +71,14 @@ namespace Barnabus.Login.StateControl
             callbacks.OnFail = OnSignUpFail;
 
             sceneManager.PostRequest(API_PATH.SignUp, data, callbacks);
+        }
+        private void OnSignUpSuccess(ReceiveSignUp receiveSignUp)
+        {
+            var networkInfo = new NetworkInfo(receiveSignUp.meandmineid, receiveSignUp.access_token);
+
+            sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
+
+            NextPage();
         }
 
         private void OnSignUpSuccess(string text)
@@ -118,6 +128,8 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
+            sceneManager.NetworkManager.Dispatcher.OnReceiveSignUp -= OnSignUpSuccess;
+
             ResetNumbers();
             verifyAgeUI.Hide();
         }
@@ -139,13 +151,6 @@ namespace Barnabus.Login.StateControl
             result += thousandsDigit * Mathf.Pow(10, 3);
 
             return (int)result;
-        }
-        protected virtual VerifyAgeUI CreateVerifyAgeUI()
-        {
-            var key = AddressablesLabels.CanvasVerifyAge;
-            var ui = stateController.SceneManager.GetPage(key) as VerifyAgeUI;
-
-            return ui;
         }
     }
 }
