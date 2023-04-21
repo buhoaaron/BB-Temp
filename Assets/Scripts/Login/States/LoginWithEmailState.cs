@@ -16,7 +16,20 @@ namespace Barnabus.Login.StateControl
             loginWithEmailUI = CreateLoginWithEmailUI();
             loginWithEmailUI.Show();
 
-            loginWithEmailUI.OnButtonLoginClick = SendLogin;
+            loginWithEmailUI.OnButtonLoginClick = ProcessLogin;
+        }
+
+        private void ProcessLogin()
+        {
+            //檢查Email格式
+            var isValidEmail = EmailChecker.CheckValidEmail(loginWithEmailUI.GetLoginInfo().EmailAddress);
+            if (!isValidEmail)
+            {
+                stateController.SceneManager.DoShowErrorMessage(1);
+                return;
+            }
+
+            SendLogin();
         }
 
         #region SEND_LOGIN

@@ -47,10 +47,7 @@ namespace Barnabus.Login
         }
         #endregion
 
-        public void PostRequest(API_PATH path, BaseSendPacket sendPacket, NetworkCallbacks callbacks = null)
-        {
-            NewGameManager.Instance.NetworkManager.PostRequest(path, sendPacket, callbacks);
-        }
+        #region PAGE_MANAGER
         public T CreateUI<T>(string label) where T : BaseLoginCommonUI
         {
             var prefab = prefabPool.GetPrefab(label);
@@ -77,6 +74,9 @@ namespace Barnabus.Login
 
             return page;
         }
+        #endregion
+
+        #region MESSAGE_MANAGER
 
         public MessageUI DoShowErrorMessage(string title, string msg)
         {
@@ -101,6 +101,17 @@ namespace Barnabus.Login
 
             return infos;
         }
+
+        #endregion
+
+        #region NETWORK
+
+        public void PostRequest(API_PATH path, BaseSendPacket sendPacket, NetworkCallbacks callbacks = null)
+        {
+            NewGameManager.Instance.NetworkManager.PostRequest(path, sendPacket, callbacks);
+        }
+
+        #endregion
 
         public bool CheckAdultAge(int birthyear)
         {
