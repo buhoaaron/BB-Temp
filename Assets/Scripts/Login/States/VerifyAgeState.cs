@@ -15,7 +15,8 @@ namespace Barnabus.Login.StateControl
 
         public override void Begin()
         {
-            verifyAgeUI = CreateVerifyAgeUI();
+            var key = AddressablesLabels.CanvasVerifyAge;
+            verifyAgeUI = stateController.SceneManager.GetPage<VerifyAgeUI>(key);
             verifyAgeUI.HideSecurity();
             verifyAgeUI.Show();
 
@@ -26,15 +27,70 @@ namespace Barnabus.Login.StateControl
             verifyAgeUI.OnButtonContinueClick = CheckBirthYearVaild;
 
             verifyAgeUI.SecurityUI.OnButtonCloseClick = verifyAgeUI.HideSecurity;
+            sceneManager.NetworkManager.Dispatcher.OnReceiveSignUp += OnSignUpSuccess;
 
             HighlightBirthYearField();
         }
 
-        public override void End()
+        /// <summary>
+        /// 檢查輸入是否有效
+        /// </summary>
+        private void CheckBirthYearVaild()
         {
-            ResetNumbers();
-            verifyAgeUI.Hide();
+            //是否有未輸入的欄位
+            if (currentBirthYearNumber != null)
+            {
+                //振動提示
+                currentBirthYearNumber.DoShake();
+                return;
+            }
+
+            birthYear = GetBirthYearInputResult();
+            var isAdult = sceneManager.CheckAdultAge(birthYear);
+
+            if (isAdult)
+            {
+                SendSignUp();
+            }
+            else
+            {
+                //未滿18跳標語
+                verifyAgeUI.DoPopUpSecurity();
+            }
         }
+
+        #region SEND_SIGN_UP
+        private void SendSignUp()
+        {
+            var email = sceneManager.CurrentSignUpInfo.EmailAddress;
+            var password = sceneManager.CurrentSignUpInfo.Password;
+            var data = new SendSignUp(email, password, birthYear);
+
+            var callbacks = new NetworkCallbacks();
+            callbacks.OnSuccess = OnSignUpSuccess;
+            callbacks.OnFail = OnSignUpFail;
+
+            sceneManager.PostRequest(API_PATH.SignUp, data, callbacks);
+        }
+        private void OnSignUpSuccess(ReceiveSignUp receiveSignUp)
+        {
+            var networkInfo = new NetworkInfo(receiveSignUp.meandmineid, receiveSignUp.access_token);
+
+            sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
+
+            NextPage();
+        }
+
+        private void OnSignUpSuccess(string text)
+        {
+            NextPage();
+        }
+
+        private void OnSignUpFail(ReceiveErrorMessage errorMessage)
+        {
+            stateController.SceneManager.DoShowErrorMessage(errorMessage.error);
+        }
+        #endregion
 
         private void NextPage()
         {
@@ -70,55 +126,12 @@ namespace Barnabus.Login.StateControl
             currentBirthYearNumber?.ChangeSwitchSprite(true);
         }
 
-        /// <summary>
-        /// 檢查輸入是否有效
-        /// </summary>
-        private void CheckBirthYearVaild()
+        public override void End()
         {
-            //是否有未輸入的欄位
-            if (currentBirthYearNumber != null)
-            {
-                //振動提示
-                currentBirthYearNumber.DoShake();
-                return;
-            }
+            sceneManager.NetworkManager.Dispatcher.OnReceiveSignUp -= OnSignUpSuccess;
 
-            birthYear = GetBirthYearInputResult();
-            var isAdult = sceneManager.CheckAdultAge(birthYear);
-
-            if (isAdult)
-            {
-                SendSignUp();
-            }
-            else
-            {
-                //未滿18跳標語
-                verifyAgeUI.DoPopUpSecurity();
-            }
-        }
-
-        private void SendSignUp()
-        {
-            var email = sceneManager.CurrentSignUpInfo.EmailAddress;
-            var password = sceneManager.CurrentSignUpInfo.Password;
-            var data = new SendSignUp(email, password, birthYear);
-
-            var callbacks = new NetworkCallbacks();
-            callbacks.OnSuccess = OnSignUpSuccess;
-            callbacks.OnFail = OnSignUpFail;
-
-            sceneManager.PostRequest(API_PATH.SignUp, data, callbacks);
-        }
-
-
-        private void OnSignUpSuccess(string text)
-        {
-            NextPage();
-        }
-
-        private void OnSignUpFail(ReceiveErrorMessage errorMessage)
-        {
-            stateController.SceneManager.DoShowErrorMessage(errorMessage.error);
+            ResetNumbers();
+            verifyAgeUI.Hide();
         }
 
         private int GetBirthYearInputResult()
@@ -138,13 +151,6 @@ namespace Barnabus.Login.StateControl
             result += thousandsDigit * Mathf.Pow(10, 3);
 
             return (int)result;
-        }
-        protected virtual VerifyAgeUI CreateVerifyAgeUI()
-        {
-            var key = AddressablesLabels.CanvasVerifyAge;
-            var ui = stateController.SceneManager.GetPage(key) as VerifyAgeUI;
-
-            return ui;
         }
     }
 }

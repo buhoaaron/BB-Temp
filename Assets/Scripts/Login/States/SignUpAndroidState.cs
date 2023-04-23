@@ -1,5 +1,4 @@
-﻿using System.Net.Mail;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Barnabus.Login.StateControl
 {
@@ -26,7 +25,7 @@ namespace Barnabus.Login.StateControl
             sceneManager.CurrentSignUpInfo = signUpUI.GetSignUpInfo();
 
             //檢查Email格式
-            var isValidEmail = IsValidEmail(signUpUI.GetSignUpInfo().EmailAddress);
+            var isValidEmail = EmailChecker.CheckValidEmail(signUpUI.GetSignUpInfo().EmailAddress);
             if (!isValidEmail)
             {
                 stateController.SceneManager.DoShowErrorMessage(1);
@@ -66,7 +65,7 @@ namespace Barnabus.Login.StateControl
         protected virtual SignUpUI_Android CreateSignUpUI()
         {
             var key = AddressablesLabels.CanvasSignUpAndroid;
-            var ui = stateController.SceneManager.GetPage(key) as SignUpUI_Android;
+            var ui = stateController.SceneManager.GetPage<SignUpUI_Android>(key);
 
             return ui;
         }
@@ -79,19 +78,6 @@ namespace Barnabus.Login.StateControl
                 Debug.Log("You must agree to the Terms of Use.");
 
             return isOn;
-        }
-
-        private bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
         }
     }
 }

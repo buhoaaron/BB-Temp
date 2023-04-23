@@ -18,6 +18,8 @@ namespace Barnabus.Login.StateControl
                     return new VerifyAgeState(this);
                 case LOGIN_SCENE_STATE.ACCOUNT:
                     return new AccountState(this);
+                case LOGIN_SCENE_STATE.LOGIN:
+                    return new LoginWithEmailState(this);
                 default:
                     Debug.LogError(string.Format("No state found for {0}", stateName));
                     return null;

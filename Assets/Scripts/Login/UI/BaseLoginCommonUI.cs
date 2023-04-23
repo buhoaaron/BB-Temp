@@ -21,12 +21,13 @@ namespace Barnabus.Login
             GetComponent<Canvas>().worldCamera = camera;
         }
 
-        public void DoShift(bool isForward)
+        public void DoShift(bool isForward, TweenCallback onComplete = null)
         {
-            root.DOLocalMoveX(isForward ? -1920 : 0, 0.3f).SetEase(Ease.Linear);
+            var tweener = root.DOLocalMoveX(isForward ? -1920 : 0, 0.3f).SetEase(Ease.Linear);
+            tweener.onComplete = onComplete;
         }
 
-        public override void DoPopUp(TweenCallback onComplete = null)
+        public void DoPopUp(TweenCallback onComplete = null, float delay = 0)
         {
             Debug.AssertFormat(root != null, "not set to Root");
             Debug.AssertFormat(mask != null, "not set to Mask");
@@ -34,6 +35,7 @@ namespace Barnabus.Login
             ResetPopUp();
 
             Sequence seq = DOTween.Sequence();
+            seq.AppendInterval(delay);
             seq.Append(root.DOScale(1, 0.3f).SetEase(Ease.OutBack));
             seq.Join(mask.DOFade(0.4f, 0.2f));
             seq.onComplete = onComplete;

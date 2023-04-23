@@ -11,6 +11,9 @@ namespace Barnabus.Login
         [Header("Set IdentificationUI")]
         public IdentificationUI IdentificationUI = null;
 
+        public NetworkManager NetworkManager { private set; get; } = null;
+        public SignUpInfo CurrentSignUpInfo = null;
+
         private PrefabPool prefabPool = null;
         private LoginSceneStateController stateController = null;
         private PageManager pageManager = null;
@@ -18,7 +21,12 @@ namespace Barnabus.Login
         private MessageManager messageManager = null;
         private VerifyAgeManager verifyAgeManager = null;
 
-        public SignUpInfo CurrentSignUpInfo = null;
+        public void Init(NetworkManager nm)
+        {
+            NetworkManager = nm;
+
+            Init();
+        }
 
         #region BASE_API
         public void Init()
@@ -47,10 +55,7 @@ namespace Barnabus.Login
         }
         #endregion
 
-        public void PostRequest(API_PATH path, BaseSendPacket sendPacket, NetworkCallbacks callbacks = null)
-        {
-            NewGameManager.Instance.NetworkManager.PostRequest(path, sendPacket, callbacks);
-        }
+        #region PAGE_MANAGER
         public T CreateUI<T>(string label) where T : BaseLoginCommonUI
         {
             var prefab = prefabPool.GetPrefab(label);
@@ -61,19 +66,25 @@ namespace Barnabus.Login
 
             return ui;
         }
-
-        public BaseLoginCommonUI GetPage(string pageKey)
+        public void ResetPages()
         {
-            var page = pageManager.GetPage(pageKey);
+            pageManager.ResetPages();
+        }
+        public T GetPage<T>(string pageKey) where T : BaseLoginCommonUI
+        {
+            var page = pageManager.GetPage(pageKey) as T;
 
             if (page == null)
             {
-                page = CreateUI<BaseLoginCommonUI>(pageKey);
+                page = CreateUI<T>(pageKey);
                 page.Init();
             }
 
             return page;
         }
+        #endregion
+
+        #region MESSAGE_MANAGER
 
         public MessageUI DoShowErrorMessage(string title, string msg)
         {
@@ -98,6 +109,17 @@ namespace Barnabus.Login
 
             return infos;
         }
+
+        #endregion
+
+        #region NETWORK
+
+        public void PostRequest(API_PATH path, BaseSendPacket sendPacket, NetworkCallbacks callbacks = null)
+        {
+            NewGameManager.Instance.NetworkManager.PostRequest(path, sendPacket, callbacks);
+        }
+
+        #endregion
 
         public bool CheckAdultAge(int birthyear)
         {

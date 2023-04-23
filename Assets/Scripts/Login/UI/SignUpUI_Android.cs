@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using Barnabus.UI;
 using TMPro;
-using TMPro;
 
 namespace Barnabus.Login
 {
@@ -19,14 +18,11 @@ namespace Barnabus.Login
         public Button ButtonFacebook = null;
         public Button ButtonPrevious = null;
         public Button ButtonCreate = null;
-        public Button ButtonShowPassword = null;
 
         public TMP_InputField InputFieldEmail = null;
         public TMP_InputField InputFieldPassword = null;
 
         public Toggle ToggleOK = null;
-
-        private bool isShowPassword = false;
 
         public override void Init()
         {
@@ -34,9 +30,6 @@ namespace Barnabus.Login
             ButtonFacebook.onClick.AddListener(ProcessButtonFacebookClick);
             ButtonPrevious.onClick.AddListener(ProcessButtonPreviousClick);
             ButtonCreate.onClick.AddListener(ProcessButtonCreateClick);
-
-            ButtonShowPassword.onClick.AddListener(ProcessShowPassword);
-            InputFieldPassword.asteriskChar = '●';
         }
         public override void UpdateUI()
         {
@@ -48,8 +41,6 @@ namespace Barnabus.Login
             ButtonFacebook.onClick.RemoveListener(ProcessButtonFacebookClick);
             ButtonPrevious.onClick.RemoveListener(ProcessButtonPreviousClick);
             ButtonCreate.onClick.RemoveListener(ProcessButtonCreateClick);
-
-            ButtonShowPassword.onClick.RemoveListener(ProcessShowPassword);
         }
 
         public SignUpInfo GetSignUpInfo()
@@ -75,19 +66,6 @@ namespace Barnabus.Login
         private void ProcessButtonCreateClick()
         {
             OnButtonCreateClick?.Invoke();
-        }
-
-        private void ProcessShowPassword()
-        {
-            isShowPassword = !isShowPassword;
-
-            InputFieldPassword.contentType = isShowPassword ? TMP_InputField.ContentType.Alphanumeric
-                                                            : TMP_InputField.ContentType.Password;
-
-            InputFieldPassword.ForceLabelUpdate();
-
-            var changeSprite = ButtonShowPassword.GetComponent<UIButtonChangeSprite>();
-            changeSprite.Change(System.Convert.ToInt16(isShowPassword));
         }
 
         public bool CheckToggleStatus()

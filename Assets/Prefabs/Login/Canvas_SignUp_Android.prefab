@@ -121,7 +121,6 @@ MonoBehaviour:
   ButtonFacebook: {fileID: 5804441791411630569}
   ButtonPrevious: {fileID: 1494654101}
   ButtonCreate: {fileID: 5804441791030135030}
-  ButtonShowPassword: {fileID: 9078133047582179736}
   InputFieldEmail: {fileID: 3206345589391808997}
   InputFieldPassword: {fileID: 3206345589167690162}
   ToggleOK: {fileID: 3206345589685112290}
@@ -224,7 +223,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8222314139746735771, guid: 827bcc8393fe0694d9f453f1ffa99df1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 813246685040208054}
   m_SourcePrefab: {fileID: 100100000, guid: 827bcc8393fe0694d9f453f1ffa99df1, type: 3}
 --- !u!114 &1494654101 stripped
 MonoBehaviour:
@@ -308,14 +310,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744eb046149e97b43b6bc978f3db9735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9078133047582179736 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8232303281413862677, guid: 827bcc8393fe0694d9f453f1ffa99df1, type: 3}
+--- !u!1 &9068141860440826390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8222314139746735771, guid: 827bcc8393fe0694d9f453f1ffa99df1, type: 3}
   m_PrefabInstance: {fileID: 1135757988094178445}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &813246685040208054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9068141860440826390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: ee612249e8d6edd42adb37e99b6968bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 3206345589167690162}

@@ -16,7 +16,8 @@ namespace Barnabus.SceneManagement
         public override void Begin()
         {
             manager = GameObject.FindObjectOfType<LoginSceneManager>();
-            manager.Init();
+            manager.Init(NewGameManager.Instance.NetworkManager);
+            
             //TOFIX: 測試用SKip鍵，後續可拔
             manager.IdentificationUI.ButtonSkip.onClick.AddListener(SkipLogin);
 

@@ -70,7 +70,7 @@ public class NewGameManager : MonoBehaviour
         audioeManager = new BarnabusAudioManager(this, audioSourceManager);
         audioeManager.Init();
 
-        networkManager = new NetworkManager(this);
+        networkManager = GetComponentInChildren<NetworkManager>();
         networkManager.Init();
     }
 

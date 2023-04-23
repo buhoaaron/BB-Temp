@@ -12,15 +12,8 @@ namespace Barnabus.Login.StateControl
 
         public override void Begin()
         {
-            accountUI = CreateVerifyAgeUI();
-        }
-
-        protected virtual AccountUI CreateVerifyAgeUI()
-        {
             var key = AddressablesLabels.CanvasAccount;
-            var ui = stateController.SceneManager.GetPage(key) as AccountUI;
-
-            return ui;
+            accountUI = stateController.SceneManager.GetPage<AccountUI>(key);
         }
     }
 }

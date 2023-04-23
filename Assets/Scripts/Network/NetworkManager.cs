@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Barnabus.Network
 {
-    public class NetworkManager : BaseBarnabusManager
+    public class NetworkManager : MonoBehaviour, IBaseSystem
     {
         public bool IsNetworkReady
         {
@@ -17,23 +17,23 @@ namespace Barnabus.Network
                 return NetworkConfig != null && NetworkPaths != null;
             }
         }
+        public GameObject ConnectingUIPrefab = null;
 
+        public NetworkInfo NetworkInfo { get; private set; } = null;
         public NetworkConfig NetworkConfig { get; private set; } = null;
         public NetworkPaths NetworkPaths { get; private set; } = null;
+        public NetworkDispatcher Dispatcher { get; private set; } = null;
 
+        private ConnectingManager connectingManager = null;
         private PathParser pathParser = null;
+        
         private string postRequestTag = "POST";
-
-        public NetworkManager(NewGameManager gm) : base(gm)
-        {
-            
-        }
 
         public void LoadNetworkConfig()
         {
             var path = Path.Combine(Application.streamingAssetsPath, AppFiles.NetworkConfig);
 
-            GameManager.NetworkManager.GetRequest(path, (text) => 
+            GetRequest(path, (text) => 
             {
                 NetworkConfig = JsonConvert.DeserializeObject<NetworkConfig>(text);
             });
@@ -43,23 +43,28 @@ namespace Barnabus.Network
         {
             var path = Path.Combine(Application.streamingAssetsPath, AppFiles.NetworkPaths);
 
-            GameManager.NetworkManager.GetRequest(path, (text) =>
+            GetRequest(path, (text) =>
             {
                 NetworkPaths = JsonConvert.DeserializeObject<NetworkPaths>(text);
             });
         }
 
         #region BASE_API
-        public override void Init()
+        public void Init()
         {
+            connectingManager = new ConnectingManager(this);
             pathParser = new PathParser(this);
+            Dispatcher = new NetworkDispatcher(this);
+
+            connectingManager.Init();
             pathParser.Init();
+            Dispatcher.Init();
         }
-        public override void SystemUpdate()
+        public void SystemUpdate()
         {
 
         }
-        public override void Clear()
+        public void Clear()
         {
 
         }
@@ -72,11 +77,13 @@ namespace Barnabus.Network
             string jsonStr = JsonConvert.SerializeObject(sendPacket);
 
             Debug.unityLogger.Log(postRequestTag, string.Format("PostRequest {0}, json: {1}", url, jsonStr));
-
-            GameManager.CustomStartCoroutine(IPostRequest(url, jsonStr, callbacks));
+            //開啟連線提示
+            connectingManager.CreateConnectingTip();
+            //送出請求
+            StartCoroutine(IPostRequest(path, url, jsonStr, callbacks));
         }
 
-        private IEnumerator IPostRequest(string url, string jsonStr, NetworkCallbacks callbacks)
+        private IEnumerator IPostRequest(API_PATH path, string url, string jsonStr, NetworkCallbacks callbacks)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(jsonStr);
             UnityWebRequest request = new UnityWebRequest(url, UnityWebRequest.kHttpVerbPOST)
@@ -87,10 +94,13 @@ namespace Barnabus.Network
             request.SetRequestHeader("Content-Type", "application/json");
             yield return request.SendWebRequest();
 
+            //關閉連線提示
+            connectingManager.CloseConnectingTip();
+
             //顯示訊息
             string result = request.downloadHandler.text;
             var output = string.Format("PostRequest callback: statusCode {0}, Value: {1}", request.responseCode, result);
-            Debug.unityLogger.LogError(postRequestTag, output);
+            Debug.unityLogger.Log(postRequestTag, output);
 
             if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
             {
@@ -101,7 +111,9 @@ namespace Barnabus.Network
             }
             else
             {
-                callbacks?.OnSuccess?.Invoke(result);
+                //callbacks?.OnSuccess?.Invoke(result);
+
+                Dispatcher.Dispatch(path, result);
             }
         }
         #endregion
@@ -111,7 +123,7 @@ namespace Barnabus.Network
         {
             Debug.LogFormat("GetRequest url: {0}", url);
 
-            return GameManager.CustomStartCoroutine(IGetRequest(url, onSuccess));
+            return StartCoroutine(IGetRequest(url, onSuccess));
         }
 
         private IEnumerator IGetRequest(string url, Action<string> onSuccess)
@@ -126,6 +138,11 @@ namespace Barnabus.Network
             }
         }
         #endregion
+
+        public void UpdatePlayerNetworkInfo(NetworkInfo info)
+        {
+            NetworkInfo = info;
+        }
 
         public string CaseUrl(API_PATH path)
         {
