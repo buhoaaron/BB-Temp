@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class PageView : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 {
+    public Action<int> OnPageChanged = null;
+
+    public int PageCount => totalPage;
+
     [SerializeField]
     private bool _interactable = true;
     public bool interactable
@@ -180,5 +184,7 @@ public class PageView : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         //计算值
         selectPage = totalPage <= 0 ? 0 : selectPage > totalPage ? totalPage : selectPage <= 0 ? 1 : selectPage;
         targetHorizontalPosition = -(selectPage - 1) * rectSize.x;
+
+        OnPageChanged?.Invoke(selectPage);
     }
 }

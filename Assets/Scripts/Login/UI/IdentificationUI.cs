@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.Events;
 using Barnabus.UI;
+using System.Collections.Generic;
 
 namespace Barnabus.Login
 {
@@ -20,6 +21,9 @@ namespace Barnabus.Login
 
         public Button ButtonSkip = null;
 
+        public PageView PageViewBanner = null;
+        public List<UIImageSwitch> SwitchPageBalls = null;
+
         public override void Init()
         {
             buttons.Add(ButtonFamilies);
@@ -31,7 +35,25 @@ namespace Barnabus.Login
             ButtonEducators.onClick.AddListener(ProcessButtonEducatorsClick);
             ButtonStudents.onClick.AddListener(ProcessButtonStudentsClick);
             ButtonHaveAccount.onClick.AddListener(ProcessButtonHaveAccountClick);
+
+            PageViewBanner.OnPageChanged = ProcessPageChanged;
         }
+
+        private void ProcessPageChanged(int selectPage)
+        {
+            //防呆
+            if (SwitchPageBalls.Count != PageViewBanner.PageCount)
+                Debug.LogError("PageCount and PageBalls not equal.");
+
+            foreach(var switchBall in SwitchPageBalls)
+            {
+                var indexPage = selectPage - 1;
+                var indexBall = SwitchPageBalls.IndexOf(switchBall);
+
+                switchBall.Switch(indexPage == indexBall);
+            }
+        }
+
         public override void UpdateUI()
         {
 
@@ -42,6 +64,8 @@ namespace Barnabus.Login
             ButtonEducators.onClick.RemoveListener(ProcessButtonEducatorsClick);
             ButtonStudents.onClick.RemoveListener(ProcessButtonStudentsClick);
             ButtonHaveAccount.onClick.RemoveListener(ProcessButtonHaveAccountClick);
+
+            PageViewBanner.OnPageChanged = null;
         }
         
         private void ProcessButtonFamiliesClick()

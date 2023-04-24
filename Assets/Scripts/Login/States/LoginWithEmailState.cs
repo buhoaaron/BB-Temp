@@ -19,6 +19,7 @@ namespace Barnabus.Login.StateControl
             loginWithEmailUI.Show();
 
             loginWithEmailUI.OnButtonLoginClick = ProcessLogin;
+            loginWithEmailUI.OnButtonPreviousClick = PreviousPage;
 
             sceneManager.NetworkManager.Dispatcher.OnReceiveLogin += OnLoginSuccess;
         }
@@ -72,18 +73,16 @@ namespace Barnabus.Login.StateControl
         public override void End()
         {
             sceneManager.NetworkManager.Dispatcher.OnReceiveLogin -= OnLoginSuccess;
+        }
 
+        public override void NextPage()
+        {
             loginWithEmailUI.Hide();
         }
 
-        private void NextPage()
+        public override void PreviousPage()
         {
-            
-        }
-
-        private void PreviousPage()
-        {
-            
+            stateController.SetState(LOGIN_SCENE_STATE.IDENTIFICATION);
         }
     }
 }
