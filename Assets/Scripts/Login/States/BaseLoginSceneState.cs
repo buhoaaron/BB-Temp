@@ -2,7 +2,7 @@
 
 namespace Barnabus.Login.StateControl
 {
-    public class BaseLoginSceneState : BaseState
+    public abstract class BaseLoginSceneState : BaseState
     {
         protected LoginSceneStateController stateController = null;
         protected LoginSceneManager sceneManager = null;
@@ -12,5 +12,7 @@ namespace Barnabus.Login.StateControl
             stateController = controller;
             sceneManager = stateController.SceneManager;
         }
+        public abstract void NextPage();
+        public abstract void PreviousPage();
     }
 }

@@ -28,6 +28,16 @@ namespace Barnabus.Login.StateControl
 
         }
 
+        public override void NextPage()
+        {
+
+        }
+
+        public override void PreviousPage()
+        {
+
+        }
+
         public override void End()
         {
             identificationUI.DoShift(true);

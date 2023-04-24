@@ -92,12 +92,12 @@ namespace Barnabus.Login.StateControl
         }
         #endregion
 
-        private void NextPage()
+        public override void NextPage()
         {
             stateController.SetState(LOGIN_SCENE_STATE.ACCOUNT);
         }
 
-        private void PreviousPage()
+        public override void PreviousPage()
         {
             stateController.SetState(LOGIN_SCENE_STATE.SIGN_UP_ANDROID);
         }
