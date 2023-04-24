@@ -14,12 +14,11 @@ namespace Barnabus.UI
         public TMP_InputField Target = null;
 
         private Button button = null;
-
         private void Awake()
         {
             Debug.Assert(Target != null, "ShowPasswordSwitch: you have to set Target.");
 
-            Target.asteriskChar = 'w';
+            Target.asteriskChar = '��';
 
             button = GetComponent<Button>();
             button.onClick.AddListener(ProcessShowPassword);
@@ -29,9 +28,8 @@ namespace Barnabus.UI
         {
             IsShowPassword = !IsShowPassword;
 
-            Target.contentType = IsShowPassword
-                ? TMP_InputField.ContentType.Alphanumeric
-                : TMP_InputField.ContentType.Password;
+            Target.contentType = IsShowPassword ? TMP_InputField.ContentType.Alphanumeric
+                                                : TMP_InputField.ContentType.Password;
 
             Target.ForceLabelUpdate();
 
