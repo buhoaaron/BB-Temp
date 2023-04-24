@@ -84,5 +84,10 @@ namespace Barnabus.Login
         {
             OnButtonHaveAccountClick?.Invoke();
         }
+
+        public void AutoPlayPageView(bool isAutoPlay)
+        {
+            PageViewBanner.autoPlay = isAutoPlay;
+        }
     }
 }
