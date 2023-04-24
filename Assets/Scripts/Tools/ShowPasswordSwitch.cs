@@ -5,7 +5,7 @@ using TMPro;
 namespace Barnabus.UI
 {
     /// <summary>
-    /// PWD¶}Ãö
+    /// PWDï¿½}ï¿½ï¿½
     /// </summary>
     [RequireComponent(typeof(UIButtonChangeSprite))]
     public class ShowPasswordSwitch : MonoBehaviour
@@ -14,11 +14,12 @@ namespace Barnabus.UI
         public TMP_InputField Target = null;
 
         private Button button = null;
+
         private void Awake()
         {
             Debug.Assert(Target != null, "ShowPasswordSwitch: you have to set Target.");
 
-            Target.asteriskChar = '¡´';
+            Target.asteriskChar = 'w';
 
             button = GetComponent<Button>();
             button.onClick.AddListener(ProcessShowPassword);
@@ -28,8 +29,9 @@ namespace Barnabus.UI
         {
             IsShowPassword = !IsShowPassword;
 
-            Target.contentType = IsShowPassword ? TMP_InputField.ContentType.Alphanumeric
-                                                : TMP_InputField.ContentType.Password;
+            Target.contentType = IsShowPassword
+                ? TMP_InputField.ContentType.Alphanumeric
+                : TMP_InputField.ContentType.Password;
 
             Target.ForceLabelUpdate();
 
