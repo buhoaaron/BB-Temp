@@ -105,6 +105,8 @@ namespace Barnabus.EmotionFace
         private string selectedCharacterName;
         private SelectableButton defaultCharacterTypeButton;
 
+        private bool isEntry=true;
+
         //private Rect pictureRect;
         private RectTransform pictureRectTransform;
 
@@ -124,19 +126,20 @@ namespace Barnabus.EmotionFace
 
             SetDefaultCharacter();
 
+            isEntry = true;
             selectedBackgroundColorIndex = 0;
             selectedCharacterColorIndex = 1;
             SetBackgroundColor();
             SetCharacterColor();
 
-            nameTitle.text = "";
+            //nameTitle.text = "";
             characterItem = pictureCharacter.GetComponent<Item>();
             characterItem.info.itemName = "Character";
             characterItem.info.layer = 0;
             items.Add(characterItem);
 
             //OnClick_CharacterType(defaultCharacterTypeButton);
-            //OnClick_Character(characterButtons[0]);
+            //OnClick_CharacterType(characterButtons[0]);
             //OnClick_SelectColorTarget(0);
             //OnClick_BackgroundColor(itemButtons[0]);
 
@@ -144,6 +147,9 @@ namespace Barnabus.EmotionFace
             characterBaseButton.backgroundImage.color = Color.black;
             backgroundColorButton.backgroundImage.color = Color.black;
             characterColorButton.backgroundImage.color = Color.black;
+
+            
+
 
             //DialogController.ShowDialog(DialogController.StringAsset.emotionFaceStartDialog, () => nameController.ShowNameSelector());
         }
@@ -231,10 +237,11 @@ namespace Barnabus.EmotionFace
         private void SetDefaultCharacter()
         {
             pictureInfo.characterTypeName = asset.GetCharacterType(0).Name;
+            selectedCharacterName = asset.GetCharacterType(0).Name;
+            pictureCharacter.sprite = asset.GetCharacterType(0).Sprite;
             /*pictureInfo.characterName = asset.GetCharacterType(0).Elements[0].Name;
             selectedCharacterName = asset.GetCharacterType(0).Elements[0].Name;
             pictureCharacter.sprite = asset.GetCharacterType(0).Elements[0].Sprite;*/
-            pictureCharacter.sprite = asset.GetCharacterType(0).Sprite;
         }
 
         public void GenerateCharacterTypeButtons()
@@ -268,7 +275,14 @@ namespace Barnabus.EmotionFace
 */
                 if (i == 0) defaultCharacterTypeButton = newButton;
 
+            characterButtons.Add(newButton);
+            if(isEntry==true)
+            {
+                selectedCharacterTypeButton = characterButtons[0];
+                isEntry = false;
             }
+           }
+            
         }
 
         private void RefreshCharacterButton(string typeName)
@@ -320,9 +334,10 @@ namespace Barnabus.EmotionFace
         private void OnClick_CharacterType(SelectableButton clickedButton)
         {
             //if(clickedButton == selectedCharacterTypeButton) characterList.SetActive(!characterList.activeSelf);
+
             if (clickedButton == selectedCharacterTypeButton)
             {
-                characterList.SetActive(false);
+                characterList.SetActive(true);
                 clickedButton.backgroundImage.sprite = asset.buttonUnselectedSprite;
                 selectedCharacterTypeButton = null;
             }
@@ -339,7 +354,13 @@ namespace Barnabus.EmotionFace
                 characterList.SetActive(true);
             }
 
-          
+            if (isEntry == true)
+            {
+                selectedCharacterTypeButton = characterButtons[0];
+                isEntry = false;
+            }
+
+
 
         }
 

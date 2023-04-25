@@ -44,6 +44,8 @@ namespace Barnabus.EmotionFace
             moodQuestLevel = DataManager.MoodQuestLevel;
             GenerateNameButtons();
             confirmButton.SetActive(false);
+            OnClick_NameButton(nameButtons[0]);
+            
             //HideNameSelector();
         }
 
@@ -89,6 +91,9 @@ namespace Barnabus.EmotionFace
             selectedNameButton.backgroundImage.color = Color.yellow;
 
             confirmButton.SetActive(true);
+
+            
+            controller.SetFileName(selectedNameButton.text.text);
         }
 
         private bool IsNameButtonUnlocked(int buttonIndex)
