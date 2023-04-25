@@ -5,7 +5,7 @@ using TMPro;
 namespace Barnabus.UI
 {
     /// <summary>
-    /// PWD∂}√ˆ
+    /// PWDÈñãÈóú
     /// </summary>
     [RequireComponent(typeof(UIButtonChangeSprite))]
     public class ShowPasswordSwitch : MonoBehaviour
@@ -18,7 +18,7 @@ namespace Barnabus.UI
         {
             Debug.Assert(Target != null, "ShowPasswordSwitch: you have to set Target.");
 
-            Target.asteriskChar = '°¥';
+            Target.asteriskChar = '‚óè';
 
             button = GetComponent<Button>();
             button.onClick.AddListener(ProcessShowPassword);
