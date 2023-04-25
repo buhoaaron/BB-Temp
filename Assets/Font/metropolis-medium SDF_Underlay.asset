@@ -121,14 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: metropolis-medium SDF_Underlay
   m_EditorClassIdentifier: 
-  hashCode: -1449594230
-  material: {fileID: -7520472841764516059}
-  materialHashCode: 573466858
   m_Version: 1.1.0
-  m_SourceFontFileGUID: 99028b2006751a24988b7d0ba37ea61d
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 99028b2006751a24988b7d0ba37ea61d, type: 3}
-  m_SourceFontFile: {fileID: 0}
-  m_AtlasPopulationMode: 0
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: Metropolis
@@ -151,6 +144,12 @@ MonoBehaviour:
     m_StrikethroughOffset: 9.2
     m_StrikethroughThickness: 0.88000005
     m_TabWidth: 13
+  m_Material: {fileID: -7520472841764516059}
+  m_SourceFontFileGUID: 99028b2006751a24988b7d0ba37ea61d
+  m_SourceFontFile: {fileID: 0}
+  m_SourceFontFilePath: 
+  m_AtlasPopulationMode: 0
+  InternalDynamicOS: 0
   m_GlyphTable:
   - m_Index: 1
     m_Metrics:
@@ -3521,6 +3520,10 @@ MonoBehaviour:
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0
+  m_AtlasWidth: 512
+  m_AtlasHeight: 512
+  m_AtlasPadding: 5
+  m_AtlasRenderMode: 4165
   m_UsedGlyphRects:
   - m_X: 0
     m_Y: 0
@@ -4619,46 +4622,22 @@ MonoBehaviour:
     m_Y: 432
     m_Width: 2
     m_Height: 79
-  m_fontInfo:
-    Name: 
-    PointSize: 0
-    Scale: 0
-    CharacterCount: 0
-    LineHeight: 0
-    Baseline: 0
-    Ascender: 0
-    CapHeight: 0
-    Descender: 0
-    CenterLine: 0
-    SuperscriptOffset: 0
-    SubscriptOffset: 0
-    SubSize: 0
-    Underline: 0
-    UnderlineThickness: 0
-    strikethrough: 0
-    strikethroughThickness: 0
-    TabWidth: 0
-    Padding: 0
-    AtlasWidth: 0
-    AtlasHeight: 0
-  atlas: {fileID: 0}
-  m_AtlasWidth: 512
-  m_AtlasHeight: 512
-  m_AtlasPadding: 5
-  m_AtlasRenderMode: 4165
-  m_glyphInfoList: []
-  m_KerningTable:
-    kerningPairs: []
   m_FontFeatureTable:
+    m_MultipleSubstitutionRecords: []
+    m_LigatureSubstitutionRecords: []
     m_GlyphPairAdjustmentRecords: []
-  fallbackFontAssets: []
+    m_MarkToBaseAdjustmentRecords: []
+    m_MarkToMarkAdjustmentRecords: []
+  m_ShouldReimportFontFeatures: 0
   m_FallbackFontAssetTable: []
   m_CreationSettings:
     sourceFontFileName: 
     sourceFontFileGUID: 99028b2006751a24988b7d0ba37ea61d
+    faceIndex: 0
     pointSizeSamplingMode: 0
     pointSize: 44
     padding: 5
+    paddingMode: 0
     packingMode: 4
     atlasWidth: 512
     atlasHeight: 512
@@ -4693,11 +4672,38 @@ MonoBehaviour:
     italicTypeface: {fileID: 0}
   fontWeights: []
   normalStyle: 0
-  normalSpacingOffset: 0
+  normalSpacingOffset: -5
   boldStyle: 0.75
-  boldSpacing: 7
+  boldSpacing: 5
   italicStyle: 35
   tabSize: 10
+  m_fontInfo:
+    Name: 
+    PointSize: 0
+    Scale: 0
+    CharacterCount: 0
+    LineHeight: 0
+    Baseline: 0
+    Ascender: 0
+    CapHeight: 0
+    Descender: 0
+    CenterLine: 0
+    SuperscriptOffset: 0
+    SubscriptOffset: 0
+    SubSize: 0
+    Underline: 0
+    UnderlineThickness: 0
+    strikethrough: 0
+    strikethroughThickness: 0
+    TabWidth: 0
+    Padding: 0
+    AtlasWidth: 0
+    AtlasHeight: 0
+  m_glyphInfoList: []
+  m_KerningTable:
+    kerningPairs: []
+  fallbackFontAssets: []
+  atlas: {fileID: 0}
 --- !u!28 &4409293369203479274
 Texture2D:
   m_ObjectHideFlags: 0
