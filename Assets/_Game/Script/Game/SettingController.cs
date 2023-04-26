@@ -5,18 +5,21 @@ public class SettingController : MonoBehaviour
 {
     [SerializeField]
     private bool gamePauseable;
+
     [SerializeField]
     private GameObject settingView;
 
     [Header("Map")]
     [SerializeField]
     private bool canBackMap;
+
     [SerializeField]
     private GameObject mapButton;
 
     [Header("SceneName")]
     [SerializeField]
     private string homeSceneName;
+
     [SerializeField]
     private string mapSceneName;
 
@@ -27,13 +30,15 @@ public class SettingController : MonoBehaviour
 
     public void OnClick_OpenSetting()
     {
-        if (gamePauseable) Time.timeScale = 0;
+        if (gamePauseable)
+            Time.timeScale = 0;
         settingView.SetActive(true);
     }
 
     public void OnClick_CloseSetting()
     {
-        if (gamePauseable) Time.timeScale = 1;
+        if (gamePauseable)
+            Time.timeScale = 1;
         settingView.SetActive(false);
     }
 
@@ -51,7 +56,7 @@ public class SettingController : MonoBehaviour
     }
 
     /// <summary>
-    /// <·s¼W>©I¥s³õ´ºª¬ºA¾÷¤Á³õ´ºª¬ºA
+    /// <ï¿½sï¿½W>ï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A
     /// </summary>
     public void SetSceneState(int sceneState)
     {
