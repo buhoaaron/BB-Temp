@@ -6920,6 +6920,7 @@ MonoBehaviour:
   exportPictureRawImage: {fileID: 1686981050}
   exportPictureName: {fileID: 1803229458}
   fileController: {fileID: 1385344654}
+  currPicID: 
 --- !u!1 &1802324246
 GameObject:
   m_ObjectHideFlags: 0

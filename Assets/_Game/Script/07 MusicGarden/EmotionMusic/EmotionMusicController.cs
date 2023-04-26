@@ -174,6 +174,7 @@ namespace Barnabus.EmotionMusic
                     break;
                 case MusicGameState.Dance:
                     dancePlayer.Stop();
+                    sheetController.OnClick_StopPlaySheet();
                     ChangeGameState(MusicGameState.EditMusic);
                     break;
             }
