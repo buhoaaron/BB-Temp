@@ -154,23 +154,28 @@ namespace Barnabus.SceneManagement
         
         private void GotoFace()
         {
-            controller.SetState(SCENE_STATE.LOADING_FACE);
+            controller.GameManager.PlayerDataManager.SetSceneCacheData(new GameSceneCacheData(SCENE_STATE.LOADING_FACE));
+            controller.SetState(SCENE_STATE.GAME_PREVIEW);
         }
         private void GotoMusic()
         {
-            controller.SetState(SCENE_STATE.LOADING_MUSIC);
+            controller.GameManager.PlayerDataManager.SetSceneCacheData(new GameSceneCacheData(SCENE_STATE.LOADING_MUSIC));
+            controller.SetState(SCENE_STATE.GAME_PREVIEW);
         }
         private void GotoDotToDot()
         {
-            controller.SetState(SCENE_STATE.LOADING_DOT_TO_DOT);
+            controller.GameManager.PlayerDataManager.SetSceneCacheData(new GameSceneCacheData(SCENE_STATE.LOADING_DOT_TO_DOT));
+            controller.SetState(SCENE_STATE.GAME_PREVIEW);
         }
         private void GotoHiAndBye()
         {
-            controller.SetState(SCENE_STATE.LOADING_HI_AND_BYE);
+            controller.GameManager.PlayerDataManager.SetSceneCacheData(new GameSceneCacheData(SCENE_STATE.LOADING_HI_AND_BYE));
+            controller.SetState(SCENE_STATE.GAME_PREVIEW);
         }
         private void GotoBreathing()
         {
-            controller.SetState(SCENE_STATE.LOADING_BREATHING);
+            controller.GameManager.PlayerDataManager.SetSceneCacheData(new GameSceneCacheData(SCENE_STATE.LOADING_BREATHING));
+            controller.SetState(SCENE_STATE.GAME_PREVIEW);
         }
         private void GotoWakeUpBarnabus()
         {

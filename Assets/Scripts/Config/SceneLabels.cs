@@ -10,5 +10,6 @@ public class SceneLabels
     public static string GameHiAndBye = "GameHiAndByeScene";
     public static string WakeUp = "WakeUpScene";
     public static string Login = "Login";
+    public static string GamePreview = "GamePreviewScene";
     public static string Loading = "LoadingScene";
 }

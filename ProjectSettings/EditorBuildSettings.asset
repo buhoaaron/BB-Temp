@@ -47,5 +47,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LogIn.unity
     guid: d65c25fb5a659da46815902544fbf869
+  - enabled: 1
+    path: Assets/Scenes/GamePreviewScene.unity
+    guid: 278e6d6ce30d247ee9a253c316b4a097
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 802379ba2b66f144ab58a26b6f86e8d1, type: 2}

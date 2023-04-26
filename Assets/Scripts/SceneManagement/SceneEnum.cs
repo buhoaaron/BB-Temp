@@ -15,6 +15,7 @@
         WAKE_UP_WITH_UNLOCK,
         BREATHING,
         LOGIN,
+        GAME_PREVIEW,
         //讀取場景
         LOADING_BASE = 100,
         LOADING_MAIN = 101,
