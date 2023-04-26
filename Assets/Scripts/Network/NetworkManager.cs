@@ -31,7 +31,7 @@ namespace Barnabus.Network
 
         public void LoadNetworkConfig()
         {
-            var path = Path.Combine(Application.streamingAssetsPath, AppFiles.NetworkConfig);
+            var path = PathHelper.GetStreamingAssetsPath(AppFiles.NetworkConfig);
 
             GetRequest(path, (text) => 
             {
@@ -41,7 +41,7 @@ namespace Barnabus.Network
 
         public void LoadNetworkPaths()
         {
-            var path = Path.Combine(Application.streamingAssetsPath, AppFiles.NetworkPaths);
+            var path = PathHelper.GetStreamingAssetsPath(AppFiles.NetworkPaths);
 
             GetRequest(path, (text) =>
             {
@@ -135,6 +135,10 @@ namespace Barnabus.Network
             if (request.result == UnityWebRequest.Result.Success)
             {
                 onSuccess?.Invoke(request.downloadHandler.text);
+            }
+            else
+            {
+                Debug.LogError(request.error);
             }
         }
         #endregion
