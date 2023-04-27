@@ -50,19 +50,33 @@ namespace Barnabus.EmotionMusic
         private void Update()
         {
 
-            songProgressSlider = GameObject.Find("SongProgress").GetComponent<Slider>();
+            
 
             if (IsPlaying)
             {
                 deltaTimeSinceSheetStart += Time.deltaTime;
                 SetSliderValue(deltaTimeSinceSheetStart / sheetTimeLength);
+
             }
             else
             {
+                if(songProgressSlider)
                 SetLinePosition(songProgressSlider.value, false);
                 //SetLinePosition(songProgressSliderDance.value, false);
             }
 
+           
+        }
+
+        public void RefreshSlider()
+        {
+            songProgressSlider = GameObject.Find("SongProgress").GetComponent<Slider>();
+            Debug.Log("slider refreshed");
+        }
+
+        public void EraseSlider()
+        {
+            songProgressSlider = null;
             
         }
 
@@ -90,12 +104,14 @@ namespace Barnabus.EmotionMusic
 
         public void OnSliderValueChanged()
         {
+            if(songProgressSlider)
             SetLinePosition(songProgressSlider.value, !IsPlaying);
            
         }
 
         private void SetSliderValue(float progress)
         {
+            if(songProgressSlider)
             songProgressSlider.value = progress;
            
         }
@@ -119,6 +135,7 @@ namespace Barnabus.EmotionMusic
             StopAllCoroutines();
             SetSliderValue(0);
             StartCoroutine(PlaySheet(sheet, songProgressSlider.value));
+            RefreshSlider();
         }
 
         private void SetLinePosition(float progress, bool autoMoveSheet = true)
