@@ -25,7 +25,8 @@ public class SettingController : MonoBehaviour
 
     private void Start()
     {
-        mapButton.SetActive(canBackMap);
+        if (mapButton != null)
+            mapButton.SetActive(canBackMap);
     }
 
     public void OnClick_OpenSetting()

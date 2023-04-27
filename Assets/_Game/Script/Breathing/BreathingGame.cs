@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Playables;
 using TMPro;
 using Barnabus;
+using Barnabus.UI;
+using Barnabus.SceneManagement;
 
 public class BreathingGame : MonoBehaviour
 {
@@ -55,13 +57,17 @@ public class BreathingGame : MonoBehaviour
     [SerializeField]
     private TMP_Text TextGuide;
 
+    [Header("Prefab")]
+    [SerializeField]
+    private PotionRewardUI potionRewardUIPrefab;
+
     [Header("Pause")]
     [SerializeField]
     private GameObject pause;
 
     [SerializeField]
     private GameObject settings;
-
+    
     private int currentLevel;
     private BreathingLevels tempItem;
 
@@ -132,7 +138,8 @@ public class BreathingGame : MonoBehaviour
     public void ReturnHome()
     {
         DoPause();
-        settings.SetActive(true);
+        //FIXED: Controlled by SettingController instead
+        settings.GetComponentInChildren<SettingController>().OnClick_OpenSetting();
     }
 
     /// <summary>
@@ -149,7 +156,8 @@ public class BreathingGame : MonoBehaviour
     public void CancelReturnHome()
     {
         GameResume();
-        settings.SetActive(false);
+        //FIXED: Controlled by SettingController instead
+        settings.GetComponentInChildren<SettingController>().OnClick_CloseSetting();
     }
 
     public void GamePause()
@@ -263,14 +271,22 @@ public class BreathingGame : MonoBehaviour
 
     private void ShowAward()
     {
-        AwardController.SetPotionSprite(Game.GameSettings.BreathingPotionType);
-        AwardController.ShowAward(
-            3,
-            3,
-            () => SceneTransit.LoadSceneAsync("MainScene"),
-            () => SceneTransit.LoadSceneAsync("BreathingScene"),
-            () => SceneTransit.LoadSceneAsync("MainScene")
-        );
+        //FIXED: Unified potion reward UI
+        var potionRewardUI = Instantiate(potionRewardUIPrefab, settings.transform);
+        potionRewardUI.Init(POTION_REWARD_MODE.TWO_BUTTONS);
+        potionRewardUI.DoPopUp();
+        potionRewardUI.SetPotionValue(3);
+
+        potionRewardUI.OnButtonBackMainClick = () =>
+        {
+            NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+            NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_MAIN);
+        };
+        potionRewardUI.OnButtonReplayClick = () =>
+        {
+            NewGameManager.Instance.AudioManager.PlaySound(AUDIO_NAME.BUTTON_CLICK);
+            NewGameManager.Instance.SetSceneState(SCENE_STATE.LOADING_BREATHING);
+        };
 
         DataManager.LoadPotions();
         DataManager.Potions.AddPotion(Game.GameSettings.BreathingPotionType, 3);
