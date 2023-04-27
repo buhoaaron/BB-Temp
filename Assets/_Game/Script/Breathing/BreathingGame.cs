@@ -85,11 +85,30 @@ public class BreathingGame : MonoBehaviour
     #region GAMES
     public void GameStart()
     {
-        mainTimeline = levels[currentLevel].GetComponent<PlayableDirector>();
+        StartCoroutine(GameStartCoroutine());
+    }
+
+    private IEnumerator GameStartCoroutine()
+    {
+        GameObject go = Instantiate(levels[currentLevel]);
+        yield return null;
+        mainTimeline = go.GetComponent<PlayableDirector>();
+        mainTimeline.stopped += OnPlayableDirectorStopped;
+        yield return null;
+        mainTimeline.Play();
+    }
+
+    private void OnDestroy()
+    {
         if (mainTimeline != null)
         {
-            mainTimeline.Play();
+            mainTimeline.stopped -= OnPlayableDirectorStopped;
         }
+    }
+
+    private void OnPlayableDirectorStopped(PlayableDirector director)
+    {
+        Invoke("ShowAward", 0.5f);
     }
 
     /// <summary>
@@ -249,7 +268,7 @@ public class BreathingGame : MonoBehaviour
             3,
             3,
             () => SceneTransit.LoadSceneAsync("MainScene"),
-            () => SceneTransit.LoadSceneAsync("MainScene"),
+            () => SceneTransit.LoadSceneAsync("BreathingScene"),
             () => SceneTransit.LoadSceneAsync("MainScene")
         );
 
