@@ -222,8 +222,13 @@ namespace Barnabus.EmotionFace
             for (int i = 0; i < characterButtonContainer.childCount; i++)
             {
                 //Destroy(characterList.transform.GetChild(i).gameObject);
-                //Destroy(characterButtonContainer.GetChild(i).gameObject);
-                characterButtonContainer.GetChild(i).gameObject.SetActive(false);
+                Destroy(characterButtonContainer.GetChild(i).gameObject);
+                //characterButtonContainer.GetChild(i).gameObject.SetActive(false);
+            }
+
+            for(int i = 0; i<itemButtonContainer.childCount;i++)
+            {
+                Destroy(itemButtonContainer.GetChild(i).gameObject);
             }
 
             if(characterColorButton.backgroundImage.color==Color.black)
@@ -254,6 +259,7 @@ namespace Barnabus.EmotionFace
         public void GenerateCharacterTypeButtons()
         {
             ClearList();
+
             characterList.SetActive(true);
             itemList.SetActive(false);
 
@@ -408,7 +414,6 @@ namespace Barnabus.EmotionFace
             for (int i = 0; i < asset.ItemTypeCount; i++)
             {
                 newButton = Instantiate(rightButtonPrefab, itemTypeButtonContainer);
-                // newButton.backgroundImage
                 newButton.backgroundImage.sprite = asset.rightButtonUnselectedSprite;
                 newButton.buttonIcon.sprite = asset.GetItemType(i).Icon;
                 newButton.parameter = asset.GetItemType(i).Name;
@@ -439,23 +444,26 @@ namespace Barnabus.EmotionFace
         {
             ClearList();
             characterList.SetActive(false);
+            characterBaseButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
+            backgroundColorButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
+            characterColorButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
 
             //if (clickedButton == selectedItemTypeButton) itemList.SetActive(!itemList.activeSelf);
-            if (clickedButton == selectedItemTypeButton)
-            {
-                //itemList.SetActive(false);
-                clickedButton.backgroundImage.sprite = asset.rightButtonUnselectedSprite;
-                selectedItemTypeButton = null;
-            }
-            else
-            {
+            // if (clickedButton == selectedItemTypeButton)
+            // {
+            //     //itemList.SetActive(false);
+            //     clickedButton.backgroundImage.sprite = asset.rightButtonUnselectedSprite;
+            //     selectedItemTypeButton = null;
+            // }
+            // else
+            // {
                 if (selectedItemTypeButton) selectedItemTypeButton.backgroundImage.sprite = asset.rightButtonUnselectedSprite;
                 clickedButton.backgroundImage.sprite = asset.rightButtonSelectedSprite;
                 selectedItemTypeButton = clickedButton;
 
                 RefreshItemButton(clickedButton.parameter);
                 itemList.SetActive(true);
-            }
+           // }
         }
 
         private void OnClick_Item(SelectableButton clickedButton)
