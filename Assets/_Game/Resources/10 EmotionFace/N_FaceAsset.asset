@@ -152,13 +152,13 @@ MonoBehaviour:
       buttonIcon_Gray: {fileID: 0}
       sprite: {fileID: 21300000, guid: 98a90cca9ed94614eae69119547f18e5, type: 3}
     - elementName: N06
+      buttonIcon: {fileID: 21300000, guid: 62d5404802c577f4081d7a5cd0323ba9, type: 3}
+      buttonIcon_Gray: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 62d5404802c577f4081d7a5cd0323ba9, type: 3}
+    - elementName: N07
       buttonIcon: {fileID: 21300000, guid: 0b1fd29dd1b6dc54f84eab74087715a5, type: 3}
       buttonIcon_Gray: {fileID: 0}
       sprite: {fileID: 21300000, guid: 0b1fd29dd1b6dc54f84eab74087715a5, type: 3}
-    - elementName: N07
-      buttonIcon: {fileID: 0}
-      buttonIcon_Gray: {fileID: 0}
-      sprite: {fileID: 0}
     - elementName: N08
       buttonIcon: {fileID: 21300000, guid: 97a7ee5a5b792b54d9ac1c4acd905679, type: 3}
       buttonIcon_Gray: {fileID: 0}
