@@ -87,6 +87,9 @@ namespace Barnabus.Login
 
         public void AutoPlayPageView(bool isAutoPlay)
         {
+            if (!isAutoPlay)
+                PageViewBanner.ResetAutoCount();
+
             PageViewBanner.autoPlay = isAutoPlay;
         }
     }

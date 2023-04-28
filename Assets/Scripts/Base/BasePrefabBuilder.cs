@@ -34,6 +34,15 @@ public abstract class BasePrefabBuilder : MonoBehaviour
 
         return listObject;
     }
+
+    public virtual GameObject BuildSingle()
+    {
+        var go = GameObject.Instantiate(Prefab, Parent);
+        listObject.Add(go);
+
+        return go;
+    }
+
     public virtual void Destroy()
     {
         foreach (GameObject go in listObject)

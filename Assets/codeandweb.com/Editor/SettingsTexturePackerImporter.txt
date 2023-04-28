@@ -9,6 +9,7 @@ tpsheetFileNames:
 - Assets/Sprite/Atlas/HubBrand.tpsheet
 - Assets/Sprite/Atlas/LoginCommon.tpsheet
 - Assets/Sprite/Atlas/NavigationBar.tpsheet
+- Assets/Sprite/Atlas/PlayerIcon.tpsheet
 - Assets/Sprite/Atlas/PotionHIghlightEffect.tpsheet
 textureFileNames:
 - Assets/Atlas/Shelf/HubBrand.png
@@ -20,10 +21,12 @@ textureFileNames:
 - Assets/Sprite/Atlas/HubBrand.png
 - Assets/Sprite/Atlas/LoginCommon.png
 - Assets/Sprite/Atlas/NavigationBar.png
+- Assets/Sprite/Atlas/PlayerIcon.png
 - Assets/Sprite/Atlas/PotionHIghlightEffect.png
 normalmapFileNames:
 - 
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 

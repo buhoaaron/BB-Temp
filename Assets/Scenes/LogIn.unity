@@ -33646,6 +33646,8 @@ MonoBehaviour:
     Prefab: {fileID: 6733362697423441829, guid: ca2fa1f07e418fa41b30238e9ea01825, type: 3}
   - Name: Canvas_LoginWithEmail
     Prefab: {fileID: 3893199347755153750, guid: d27121d25aada3642b2414043074a0ef, type: 3}
+  - Name: Canvas_ChooseProfile
+    Prefab: {fileID: 2586761790752730713, guid: b410054dfabcae340850e97363de65df, type: 3}
 --- !u!1 &1604068510
 GameObject:
   m_ObjectHideFlags: 0

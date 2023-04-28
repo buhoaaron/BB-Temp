@@ -135,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 363
-        y: 191
+        y: 199
         width: 256
         height: 256
       alignment: 0
@@ -155,8 +155,8 @@ TextureImporter:
       name: BG_Account
       rect:
         serializedVersion: 2
-        x: 556
-        y: 937
+        x: 205
+        y: 7
         width: 100
         height: 86
       alignment: 0
@@ -176,8 +176,8 @@ TextureImporter:
       name: BG_BTN_01
       rect:
         serializedVersion: 2
-        x: 556
-        y: 849
+        x: 307
+        y: 7
         width: 100
         height: 86
       alignment: 0
@@ -197,8 +197,8 @@ TextureImporter:
       name: BG_BTN_02
       rect:
         serializedVersion: 2
-        x: 814
-        y: 477
+        x: 566
+        y: 13
         width: 100
         height: 86
       alignment: 0
@@ -218,8 +218,8 @@ TextureImporter:
       name: BG_BTN_Lock
       rect:
         serializedVersion: 2
-        x: 916
-        y: 444
+        x: 556
+        y: 937
         width: 100
         height: 86
       alignment: 0
@@ -239,8 +239,8 @@ TextureImporter:
       name: BG_BTN_NoOutline
       rect:
         serializedVersion: 2
-        x: 814
-        y: 389
+        x: 556
+        y: 849
         width: 100
         height: 86
       alignment: 0
@@ -260,8 +260,8 @@ TextureImporter:
       name: BG_Importing
       rect:
         serializedVersion: 2
-        x: 711
-        y: 367
+        x: 556
+        y: 761
         width: 100
         height: 86
       alignment: 0
@@ -281,8 +281,8 @@ TextureImporter:
       name: BG_Importing_Number0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
+        x: 926
+        y: 939
         width: 84
         height: 84
       alignment: 0
@@ -302,8 +302,8 @@ TextureImporter:
       name: BG_Importing_Number1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 1
+        x: 926
+        y: 853
         width: 84
         height: 84
       alignment: 0
@@ -323,8 +323,8 @@ TextureImporter:
       name: BG_Importing_Number2
       rect:
         serializedVersion: 2
-        x: 173
-        y: 1
+        x: 926
+        y: 767
         width: 84
         height: 84
       alignment: 0
@@ -345,7 +345,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 465
-        y: 93
+        y: 101
         width: 96
         height: 96
       alignment: 0
@@ -365,8 +365,8 @@ TextureImporter:
       name: BG_Select
       rect:
         serializedVersion: 2
-        x: 507
-        y: 1
+        x: 1
+        y: 3
         width: 100
         height: 90
       alignment: 0
@@ -386,8 +386,8 @@ TextureImporter:
       name: BG_SelectColorOutline
       rect:
         serializedVersion: 2
-        x: 609
-        y: 1
+        x: 103
+        y: 3
         width: 100
         height: 90
       alignment: 0
@@ -407,8 +407,8 @@ TextureImporter:
       name: BG_Selected
       rect:
         serializedVersion: 2
-        x: 345
-        y: 21
+        x: 814
+        y: 701
         width: 160
         height: 64
       alignment: 0
@@ -428,8 +428,8 @@ TextureImporter:
       name: BG_Selection
       rect:
         serializedVersion: 2
-        x: 817
-        y: 701
+        x: 814
+        y: 635
         width: 160
         height: 64
       alignment: 0
@@ -450,7 +450,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 363
-        y: 89
+        y: 97
         width: 100
         height: 100
       alignment: 0
@@ -470,8 +470,8 @@ TextureImporter:
       name: BTN_Add
       rect:
         serializedVersion: 2
-        x: 556
-        y: 713
+        x: 814
+        y: 499
         width: 134
         height: 134
       alignment: 0
@@ -491,8 +491,8 @@ TextureImporter:
       name: BTN_Add_Lock
       rect:
         serializedVersion: 2
-        x: 814
-        y: 565
+        x: 795
+        y: 363
         width: 134
         height: 134
       alignment: 0
@@ -512,8 +512,8 @@ TextureImporter:
       name: BTN_Close
       rect:
         serializedVersion: 2
-        x: 563
-        y: 93
+        x: 468
+        y: 3
         width: 96
         height: 96
       alignment: 0
@@ -533,8 +533,8 @@ TextureImporter:
       name: BTN_Close_Lock
       rect:
         serializedVersion: 2
-        x: 916
-        y: 346
+        x: 563
+        y: 101
         width: 96
         height: 96
       alignment: 0
@@ -554,8 +554,8 @@ TextureImporter:
       name: BTN_Del
       rect:
         serializedVersion: 2
-        x: 259
-        y: 1
+        x: 681
+        y: 417
         width: 84
         height: 84
       alignment: 0
@@ -575,8 +575,8 @@ TextureImporter:
       name: BTN_PageUP
       rect:
         serializedVersion: 2
-        x: 621
-        y: 359
+        x: 409
+        y: 1
         width: 57
         height: 94
       alignment: 0
@@ -596,8 +596,8 @@ TextureImporter:
       name: BTN_ShowSN_Off
       rect:
         serializedVersion: 2
-        x: 752
-        y: 725
+        x: 616
+        y: 461
         width: 63
         height: 40
       alignment: 9
@@ -617,8 +617,8 @@ TextureImporter:
       name: BTN_ShowSN_On
       rect:
         serializedVersion: 2
-        x: 752
-        y: 725
+        x: 616
+        y: 461
         width: 63
         height: 40
       alignment: 9
@@ -639,7 +639,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 87
+        y: 95
         width: 360
         height: 360
       alignment: 0
@@ -659,7 +659,7 @@ TextureImporter:
       name: FBID
       rect:
         serializedVersion: 2
-        x: 711
+        x: 668
         y: 767
         width: 256
         height: 256
@@ -681,7 +681,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 556
-        y: 455
+        y: 503
         width: 256
         height: 256
       alignment: 0
@@ -701,8 +701,8 @@ TextureImporter:
       name: Icon_Boy
       rect:
         serializedVersion: 2
-        x: 661
-        y: 973
+        x: 976
+        y: 715
         width: 30
         height: 50
       alignment: 0
@@ -722,8 +722,8 @@ TextureImporter:
       name: Icon_Confirm_OK
       rect:
         serializedVersion: 2
-        x: 692
-        y: 723
+        x: 556
+        y: 459
         width: 58
         height: 42
       alignment: 0
@@ -744,7 +744,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 950
-        y: 635
+        y: 569
         width: 64
         height: 64
       alignment: 0
@@ -765,7 +765,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 950
-        y: 569
+        y: 503
         width: 64
         height: 64
       alignment: 0
@@ -785,8 +785,8 @@ TextureImporter:
       name: Icon_Girl
       rect:
         serializedVersion: 2
-        x: 661
-        y: 921
+        x: 976
+        y: 663
         width: 30
         height: 50
       alignment: 0
@@ -807,7 +807,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 950
-        y: 532
+        y: 466
         width: 58
         height: 35
       alignment: 0
@@ -828,11 +828,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 449
+        y: 457
         width: 553
-        height: 574
+        height: 566
       alignment: 9
-      pivot: {x: 0.4972875, y: 0.5}
+      pivot: {x: 0.4972875, y: 0.49293286}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -848,8 +848,8 @@ TextureImporter:
       name: ImageBanner_Point_Off
       rect:
         serializedVersion: 2
-        x: 658
-        y: 893
+        x: 976
+        y: 635
         width: 26
         height: 26
       alignment: 0
@@ -869,8 +869,8 @@ TextureImporter:
       name: ImageBanner_Point_On
       rect:
         serializedVersion: 2
-        x: 658
-        y: 865
+        x: 767
+        y: 475
         width: 26
         height: 26
       alignment: 0

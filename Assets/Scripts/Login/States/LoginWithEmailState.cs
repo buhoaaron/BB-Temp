@@ -52,7 +52,7 @@ namespace Barnabus.Login.StateControl
 
         private void OnLoginSuccess(ReceiveLogin receiveLogin)
         {
-            var networkInfo = new NetworkInfo(receiveLogin.meandmineid, receiveLogin.access_token);
+            var networkInfo = new NetworkInfo(receiveLogin.meandmineid, receiveLogin.access_token, receiveLogin.players_list);
 
             sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
 
@@ -72,12 +72,13 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
+            loginWithEmailUI.Hide();
             sceneManager.NetworkManager.Dispatcher.OnReceiveLogin -= OnLoginSuccess;
         }
 
         public override void NextPage()
         {
-            loginWithEmailUI.Hide();
+            stateController.SetState(LOGIN_SCENE_STATE.CHOOSE_PROFILE);
         }
 
         public override void PreviousPage()

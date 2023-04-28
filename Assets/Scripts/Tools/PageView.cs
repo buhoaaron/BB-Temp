@@ -105,6 +105,10 @@ public class PageView : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             }
         }
     }
+    public void ResetAutoCount()
+    {
+        count = 0;
+    }
 
     /// <summary>
     /// 如果手动改变了节点(数量不变),需要手动调用此方法 , 且不能有Active=false和非RectTransform的节点
