@@ -1846,7 +1846,7 @@ MonoBehaviour:
   nameButtonPrefab: {fileID: 8612954035689272997, guid: c2d34a2b2f561f348bbd685391076cf0, type: 3}
   nameButtonContainer: {fileID: 486979459}
   confirmButton: {fileID: 2132451933}
-  buttonLockedColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+  buttonLockedColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
 --- !u!4 &635358123
 Transform:
   m_ObjectHideFlags: 0
