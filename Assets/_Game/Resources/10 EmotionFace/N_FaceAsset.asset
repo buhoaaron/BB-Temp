@@ -46,7 +46,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 4ec7db3a2b63846378681d7661abd779, type: 3}
   itemTypes:
   - typeName: Food
-    buttonIcon: {fileID: 21300000, guid: 4a6ecbf6c3a6ee641978655addec8637, type: 3}
+    buttonIcon: {fileID: 21300000, guid: f7a3febf65061b24496eabc07ef9b1cc, type: 3}
     elements:
     - elementName: F01
       buttonIcon: {fileID: 21300000, guid: f7a3febf65061b24496eabc07ef9b1cc, type: 3}
@@ -123,13 +123,13 @@ MonoBehaviour:
     - elementName: F19
       buttonIcon: {fileID: 21300000, guid: a6876cf052aa31c4aaca3cbf8bfbd842, type: 3}
       buttonIcon_Gray: {fileID: 0}
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: a6876cf052aa31c4aaca3cbf8bfbd842, type: 3}
     - elementName: F20
       buttonIcon: {fileID: 21300000, guid: b4a7702ac9d555a45af2eaa15a793102, type: 3}
       buttonIcon_Gray: {fileID: 0}
       sprite: {fileID: 21300000, guid: b4a7702ac9d555a45af2eaa15a793102, type: 3}
   - typeName: Nature
-    buttonIcon: {fileID: 21300000, guid: 08e0b61d0ba19574492149d6d3b86c4c, type: 3}
+    buttonIcon: {fileID: 21300000, guid: 387f031fb3d462f47a30b5134c7fe23f, type: 3}
     elements:
     - elementName: N01
       buttonIcon: {fileID: 21300000, guid: 5a0b3c3a3d2c9d64b8106394352df955, type: 3}
@@ -212,7 +212,7 @@ MonoBehaviour:
       buttonIcon_Gray: {fileID: 0}
       sprite: {fileID: 21300000, guid: 3469a7d1215575c4db2fecf468e10fff, type: 3}
   - typeName: Sport
-    buttonIcon: {fileID: 21300000, guid: c0c9b9d7c1c88df48a47a923ddb083d5, type: 3}
+    buttonIcon: {fileID: 21300000, guid: 503bd84e0c1abda4faee3a6959607263, type: 3}
     elements:
     - elementName: S01
       buttonIcon: {fileID: 21300000, guid: 503bd84e0c1abda4faee3a6959607263, type: 3}
@@ -295,7 +295,7 @@ MonoBehaviour:
       buttonIcon_Gray: {fileID: 0}
       sprite: {fileID: 21300000, guid: ebcd3b7eef5308c43b2e7198208fb01b, type: 3}
   - typeName: Supplies
-    buttonIcon: {fileID: 21300000, guid: c39d710decbf71c4e9cf0765fc94c3f3, type: 3}
+    buttonIcon: {fileID: 21300000, guid: 23078eff485e5364d8ed457457044333, type: 3}
     elements:
     - elementName: Su01
       buttonIcon: {fileID: 21300000, guid: 23078eff485e5364d8ed457457044333, type: 3}
