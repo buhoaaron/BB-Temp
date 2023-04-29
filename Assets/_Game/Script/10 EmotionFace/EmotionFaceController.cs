@@ -235,8 +235,24 @@ namespace Barnabus.EmotionFace
 
             if(characterColorButton.backgroundImage.color==Color.black)
             {
+                Transform themeIMG = themeButton.gameObject.transform.Find("Image");
+                Image themeIMGpic = themeIMG.GetComponent<Image>();
+
+                themeIMGpic.color = Color.gray;
                 themeButton.color = Color.black;
                 themeButton.sprite = asset.leftButtonUnselectedSprite;
+
+                Transform CColorIMG = characterColorButton.gameObject.transform.Find("Image");
+                Image CColorIMGpic = CColorIMG.GetComponent<Image>();
+                Transform BColorIMG = backgroundColorButton.gameObject.transform.Find("Image");
+                Image BColorIMGpic = BColorIMG.GetComponent<Image>();
+                Transform CBaseIMG = characterBaseButton.gameObject.transform.Find("Image");
+                Image CBaseIMGpic = CBaseIMG.GetComponent<Image>();
+
+                CColorIMGpic.color = Color.white;
+                BColorIMGpic.color = Color.white;
+                CBaseIMGpic.color = Color.white;
+
                 characterColorButton.backgroundImage.color = Color.white;
                 backgroundColorButton.backgroundImage.color = Color.white;
                 characterBaseButton.backgroundImage.color = Color.white;
@@ -718,34 +734,34 @@ namespace Barnabus.EmotionFace
             characterList.SetActive(true);
 
             colorTarget = (ColorTarget)target;
-            if (colorTarget == ColorTarget.Background && selectedItemTypeButton == backgroundColorButton)
+            if (colorTarget == ColorTarget.Background && selectedCharacterTypeButton == backgroundColorButton)
             {
                 //itemList.SetActive(false);
                 backgroundColorButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
-                selectedItemTypeButton = null;
+                selectedCharacterTypeButton = null;
             }
-            else if (colorTarget == ColorTarget.Character && selectedItemTypeButton == characterColorButton)
+            else if (colorTarget == ColorTarget.Character && selectedCharacterTypeButton == characterColorButton)
             {
                 //itemList.SetActive(false);
                 characterColorButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
-                selectedItemTypeButton = null;
+                selectedCharacterTypeButton = null;
             }
             else
             {
-                if (selectedItemTypeButton) selectedItemTypeButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
+                if (selectedCharacterTypeButton) selectedCharacterTypeButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
                 //itemList.SetActive(true);
 
                 GenerateColorButton(colorTarget);
                 switch (colorTarget)
                 {
                     case ColorTarget.Background:
-                        selectedItemTypeButton = backgroundColorButton;
+                        selectedCharacterTypeButton = backgroundColorButton;
                         break;
                     case ColorTarget.Character:
-                        selectedItemTypeButton = characterColorButton;
+                        selectedCharacterTypeButton = characterColorButton;
                         break;
                 }
-                selectedItemTypeButton.backgroundImage.sprite = asset.leftButtonSelectedSprite;
+                selectedCharacterTypeButton.backgroundImage.sprite = asset.leftButtonSelectedSprite;
             }
         }
 
