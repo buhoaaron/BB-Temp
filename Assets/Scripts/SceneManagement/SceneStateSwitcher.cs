@@ -36,6 +36,9 @@ namespace Barnabus.SceneManagement
                 case SCENE_STATE.LOGIN:
                     return new LoginSceneState(sceneStateController, SceneLabels.Login);
 
+                case SCENE_STATE.GAME_PREVIEW:
+                    return new GamePreviewSceneState(sceneStateController, SceneLabels.GamePreview);
+
                 case SCENE_STATE.LOADING_MAIN:
                     return new LoadingMainSceneState(sceneStateController, SceneLabels.Loading);
                 case SCENE_STATE.LOADING_FACE:

@@ -11,6 +11,7 @@ namespace Barnabus.Login
         public UIImageSwitch ImageSwitch = null;
 
         private Vector2 originPos = Vector2.zero;
+        private Tweener tweenerShake = null;
 
         #region BASE_API
         public void Init()
@@ -59,8 +60,11 @@ namespace Barnabus.Login
 
         public void DoShake()
         {
+            if (tweenerShake != null)
+                tweenerShake.Complete();
+
             transform.localPosition = originPos;
-            transform.DOShakePosition(0.5f, 10);
+            tweenerShake = transform.DOShakePosition(0.5f, 10);
         }
 
         public void ChangeSwitchSprite(bool isOn)

@@ -41,13 +41,13 @@ namespace Barnabus.Login.StateControl
 
             NextPage();
         }
-        private void NextPage()
+        public override void NextPage()
         {
             signUpUI.Hide();
             stateController.SetState(LOGIN_SCENE_STATE.VERIFY_AGE);
         }
 
-        protected void PreviousPage()
+        public override void PreviousPage()
         {
             stateController.SetState(LOGIN_SCENE_STATE.IDENTIFICATION);
         }
@@ -59,7 +59,7 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
-
+            
         }
 
         protected virtual SignUpUI_Android CreateSignUpUI()

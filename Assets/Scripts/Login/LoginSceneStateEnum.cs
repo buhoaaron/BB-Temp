@@ -26,5 +26,9 @@
         /// 登入
         /// </summary>
         LOGIN,
+        /// <summary>
+        /// Profile管理
+        /// </summary>
+        CHOOSE_PROFILE,
     }
 }

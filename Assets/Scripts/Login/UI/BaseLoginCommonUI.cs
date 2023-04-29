@@ -9,11 +9,13 @@ namespace Barnabus.Login
     /// </summary>
     public abstract class BaseLoginCommonUI : BaseGameUI
     {
-        public virtual void Init(Camera camera)
-        {
-            SetCanvasCamera(camera);
+        protected CanvasGroup canvasGroup = null;
 
-            Init();
+        private void Awake()
+        {
+            //add用來做淡入淡出的元件
+            if (!TryGetComponent<CanvasGroup>(out canvasGroup))
+                canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
 
         public void SetCanvasCamera(Camera camera)
@@ -39,6 +41,12 @@ namespace Barnabus.Login
             seq.Append(root.DOScale(1, 0.3f).SetEase(Ease.OutBack));
             seq.Join(mask.DOFade(0.4f, 0.2f));
             seq.onComplete = onComplete;
+        }
+
+        public void DoFade(float endValue, float duration, TweenCallback onComplete = null)
+        {
+            Tweener t = canvasGroup.DOFade(endValue, duration);
+            t.onComplete = onComplete;
         }
     }
 }

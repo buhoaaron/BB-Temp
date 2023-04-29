@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/_Game/00 GameScenes/04 Breathing/AngerBreathing.unity
     guid: 7de2f6ba4a958ec49a70bfa5de89092c
   - enabled: 1
+    path: Assets/_Game/00 GameScenes/04 Breathing/BreathingScene.unity
+    guid: d567bb4148b774e4e9d9fe740360457b
+  - enabled: 1
     path: Assets/_Game/00 GameScenes/04 Breathing/PropBreathing.unity
     guid: 0ce84288da940f14db244bfcdbfe31dd
   - enabled: 1
@@ -47,5 +50,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LogIn.unity
     guid: d65c25fb5a659da46815902544fbf869
+  - enabled: 1
+    path: Assets/Scenes/GamePreviewScene.unity
+    guid: 278e6d6ce30d247ee9a253c316b4a097
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 802379ba2b66f144ab58a26b6f86e8d1, type: 2}

@@ -9,9 +9,11 @@ namespace Barnabus.Login
     public class LoginWithEmailUI : BaseLoginCommonUI
     {
         public UnityAction OnButtonLoginClick = null;
+        public UnityAction OnButtonPreviousClick = null;
 
         [Header("Set UI Components")]
         public Button ButtonLogin = null;
+        public Button ButtonPrevious = null;
 
         public TMP_InputField InputFieldEmail = null;
         public TMP_InputField InputFieldPassword = null;
@@ -19,6 +21,7 @@ namespace Barnabus.Login
         public override void Init()
         {
             ButtonLogin.onClick.AddListener(ProcessButtonLoginClick);
+            ButtonPrevious.onClick.AddListener(ProcessButtonPreviousClick);
         }
         public override void UpdateUI()
         {
@@ -27,6 +30,7 @@ namespace Barnabus.Login
         public override void Clear()
         {
             ButtonLogin.onClick.RemoveListener(ProcessButtonLoginClick);
+            ButtonPrevious.onClick.RemoveListener(ProcessButtonPreviousClick);
         }
 
         public LoginInfo GetLoginInfo()
@@ -40,6 +44,11 @@ namespace Barnabus.Login
         private void ProcessButtonLoginClick()
         {
             OnButtonLoginClick?.Invoke();
+        }
+
+        private void ProcessButtonPreviousClick()
+        {
+            OnButtonPreviousClick?.Invoke();
         }
     }
 }

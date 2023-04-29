@@ -18,11 +18,11 @@ namespace Barnabus.UI
         public abstract void UpdateUI();
         public abstract void Clear();
 
-        public void Show()
+        public virtual void Show()
         {
             gameObject.SetActive(true);
         }
-        public void Hide()
+        public virtual void Hide()
         {
             gameObject.SetActive(false);
         }

@@ -16,6 +16,8 @@ namespace Barnabus.Login.StateControl
             identificationUI.DoShift(false, ResetPage);
             identificationUI.OnButtonFamiliesClick = CheckPlatformAndGoSignUpState;
             identificationUI.OnButtonHaveAccountClick = GotoLoginState;
+
+            identificationUI.AutoPlayPageView(true);
         }
 
         private void ResetPage()
@@ -28,8 +30,19 @@ namespace Barnabus.Login.StateControl
 
         }
 
+        public override void NextPage()
+        {
+
+        }
+
+        public override void PreviousPage()
+        {
+
+        }
+
         public override void End()
         {
+            identificationUI.AutoPlayPageView(false);
             identificationUI.DoShift(true);
         }
 
