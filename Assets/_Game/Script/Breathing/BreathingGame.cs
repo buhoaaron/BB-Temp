@@ -10,6 +10,9 @@ using Barnabus.SceneManagement;
 
 public class BreathingGame : MonoBehaviour
 {
+    [SerializeField]
+    private bool TestVar = false;
+
     [Header("Levels Selector")]
     [SerializeField]
     private GameObject levelSelector;
@@ -67,7 +70,7 @@ public class BreathingGame : MonoBehaviour
 
     [SerializeField]
     private GameObject settings;
-    
+
     private int currentLevel;
     private BreathingLevels tempItem;
 
@@ -102,6 +105,8 @@ public class BreathingGame : MonoBehaviour
         mainTimeline.stopped += OnPlayableDirectorStopped;
         yield return null;
         mainTimeline.Play();
+        GamePause();
+        GameResume();
     }
 
     private void OnDestroy()
@@ -229,7 +234,7 @@ public class BreathingGame : MonoBehaviour
             BreathingLevels item = Instantiate(levelPref, levelContainer);
             item.id = counts;
             item.outline.color = new Color(1, 1, 1, 0);
-            if (DataManager.ShapeBreathingLevel < counts)
+            if (DataManager.ShapeBreathingLevel < counts && TestVar == false)
             {
                 item.btn.enabled = false;
                 Color color;
