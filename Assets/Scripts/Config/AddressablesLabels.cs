@@ -11,4 +11,5 @@ public class AddressablesLabels
     public static string CanvasAccount = "Canvas_Account";
     public static string CanvasLoginWithEmail = "Canvas_LoginWithEmail";
     public static string CanvasChooseProfile = "Canvas_ChooseProfile";
+    public static string CanvasNewAccountSetUp = "Canvas_NewAccountSetUp";
 }

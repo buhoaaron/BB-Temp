@@ -29,12 +29,17 @@ namespace Barnabus.Login.StateControl
 
         public override void NextPage()
         {
-            //stateController.SetState(LOGIN_SCENE_STATE.ACCOUNT);
+            
         }
 
         public override void PreviousPage()
         {
             stateController.SetState(LOGIN_SCENE_STATE.LOGIN);
+        }
+
+        private void GotoSetUpAccount()
+        {
+            stateController.SetState(LOGIN_SCENE_STATE.CREATE_PROFILE);
         }
 
         private void GotoDashboard()
@@ -68,6 +73,7 @@ namespace Barnabus.Login.StateControl
                 int index = profileControllers.IndexOf(controller);
 
                 controller.SetState(PROFILE_STATE.NORMAL, playerInfo.Profiles[index]);
+                controller.OnButtonClick = GotoDashboard;
             }
         }
 
@@ -82,6 +88,7 @@ namespace Barnabus.Login.StateControl
 
             //設定狀態
             profileController.SetState(PROFILE_STATE.ADD);
+            profileController.OnButtonClick = GotoSetUpAccount;
         }
 
         /// <summary>

@@ -27,8 +27,12 @@
         /// </summary>
         LOGIN,
         /// <summary>
-        /// Profile管理
+        /// 選擇Profile
         /// </summary>
         CHOOSE_PROFILE,
+        /// <summary>
+        /// 建立Profile
+        /// </summary>
+        CREATE_PROFILE,
     }
 }
