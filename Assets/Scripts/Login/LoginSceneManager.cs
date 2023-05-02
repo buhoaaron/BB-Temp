@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Barnabus.Login.StateControl;
 using Barnabus.Network;
+using System.Collections.Generic;
 
 namespace Barnabus.Login
 {
@@ -12,6 +13,10 @@ namespace Barnabus.Login
         public IdentificationUI IdentificationUI = null;
 
         public NetworkManager NetworkManager { private set; get; } = null;
+        public JsonManager JsonManager { private set; get; } = null;
+
+        public ProfileManager ProfileManager => profileManager;
+
         public SignUpInfo CurrentSignUpInfo = null;
 
         private PrefabPool prefabPool = null;
@@ -20,10 +25,12 @@ namespace Barnabus.Login
 
         private MessageManager messageManager = null;
         private VerifyAgeManager verifyAgeManager = null;
+        private ProfileManager profileManager = null;
 
-        public void Init(NetworkManager nm)
+        public void Init(NetworkManager nm, JsonManager jm)
         {
             NetworkManager = nm;
+            JsonManager = jm;
 
             Init();
         }
@@ -34,11 +41,13 @@ namespace Barnabus.Login
             pageManager = new PageManager();
             messageManager = new MessageManager(this);
             verifyAgeManager = new VerifyAgeManager(this);
+            profileManager = new ProfileManager(this);
             prefabPool = transform.Find("PrefabPool").GetComponent<PrefabPool>();
             
             pageManager.Init();
             IdentificationUI.Init();
             verifyAgeManager.Init();
+            profileManager.Init();
 
             messageManager.Init(prefabPool.GetPrefab(AddressablesLabels.CanvasMessage));
 
@@ -103,7 +112,7 @@ namespace Barnabus.Login
 
         public AllErrorMessageInfo LoadErrorMessageJson()
         {
-            var infos = NewGameManager.Instance.JsonManager.DeserializeObject<AllErrorMessageInfo>(JsonText.ErrorMessages);
+            var infos = JsonManager.DeserializeObject<AllErrorMessageInfo>(JsonText.ErrorMessages);
 
             messageManager.SetAllErrorMessageInfo(infos);
 
@@ -117,6 +126,15 @@ namespace Barnabus.Login
         public void PostRequest(API_PATH path, BaseSendPacket sendPacket, NetworkCallbacks callbacks = null)
         {
             NewGameManager.Instance.NetworkManager.PostRequest(path, sendPacket, callbacks);
+        }
+
+        #endregion
+
+        #region PROFILE
+        public void LoadProfileJson()
+        {
+            profileManager.LoadStateCurriculum();
+            profileManager.LoadGrade();
         }
 
         #endregion

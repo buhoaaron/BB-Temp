@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Barnabus.UI;
 using TMPro;
@@ -7,6 +8,7 @@ namespace Barnabus.Login
 {
     public class ProfileController : MonoBehaviour, IBaseController
     {
+        public UnityAction OnButtonClick = null;
         public PROFILE_STATE State { private set; get; } = PROFILE_STATE.NORMAL;
         public ProfileInfo Info { private set; get; } = null;
 
@@ -19,6 +21,8 @@ namespace Barnabus.Login
         public void Init()
         {
             changeButtonSprite = ButtonPlayer.GetComponent<UIButtonChangeSprite>();
+
+            ButtonPlayer.onClick.AddListener(ProcessButtonClick);
         }
         public void Refresh()
         {
@@ -60,6 +64,11 @@ namespace Barnabus.Login
             changeButtonSprite.Change(1);
 
             TextName.text = LoginText.AddChild;
+        }
+
+        private void ProcessButtonClick()
+        {
+            OnButtonClick?.Invoke();
         }
     }
 }

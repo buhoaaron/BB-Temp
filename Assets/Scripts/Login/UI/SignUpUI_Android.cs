@@ -46,7 +46,7 @@ namespace Barnabus.Login
         public SignUpInfo GetSignUpInfo()
         {
             var email = InputFieldEmail.text;
-            var password = InputFieldPassword.text;
+            var password = InputFieldPassword.GetComponent<PasswordControl>().RealText;
 
             return new SignUpInfo(email, password);
         }
