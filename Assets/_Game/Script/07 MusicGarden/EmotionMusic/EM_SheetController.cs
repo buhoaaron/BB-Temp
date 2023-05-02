@@ -430,10 +430,10 @@ namespace Barnabus.EmotionMusic
 
         private int GetMeasureCount(Song song)
         {
-            //"®Éªø*(bpm/60)"­pºâ¥X¨Óªº¬O4¤À­µ²Åªº¼Æ¶q
-            //return (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f) / 4f); //¥|¤À­µ²Å(¨C¤p¸`¦³4­Ó4¤À­µ²Å=4­Ó4¤À­µ²Å)
-            return (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f) / 2f); //¤K¤À­µ²Å(¨C¤p¸`¦³4­Ó8¤À­µ²Å=2­Ó4¤À­µ²Å)
-            //return (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f)); //¤Q¤»¤À­µ²Å(¨C¤p¸`¦³4­Ó16¤À­µ²Å=1­Ó4¤À­µ²Å)
+            //"ï¿½Éªï¿½*(bpm/60)"ï¿½pï¿½ï¿½Xï¿½Óªï¿½ï¿½O4ï¿½ï¿½ï¿½ï¿½ï¿½Åªï¿½ï¿½Æ¶q
+            //return (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f) / 4f); //ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Cï¿½pï¿½`ï¿½ï¿½4ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=4ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+            return (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f) / 2f); //ï¿½Kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Cï¿½pï¿½`ï¿½ï¿½4ï¿½ï¿½8ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=2ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+            //return (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f)); //ï¿½Qï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Cï¿½pï¿½`ï¿½ï¿½4ï¿½ï¿½16ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=1ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
         }
 
         private NoteLinker GetNotLinkerByPointer(NotePointer beginPointer)
@@ -452,17 +452,17 @@ namespace Barnabus.EmotionMusic
         {
             if(tempNoteButtonLinkList.Count > 0 && tempNoteButtonLinkList.Find(x => x == note) == null)
             {
-                if (tempNoteButtonLinkList.Count >= maxNoteLinkCount) return; //³Ì¦h4©ç
-                if (note.NoteID / 4 != tempNoteButtonLinkList[0].NoteID / 4) return; //¤£¦b¦P¤@¦C
-                if (note.MeasureID < tempNoteButtonLinkList[0].MeasureID) return; //¤£¯à©¹¥ª·Æ
-                if (note.MeasureID == tempNoteButtonLinkList[0].MeasureID && note.NoteID < tempNoteButtonLinkList[0].NoteID) return; //¤£¯à©¹¥ª·Æ
-                if ((note.MeasureID - 1) > tempNoteButtonLinkList[^1].MeasureID) return; //¸ó¤Ó¦h¤F¡A¨S³s°_¨Ó
-                if (note.MeasureID == tempNoteButtonLinkList[^1].MeasureID && (note.NoteID - 1) != tempNoteButtonLinkList[^1].NoteID) return; //¸ó¤Ó¦h¤F¡A¨S³s°_¨Ó
-                if (note.MeasureID > tempNoteButtonLinkList[^1].MeasureID && (note.NoteID + 3) != tempNoteButtonLinkList[^1].NoteID) return; //¸ó¤Ó¦h¤F¡A¨S³s°_¨Ó
-                if (IsNoteExistSound(note)) return; //¤w¸g¦³Note¤F
+                if (tempNoteButtonLinkList.Count >= maxNoteLinkCount) return; //ï¿½Ì¦h4ï¿½ï¿½
+                if (note.NoteID / 4 != tempNoteButtonLinkList[0].NoteID / 4) return; //ï¿½ï¿½ï¿½bï¿½Pï¿½@ï¿½C
+                if (note.MeasureID < tempNoteButtonLinkList[0].MeasureID) return; //ï¿½ï¿½ï¿½à©¹ï¿½ï¿½ï¿½ï¿½
+                if (note.MeasureID == tempNoteButtonLinkList[0].MeasureID && note.NoteID < tempNoteButtonLinkList[0].NoteID) return; //ï¿½ï¿½ï¿½à©¹ï¿½ï¿½ï¿½ï¿½
+                if ((note.MeasureID - 1) > tempNoteButtonLinkList[^1].MeasureID) return; //ï¿½ï¿½Ó¦hï¿½Fï¿½Aï¿½Sï¿½sï¿½_ï¿½ï¿½
+                if (note.MeasureID == tempNoteButtonLinkList[^1].MeasureID && (note.NoteID - 1) != tempNoteButtonLinkList[^1].NoteID) return; //ï¿½ï¿½Ó¦hï¿½Fï¿½Aï¿½Sï¿½sï¿½_ï¿½ï¿½
+                if (note.MeasureID > tempNoteButtonLinkList[^1].MeasureID && (note.NoteID + 3) != tempNoteButtonLinkList[^1].NoteID) return; //ï¿½ï¿½Ó¦hï¿½Fï¿½Aï¿½Sï¿½sï¿½_ï¿½ï¿½
+                if (IsNoteExistSound(note)) return; //ï¿½wï¿½gï¿½ï¿½Noteï¿½F
 
                 int sameSoundIndex = FindNoteByCharacterID(sheet.measures[note.MeasureID].beats[note.NoteID % 4].notes, SelectedCharacterID);
-                if (sameSoundIndex != -1) return; //¦P¤@¦æ¤w¸g¦³¬Û¦P¨¤¦â¤F
+                if (sameSoundIndex != -1) return; //ï¿½Pï¿½@ï¿½ï¿½wï¿½gï¿½ï¿½ï¿½Û¦Pï¿½ï¿½ï¿½ï¿½F
 
                 tempNoteButtonLinkList.Add(note);
                 NoteLinker noteLinker = GetNotLinkerByPointer(tempNoteButtonLinkList[0].ToPointer());
@@ -503,7 +503,7 @@ namespace Barnabus.EmotionMusic
             if(!IsNoteExistSound(note))
             {
                 int sameSoundIndex = FindNoteByCharacterID(sheet.measures[note.MeasureID].beats[note.NoteID % 4].notes, SelectedCharacterID);
-                if (sameSoundIndex != -1) return; //¦P¤@¦æ¤w¸g¦³¬Û¦P¨¤¦â¤F
+                if (sameSoundIndex != -1) return; //ï¿½Pï¿½@ï¿½ï¿½wï¿½gï¿½ï¿½ï¿½Û¦Pï¿½ï¿½ï¿½ï¿½F
 
                 tempNoteButtonLinkList.Clear();
                 tempNoteButtonLinkList.Add(note);
@@ -608,13 +608,13 @@ namespace Barnabus.EmotionMusic
             int sameIdIndex = FindNoteById(notes, noteID);
             int sameSoundIndex = FindNoteByCharacterID(notes, SelectedCharacterID);
 
-            if (sameIdIndex == -1) //ÂIÀ»ªº®æ¤l¬OªÅªº
+            if (sameIdIndex == -1) //ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½Oï¿½Åªï¿½
             {
-                if (sameSoundIndex == -1) //¸Óbeat©|¥¼¦³³o­Ó¼Ö¾¹ => ·s¼W
+                if (sameSoundIndex == -1) //ï¿½ï¿½beatï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Ó¼Ö¾ï¿½ => ï¿½sï¿½W
                 {
                     sheet.AddNote(measureID, noteID, new CharacterSound(SelectedCharacterID, GetPitchByNoteID(noteID)));
                 }
-                else //¸Óbeat¨ä¥L®æ¤l¤w¦³³o­Ó¼Ö¾¹ => §R±¼¸Ó®æ¡A·s¼W³o®æ
+                else //ï¿½ï¿½beatï¿½ï¿½Lï¿½ï¿½lï¿½wï¿½ï¿½ï¿½oï¿½Ó¼Ö¾ï¿½ => ï¿½Rï¿½ï¿½ï¿½Ó®ï¿½Aï¿½sï¿½Wï¿½oï¿½ï¿½
                 {
                     if (!notes[sameSoundIndex].info.isLongSound)
                     {
@@ -625,16 +625,16 @@ namespace Barnabus.EmotionMusic
                     else removedNoteID = -2;
                 }
             }
-            else //ÂIÀ»ªº®æ¤l¤w¦³¼Ö¾¹
+            else //ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½wï¿½ï¿½ï¿½Ö¾ï¿½
             {
-                if (notes[sameIdIndex].info.characterID == SelectedCharacterID) //»P¸Ó®æ¼Ö¾¹¬Û¦P => §R°£
+                if (notes[sameIdIndex].info.characterID == SelectedCharacterID) //ï¿½Pï¿½Ó®ï¿½Ö¾ï¿½ï¿½Û¦P => ï¿½Rï¿½ï¿½
                 {
                     removedNoteID = notes[sameIdIndex].id;
                     sheet.RemoveNote(measureID, removedNoteID);
                 }
-                else //»P¸Ó®æ¼Ö¾¹¤£¦P => ´À´«¸Ó®æ¼Ö¾¹
+                else //ï¿½Pï¿½Ó®ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½P => ï¿½ï¿½ï¿½ï¿½ï¿½Ó®ï¿½Ö¾ï¿½
                 {
-                    if(sameSoundIndex != -1) //¸Óbeat¨ä¥L®æ¤l¦³¬Û¦P¼Ö¾¹
+                    if(sameSoundIndex != -1) //ï¿½ï¿½beatï¿½ï¿½Lï¿½ï¿½lï¿½ï¿½ï¿½Û¦Pï¿½Ö¾ï¿½
                     {
                         if (!notes[sameSoundIndex].info.isLongSound)
                         {
@@ -894,12 +894,13 @@ namespace Barnabus.EmotionMusic
         {
             int[] charactersID = new int[5];
             for (int i = 0; i < charactersID.Length; i++) charactersID[i] = soundButtons[i].characterID;
-
+           
             OnClick_StopPlaySheet();
             sheetPlayer.DanceProgress();
             emotionMusicController.ChangeGameState(MusicGameState.Dance);
             dancePlayer.Play(CurrentSong, sheet, charactersID);
-            
+            sheetPlayer.EraseSlider();
+            sheetPlayer.RefreshSlider();
         }
         #endregion
     }

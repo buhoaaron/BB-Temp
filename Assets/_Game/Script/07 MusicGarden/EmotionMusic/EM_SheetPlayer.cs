@@ -33,8 +33,8 @@ namespace Barnabus.EmotionMusic
         [Header("Progress Slider")]
         [SerializeField]
         private Slider songProgressSlider;
-        [SerializeField]
-        private Slider songProgressSliderDance;
+        // [SerializeField]
+        // private Slider songProgressSliderDance;
 
         private bool isBreak = true;
         private float linePosition;
@@ -50,17 +50,33 @@ namespace Barnabus.EmotionMusic
         private void Update()
         {
 
+            
+
             if (IsPlaying)
             {
                 deltaTimeSinceSheetStart += Time.deltaTime;
                 SetSliderValue(deltaTimeSinceSheetStart / sheetTimeLength);
+
             }
             else
             {
+                if(songProgressSlider)
                 SetLinePosition(songProgressSlider.value, false);
-                SetLinePosition(songProgressSliderDance.value, false);
+                //SetLinePosition(songProgressSliderDance.value, false);
             }
 
+           
+        }
+
+        public void RefreshSlider()
+        {
+            songProgressSlider = GameObject.Find("SongProgress").GetComponent<Slider>();
+            Debug.Log("slider refreshed");
+        }
+
+        public void EraseSlider()
+        {
+            songProgressSlider = null;
             
         }
 
@@ -88,14 +104,16 @@ namespace Barnabus.EmotionMusic
 
         public void OnSliderValueChanged()
         {
+            if(songProgressSlider)
             SetLinePosition(songProgressSlider.value, !IsPlaying);
-            SetLinePosition(songProgressSliderDance.value, !IsPlaying);
+           
         }
 
         private void SetSliderValue(float progress)
         {
+            if(songProgressSlider)
             songProgressSlider.value = progress;
-            songProgressSliderDance.value = progress;
+           
         }
 
         public void Stop()
@@ -105,6 +123,7 @@ namespace Barnabus.EmotionMusic
             if (!sheetController.IsPreviewingSong) AudioManager.instance.StopBGM();
             OnPlayEnd();
             StopAllCoroutines();
+            
             //SetSliderValue(0);
         }
 
@@ -115,7 +134,8 @@ namespace Barnabus.EmotionMusic
             if (!sheetController.IsPreviewingSong) AudioManager.instance.StopBGM();
             StopAllCoroutines();
             SetSliderValue(0);
-            StartCoroutine(PlaySheet(sheet, songProgressSliderDance.value));
+            StartCoroutine(PlaySheet(sheet, songProgressSlider.value));
+            RefreshSlider();
         }
 
         private void SetLinePosition(float progress, bool autoMoveSheet = true)
@@ -287,12 +307,12 @@ namespace Barnabus.EmotionMusic
 
         private int GetMeasureCount(Song song)
         {
-            //"®Éªø*(bpm/60)"­pºâ¥X¨Óªº¬O4¤À­µ²Åªº¼Æ¶q
+            //"ï¿½Éªï¿½*(bpm/60)"ï¿½pï¿½ï¿½Xï¿½Óªï¿½ï¿½O4ï¿½ï¿½ï¿½ï¿½ï¿½Åªï¿½ï¿½Æ¶q
             return tempo switch
             {
-                TempoPerBeat.Quarter => (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f) / 4f), //¥|¤À­µ²Å(¨C¤p¸`¦³4­Ó4¤À­µ²Å=4­Ó4¤À­µ²Å)
-                TempoPerBeat.Eighth => (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f) / 2f), //¤K¤À­µ²Å(¨C¤p¸`¦³4­Ó8¤À­µ²Å=2­Ó4¤À­µ²Å)
-                TempoPerBeat.Sixteenth => (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f)), //¤Q¤»¤À­µ²Å(¨C¤p¸`¦³4­Ó16¤À­µ²Å=1­Ó4¤À­µ²Å)
+                TempoPerBeat.Quarter => (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f) / 4f), //ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Cï¿½pï¿½`ï¿½ï¿½4ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=4ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+                TempoPerBeat.Eighth => (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f) / 2f), //ï¿½Kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Cï¿½pï¿½`ï¿½ï¿½4ï¿½ï¿½8ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=2ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+                TempoPerBeat.Sixteenth => (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f)), //ï¿½Qï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Cï¿½pï¿½`ï¿½ï¿½4ï¿½ï¿½16ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=1ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
                 _ => (int)Mathf.Ceil(song.audioClip.length * (song.bpm / 60f) / 2f),
             };
         }

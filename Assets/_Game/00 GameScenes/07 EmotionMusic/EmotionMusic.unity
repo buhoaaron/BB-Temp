@@ -5110,7 +5110,7 @@ GameObject:
   - component: {fileID: 594232241}
   - component: {fileID: 594232242}
   m_Layer: 5
-  m_Name: SongProgress (1)
+  m_Name: SongProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12746,7 +12746,6 @@ MonoBehaviour:
   sheetView: {fileID: 563650962}
   line: {fileID: 1290584690}
   songProgressSlider: {fileID: 725224880}
-  songProgressSliderDance: {fileID: 594232242}
 --- !u!4 &1608556956
 Transform:
   m_ObjectHideFlags: 0
