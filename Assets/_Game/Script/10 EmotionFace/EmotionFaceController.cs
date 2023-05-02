@@ -55,6 +55,8 @@ namespace Barnabus.EmotionFace
 
         [Header("Bases&Color")]
         [SerializeField]
+        private Image themeButton;
+        [SerializeField]
         private SelectableButton characterBaseButton;
         [SerializeField]
         private SelectableButton backgroundColorButton;
@@ -104,8 +106,9 @@ namespace Barnabus.EmotionFace
         private SelectableButton selectedCharacterTypeButton = null;
         private string selectedCharacterName;
         private SelectableButton defaultCharacterTypeButton;
+        public string currPicID;
 
-        private bool isEntry=true;
+        
 
         //private Rect pictureRect;
         private RectTransform pictureRectTransform;
@@ -126,7 +129,7 @@ namespace Barnabus.EmotionFace
 
             SetDefaultCharacter();
 
-            isEntry = true;
+            currPicID = "1";
             selectedBackgroundColorIndex = 0;
             selectedCharacterColorIndex = 1;
             SetBackgroundColor();
@@ -206,6 +209,8 @@ namespace Barnabus.EmotionFace
                 ShowDeleteIcon();
             }
             else HideDeleteIcon();
+
+           
             
         }
 
@@ -219,14 +224,46 @@ namespace Barnabus.EmotionFace
             for (int i = 0; i < characterButtonContainer.childCount; i++)
             {
                 //Destroy(characterList.transform.GetChild(i).gameObject);
-                characterButtonContainer.GetChild(i).gameObject.SetActive(false);
+                Destroy(characterButtonContainer.GetChild(i).gameObject);
+                //characterButtonContainer.GetChild(i).gameObject.SetActive(false);
+            }
+
+            for(int i = 0; i<itemButtonContainer.childCount;i++)
+            {
+                Destroy(itemButtonContainer.GetChild(i).gameObject);
             }
 
             if(characterColorButton.backgroundImage.color==Color.black)
             {
+                Transform themeIMG = themeButton.gameObject.transform.Find("Image");
+                Image themeIMGpic = themeIMG.GetComponent<Image>();
+
+                themeIMGpic.color = Color.gray;
+                themeButton.color = Color.black;
+                themeButton.sprite = asset.leftButtonUnselectedSprite;
+
+                Transform CColorIMG = characterColorButton.gameObject.transform.Find("Image");
+                Image CColorIMGpic = CColorIMG.GetComponent<Image>();
+                Transform BColorIMG = backgroundColorButton.gameObject.transform.Find("Image");
+                Image BColorIMGpic = BColorIMG.GetComponent<Image>();
+                Transform CBaseIMG = characterBaseButton.gameObject.transform.Find("Image");
+                Image CBaseIMGpic = CBaseIMG.GetComponent<Image>();
+
+                CColorIMGpic.color = Color.white;
+                BColorIMGpic.color = Color.white;
+                CBaseIMGpic.color = Color.white;
+
                 characterColorButton.backgroundImage.color = Color.white;
                 backgroundColorButton.backgroundImage.color = Color.white;
                 characterBaseButton.backgroundImage.color = Color.white;
+
+                GenerateCharacterTypeButtons();
+                characterBaseButton.backgroundImage.sprite = asset.leftButtonSelectedSprite;
+
+                SelectableButton StartItemTypeButton;
+                StartItemTypeButton = itemTypeButtonContainer.GetChild(0).GetComponent<SelectableButton>();
+                StartItemTypeButton.backgroundImage.sprite = asset.rightButtonSelectedSprite;
+                OnClick_ItemType(StartItemTypeButton);
             }
 
         }
@@ -239,23 +276,29 @@ namespace Barnabus.EmotionFace
             pictureInfo.characterTypeName = asset.GetCharacterType(0).Name;
             selectedCharacterName = asset.GetCharacterType(0).Name;
             pictureCharacter.sprite = asset.GetCharacterType(0).Sprite;
+
+
             /*pictureInfo.characterName = asset.GetCharacterType(0).Elements[0].Name;
             selectedCharacterName = asset.GetCharacterType(0).Elements[0].Name;
             pictureCharacter.sprite = asset.GetCharacterType(0).Elements[0].Sprite;*/
         }
 
+
         public void GenerateCharacterTypeButtons()
         {
-            ClearList();
+            //ClearList();
+
             characterList.SetActive(true);
-            itemList.SetActive(false);
+            //itemList.SetActive(false);
+            
 
             for (int i = 0; i < characterButtons.Count; i++)
-            {
+            
                 Destroy(characterButtons[i].gameObject);
 
                 characterButtons.Clear();
-            }
+            
+            
 
             SelectableButton newButton;
             for (int i = 0; i < asset.CharacterTypeCount; i++)
@@ -276,14 +319,19 @@ namespace Barnabus.EmotionFace
                 if (i == 0) defaultCharacterTypeButton = newButton;
 
             characterButtons.Add(newButton);
-            if(isEntry==true)
+
+            if(newButton.parameter==currPicID)
             {
-                selectedCharacterTypeButton = characterButtons[0];
-                isEntry = false;
+                newButton.backgroundImage.sprite = asset.buttonSelectedSprite;
             }
+                   
+           
+            }
+
+           
            }
             
-        }
+        
 
         private void RefreshCharacterButton(string typeName)
         {
@@ -335,31 +383,30 @@ namespace Barnabus.EmotionFace
         {
             //if(clickedButton == selectedCharacterTypeButton) characterList.SetActive(!characterList.activeSelf);
 
-            if (clickedButton == selectedCharacterTypeButton)
-            {
-                characterList.SetActive(true);
-                clickedButton.backgroundImage.sprite = asset.buttonUnselectedSprite;
-                selectedCharacterTypeButton = null;
-            }
-            else
-            {
+            // if (clickedButton == selectedCharacterTypeButton)
+            // {
+            //     characterList.SetActive(true);
+            //     clickedButton.backgroundImage.sprite = asset.buttonUnselectedSprite;
+            //     selectedCharacterTypeButton = null;
+            // }
+            // else
+            // {
                 if (selectedCharacterTypeButton) selectedCharacterTypeButton.backgroundImage.sprite = asset.buttonUnselectedSprite;
                 clickedButton.backgroundImage.sprite = asset.buttonSelectedSprite;
                 selectedCharacterTypeButton = clickedButton;
+
+                currPicID = asset.GetCharacterType(selectedCharacterTypeButton.parameter).Name;
+               
+               GenerateCharacterTypeButtons();
 
                 pictureCharacter.sprite = asset.GetCharacterType(selectedCharacterTypeButton.parameter).Sprite;
                 SetCharacterColor();
 
                 //RefreshCharacterButton(clickedButton.parameter);
                 characterList.SetActive(true);
-            }
+            //}
 
-            if (isEntry == true)
-            {
-                selectedCharacterTypeButton = characterButtons[0];
-                isEntry = false;
-            }
-
+           
 
 
         }
@@ -397,7 +444,6 @@ namespace Barnabus.EmotionFace
             for (int i = 0; i < asset.ItemTypeCount; i++)
             {
                 newButton = Instantiate(rightButtonPrefab, itemTypeButtonContainer);
-                // newButton.backgroundImage
                 newButton.backgroundImage.sprite = asset.rightButtonUnselectedSprite;
                 newButton.buttonIcon.sprite = asset.GetItemType(i).Icon;
                 newButton.parameter = asset.GetItemType(i).Name;
@@ -407,6 +453,8 @@ namespace Barnabus.EmotionFace
 
         private void RefreshItemButton(string typeName)
         {
+            
+
             for (int i = 0; i < itemButtons.Count; i++) Destroy(itemButtons[i].gameObject);
             itemButtons.Clear();
 
@@ -426,25 +474,28 @@ namespace Barnabus.EmotionFace
 
         private void OnClick_ItemType(SelectableButton clickedButton)
         {
-            ClearList();
-            characterList.SetActive(false);
+            //ClearList();
+            //characterList.SetActive(false);
+            // characterBaseButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
+            // backgroundColorButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
+            // characterColorButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
 
             //if (clickedButton == selectedItemTypeButton) itemList.SetActive(!itemList.activeSelf);
-            if (clickedButton == selectedItemTypeButton)
-            {
-                //itemList.SetActive(false);
-                clickedButton.backgroundImage.sprite = asset.rightButtonUnselectedSprite;
-                selectedItemTypeButton = null;
-            }
-            else
-            {
+            // if (clickedButton == selectedItemTypeButton)
+            // {
+            //     //itemList.SetActive(false);
+            //     clickedButton.backgroundImage.sprite = asset.rightButtonUnselectedSprite;
+            //     selectedItemTypeButton = null;
+            // }
+            // else
+            // {
                 if (selectedItemTypeButton) selectedItemTypeButton.backgroundImage.sprite = asset.rightButtonUnselectedSprite;
                 clickedButton.backgroundImage.sprite = asset.rightButtonSelectedSprite;
                 selectedItemTypeButton = clickedButton;
 
                 RefreshItemButton(clickedButton.parameter);
                 itemList.SetActive(true);
-            }
+           // }
         }
 
         private void OnClick_Item(SelectableButton clickedButton)
@@ -485,6 +536,7 @@ namespace Barnabus.EmotionFace
         {
             deleteItemIcon.gameObject.SetActive(false);
             clearItemIcon.gameObject.SetActive(false);
+            
             isReadyDelete = false;
         }
 
@@ -625,7 +677,7 @@ namespace Barnabus.EmotionFace
 
         private void GenerateItem(string itemTypeName, string itemName)
         {
-            ClearList();
+            //ClearList();
 
             Item item = Instantiate(itemPrefab, itemContainer);
             item.SetCallbacks(OnPointerDown_Item, OnPointerUp_Item);
@@ -678,50 +730,50 @@ namespace Barnabus.EmotionFace
 
         public void OnClick_SelectColorTarget(int target)
         {
-            itemList.SetActive(false);
+            //itemList.SetActive(false);
             characterList.SetActive(true);
 
             colorTarget = (ColorTarget)target;
-            if (colorTarget == ColorTarget.Background && selectedItemTypeButton == backgroundColorButton)
+            if (colorTarget == ColorTarget.Background && selectedCharacterTypeButton == backgroundColorButton)
             {
                 //itemList.SetActive(false);
                 backgroundColorButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
-                selectedItemTypeButton = null;
+                selectedCharacterTypeButton = null;
             }
-            else if (colorTarget == ColorTarget.Character && selectedItemTypeButton == characterColorButton)
+            else if (colorTarget == ColorTarget.Character && selectedCharacterTypeButton == characterColorButton)
             {
                 //itemList.SetActive(false);
                 characterColorButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
-                selectedItemTypeButton = null;
+                selectedCharacterTypeButton = null;
             }
             else
             {
-                if (selectedItemTypeButton) selectedItemTypeButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
+                if (selectedCharacterTypeButton) selectedCharacterTypeButton.backgroundImage.sprite = asset.leftButtonUnselectedSprite;
                 //itemList.SetActive(true);
 
                 GenerateColorButton(colorTarget);
                 switch (colorTarget)
                 {
                     case ColorTarget.Background:
-                        selectedItemTypeButton = backgroundColorButton;
+                        selectedCharacterTypeButton = backgroundColorButton;
                         break;
                     case ColorTarget.Character:
-                        selectedItemTypeButton = characterColorButton;
+                        selectedCharacterTypeButton = characterColorButton;
                         break;
                 }
-                selectedItemTypeButton.backgroundImage.sprite = asset.leftButtonSelectedSprite;
+                selectedCharacterTypeButton.backgroundImage.sprite = asset.leftButtonSelectedSprite;
             }
         }
 
         private void GenerateColorButton(ColorTarget colorTarget)
         {
-            ClearList();
+            //ClearList();
 
-         /*   for (int i = 0; i < itemButtons.Count; i++)
-            {
-                Destroy(itemButtons[i].gameObject);
-                itemButtons.Clear();
-            }*/
+         for (int i = 0; i < characterButtons.Count; i++)
+            
+                Destroy(characterButtons[i].gameObject);
+                characterButtons.Clear();
+            
                 
 
             SelectableButton newButton;
@@ -747,7 +799,7 @@ namespace Barnabus.EmotionFace
                 newButton.buttonIcon.color = asset.colors[i];
                 newButton.parameter = i.ToString();
 
-                itemButtons.Add(newButton);
+                characterButtons.Add(newButton);
             }
         }
 

@@ -529,19 +529,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca02f3c1fb0e14a8a879e6424c9c9473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestVar: 0
   levelSelector: {fileID: 1080643132}
   levelContainer: {fileID: 1745985670}
   levelPref: {fileID: 2355087153410923837, guid: 30fbde285e99a4f05b7b4e0cb58bd6a2, type: 3}
   confirmBtn: {fileID: 181021722}
   levels:
   - {fileID: 90657413503707980, guid: c49eef0fc376f4ce7aef4e6c2f9700aa, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4256606839014431067, guid: 3a266cd4261e31c4097ee38b96004ff3, type: 3}
+  - {fileID: 1393124990162199304, guid: bd64648a95d7a0641998cee4f9abb0ef, type: 3}
+  - {fileID: 3494598020981585366, guid: cae290717e2c917468fddfee586b8853, type: 3}
+  - {fileID: 4151548289873411226, guid: 1add457f5fb2cea47ba04b9a8924d36c, type: 3}
   mainTimeline: {fileID: 1361404573}
   ButtonPause: {fileID: 674683365}
   ButtonHome: {fileID: 296343070}

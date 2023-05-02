@@ -173,7 +173,10 @@ namespace Barnabus.EmotionMusic
                     RefreshCharacterButtonStates();
                     break;
                 case MusicGameState.Dance:
+                    sheetPlayer.EraseSlider();
+                    sheetPlayer.Invoke("RefreshSlider",.2f);
                     dancePlayer.Stop();
+                    sheetController.OnClick_StopPlaySheet();
                     ChangeGameState(MusicGameState.EditMusic);
                     break;
             }
