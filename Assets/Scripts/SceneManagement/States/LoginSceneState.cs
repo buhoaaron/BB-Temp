@@ -23,6 +23,8 @@ namespace Barnabus.SceneManagement
 
             manager.LoadErrorMessageJson();
             manager.LoadProfileJson();
+            //Load Sprites from addressable
+            manager.LoadPlayerIcons();
         }
 
         public override void StateUpdate()

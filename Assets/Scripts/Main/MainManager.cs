@@ -154,10 +154,5 @@ public class MainManager : MonoBehaviour, IBaseSystem
     {
         return shelfPrefabPool.GetPrefab(name);
     }
-
-    public void LoadNavigationBarAsset()
-    {
-        shelfAssets.LoadNavigationBarAsset();
-    }
     #endregion
 }

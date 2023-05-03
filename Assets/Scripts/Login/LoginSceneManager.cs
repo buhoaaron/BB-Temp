@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using Barnabus.Login.StateControl;
 using Barnabus.Network;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AddressableAssets;
 
 namespace Barnabus.Login
 {
@@ -18,6 +20,8 @@ namespace Barnabus.Login
         public ProfileManager ProfileManager => profileManager;
 
         public SignUpInfo CurrentSignUpInfo = null;
+
+        public PlayerIcons PlayerIcons { private set; get; } = null;
 
         private PrefabPool prefabPool = null;
         private LoginSceneStateController stateController = null;
@@ -142,6 +146,19 @@ namespace Barnabus.Login
         public bool CheckAdultAge(int birthyear)
         {
             return verifyAgeManager.CheckAdultAge(birthyear);
+        }
+
+        public void LoadPlayerIcons()
+        {
+            StartCoroutine(ILoadPlayerIcons());
+        }
+        private IEnumerator ILoadPlayerIcons()
+        {
+            var handle = Addressables.LoadAssetAsync<Sprite[]>(AddressablesLabels.PlayerIconSprites);
+
+            yield return handle;
+
+            PlayerIcons = new PlayerIcons(handle.Result);
         }
     }
 }
