@@ -71,7 +71,7 @@ namespace Barnabus.Network
         #endregion
 
         #region POST
-        public void PostRequest(API_PATH path, BaseSendPacket sendPacket, NetworkCallbacks callbacks = null)
+        public void PostRequest(API_PATH path, BaseSendPacket sendPacket)
         {
             string url = pathParser.CaseUrl(path);
             string jsonStr = JsonConvert.SerializeObject(sendPacket);
@@ -80,10 +80,10 @@ namespace Barnabus.Network
             //開啟連線提示
             connectingManager.CreateConnectingTip();
             //送出請求
-            StartCoroutine(IPostRequest(path, url, jsonStr, callbacks));
+            StartCoroutine(IPostRequest(path, url, jsonStr));
         }
 
-        private IEnumerator IPostRequest(API_PATH path, string url, string jsonStr, NetworkCallbacks callbacks)
+        private IEnumerator IPostRequest(API_PATH path, string url, string jsonStr)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(jsonStr);
             UnityWebRequest request = new UnityWebRequest(url, UnityWebRequest.kHttpVerbPOST)
@@ -101,18 +101,13 @@ namespace Barnabus.Network
             string result = request.downloadHandler.text;
             var output = string.Format("PostRequest callback: statusCode {0}, Value: {1}", request.responseCode, result);
             Debug.unityLogger.Log(postRequestTag, output);
-
+            //處理結果
             if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
             {
-                var receiveErrorMessage = JsonConvert.DeserializeObject<ReceiveErrorMessage>(result);
-                receiveErrorMessage.StatusCode = request.responseCode;
-
-                callbacks?.OnFail?.Invoke(receiveErrorMessage);
+                Dispatcher.NotifyError(request.responseCode, result);
             }
             else
             {
-                //callbacks?.OnSuccess?.Invoke(result);
-
                 Dispatcher.Dispatch(path, result);
             }
         }

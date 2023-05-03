@@ -6,5 +6,9 @@
     {
         "code":"Login",
 	"path":"api/v1/login"
+    },
+    {
+        "code":"CreatePlayer",
+	"path":"/api/v1/create_player"
     }
 ]

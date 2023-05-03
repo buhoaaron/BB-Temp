@@ -34,5 +34,9 @@
         /// 建立Profile
         /// </summary>
         CREATE_PROFILE,
+        /// <summary>
+        /// 家長入職
+        /// </summary>
+        PARENTS_ONBOARDING,
     }
 }

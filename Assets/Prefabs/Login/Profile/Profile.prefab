@@ -64,7 +64,6 @@ GameObject:
   - component: {fileID: 1159462361088556289}
   - component: {fileID: 1159462361088556288}
   - component: {fileID: 8951862952285297479}
-  - component: {fileID: 2187732031676848734}
   m_Layer: 5
   m_Name: Button_Player
   m_TagString: Untagged
@@ -121,7 +120,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1846575082, guid: 7252cfc9aac2b8e468c6c4ff56065a78, type: 3}
+  m_Sprite: {fileID: -1111315317, guid: 5bf130016d2bfde4cbdfe27f3d1d830c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -175,21 +174,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2187732031676848734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159462361088556290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff694df7695b9d24c920832c062a2aba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sprites:
-  - {fileID: -1846575082, guid: 7252cfc9aac2b8e468c6c4ff56065a78, type: 3}
-  - {fileID: -1111315317, guid: 5bf130016d2bfde4cbdfe27f3d1d830c, type: 3}
 --- !u!1 &1159462361380931856
 GameObject:
   m_ObjectHideFlags: 0

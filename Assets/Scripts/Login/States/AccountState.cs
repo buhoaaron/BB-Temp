@@ -12,8 +12,7 @@ namespace Barnabus.Login.StateControl
 
         public override void Begin()
         {
-            var key = AddressablesLabels.CanvasAccount;
-            accountUI = stateController.SceneManager.GetPage<AccountUI>(key);
+            accountUI = stateController.SceneManager.GetPage<AccountUI>(PAGE.ACCOUNT);
         }
         public override void NextPage()
         {

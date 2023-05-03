@@ -16,6 +16,7 @@ namespace Barnabus.Login.StateControl
                 case LOGIN_SCENE_STATE.LOGIN: return new LoginWithEmailState(this);
                 case LOGIN_SCENE_STATE.CHOOSE_PROFILE: return new ChooseProfileState(this);
                 case LOGIN_SCENE_STATE.CREATE_PROFILE: return new NewAccountSetUpState(this);
+                case LOGIN_SCENE_STATE.PARENTS_ONBOARDING: return new ParentsOnboardingState(this);
                 default:
                     Debug.LogError(string.Format("No state found for {0}", stateName));
                     return null;

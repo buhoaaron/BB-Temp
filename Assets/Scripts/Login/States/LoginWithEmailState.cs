@@ -13,15 +13,14 @@ namespace Barnabus.Login.StateControl
 
         public override void Begin()
         {
-            var pageKey = AddressablesLabels.CanvasLoginWithEmail;
-
-            loginWithEmailUI = stateController.SceneManager.GetPage<LoginWithEmailUI>(pageKey);
+            loginWithEmailUI = stateController.SceneManager.GetPage<LoginWithEmailUI>(PAGE.LOGIN_WITH_EMAIL);
             loginWithEmailUI.Show();
 
             loginWithEmailUI.OnButtonLoginClick = ProcessLogin;
             loginWithEmailUI.OnButtonPreviousClick = PreviousPage;
 
             sceneManager.NetworkManager.Dispatcher.OnReceiveLogin += OnLoginSuccess;
+            sceneManager.NetworkManager.Dispatcher.OnReceiveErrorMessage += OnLoginFail;
         }
 
         private void ProcessLogin()
@@ -43,24 +42,15 @@ namespace Barnabus.Login.StateControl
             var loginInfo = loginWithEmailUI.GetLoginInfo();
             var data = new SendLogin(loginInfo.EmailAddress, loginInfo.Password);
 
-            var callbacks = new NetworkCallbacks();
-            callbacks.OnSuccess = OnLoginSuccess;
-            callbacks.OnFail = OnLoginFail;
-
-            sceneManager.PostRequest(API_PATH.Login, data, callbacks);
+            sceneManager.PostRequest(API_PATH.Login, data);
         }
 
         private void OnLoginSuccess(ReceiveLogin receiveLogin)
         {
-            var networkInfo = new NetworkInfo(receiveLogin.meandmineid, receiveLogin.access_token, receiveLogin.players_list);
+            var networkInfo = new NetworkInfo(receiveLogin.meandmine_id, receiveLogin.access_token, receiveLogin.players_list);
 
             sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
 
-            NextPage();
-        }
-
-        private void OnLoginSuccess(string text)
-        {
             NextPage();
         }
 
@@ -74,6 +64,7 @@ namespace Barnabus.Login.StateControl
         {
             loginWithEmailUI.Hide();
             sceneManager.NetworkManager.Dispatcher.OnReceiveLogin -= OnLoginSuccess;
+            sceneManager.NetworkManager.Dispatcher.OnReceiveErrorMessage -= OnLoginFail;
         }
 
         public override void NextPage()

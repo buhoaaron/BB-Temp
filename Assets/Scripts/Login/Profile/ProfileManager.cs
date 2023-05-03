@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Barnabus.Login
 {
     /// <summary>
-    /// 控制頁面(LoginCommonUI)
+    /// 玩家檔案管理
     /// </summary>
     public class ProfileManager : BaseLoginManager
     {

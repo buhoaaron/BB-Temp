@@ -15,13 +15,9 @@ namespace Barnabus.Login
         public Button ButtonPlayer = null;
         public TMP_Text TextName = null;
 
-        private UIButtonChangeSprite changeButtonSprite = null;
-
         #region BASE_API
         public void Init()
         {
-            changeButtonSprite = ButtonPlayer.GetComponent<UIButtonChangeSprite>();
-
             ButtonPlayer.onClick.AddListener(ProcessButtonClick);
         }
         public void Refresh()
@@ -54,15 +50,14 @@ namespace Barnabus.Login
         {
             Debug.Assert(Info != null, "In normal, ProfileInfo can't be null.");
 
-            changeButtonSprite.Change(0);
             //family's profile only show firstname
-            TextName.text = Info.user_firstname;
+            TextName.text = Info.family_nick_name;
+
+            ButtonPlayer.image.sprite = Info.SpriteIcon;
         }
 
         private void LayoutAdd()
         {
-            changeButtonSprite.Change(1);
-
             TextName.text = LoginText.AddChild;
         }
 

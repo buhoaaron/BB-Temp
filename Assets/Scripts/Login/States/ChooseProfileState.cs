@@ -15,8 +15,7 @@ namespace Barnabus.Login.StateControl
         public override void Begin()
         {
             var parentInfo = stateController.SceneManager.NetworkManager.NetworkInfo;
-            var key = AddressablesLabels.CanvasChooseProfile;
-            chooseProfileUI = stateController.SceneManager.GetPage<ChooseProfileUI>(key);
+            chooseProfileUI = stateController.SceneManager.GetPage<ChooseProfileUI>(PAGE.CHOOSE_PROFILE);
             chooseProfileUI.Show();
 
             //設定事件
@@ -37,14 +36,14 @@ namespace Barnabus.Login.StateControl
             stateController.SetState(LOGIN_SCENE_STATE.LOGIN);
         }
 
-        private void GotoSetUpAccount()
-        {
-            stateController.SetState(LOGIN_SCENE_STATE.CREATE_PROFILE);
-        }
-
         private void GotoDashboard()
         {
 
+        }
+
+        private void GotoSetUpAccount()
+        {
+            stateController.SetState(LOGIN_SCENE_STATE.CREATE_PROFILE);
         }
 
         public override void End()
@@ -72,9 +71,16 @@ namespace Barnabus.Login.StateControl
             {
                 int index = profileControllers.IndexOf(controller);
 
-                controller.SetState(PROFILE_STATE.NORMAL, playerInfo.Profiles[index]);
-                controller.OnButtonClick = GotoDashboard;
+                var info = playerInfo.Profiles[index];
+                info.SpriteIcon = sceneManager.PlayerIcons.GetIcon(1, 1);
+
+                controller.SetState(PROFILE_STATE.NORMAL, info);
+                controller.OnButtonClick = CompleteLogin;
             }
+        }
+        private void CompleteLogin()
+        {
+            sceneManager.CompleteLogin();
         }
 
         private void CreateAddProfile(NetworkInfo playerInfo)

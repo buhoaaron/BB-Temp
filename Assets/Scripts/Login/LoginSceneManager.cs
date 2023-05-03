@@ -13,7 +13,9 @@ namespace Barnabus.Login
         public Camera SceneCamera = null;
         [Header("Set IdentificationUI")]
         public IdentificationUI IdentificationUI = null;
+        public bool IsLoginFlowComplete { private set; get; } = false;
 
+        public NewGameManager GameManager = null;
         public NetworkManager NetworkManager { private set; get; } = null;
         public JsonManager JsonManager { private set; get; } = null;
 
@@ -23,7 +25,7 @@ namespace Barnabus.Login
 
         public PlayerIcons PlayerIcons { private set; get; } = null;
 
-        private PrefabPool prefabPool = null;
+        private PagePrefabPool pagePrefabPool = null;
         private LoginSceneStateController stateController = null;
         private PageManager pageManager = null;
 
@@ -31,10 +33,11 @@ namespace Barnabus.Login
         private VerifyAgeManager verifyAgeManager = null;
         private ProfileManager profileManager = null;
 
-        public void Init(NetworkManager nm, JsonManager jm)
+        public void Init(NewGameManager gm)
         {
-            NetworkManager = nm;
-            JsonManager = jm;
+            GameManager = gm;
+            NetworkManager = GameManager.NetworkManager;
+            JsonManager = GameManager.JsonManager;
 
             Init();
         }
@@ -46,14 +49,14 @@ namespace Barnabus.Login
             messageManager = new MessageManager(this);
             verifyAgeManager = new VerifyAgeManager(this);
             profileManager = new ProfileManager(this);
-            prefabPool = transform.Find("PrefabPool").GetComponent<PrefabPool>();
+            pagePrefabPool = transform.Find("PrefabPool").GetComponent<PagePrefabPool>();
             
             pageManager.Init();
             IdentificationUI.Init();
             verifyAgeManager.Init();
             profileManager.Init();
 
-            messageManager.Init(prefabPool.GetPrefab(AddressablesLabels.CanvasMessage));
+            messageManager.Init(pagePrefabPool.GetPrefab(PAGE.MESSAGE));
 
             stateController = new LoginSceneStateController(this);
             stateController.SetState(LOGIN_SCENE_STATE.IDENTIFICATION);
@@ -64,18 +67,18 @@ namespace Barnabus.Login
         }
         public void Clear()
         {
-           
+            IsLoginFlowComplete = false;
         }
         #endregion
 
         #region PAGE_MANAGER
-        public T CreateUI<T>(string label) where T : BaseLoginCommonUI
+        private T CreateUI<T>(PAGE name) where T : BaseLoginCommonUI
         {
-            var prefab = prefabPool.GetPrefab(label);
+            var prefab = pagePrefabPool.GetPrefab(name);
             var ui = GameObject.Instantiate(prefab).GetComponent<T>();
             ui.SetCanvasCamera(SceneCamera);
 
-            pageManager.AddPage(label, ui);
+            pageManager.AddPage(name, ui);
 
             return ui;
         }
@@ -83,13 +86,13 @@ namespace Barnabus.Login
         {
             pageManager.ResetPages();
         }
-        public T GetPage<T>(string pageKey) where T : BaseLoginCommonUI
+        public T GetPage<T>(PAGE name) where T : BaseLoginCommonUI
         {
-            var page = pageManager.GetPage(pageKey) as T;
+            var page = pageManager.GetPage(name) as T;
 
             if (page == null)
             {
-                page = CreateUI<T>(pageKey);
+                page = CreateUI<T>(name);
                 page.Init();
             }
 
@@ -127,9 +130,9 @@ namespace Barnabus.Login
 
         #region NETWORK
 
-        public void PostRequest(API_PATH path, BaseSendPacket sendPacket, NetworkCallbacks callbacks = null)
+        public void PostRequest(API_PATH path, BaseSendPacket sendPacket)
         {
-            NewGameManager.Instance.NetworkManager.PostRequest(path, sendPacket, callbacks);
+            NewGameManager.Instance.NetworkManager.PostRequest(path, sendPacket);
         }
 
         #endregion
@@ -142,6 +145,14 @@ namespace Barnabus.Login
         }
 
         #endregion
+
+        /// <summary>
+        /// 完成所有Login流程需要的行為
+        /// </summary>
+        public void CompleteLogin()
+        {
+            IsLoginFlowComplete = true;
+        }
 
         public bool CheckAdultAge(int birthyear)
         {

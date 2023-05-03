@@ -10,7 +10,9 @@ namespace Barnabus.Network
     {
         public Action<ReceiveLogin> OnReceiveLogin = null;
         public Action<ReceiveSignUp> OnReceiveSignUp = null;
+        public Action<ReceiveCreatePlayer> OnReceiveCreatePlayer = null;
 
+        public Action<ReceiveErrorMessage> OnReceiveErrorMessage = null;
         public NetworkDispatcher(NetworkManager networkManager) : base(networkManager)
         {
             
@@ -43,6 +45,10 @@ namespace Barnabus.Network
                     var receiveLogin = DeserializeObject<ReceiveLogin>(path, result);
                     OnReceiveLogin?.Invoke(receiveLogin);
                     break;
+                case API_PATH.CreatePlayer:
+                    var receiveCreatePlayer = DeserializeObject<ReceiveCreatePlayer>(path, result);
+                    OnReceiveCreatePlayer?.Invoke(receiveCreatePlayer);
+                    break;
             }
         }
 
@@ -62,6 +68,14 @@ namespace Barnabus.Network
                 UnityEngine.Debug.LogError(string.Format("{0} DeserializeObject Fail: {1}", path, ex));
                 return null;
             }
+        }
+
+        public void NotifyError(long stateCode, string result)
+        {
+            var receiveErrorMessage = JsonConvert.DeserializeObject<ReceiveErrorMessage>(result);
+            receiveErrorMessage.StatusCode = stateCode;
+
+            OnReceiveErrorMessage?.Invoke(receiveErrorMessage);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Barnabus.Login
     /// </summary>
     public class PageManager : IBaseSystem
     {
-        private Dictionary<string, BaseLoginCommonUI> pages = null;
+        private Dictionary<PAGE, BaseLoginCommonUI> pages = null;
 
         private BaseLoginCommonUI currentPage = null;
         private BaseLoginCommonUI previousPage = null;
@@ -16,7 +16,7 @@ namespace Barnabus.Login
         #region BASE_API
         public void Init()
         {
-            pages = new Dictionary<string, BaseLoginCommonUI>();
+            pages = new Dictionary<PAGE, BaseLoginCommonUI>();
         }
         public void SystemUpdate()
         {
@@ -28,18 +28,18 @@ namespace Barnabus.Login
         }
         #endregion
 
-        public void AddPage(string pageKey, BaseLoginCommonUI page)
+        public void AddPage(PAGE name, BaseLoginCommonUI page)
         {
-            if (pages.ContainsKey(pageKey))
+            if (pages.ContainsKey(name))
                 return;
 
-            pages.Add(pageKey, page);
+            pages.Add(name, page);
         }
 
-        public BaseLoginCommonUI GetPage(string pageKey)
+        public BaseLoginCommonUI GetPage(PAGE name)
         {
-            if (pages.ContainsKey(pageKey))
-                return pages[pageKey];
+            if (pages.ContainsKey(name))
+                return pages[name];
 
             return null;
         }

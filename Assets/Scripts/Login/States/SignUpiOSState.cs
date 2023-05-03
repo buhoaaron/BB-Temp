@@ -17,8 +17,7 @@ namespace Barnabus.Login.StateControl
 
         protected override SignUpUI_Android CreateSignUpUI()
         {
-            var key = AddressablesLabels.CanvasSignUpiOS;
-            var ui = stateController.SceneManager.GetPage<SignUpUI_iOS>(key);
+            var ui = stateController.SceneManager.GetPage<SignUpUI_iOS>(PAGE.SIGN_UP_IOS);
 
             return ui;
         }

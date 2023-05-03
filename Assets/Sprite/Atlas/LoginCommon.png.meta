@@ -134,8 +134,8 @@ TextureImporter:
       name: AppleID
       rect:
         serializedVersion: 2
-        x: 363
-        y: 199
+        x: 648
+        y: 767
         width: 256
         height: 256
       alignment: 0
@@ -155,8 +155,8 @@ TextureImporter:
       name: BG_Account
       rect:
         serializedVersion: 2
-        x: 205
-        y: 7
+        x: 906
+        y: 651
         width: 100
         height: 86
       alignment: 0
@@ -176,8 +176,8 @@ TextureImporter:
       name: BG_BTN_01
       rect:
         serializedVersion: 2
-        x: 307
-        y: 7
+        x: 906
+        y: 563
         width: 100
         height: 86
       alignment: 0
@@ -197,8 +197,8 @@ TextureImporter:
       name: BG_BTN_02
       rect:
         serializedVersion: 2
-        x: 566
-        y: 13
+        x: 906
+        y: 475
         width: 100
         height: 86
       alignment: 0
@@ -218,8 +218,8 @@ TextureImporter:
       name: BG_BTN_Lock
       rect:
         serializedVersion: 2
-        x: 556
-        y: 937
+        x: 248
+        y: 575
         width: 100
         height: 86
       alignment: 0
@@ -239,8 +239,8 @@ TextureImporter:
       name: BG_BTN_NoOutline
       rect:
         serializedVersion: 2
-        x: 556
-        y: 849
+        x: 248
+        y: 487
         width: 100
         height: 86
       alignment: 0
@@ -260,8 +260,8 @@ TextureImporter:
       name: BG_Importing
       rect:
         serializedVersion: 2
-        x: 556
-        y: 761
+        x: 248
+        y: 399
         width: 100
         height: 86
       alignment: 0
@@ -281,8 +281,8 @@ TextureImporter:
       name: BG_Importing_Number0
       rect:
         serializedVersion: 2
-        x: 926
-        y: 939
+        x: 497
+        y: 202
         width: 84
         height: 84
       alignment: 0
@@ -302,8 +302,8 @@ TextureImporter:
       name: BG_Importing_Number1
       rect:
         serializedVersion: 2
-        x: 926
-        y: 853
+        x: 871
+        y: 291
         width: 84
         height: 84
       alignment: 0
@@ -323,8 +323,8 @@ TextureImporter:
       name: BG_Importing_Number2
       rect:
         serializedVersion: 2
-        x: 926
-        y: 767
+        x: 871
+        y: 205
         width: 84
         height: 84
       alignment: 0
@@ -344,8 +344,8 @@ TextureImporter:
       name: BG_Number
       rect:
         serializedVersion: 2
-        x: 465
-        y: 101
+        x: 903
+        y: 377
         width: 96
         height: 96
       alignment: 0
@@ -365,8 +365,8 @@ TextureImporter:
       name: BG_Select
       rect:
         serializedVersion: 2
-        x: 1
-        y: 3
+        x: 906
+        y: 831
         width: 100
         height: 90
       alignment: 0
@@ -386,8 +386,8 @@ TextureImporter:
       name: BG_SelectColorOutline
       rect:
         serializedVersion: 2
-        x: 103
-        y: 3
+        x: 906
+        y: 739
         width: 100
         height: 90
       alignment: 0
@@ -407,8 +407,8 @@ TextureImporter:
       name: BG_Selected
       rect:
         serializedVersion: 2
-        x: 814
-        y: 701
+        x: 332
+        y: 333
         width: 160
         height: 64
       alignment: 0
@@ -428,8 +428,8 @@ TextureImporter:
       name: BG_Selection
       rect:
         serializedVersion: 2
-        x: 814
-        y: 635
+        x: 1
+        y: 597
         width: 160
         height: 64
       alignment: 0
@@ -449,8 +449,8 @@ TextureImporter:
       name: BG_Window
       rect:
         serializedVersion: 2
-        x: 363
-        y: 97
+        x: 906
+        y: 923
         width: 100
         height: 100
       alignment: 0
@@ -470,8 +470,8 @@ TextureImporter:
       name: BTN_Add
       rect:
         serializedVersion: 2
-        x: 814
-        y: 499
+        x: 1
+        y: 263
         width: 134
         height: 134
       alignment: 0
@@ -491,8 +491,8 @@ TextureImporter:
       name: BTN_Add_Lock
       rect:
         serializedVersion: 2
-        x: 795
-        y: 363
+        x: 137
+        y: 263
         width: 134
         height: 134
       alignment: 0
@@ -512,8 +512,8 @@ TextureImporter:
       name: BTN_Close
       rect:
         serializedVersion: 2
-        x: 468
-        y: 3
+        x: 497
+        y: 386
         width: 96
         height: 96
       alignment: 0
@@ -533,8 +533,8 @@ TextureImporter:
       name: BTN_Close_Lock
       rect:
         serializedVersion: 2
-        x: 563
-        y: 101
+        x: 497
+        y: 288
         width: 96
         height: 96
       alignment: 0
@@ -554,8 +554,8 @@ TextureImporter:
       name: BTN_Del
       rect:
         serializedVersion: 2
-        x: 681
-        y: 417
+        x: 1
+        y: 511
         width: 84
         height: 84
       alignment: 0
@@ -575,8 +575,8 @@ TextureImporter:
       name: BTN_PageUP
       rect:
         serializedVersion: 2
-        x: 409
-        y: 1
+        x: 273
+        y: 303
         width: 57
         height: 94
       alignment: 0
@@ -596,8 +596,8 @@ TextureImporter:
       name: BTN_ShowSN_Off
       rect:
         serializedVersion: 2
-        x: 616
-        y: 461
+        x: 273
+        y: 261
         width: 63
         height: 40
       alignment: 9
@@ -617,8 +617,8 @@ TextureImporter:
       name: BTN_ShowSN_On
       rect:
         serializedVersion: 2
-        x: 616
-        y: 461
+        x: 273
+        y: 261
         width: 63
         height: 40
       alignment: 9
@@ -639,7 +639,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 95
+        y: 663
         width: 360
         height: 360
       alignment: 0
@@ -659,8 +659,8 @@ TextureImporter:
       name: FBID
       rect:
         serializedVersion: 2
-        x: 668
-        y: 767
+        x: 648
+        y: 509
         width: 256
         height: 256
       alignment: 0
@@ -680,8 +680,8 @@ TextureImporter:
       name: GoogleID
       rect:
         serializedVersion: 2
-        x: 556
-        y: 503
+        x: 363
+        y: 484
         width: 256
         height: 256
       alignment: 0
@@ -701,8 +701,8 @@ TextureImporter:
       name: Icon_Boy
       rect:
         serializedVersion: 2
-        x: 976
-        y: 715
+        x: 871
+        y: 457
         width: 30
         height: 50
       alignment: 0
@@ -722,8 +722,8 @@ TextureImporter:
       name: Icon_Confirm_OK
       rect:
         serializedVersion: 2
-        x: 556
-        y: 459
+        x: 350
+        y: 440
         width: 58
         height: 42
       alignment: 0
@@ -743,8 +743,8 @@ TextureImporter:
       name: Icon_ConfirmOk
       rect:
         serializedVersion: 2
-        x: 950
-        y: 569
+        x: 338
+        y: 267
         width: 64
         height: 64
       alignment: 0
@@ -764,8 +764,8 @@ TextureImporter:
       name: Icon_ConfirmWait
       rect:
         serializedVersion: 2
-        x: 950
-        y: 503
+        x: 404
+        y: 267
         width: 64
         height: 64
       alignment: 0
@@ -785,8 +785,8 @@ TextureImporter:
       name: Icon_Girl
       rect:
         serializedVersion: 2
-        x: 976
-        y: 663
+        x: 871
+        y: 405
         width: 30
         height: 50
       alignment: 0
@@ -806,8 +806,8 @@ TextureImporter:
       name: Icon_PullDownList
       rect:
         serializedVersion: 2
-        x: 950
-        y: 466
+        x: 350
+        y: 403
         width: 58
         height: 35
       alignment: 0
@@ -827,12 +827,12 @@ TextureImporter:
       name: ParentID_Lock
       rect:
         serializedVersion: 2
-        x: 1
-        y: 457
-        width: 553
-        height: 566
+        x: 363
+        y: 742
+        width: 283
+        height: 281
       alignment: 9
-      pivot: {x: 0.4972875, y: 0.49293286}
+      pivot: {x: 0.50706714, y: 0.48932385}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -848,8 +848,8 @@ TextureImporter:
       name: ImageBanner_Point_Off
       rect:
         serializedVersion: 2
-        x: 976
-        y: 635
+        x: 871
+        y: 377
         width: 26
         height: 26
       alignment: 0
@@ -869,8 +869,8 @@ TextureImporter:
       name: ImageBanner_Point_On
       rect:
         serializedVersion: 2
-        x: 767
-        y: 475
+        x: 583
+        y: 260
         width: 26
         height: 26
       alignment: 0
@@ -882,6 +882,69 @@ TextureImporter:
       bones: []
       spriteID: a32b6394e1766cc48a854958ab503851
       internalID: 1284940542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Assessment
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 10
+        width: 245
+        height: 249
+      alignment: 9
+      pivot: {x: 0.4979592, y: 0.49799198}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285cc38b318058747940b1bb49080c19
+      internalID: 1205534958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Progress
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 261
+        width: 248
+        height: 246
+      alignment: 9
+      pivot: {x: 0.50403225, y: 0.50406504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf789b1cbecd6746bd78c0d6a6063ca
+      internalID: 788126286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Image_Rewards
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 16
+        width: 247
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5020243, y: 0.51028806}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601c5ac537dd00b479f24ca72a8a0a70
+      internalID: 475481876
       vertices: []
       indices: 
       edges: []
@@ -904,17 +967,19 @@ TextureImporter:
       BG_Importing_Number2: -720343009
       Icon_ConfirmWait: -2122443926
       BG_Number: -1932258148
-      ParentID_Lock: 2095869672
+      Image_Rewards: 475481876
       BG_Window: -1125562271
       BG_Select: -387019701
       Icon_PullDownList: 933937150
       BG_BTN_01: -1904004872
       BG_BTN_02: 1695739434
+      ParentID_Lock: 2095869672
       BTN_PageUP: 1720653440
       BG_Selection: 17320840
       CleverID: -1692829835
       BG_Importing_Number0: -1347625919
       BTN_ShowSN_On: 581897277
+      Image_Progress: 788126286
       BTN_Close: -45921024
       BTN_Add_Lock: 1517676440
       BG_Importing: -244412508
@@ -932,6 +997,7 @@ TextureImporter:
       ImageBanner_Point_Off: 1744223421
       BTN_Del: 1230962385
       Icon_Confirm_OK: 1970732144
+      Image_Assessment: 1205534958
       Icon_Boy: -168629008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

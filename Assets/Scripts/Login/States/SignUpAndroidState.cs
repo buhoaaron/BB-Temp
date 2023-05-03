@@ -64,8 +64,7 @@ namespace Barnabus.Login.StateControl
 
         protected virtual SignUpUI_Android CreateSignUpUI()
         {
-            var key = AddressablesLabels.CanvasSignUpAndroid;
-            var ui = stateController.SceneManager.GetPage<SignUpUI_Android>(key);
+            var ui = stateController.SceneManager.GetPage<SignUpUI_Android>(PAGE.SIGN_UP_ANDROID);
 
             return ui;
         }

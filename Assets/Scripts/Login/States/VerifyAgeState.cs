@@ -15,8 +15,7 @@ namespace Barnabus.Login.StateControl
 
         public override void Begin()
         {
-            var key = AddressablesLabels.CanvasVerifyAge;
-            verifyAgeUI = stateController.SceneManager.GetPage<VerifyAgeUI>(key);
+            verifyAgeUI = stateController.SceneManager.GetPage<VerifyAgeUI>(PAGE.VERIFY_AGE);
             verifyAgeUI.HideSecurity();
             verifyAgeUI.Show();
 
@@ -27,7 +26,9 @@ namespace Barnabus.Login.StateControl
             verifyAgeUI.OnButtonContinueClick = CheckBirthYearVaild;
 
             verifyAgeUI.SecurityUI.OnButtonCloseClick = verifyAgeUI.HideSecurity;
+
             sceneManager.NetworkManager.Dispatcher.OnReceiveSignUp += OnSignUpSuccess;
+            sceneManager.NetworkManager.Dispatcher.OnReceiveErrorMessage += OnSignUpFail;
 
             HighlightBirthYearField();
         }
@@ -66,23 +67,14 @@ namespace Barnabus.Login.StateControl
             var password = sceneManager.CurrentSignUpInfo.Password;
             var data = new SendSignUp(email, password, birthYear);
 
-            var callbacks = new NetworkCallbacks();
-            callbacks.OnSuccess = OnSignUpSuccess;
-            callbacks.OnFail = OnSignUpFail;
-
-            sceneManager.PostRequest(API_PATH.SignUp, data, callbacks);
+            sceneManager.PostRequest(API_PATH.SignUp, data);
         }
         private void OnSignUpSuccess(ReceiveSignUp receiveSignUp)
         {
-            var networkInfo = new NetworkInfo(receiveSignUp.meandmineid, receiveSignUp.access_token);
+            var networkInfo = new NetworkInfo(receiveSignUp.meandmine_id, receiveSignUp.access_token);
 
             sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
 
-            NextPage();
-        }
-
-        private void OnSignUpSuccess(string text)
-        {
             NextPage();
         }
 
@@ -129,6 +121,7 @@ namespace Barnabus.Login.StateControl
         public override void End()
         {
             sceneManager.NetworkManager.Dispatcher.OnReceiveSignUp -= OnSignUpSuccess;
+            sceneManager.NetworkManager.Dispatcher.OnReceiveErrorMessage -= OnSignUpFail;
 
             ResetNumbers();
             verifyAgeUI.Hide();

@@ -6,7 +6,7 @@ namespace Barnabus.Network
     {
         public readonly List<ProfileInfo> players_list;
 
-        public ReceiveLogin(int meandmineid, string access_token, List<ProfileInfo> players_list) : base(meandmineid, access_token)
+        public ReceiveLogin(int meandmine_id, string access_token, List<ProfileInfo> players_list) : base(meandmine_id, access_token)
         {
             this.players_list = players_list;
         }
