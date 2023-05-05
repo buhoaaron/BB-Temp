@@ -49,7 +49,7 @@ namespace Barnabus.Login.StateControl
 
         private void CheckPlatformAndGoSignUpState()
         {
-            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            if (PlatformHelper.GetPlatform() == PLATFORM.IOS)
                 stateController.SetState(LOGIN_SCENE_STATE.SIGN_UP_IOS);
             else
                 stateController.SetState(LOGIN_SCENE_STATE.SIGN_UP_ANDROID);

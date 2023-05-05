@@ -84,8 +84,6 @@ namespace Barnabus.Login.StateControl
             stateController.SetState(LOGIN_SCENE_STATE.SIGN_UP_ANDROID);
         }
 
-        
-
         public override void End()
         {
             sceneManager.NetworkManager.Dispatcher.OnReceiveSignUp -= OnSignUpSuccess;
