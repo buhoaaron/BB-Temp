@@ -5,7 +5,7 @@ using Barnabus.Card;
 using Barnabus.SceneTransitions;
 using System.Collections;
 using Barnabus.Network;
-using Barnabus;
+using System.Linq;
 
 /// <summary>
 /// 新的遊戲管理者
@@ -72,6 +72,14 @@ public class NewGameManager : MonoBehaviour
 
         networkManager = GetComponentInChildren<NetworkManager>();
         networkManager.Init();
+
+        string a1 = "123456";
+        string a2 = "4456";
+
+        var result = a2.Except(a1);
+
+        foreach(var item in result)
+            Debug.Log(item);
     }
 
     /// <summary>

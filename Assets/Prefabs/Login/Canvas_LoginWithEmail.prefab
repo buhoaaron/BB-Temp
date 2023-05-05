@@ -606,7 +606,7 @@ RectTransform:
   m_Children:
   - {fileID: 3893199349662342381}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -692,7 +692,7 @@ MonoBehaviour:
   ButtonLogin: {fileID: 3893199349523133110}
   ButtonPrevious: {fileID: 8942571030885332698}
   InputFieldEmail: {fileID: 3893199348117037985}
-  InputFieldPassword: {fileID: 3893199349159967648}
+  InputFieldPassword: {fileID: 9048671471492571524}
 --- !u!1 &3893199348420335763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,19 +1986,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b81be689a0440046877829860e3aa7a, type: 3}
---- !u!114 &3893199349159967648 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4785170163842550440, guid: 9b81be689a0440046877829860e3aa7a, type: 3}
-  m_PrefabInstance: {fileID: 8389989258996494600}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &3893199349159967649 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4785170163842550441, guid: 9b81be689a0440046877829860e3aa7a, type: 3}
   m_PrefabInstance: {fileID: 8389989258996494600}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9048671471492571524 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 719568811355967628, guid: 9b81be689a0440046877829860e3aa7a, type: 3}
+  m_PrefabInstance: {fileID: 8389989258996494600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78caf2d898b673744971350cae446697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

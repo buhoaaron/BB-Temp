@@ -10,12 +10,17 @@ namespace Barnabus
         public PlayerIcons(IEnumerable<Sprite> collection) : base(collection)
         {}
 
-        public Sprite GetIcon(int colorId, int skinId)
+        public Sprite GetIcon(string colorId, string skinId)
         {
             var name = string.Format(iconFormat, colorId, skinId);
             var sp = Find(x => x.name.Equals(name));
 
             return sp;
+        }
+
+        public Sprite GetIcon(int colorId, int skinId)
+        {
+            return GetIcon(colorId.ToString(), skinId.ToString());
         }
     }
 }

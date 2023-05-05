@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using Barnabus.UI;
+using DG.Tweening;
 using TMPro;
 
 namespace Barnabus.Login
@@ -15,9 +15,13 @@ namespace Barnabus.Login
         public Button ButtonPlayer = null;
         public TMP_Text TextName = null;
 
+        private CanvasGroup group = null;
+
         #region BASE_API
         public void Init()
         {
+            group = GetComponent<CanvasGroup>();
+
             ButtonPlayer.onClick.AddListener(ProcessButtonClick);
         }
         public void Refresh()
@@ -64,6 +68,19 @@ namespace Barnabus.Login
         private void ProcessButtonClick()
         {
             OnButtonClick?.Invoke();
+        }
+
+        public void DoShow(float delay)
+        {
+            group.alpha = 0;
+
+            var originPos = ButtonPlayer.transform.localPosition;
+            ButtonPlayer.transform.localPosition = new Vector2(originPos.x, originPos.y + 20);
+
+            Sequence seq = DOTween.Sequence();
+            seq.AppendInterval(delay);
+            seq.Append(ButtonPlayer.transform.DOLocalMoveY(originPos.y, 0.5f));
+            seq.Join(group.DOFade(1, 0.5f));
         }
     }
 }

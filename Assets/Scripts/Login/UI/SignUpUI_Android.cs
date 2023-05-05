@@ -20,7 +20,7 @@ namespace Barnabus.Login
         public Button ButtonCreate = null;
 
         public TMP_InputField InputFieldEmail = null;
-        public TMP_InputField InputFieldPassword = null;
+        public PasswordField InputFieldPassword = null;
 
         public Toggle ToggleOK = null;
 
@@ -46,7 +46,7 @@ namespace Barnabus.Login
         public SignUpInfo GetSignUpInfo()
         {
             var email = InputFieldEmail.text;
-            var password = InputFieldPassword.GetComponent<PasswordControl>().RealText;
+            var password = InputFieldPassword.text;
 
             return new SignUpInfo(email, password);
         }

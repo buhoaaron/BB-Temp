@@ -11,6 +11,7 @@ namespace Barnabus.Login
     {
         protected CanvasGroup canvasGroup = null;
 
+        private Sequence seqShow = null;
         private void Awake()
         {
             //add用來做淡入淡出的元件
@@ -36,17 +37,25 @@ namespace Barnabus.Login
 
             ResetPopUp();
 
-            Sequence seq = DOTween.Sequence();
-            seq.AppendInterval(delay);
-            seq.Append(root.DOScale(1, 0.3f).SetEase(Ease.OutBack));
-            seq.Join(mask.DOFade(0.4f, 0.2f));
-            seq.onComplete = onComplete;
+            seqShow = DOTween.Sequence();
+            seqShow.AppendInterval(delay);
+            seqShow.Append(root.DOScale(1, 0.3f).SetEase(Ease.OutBack));
+            seqShow.Join(mask.DOFade(0.4f, 0.2f));
+            seqShow.onComplete = onComplete;
         }
 
         public void DoFade(float endValue, float duration, TweenCallback onComplete = null)
         {
             Tweener t = canvasGroup.DOFade(endValue, duration);
             t.onComplete = onComplete;
+        }
+
+        public override void Destroy()
+        {
+            if (seqShow != null)
+                seqShow.Kill();
+
+            Destroy(gameObject);
         }
     }
 }

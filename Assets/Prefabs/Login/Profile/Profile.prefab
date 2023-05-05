@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159462359945868592}
   - component: {fileID: 8754365778207031668}
+  - component: {fileID: 2675068577191469586}
   m_Layer: 5
   m_Name: Profile
   m_TagString: Untagged
@@ -52,6 +53,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonPlayer: {fileID: 8951862952285297479}
   TextName: {fileID: 1159462361380931862}
+--- !u!225 &2675068577191469586
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159462359945868595}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1159462361088556290
 GameObject:
   m_ObjectHideFlags: 0

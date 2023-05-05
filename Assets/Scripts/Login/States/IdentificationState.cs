@@ -13,6 +13,7 @@ namespace Barnabus.Login.StateControl
         public override void Begin()
         {
             identificationUI = sceneManager.IdentificationUI;
+            //待Shift表演完後重置所有Page
             identificationUI.DoShift(false, ResetPage);
             identificationUI.OnButtonFamiliesClick = CheckPlatformAndGoSignUpState;
             identificationUI.OnButtonHaveAccountClick = GotoLoginState;

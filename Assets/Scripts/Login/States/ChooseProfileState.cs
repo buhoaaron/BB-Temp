@@ -24,6 +24,14 @@ namespace Barnabus.Login.StateControl
 
             //創建玩家Profiles
             CreateProfiles(parentInfo);
+
+            //表演Profiles
+            chooseProfileUI.DoShowProfiles();
+        }
+
+        public override void StateUpdate()
+        {
+
         }
 
         public override void NextPage()
@@ -72,7 +80,7 @@ namespace Barnabus.Login.StateControl
                 int index = profileControllers.IndexOf(controller);
 
                 var info = playerInfo.Profiles[index];
-                info.SpriteIcon = sceneManager.PlayerIcons.GetIcon(1, 1);
+                info.SpriteIcon = sceneManager.PlayerIcons.GetIcon(info.color_id, info.skin_id);
 
                 controller.SetState(PROFILE_STATE.NORMAL, info);
                 controller.OnButtonClick = CompleteLogin;
