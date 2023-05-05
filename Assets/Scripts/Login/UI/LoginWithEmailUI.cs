@@ -16,7 +16,7 @@ namespace Barnabus.Login
         public Button ButtonPrevious = null;
 
         public TMP_InputField InputFieldEmail = null;
-        public TMP_InputField InputFieldPassword = null;
+        public PasswordField InputFieldPassword = null;
 
         public override void Init()
         {
@@ -36,7 +36,7 @@ namespace Barnabus.Login
         public LoginInfo GetLoginInfo()
         {
             var email = InputFieldEmail.text;
-            var password = InputFieldPassword.GetComponent<PasswordControl>().RealText;
+            var password = InputFieldPassword.text;
 
             return new LoginInfo(email, password);
         }

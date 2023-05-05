@@ -51,6 +51,8 @@ namespace Barnabus.Login.StateControl
 
             sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
 
+            loginWithEmailUI.Hide();
+
             NextPage();
         }
 
@@ -62,7 +64,6 @@ namespace Barnabus.Login.StateControl
 
         public override void End()
         {
-            loginWithEmailUI.Hide();
             sceneManager.NetworkManager.Dispatcher.OnReceiveLogin -= OnLoginSuccess;
             sceneManager.NetworkManager.Dispatcher.OnReceiveErrorMessage -= OnLoginFail;
         }

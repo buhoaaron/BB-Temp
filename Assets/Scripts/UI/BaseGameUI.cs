@@ -20,14 +20,16 @@ namespace Barnabus.UI
 
         public virtual void Show()
         {
-            gameObject.SetActive(true);
+            if (!gameObject.activeSelf)
+                gameObject.SetActive(true);
         }
         public virtual void Hide()
         {
-            gameObject.SetActive(false);
+            if (gameObject.activeSelf)
+                gameObject.SetActive(false);
         }
 
-        public void Destroy()
+        public virtual void Destroy()
         {
             Destroy(gameObject);
         }

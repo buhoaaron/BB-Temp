@@ -49,15 +49,14 @@ namespace Barnabus.Login.StateControl
             birthYear = GetBirthYearInputResult();
             var isAdult = sceneManager.CheckAdultAge(birthYear);
 
-            if (isAdult)
-            {
-                SendSignUp();
-            }
-            else
+            if (!isAdult)
             {
                 //未滿18跳標語
                 verifyAgeUI.DoPopUpSecurity();
+                return;
             }
+
+            SendSignUp();
         }
 
         #region SEND_SIGN_UP

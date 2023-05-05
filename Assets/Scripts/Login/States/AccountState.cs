@@ -13,7 +13,16 @@ namespace Barnabus.Login.StateControl
         public override void Begin()
         {
             accountUI = stateController.SceneManager.GetPage<AccountUI>(PAGE.ACCOUNT);
+            accountUI.Show();
+
+            accountUI.OnButtonNewAccountClick = GoCreateProfile;
         }
+
+        private void GoCreateProfile()
+        {
+            stateController.SetState(LOGIN_SCENE_STATE.CREATE_PROFILE);
+        }
+
         public override void NextPage()
         {
 
@@ -21,6 +30,11 @@ namespace Barnabus.Login.StateControl
         public override void PreviousPage()
         {
 
+        }
+
+        public override void End()
+        {
+            accountUI.Hide();
         }
     }
 }

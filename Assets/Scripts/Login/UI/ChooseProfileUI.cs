@@ -65,6 +65,15 @@ namespace Barnabus.Login
             return result;
         }
 
+        public void DoShowProfiles()
+        {
+            foreach(var controller in profileControllers)
+            {
+                var index = profileControllers.IndexOf(controller);
+                controller.DoShow(0.1f + index * 0.2f);
+            }
+        }
+
         public void DestroyAllProfile()
         {
             profileBuilder.Destroy();

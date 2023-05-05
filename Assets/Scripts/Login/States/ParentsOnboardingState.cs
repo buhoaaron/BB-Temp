@@ -32,7 +32,7 @@ namespace Barnabus.Login.StateControl
 
         public override void PreviousPage()
         {
-            //stateController.SetState(LOGIN_SCENE_STATE.CHOOSE_PROFILE);
+            
         }
 
         public override void End()
