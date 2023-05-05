@@ -1,1 +1,1 @@
-[{"ErrorCode":1,"Title":"Invalid Email","Message":"Please enter a valid email address."},{"ErrorCode":2,"Title":"Oops!","Message":"You need to accept our terms of service and privacy policy to proceed."}]
+[{"ErrorCode":1,"Title":"Invalid Email","Message":"Please enter a valid email address."},{"ErrorCode":2,"Title":"Oops!","Message":"You need to accept our terms of service and privacy policy to proceed."},{"ErrorCode":3,"Title":"Oops!","Message":"Year of birth is incorrect."}]

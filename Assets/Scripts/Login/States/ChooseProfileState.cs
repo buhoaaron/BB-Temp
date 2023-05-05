@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using Barnabus.Network;
-using System.Collections.Generic;
-
-namespace Barnabus.Login.StateControl
+﻿namespace Barnabus.Login.StateControl
 {
     public class ChooseProfileState : BaseLoginSceneState
     {
@@ -18,17 +14,21 @@ namespace Barnabus.Login.StateControl
             chooseProfileUI = stateController.SceneManager.GetPage<ChooseProfileUI>(PAGE.CHOOSE_PROFILE);
             chooseProfileUI.Show();
 
+            chooseProfileUI.VerifyAgeUnlockUI.Hide();
+
             //設定事件
-            chooseProfileUI.OnButtonParentDashboardClick = GotoDashboard;
+            chooseProfileUI.OnButtonParentDashboardClick = VerifyAgeForUnlock;
             chooseProfileUI.OnButtonPreviousClick = PreviousPage;
+            chooseProfileUI.VerifyAgeUnlockUI.OnButtonCloseClick = chooseProfileUI.VerifyAgeUnlockUI.Hide;
+            chooseProfileUI.OnBirthYearInputCompleted = ProcessBirthYearInputCompleted;
 
             //創建玩家Profiles
-            CreateProfiles(parentInfo);
-
+            CreateNormalProfiles(parentInfo);
+            //創建Add Profiles
+            CreateAddProfile(parentInfo);
             //表演Profiles
             chooseProfileUI.DoShowProfiles();
         }
-
         public override void StateUpdate()
         {
 
@@ -44,8 +44,27 @@ namespace Barnabus.Login.StateControl
             stateController.SetState(LOGIN_SCENE_STATE.LOGIN);
         }
 
-        private void GotoDashboard()
+        private void VerifyAgeForUnlock()
         {
+            chooseProfileUI.ResetNumbers();
+
+            chooseProfileUI.VerifyAgeUnlockUI.Show();
+            chooseProfileUI.VerifyAgeUnlockUI.DoPopUp();
+        }
+
+        private void ProcessBirthYearInputCompleted()
+        {
+            //check parent's birthyear
+            var isCorrect = false;
+            if (!isCorrect)
+            {
+                chooseProfileUI.ResetNumbers();
+                sceneManager.DoShowErrorMessage(3);
+
+                return;
+            }
+
+            //go parent's dashboard
 
         }
 
@@ -58,15 +77,6 @@ namespace Barnabus.Login.StateControl
         {
             chooseProfileUI.DestroyAllProfile();
             chooseProfileUI.Hide();
-        }
-
-        /// <summary>
-        /// 創建帳號擁有的profiles物件及狀態
-        /// </summary>
-        private void CreateProfiles(NetworkInfo playerInfo)
-        {
-            CreateNormalProfiles(playerInfo);
-            CreateAddProfile(playerInfo);
         }
 
         private void CreateNormalProfiles(NetworkInfo playerInfo)
@@ -86,10 +96,6 @@ namespace Barnabus.Login.StateControl
                 controller.OnButtonClick = CompleteLogin;
             }
         }
-        private void CompleteLogin()
-        {
-            sceneManager.CompleteLogin();
-        }
 
         private void CreateAddProfile(NetworkInfo playerInfo)
         {
@@ -104,14 +110,16 @@ namespace Barnabus.Login.StateControl
             profileController.SetState(PROFILE_STATE.ADD);
             profileController.OnButtonClick = GotoSetUpAccount;
         }
-
         /// <summary>
         /// 是否還能夠Add profile
         /// </summary>
-        /// <returns></returns>
         private bool CheckProfileAdd(int profileCount)
         {
             return profileCount < MAX_PROFILES;
+        }
+        private void CompleteLogin()
+        {
+            sceneManager.CompleteLogin();
         }
     }
 }

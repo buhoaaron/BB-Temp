@@ -9,8 +9,16 @@ namespace Barnabus.Login
     {
         public UnityAction OnButtonParentDashboardClick = null;
         public UnityAction OnButtonPreviousClick = null;
+        public UnityAction OnBirthYearInputCompleted
+        {
+            set
+            {
+                VerifyAgeUnlockUI.BirthYearKeypad.OnInputCompleted = value;
+            }
+        }
 
         [Header("Set UI Components")]
+        public VerifyAgeUnlockUI VerifyAgeUnlockUI = null;
         public Button ButtonParentDashboard = null;
         public Button ButtonPrevious = null;
         public RectTransform TransProfiles = null;
@@ -20,6 +28,8 @@ namespace Barnabus.Login
 
         public override void Init()
         {
+            VerifyAgeUnlockUI.Init();
+
             profileControllers = new List<ProfileController>();
 
             profileBuilder = GetComponent<ProfileBuilder>();
@@ -34,6 +44,8 @@ namespace Barnabus.Login
         }
         public override void Clear()
         {
+            VerifyAgeUnlockUI.Clear();
+
             ButtonParentDashboard.onClick.RemoveListener(ProcessButtonParentDashboardClick);
             ButtonPrevious.onClick.RemoveListener(ProcessButtonPreviousClick);
         }
@@ -79,6 +91,11 @@ namespace Barnabus.Login
             profileBuilder.Destroy();
 
             profileControllers.Clear();
+        }
+
+        public void ResetNumbers()
+        {
+            VerifyAgeUnlockUI.BirthYearKeypad.ResetNumbers();
         }
     }
 }
