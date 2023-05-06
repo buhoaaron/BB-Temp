@@ -8,25 +8,21 @@ namespace Barnabus.Login
     {
         public UnityAction OnButtonPreviousClick = null;
         public UnityAction OnButtonContinueClick = null;
-        public UnityAction OnButtonClearClick = null;
 
         [Header("Set UI Components")]
         public Button ButtonPrevious = null;
         public Button ButtonContinue = null;
-        public Button ButtonClear = null;
 
-        public NumericKeypad NumericKeypad = null;
+        public BirthYearKeypad BirthYearKeypad = null;
         public VerifyAgeSecurityUI SecurityUI = null;
-        public BirthYearUI BirthYearUI = null;
+
         public override void Init()
         {
             ButtonPrevious.onClick.AddListener(ProcessButtonPreviousClick);
             ButtonContinue.onClick.AddListener(ProcessButtonContinueClick);
-            ButtonClear.onClick.AddListener(ProcessButtonClearClick);
 
-            NumericKeypad.Init();
+            BirthYearKeypad.Init();
             SecurityUI.Init();
-            BirthYearUI.Init();
         }
         public override void UpdateUI()
         {
@@ -36,11 +32,9 @@ namespace Barnabus.Login
         {
             ButtonPrevious.onClick.RemoveListener(ProcessButtonPreviousClick);
             ButtonContinue.onClick.RemoveListener(ProcessButtonContinueClick);
-            ButtonClear.onClick.RemoveListener(ProcessButtonClearClick);
 
-            NumericKeypad.Clear();
+            BirthYearKeypad.Clear();
             SecurityUI.Clear();
-            BirthYearUI.Clear();
         }
         
         private void ProcessButtonPreviousClick()
@@ -50,10 +44,6 @@ namespace Barnabus.Login
         private void ProcessButtonContinueClick()
         {
             OnButtonContinueClick?.Invoke();
-        }
-        private void ProcessButtonClearClick()
-        {
-            OnButtonClearClick?.Invoke();
         }
 
         public void HideSecurity()

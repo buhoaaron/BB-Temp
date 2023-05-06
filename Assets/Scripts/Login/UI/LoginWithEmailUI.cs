@@ -15,6 +15,10 @@ namespace Barnabus.Login
         public Button ButtonLogin = null;
         public Button ButtonPrevious = null;
 
+        public Button ButtonApple = null;
+        public Button ButtonGoogle = null;
+        public Button ButtonFacebook = null;
+
         public TMP_InputField InputFieldEmail = null;
         public PasswordField InputFieldPassword = null;
 
@@ -22,6 +26,9 @@ namespace Barnabus.Login
         {
             ButtonLogin.onClick.AddListener(ProcessButtonLoginClick);
             ButtonPrevious.onClick.AddListener(ProcessButtonPreviousClick);
+
+            //Apple Button 需要判斷平台
+            ButtonApple.gameObject.SetActive(PlatformHelper.GetPlatform() == PLATFORM.IOS);
         }
         public override void UpdateUI()
         {
