@@ -9,7 +9,7 @@ namespace Barnabus.Login
     {
         public UnityAction OnButtonParentDashboardClick = null;
         public UnityAction OnButtonPreviousClick = null;
-        public UnityAction OnBirthYearInputCompleted
+        public UnityAction<int> OnBirthYearInputCompleted
         {
             set
             {

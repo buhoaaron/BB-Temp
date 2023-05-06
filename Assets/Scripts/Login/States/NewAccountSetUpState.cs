@@ -11,6 +11,8 @@ namespace Barnabus.Login.StateControl
         private int selectColorId = 1;
         private int selectSkinId = 1;
 
+        private SendCreatePlayer currentSendCreatePlayer = null;
+
         public NewAccountSetUpState(LoginSceneStateController controller) : base(controller)
         {
         }
@@ -90,7 +92,7 @@ namespace Barnabus.Login.StateControl
         #region SEND_CREATE_PLAYER
         private void SendCreatePlayer()
         {
-            var userId = sceneManager.NetworkManager.NetworkInfo.Meandmineid;
+            var userId = sceneManager.NetworkManager.FamiliesAccountInfo.Meandmineid;
             var isParentOwned = true;
             var firstName = newAccountSetUpUI.InputFieldFirstName.text;
             var lastName = newAccountSetUpUI.InputFieldLaseInitial.text;
@@ -99,15 +101,23 @@ namespace Barnabus.Login.StateControl
             var state = newAccountSetUpUI.DropdownStateCurriculum.captionText.text;
             var avatar = new AvatarInfo(selectSkinId.ToString(), selectColorId.ToString(), "1");
 
-            var data = new SendCreatePlayer(userId, isParentOwned, firstName, lastName, grade, countryCode, state, avatar);
+            currentSendCreatePlayer = new SendCreatePlayer(userId, isParentOwned, firstName, lastName, grade, 
+                                                           countryCode, state, avatar);
 
-            sceneManager.PostRequest(API_PATH.CreatePlayer, data);
+            sceneManager.PostRequest(API_PATH.CreatePlayer, currentSendCreatePlayer);
         }
-        private void OnSendCreatePlayerSuccess(ReceiveSignUp receiveSignUp)
+        private void OnSendCreatePlayerSuccess(ReceiveCreatePlayer receiveCreatePlayer)
         {
-            var networkInfo = new NetworkInfo(receiveSignUp.meandmine_id, receiveSignUp.access_token);
-
-            sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
+            //創建一個profile，帶入使用者剛剛填的資料及收到的player_id
+            ProfileInfo profileInfo = new ProfileInfo(receiveCreatePlayer.player_id, 
+                                                      currentSendCreatePlayer.first_name,
+                                                      currentSendCreatePlayer.last_name,
+                                                      currentSendCreatePlayer.first_name,
+                                                      currentSendCreatePlayer.avatar.color_id,
+                                                      currentSendCreatePlayer.avatar.skin_id,
+                                                      currentSendCreatePlayer.avatar.format_version);
+            //加入PlayerList
+            sceneManager.NetworkManager.AddPlayerProfile(profileInfo);
 
             NextPage();
         }

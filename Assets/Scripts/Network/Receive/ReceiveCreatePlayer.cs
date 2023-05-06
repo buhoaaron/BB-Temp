@@ -2,9 +2,10 @@
 {
     public class ReceiveCreatePlayer : ReceiveSignUp
     {
-        public ReceiveCreatePlayer(int meandmineid, string access_token) : base(meandmineid, access_token)
+        public readonly int player_id;
+        public ReceiveCreatePlayer(int meandmineid, string access_token, int player_id) : base(meandmineid, access_token)
         {
-
+            this.player_id = player_id;
         }
     }
 }

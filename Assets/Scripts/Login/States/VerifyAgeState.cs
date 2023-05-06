@@ -61,9 +61,10 @@ namespace Barnabus.Login.StateControl
         }
         private void OnSignUpSuccess(ReceiveSignUp receiveSignUp)
         {
-            var networkInfo = new NetworkInfo(receiveSignUp.meandmine_id, receiveSignUp.access_token);
+            //此處birthYear帶入使用者自己填的
+            var networkInfo = new FamiliesAccountInfo(receiveSignUp.meandmine_id, receiveSignUp.access_token, birthYear);
 
-            sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
+            sceneManager.NetworkManager.UpdateFamiliesAccountInfo(networkInfo);
 
             NextPage();
         }

@@ -3,14 +3,18 @@
     public class ChooseProfileState : BaseLoginSceneState
     {
         private const int MAX_PROFILES = 5;
+
         private ChooseProfileUI chooseProfileUI = null;
+        private FamiliesAccountInfo familiesInfo = null;
+
         public ChooseProfileState(LoginSceneStateController controller) : base(controller)
         {
         }
 
         public override void Begin()
         {
-            var parentInfo = stateController.SceneManager.NetworkManager.NetworkInfo;
+            familiesInfo = stateController.SceneManager.NetworkManager.FamiliesAccountInfo;
+
             chooseProfileUI = stateController.SceneManager.GetPage<ChooseProfileUI>(PAGE.CHOOSE_PROFILE);
             chooseProfileUI.Show();
 
@@ -23,15 +27,11 @@
             chooseProfileUI.OnBirthYearInputCompleted = ProcessBirthYearInputCompleted;
 
             //創建玩家Profiles
-            CreateNormalProfiles(parentInfo);
+            CreateNormalProfiles(familiesInfo);
             //創建Add Profiles
-            CreateAddProfile(parentInfo);
+            CreateAddProfile(familiesInfo);
             //表演Profiles
             chooseProfileUI.DoShowProfiles();
-        }
-        public override void StateUpdate()
-        {
-
         }
 
         public override void NextPage()
@@ -52,11 +52,11 @@
             chooseProfileUI.VerifyAgeUnlockUI.DoPopUp();
         }
 
-        private void ProcessBirthYearInputCompleted()
+        private void ProcessBirthYearInputCompleted(int inputBirthYear)
         {
             //check parent's birthyear
-            var isCorrect = false;
-            if (!isCorrect)
+            var isinputCorrect = familiesInfo.BirthYear == inputBirthYear;
+            if (!isinputCorrect)
             {
                 chooseProfileUI.ResetNumbers();
                 sceneManager.DoShowErrorMessage(3);
@@ -65,7 +65,7 @@
             }
 
             //go parent's dashboard
-
+            
         }
 
         private void GotoSetUpAccount()
@@ -79,7 +79,7 @@
             chooseProfileUI.Hide();
         }
 
-        private void CreateNormalProfiles(NetworkInfo playerInfo)
+        private void CreateNormalProfiles(FamiliesAccountInfo playerInfo)
         {
             var profileCount = playerInfo.GetProfileCount();
             var profileControllers = chooseProfileUI.CreateProfiles(profileCount);
@@ -97,7 +97,7 @@
             }
         }
 
-        private void CreateAddProfile(NetworkInfo playerInfo)
+        private void CreateAddProfile(FamiliesAccountInfo playerInfo)
         {
             var canAdd = CheckProfileAdd(playerInfo.GetProfileCount());
 

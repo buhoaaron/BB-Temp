@@ -19,7 +19,7 @@ namespace Barnabus.Network
         }
         public GameObject ConnectingUIPrefab = null;
 
-        public NetworkInfo NetworkInfo { get; private set; } = null;
+        public FamiliesAccountInfo FamiliesAccountInfo { get; private set; } = null;
         public NetworkConfig NetworkConfig { get; private set; } = null;
         public NetworkPaths NetworkPaths { get; private set; } = null;
         public NetworkDispatcher Dispatcher { get; private set; } = null;
@@ -138,11 +138,18 @@ namespace Barnabus.Network
         }
         #endregion
 
-        public void UpdatePlayerNetworkInfo(NetworkInfo info)
+        #region INFO
+        public void UpdateFamiliesAccountInfo(FamiliesAccountInfo info)
         {
-            NetworkInfo = info;
+            FamiliesAccountInfo = info;
         }
 
+        public void AddPlayerProfile(ProfileInfo newInfo)
+        {
+            FamiliesAccountInfo.AddProfile(newInfo);
+        }
+
+        #endregion
         public string CaseUrl(API_PATH path)
         {
             return pathParser.CaseUrl(path);

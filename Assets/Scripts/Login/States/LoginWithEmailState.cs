@@ -47,9 +47,10 @@ namespace Barnabus.Login.StateControl
 
         private void OnLoginSuccess(ReceiveLogin receiveLogin)
         {
-            var networkInfo = new NetworkInfo(receiveLogin.meandmine_id, receiveLogin.access_token, receiveLogin.players_list);
+            var networkInfo = new FamiliesAccountInfo(receiveLogin.meandmine_id, receiveLogin.access_token, 
+                                              receiveLogin.birth_year, receiveLogin.players_list);
 
-            sceneManager.NetworkManager.UpdatePlayerNetworkInfo(networkInfo);
+            sceneManager.NetworkManager.UpdateFamiliesAccountInfo(networkInfo);
 
             loginWithEmailUI.Hide();
 

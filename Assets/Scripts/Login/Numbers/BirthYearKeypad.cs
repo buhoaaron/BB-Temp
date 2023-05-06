@@ -7,7 +7,7 @@ namespace Barnabus.Login
 {
     public class BirthYearKeypad : BaseGameUI
     {
-        public UnityAction OnInputCompleted = null;
+        public UnityAction<int> OnInputCompleted = null;
 
         public Button ButtonClear = null;
         public NumericKeypad NumericKeypad = null;
@@ -53,7 +53,7 @@ namespace Barnabus.Login
 
             //是否輸入完成
             if (controller == null)
-                OnInputCompleted?.Invoke();
+                OnInputCompleted?.Invoke(GetBirthYearInputResult());
         }
 
         public void ResetNumbers()
