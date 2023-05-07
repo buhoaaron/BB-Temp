@@ -119,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_PlayerID1_1
+      name: avatar_icon_1_1
       rect:
         serializedVersion: 2
         x: 1
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6eb6824aecff5ef488c0c7744eee5966
-      internalID: 1687790508
+      spriteID: b6be5b3f137cfcd4ea749d18f3928357
+      internalID: 1107011319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID1_2
+      name: avatar_icon_1_2
       rect:
         serializedVersion: 2
         x: 1
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e3d8351d179e0944bdf2d2ce7f1c3b0
-      internalID: -1513903408
+      spriteID: 6843b7b6e0612c948acd77fb61e02e86
+      internalID: 410038622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID1_3
+      name: avatar_icon_1_3
       rect:
         serializedVersion: 2
         x: 1
@@ -175,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd5ab553851e652408df7cd3fa525d4e
-      internalID: -64658320
+      spriteID: 3321f508c7cc62f49965b57bdeac825f
+      internalID: 1948564499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID1_4
+      name: avatar_icon_1_4
       rect:
         serializedVersion: 2
         x: 1
@@ -196,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 129e05628dd7c11478229449fdb684a8
-      internalID: 1093453601
+      spriteID: 25a6242629ab73240abdddf57bddb266
+      internalID: 1497785903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID2_1
+      name: avatar_icon_2_1
       rect:
         serializedVersion: 2
         x: 1
@@ -217,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27abd6e41e60f4040b292e1c2f5d83a6
-      internalID: -1619840543
+      spriteID: 4ad4a22d6a09b0241afed5c947ec290b
+      internalID: 1597553435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID2_2
+      name: avatar_icon_2_2
       rect:
         serializedVersion: 2
         x: 1
@@ -238,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bb8e4e3390a3764eb8b40d786331504
-      internalID: -242282906
+      spriteID: fd9d50174a068c847a87dad72a8d1594
+      internalID: -2131826018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID2_3
+      name: avatar_icon_2_3
       rect:
         serializedVersion: 2
         x: 1
@@ -259,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20e6bd6d8b7d24443a69b78d29fbce7d
-      internalID: 865802199
+      spriteID: 455d3a632ed97e84daff325a809a60a8
+      internalID: 920076143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID2_4
+      name: avatar_icon_2_4
       rect:
         serializedVersion: 2
         x: 131
@@ -280,14 +280,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bfa892f35ffd894dad65756b2f25874
-      internalID: -967710162
+      spriteID: f7346cc94e4d5674e99dd7478c2cfbbb
+      internalID: 1538365433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID3_1
+      name: avatar_icon_3_1
       rect:
         serializedVersion: 2
         x: 261
@@ -301,14 +301,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c9236057f5551c4280b0569b007ae5a
-      internalID: 1493246448
+      spriteID: 1b6f2e1443fbaed46b7c7edbc15f844f
+      internalID: 434124603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID3_2
+      name: avatar_icon_3_2
       rect:
         serializedVersion: 2
         x: 391
@@ -322,14 +322,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 535259aa396f1d847bf7506eeefede17
-      internalID: -1859981753
+      spriteID: 5982bed84db06fe4fb46338ae24872da
+      internalID: 2065926408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID3_3
+      name: avatar_icon_3_3
       rect:
         serializedVersion: 2
         x: 521
@@ -343,14 +343,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13776a34a08eb4c4caf2f8f8800041ba
-      internalID: -1880357645
+      spriteID: 3550a290041d99e418d04edec2851ade
+      internalID: -1585059794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID3_4
+      name: avatar_icon_3_4
       rect:
         serializedVersion: 2
         x: 651
@@ -364,14 +364,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 819d8f2e64a21c3498d19cbc3472dd49
-      internalID: 175710176
+      spriteID: 311460e68ef1dcf4cbd68e7a980f6222
+      internalID: -1390953878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID4_1
+      name: avatar_icon_4_1
       rect:
         serializedVersion: 2
         x: 781
@@ -385,14 +385,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0db3312e711c88e4bbfb593a3758146d
-      internalID: -2048101357
+      spriteID: 5abff5c64fa2ca845acc1fc0430e6645
+      internalID: -1867253616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID4_2
+      name: avatar_icon_4_2
       rect:
         serializedVersion: 2
         x: 131
@@ -406,14 +406,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d9ad0419b67f664a86bb4bae250860c
-      internalID: 1989887592
+      spriteID: bb99c6438f1232b4587775c064bd143f
+      internalID: 1235378304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID4_3
+      name: avatar_icon_4_3
       rect:
         serializedVersion: 2
         x: 131
@@ -427,14 +427,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58872873103a94d4894a09908bd4956a
-      internalID: -1848229056
+      spriteID: 166cd76808989014fa5e9e5090a81f98
+      internalID: 1588754919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_PlayerID4_4
+      name: avatar_icon_4_4
       rect:
         serializedVersion: 2
         x: 131
@@ -448,29 +448,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 460a64e2e9de2e647a2bf2be1361e47a
-      internalID: -1009787952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_PlayerID_ourline
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 6
-        width: 107
-        height: 107
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 385ca72b5e0af034697126f730209e10
-      internalID: -1819858209
+      spriteID: 6939c656f822669438217576e5075666
+      internalID: -1212041960
       vertices: []
       indices: 
       edges: []
@@ -486,23 +465,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BG_PlayerID2_4: -967710162
-      BG_PlayerID1_1: 1687790508
-      BG_PlayerID_ourline: -1819858209
-      BG_PlayerID3_2: -1859981753
-      BG_PlayerID3_3: -1880357645
-      BG_PlayerID3_1: 1493246448
-      BG_PlayerID1_3: -64658320
-      BG_PlayerID2_2: -242282906
-      BG_PlayerID4_2: 1989887592
-      BG_PlayerID3_4: 175710176
-      BG_PlayerID1_4: 1093453601
-      BG_PlayerID4_3: -1848229056
-      BG_PlayerID2_3: 865802199
-      BG_PlayerID1_2: -1513903408
-      BG_PlayerID2_1: -1619840543
-      BG_PlayerID4_1: -2048101357
-      BG_PlayerID4_4: -1009787952
+      avatar_icon_4_3: 1588754919
+      avatar_icon_4_2: 1235378304
+      avatar_icon_3_1: 434124603
+      avatar_icon_1_1: 1107011319
+      avatar_icon_3_3: -1585059794
+      avatar_icon_4_1: -1867253616
+      avatar_icon_4_4: -1212041960
+      avatar_icon_1_3: 1948564499
+      avatar_icon_2_1: 1597553435
+      avatar_icon_2_4: 1538365433
+      avatar_icon_1_2: 410038622
+      avatar_icon_3_4: -1390953878
+      avatar_icon_2_2: -2131826018
+      avatar_icon_1_4: 1497785903
+      avatar_icon_2_3: 920076143
+      avatar_icon_3_2: 2065926408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
