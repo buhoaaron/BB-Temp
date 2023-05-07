@@ -24,6 +24,9 @@ namespace Barnabus.SceneManagement
             LoadAudioMuteSetting();
             //讀取網路設定檔
             LoadNetworkSetting();
+
+            //Load Sprites from addressable
+            controller.GameManager.AddressableAssetsManager.LoadPlayerIcons();
         }
         public override void StateUpdate()
         {

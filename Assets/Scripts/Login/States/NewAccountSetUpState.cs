@@ -53,7 +53,7 @@ namespace Barnabus.Login.StateControl
         {
             for (int skinId = 1; skinId <= newAccountSetUpUI.ListToggleSkin.Count; skinId++)
             {
-                var skinSprite = sceneManager.PlayerIcons.GetIcon(colorId, skinId);
+                var skinSprite = sceneManager.GetPlayerIcons().GetIcon(colorId, skinId);
                 var toggle = newAccountSetUpUI.ListToggleSkin[skinId - 1];
 
                 toggle.image.sprite = skinSprite;

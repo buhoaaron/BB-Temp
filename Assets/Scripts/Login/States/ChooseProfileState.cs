@@ -90,7 +90,7 @@
                 int index = profileControllers.IndexOf(controller);
 
                 var info = playerInfo.Profiles[index];
-                info.SpriteIcon = sceneManager.PlayerIcons.GetIcon(info.color_id, info.skin_id);
+                info.SpriteIcon = sceneManager.GetPlayerIcons().GetIcon(info.color_id, info.skin_id);
 
                 controller.SetState(PROFILE_STATE.NORMAL, info);
                 controller.OnButtonClick = CompleteLogin;

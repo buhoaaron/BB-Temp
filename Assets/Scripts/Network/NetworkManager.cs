@@ -150,6 +150,7 @@ namespace Barnabus.Network
         }
 
         #endregion
+
         public string CaseUrl(API_PATH path)
         {
             return pathParser.CaseUrl(path);
