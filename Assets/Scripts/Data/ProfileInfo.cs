@@ -15,10 +15,6 @@ namespace Barnabus
         public readonly string skin_id;
         public readonly string format_version;
 
-        #region CLIENT
-        public Sprite SpriteIcon = null;
-        #endregion
-
         public ProfileInfo(int player_id, string first_name, string last_name, 
             string family_nick_name, string color_id, string skin_id, string format_version)
         {

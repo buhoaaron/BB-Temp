@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Barnabus.Login;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ namespace Barnabus.UI
         [Header("Set UI Components")]
         public Button ButtonHome = null;
         public Button ButtonShop = null;
-        public Button ButtonPlayer = null;
+        public ProfileController ProfileController = null;
         public Button ButtonSound = null;
         public Button ButtonSwitch = null;
 
@@ -34,13 +35,13 @@ namespace Barnabus.UI
         {
             buttons.Add(ButtonHome);
             buttons.Add(ButtonShop);
-            buttons.Add(ButtonPlayer);
+            buttons.Add(ProfileController.ButtonPlayer);
             buttons.Add(ButtonSound);
             buttons.Add(ButtonSwitch);
 
             ButtonHome.onClick.AddListener(ProcessButtonHomeClick);
             ButtonShop.onClick.AddListener(ProcessButtonShopClick);
-            ButtonPlayer.onClick.AddListener(ProcessButtonPlayerClick);
+            ProfileController.ButtonPlayer.onClick.AddListener(ProcessButtonPlayerClick);
             ButtonSound.onClick.AddListener(ProcessButtonSoundClick);
             ButtonSwitch.onClick.AddListener(ProcessButtonSwitchClick);
         }
@@ -65,7 +66,6 @@ namespace Barnabus.UI
         {
             OnButtonPlayerClick?.Invoke();
         }
-
         private void ProcessButtonSoundClick()
         {
             isOn = !isOn;
@@ -82,12 +82,13 @@ namespace Barnabus.UI
             var soundOffSpriteIndex = 1;
             changeSprite.Change(isOn ? soundOnSpriteIndex : soundOffSpriteIndex);
         }
-
         private void ProcessButtonSwitchClick()
         {
             OnButtonSwitchClick?.Invoke();
         }
-
-
+        public void SetProfile(ProfileInfo info, Sprite playerIcon)
+        {
+            ProfileController.SetState(PROFILE_STATE.NORMAL, info, playerIcon);
+        }
     }
 }

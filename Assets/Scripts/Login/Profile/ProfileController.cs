@@ -8,7 +8,7 @@ namespace Barnabus.Login
 {
     public class ProfileController : MonoBehaviour, IBaseController
     {
-        public UnityAction OnButtonClick = null;
+        public UnityAction<ProfileInfo> OnButtonClick = null;
         public PROFILE_STATE State { private set; get; } = PROFILE_STATE.NORMAL;
         public ProfileInfo Info { private set; get; } = null;
 
@@ -16,6 +16,7 @@ namespace Barnabus.Login
         public TMP_Text TextName = null;
 
         private CanvasGroup group = null;
+        private Sprite spritePlayerIcon = null;
 
         #region BASE_API
         public void Init()
@@ -42,10 +43,12 @@ namespace Barnabus.Login
         }
         #endregion
 
-        public void SetState(PROFILE_STATE state, ProfileInfo info = null)
+        public void SetState(PROFILE_STATE state, ProfileInfo info = null, Sprite playerIcon = null)
         {
             State = state;
             Info = info;
+
+            spritePlayerIcon = playerIcon;
 
             Refresh();
         }
@@ -53,11 +56,10 @@ namespace Barnabus.Login
         private void LayoutNormal()
         {
             Debug.Assert(Info != null, "In normal, ProfileInfo can't be null.");
+            Debug.Assert(spritePlayerIcon != null, "In normal, SpritePlayerIcon can't be null.");
 
-            //family's profile only show firstname
             TextName.text = Info.family_nick_name;
-
-            ButtonPlayer.image.sprite = Info.SpriteIcon;
+            ButtonPlayer.image.sprite = spritePlayerIcon;
         }
 
         private void LayoutAdd()
@@ -67,7 +69,7 @@ namespace Barnabus.Login
 
         private void ProcessButtonClick()
         {
-            OnButtonClick?.Invoke();
+            OnButtonClick?.Invoke(Info);
         }
 
         public void DoShow(float delay)

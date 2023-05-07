@@ -116,8 +116,11 @@ namespace Barnabus.Login.StateControl
                                                       currentSendCreatePlayer.avatar.color_id,
                                                       currentSendCreatePlayer.avatar.skin_id,
                                                       currentSendCreatePlayer.avatar.format_version);
+
             //加入PlayerList
             sceneManager.NetworkManager.AddPlayerProfile(profileInfo);
+            //更新玩家所選的Profile
+            sceneManager.GameManager.PlayerDataManager.UpdateCurrentProfileInfo(profileInfo);
 
             NextPage();
         }

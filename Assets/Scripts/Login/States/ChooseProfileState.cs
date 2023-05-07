@@ -68,7 +68,7 @@
             
         }
 
-        private void GotoSetUpAccount()
+        private void GotoSetUpAccount(ProfileInfo profileInfo)
         {
             stateController.SetState(LOGIN_SCENE_STATE.CREATE_PROFILE);
         }
@@ -88,11 +88,11 @@
             foreach(var controller in profileControllers)
             {
                 int index = profileControllers.IndexOf(controller);
-
                 var info = playerInfo.Profiles[index];
-                info.SpriteIcon = sceneManager.GetPlayerIcons().GetIcon(info.color_id, info.skin_id);
 
-                controller.SetState(PROFILE_STATE.NORMAL, info);
+                var spriteIcon = sceneManager.GetPlayerIcons().GetIcon(info.color_id, info.skin_id);
+
+                controller.SetState(PROFILE_STATE.NORMAL, info, spriteIcon);
                 controller.OnButtonClick = CompleteLogin;
             }
         }
@@ -117,8 +117,11 @@
         {
             return profileCount < MAX_PROFILES;
         }
-        private void CompleteLogin()
+        private void CompleteLogin(ProfileInfo profileInfo)
         {
+            //更新玩家所選的Profile
+            sceneManager.GameManager.PlayerDataManager.UpdateCurrentProfileInfo(profileInfo);
+
             sceneManager.CompleteLogin();
         }
     }

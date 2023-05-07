@@ -3,14 +3,16 @@
 namespace Barnabus
 {
     /// <summary>
-    /// 家庭帳號資訊(Server給的)
+    /// 家庭帳號資訊
     /// </summary>
     public class FamiliesAccountInfo
     {
+        #region FROM_SERVER
         public readonly int Meandmineid;
         public readonly string Token;
         public readonly int BirthYear;
-        public readonly List<ProfileInfo> Profiles;
+        public readonly List<ProfileInfo> Profiles = new List<ProfileInfo>();
+        #endregion
 
         public FamiliesAccountInfo(int meandmineid, string access_token, int birth_year = 0, List<ProfileInfo> profileInfos = null)
         {

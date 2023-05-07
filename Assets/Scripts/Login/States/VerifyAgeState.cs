@@ -62,9 +62,9 @@ namespace Barnabus.Login.StateControl
         private void OnSignUpSuccess(ReceiveSignUp receiveSignUp)
         {
             //此處birthYear帶入使用者自己填的
-            var networkInfo = new FamiliesAccountInfo(receiveSignUp.meandmine_id, receiveSignUp.access_token, birthYear);
+            var accountInfo = new FamiliesAccountInfo(receiveSignUp.meandmine_id, receiveSignUp.access_token, birthYear);
 
-            sceneManager.NetworkManager.UpdateFamiliesAccountInfo(networkInfo);
+            sceneManager.NetworkManager.UpdateFamiliesAccountInfo(accountInfo);
 
             NextPage();
         }

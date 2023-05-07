@@ -23,6 +23,7 @@ namespace Barnabus.SceneManagement
 
             InitUI();
             InitShelfAllHub();
+            InitProfile();
 
             AddButtonClickListener();
 
@@ -84,6 +85,16 @@ namespace Barnabus.SceneManagement
                 hubController.Init(playerBarnabusData, mainManager);
                 hubController.Refresh();
             }
+        }
+
+        private void InitProfile()
+        {
+            var profileInfo = mainManager.PlayerDataManager.CurrentProfile;
+            var playerIcon = controller.GameManager.AddressableAssetsManager.PlayerIcons;
+
+            var spritePlayerIcon = playerIcon.GetIcon(profileInfo.color_id, profileInfo.skin_id);
+
+            navigationBarUI.SetProfile(profileInfo, spritePlayerIcon);
         }
 
         public override void StateUpdate()

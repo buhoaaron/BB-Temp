@@ -14,6 +14,11 @@ public class PlayerDataManager : BaseBarnabusManager
     private GameSceneCacheData sceneCacheData = new GameSceneCacheData(MAIN_MENU.MAIN);
     #endregion
 
+    /// <summary>
+    /// 當前選擇的Player Profile
+    /// </summary>
+    public ProfileInfo CurrentProfile { get; private set; } = null;
+
     private PlayersPotionManager potionManager;
     private PlayersBarnabusManager barnabusManager;
 
@@ -46,6 +51,11 @@ public class PlayerDataManager : BaseBarnabusManager
 
     }
     #endregion
+
+    public void UpdateCurrentProfileInfo(ProfileInfo info)
+    {
+        CurrentProfile = info;
+    }
 
     public override void Save()
     {
