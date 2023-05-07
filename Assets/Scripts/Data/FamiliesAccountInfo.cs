@@ -11,7 +11,7 @@ namespace Barnabus
         public readonly int Meandmineid;
         public readonly string Token;
         public readonly int BirthYear;
-        public readonly List<ProfileInfo> Profiles = new List<ProfileInfo>();
+        public readonly List<ProfileInfo> Profiles;
         #endregion
 
         public FamiliesAccountInfo(int meandmineid, string access_token, int birth_year = 0, List<ProfileInfo> profileInfos = null)
@@ -20,6 +20,9 @@ namespace Barnabus
             Token = access_token;
             Profiles = profileInfos;
             BirthYear = birth_year;
+
+            if (Profiles == null)
+                Profiles = new List<ProfileInfo>();
         }
 
         public ProfileInfo GetProfileInfo(int id)
