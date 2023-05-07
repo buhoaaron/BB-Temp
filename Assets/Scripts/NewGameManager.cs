@@ -5,7 +5,6 @@ using Barnabus.Card;
 using Barnabus.SceneTransitions;
 using System.Collections;
 using Barnabus.Network;
-using System.Linq;
 
 /// <summary>
 /// 新的遊戲管理者
@@ -15,21 +14,17 @@ public class NewGameManager : MonoBehaviour
     public static NewGameManager Instance => instance;
     private static NewGameManager instance;
 
-    public BarnabusAudioManager AudioManager => audioeManager;
-    public BarnabusCardManager BarnabusCardManager => barnabusCardManager;
-    public JsonManager JsonManager => jsonManager;
-    public MainManager MainManager { get; private set; }
-    public PlayerDataManager PlayerDataManager => playerDataManager;
-    public NetworkManager NetworkManager => networkManager;
-
     #region COMMON_MANAGER
+    public BarnabusAudioManager AudioManager { get; private set; } = null;
+    public BarnabusCardManager BarnabusCardManager { get; private set; } = null;
+    public JsonManager JsonManager { get; private set; } = null;
+    public MainManager MainManager { get; private set; } = null;
+    public PlayerDataManager PlayerDataManager { get; private set; } = null;
+    public NetworkManager NetworkManager { get; private set; } = null;
+    public AddressableAssetsManager AddressableAssetsManager { get; private set; } = null;
+
     private SceneStateController sceneStateController;
-    private BarnabusAudioManager audioeManager;
-    private BarnabusCardManager barnabusCardManager;
     private SceneTransitionsManager sceneTransitionsManager;
-    private JsonManager jsonManager;
-    private PlayerDataManager playerDataManager;
-    private NetworkManager networkManager;
     #endregion
 
     private void Start()
@@ -44,7 +39,7 @@ public class NewGameManager : MonoBehaviour
     private void Update()
     {
         sceneStateController.StateUpdate();
-        playerDataManager.SystemUpdate();
+        PlayerDataManager.SystemUpdate();
     }
 
     private void Init()
@@ -54,32 +49,27 @@ public class NewGameManager : MonoBehaviour
         sceneTransitionsManager = GetComponentInChildren<SceneTransitionsManager>();
         sceneTransitionsManager.Init();
 
-        barnabusCardManager = new BarnabusCardManager(this);
-        barnabusCardManager.Init();
+        BarnabusCardManager = new BarnabusCardManager(this);
+        BarnabusCardManager.Init();
 
         sceneStateController = new SceneStateController(this, sceneTransitionsManager);
         sceneStateController.Init();
 
-        jsonManager = GetComponentInChildren<JsonManager>();
-        jsonManager.Init();
+        JsonManager = GetComponentInChildren<JsonManager>();
+        JsonManager.Init();
 
-        playerDataManager = new PlayerDataManager(this);
-        playerDataManager.Init();
+        PlayerDataManager = new PlayerDataManager(this);
+        PlayerDataManager.Init();
 
         var audioSourceManager = GetComponentInChildren<AudioSourceManager>();
-        audioeManager = new BarnabusAudioManager(this, audioSourceManager);
-        audioeManager.Init();
+        AudioManager = new BarnabusAudioManager(this, audioSourceManager);
+        AudioManager.Init();
 
-        networkManager = GetComponentInChildren<NetworkManager>();
-        networkManager.Init();
+        NetworkManager = GetComponentInChildren<NetworkManager>();
+        NetworkManager.Init();
 
-        string a1 = "123456";
-        string a2 = "4456";
-
-        var result = a2.Except(a1);
-
-        foreach(var item in result)
-            Debug.Log(item);
+        AddressableAssetsManager = new AddressableAssetsManager(this);
+        AddressableAssetsManager.Init();
     }
 
     /// <summary>
@@ -96,10 +86,10 @@ public class NewGameManager : MonoBehaviour
     public void SetMainManager(MainManager manager)
     {
         MainManager = manager;
-        MainManager.AudioManager = audioeManager;
+        MainManager.AudioManager = AudioManager;
         MainManager.SceneTransitionsManager = sceneTransitionsManager;
-        MainManager.PlayerDataManager = playerDataManager;
-        MainManager.CardManager = barnabusCardManager;
+        MainManager.PlayerDataManager = PlayerDataManager;
+        MainManager.CardManager = BarnabusCardManager;
     }
 
     /// <summary>

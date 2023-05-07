@@ -22,7 +22,6 @@ public class PlayerDataManager : BaseBarnabusManager
 
     }
 
-
     #region BASE_API
     public override void Init()
     {

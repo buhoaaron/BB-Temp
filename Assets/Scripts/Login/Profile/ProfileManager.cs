@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Barnabus.Login
 {
     /// <summary>
-    /// 玩家檔案管理
+    /// Profile相關資料管理
     /// </summary>
     public class ProfileManager : BaseLoginManager
     {
